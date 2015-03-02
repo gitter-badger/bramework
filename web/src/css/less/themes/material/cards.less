@@ -1,0 +1,26 @@
+//Tarjetas
+//http://www.google.com/design/spec/components/cards.html#cards-behavior
+
+.md-card() {
+    position: relative; //Es necesario para situar dentro elementos con 'position: absolute'
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    background-color: @white;
+    padding: 16px;
+    border-radius: @border-radius;
+    margin-bottom: 30px;
+    .shadow(2);
+    .margin-horizontal (15px);
+    &.card-dark {
+        background-color: @bg-dark;
+        color: @white;
+    }
+    footer {
+        text-align: right;
+        margin-top: 24px;
+        button {
+            .margin-vertical(0);
+        }
+    }
+}

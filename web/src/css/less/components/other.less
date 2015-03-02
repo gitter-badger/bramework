@@ -1,0 +1,74 @@
+/*------------------------------------*\
+    $OTROS
+\*------------------------------------*/
+
+//Línea
+hr {
+    display: block;
+    clear: both;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid @gray-150;
+    margin: 3rem 0;
+    padding: 0;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+//Details
+details {
+    summary::-webkit-details-marker {
+    display: none;
+    }
+
+    summary {
+        &:after {
+            .md-icon();
+            content: "\e672";
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &[open] {
+        summary {
+            &:after {
+                content: "\e671";
+            }
+        }
+    }
+}
+
+//Botones de iconos
+span[data-role="close"] {
+    font-size: 1.5rem;
+    font-weight: 700;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    
+    .circle(18px);
+    opacity: 0.5;
+    &:hover {
+        opacity: 1;
+        cursor: pointer;
+    }
+    &:active {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    &:before {
+        content: '×';
+        position: absolute;
+        top: -4px;
+        right: 1.5px;
+    }
+}
+

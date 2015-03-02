@@ -1,0 +1,144 @@
+//Botones
+//http://www.google.com/design/spec/components/buttons.html
+
+//Base
+.md-base() {
+    position: relative;
+    height: 36px;
+    padding: 0px 12px;
+    margin: 6px 4px;
+    text-transform: uppercase;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: @border-radius;
+    font-size: @font-size-small;
+    .transition(box-shadow;);
+    transition-duration: 0.1s;
+    &:hover, &:focus {
+        .shadow(2);
+        cursor: pointer;
+    }
+    &:disabled,
+    &[disabled],
+    &.disabled {
+        opacity: 0.5;
+        &:hover {
+            cursor: not-allowed;
+        }
+    }
+    &[data-icon]:before {
+        margin-right: 8px;
+        //        font-size: 1.2em;
+    }
+}
+
+//Botones planos
+.md-flat() {
+    .md-base();
+    background-color: transparent;
+    &.t-white {color: @white;}
+    &.t-primary {color: @brand-color;}
+    &.t-success {color: @color-success;}
+    &.t-info {color: @color-info;}
+    &.t-alert {color: @color-alert;}
+    &.t-error {color: @color-error;}
+    &:hover, &:focus {
+        @media (max-width: @bp-medium) {
+            box-shadow: none;
+        }
+    }
+    &:active {
+        background-color: rgba(0,0,0,0.1);
+    }
+    &:disabled,
+    &[disabled],
+    &.disabled {
+        &:hover {
+            box-shadow: none;
+        }
+    }
+}
+
+//Botones elevados
+.md-raised() {
+    .md-base();
+    transition-duration: 0.05s;
+    .shadow(1);
+    background-color: @white;
+    &.t-white {color: @white;}
+    &.t-primary {background-color: @brand-color; color:@white;}
+    &.t-success {background-color: @color-success; color:@white;}
+    &.t-info {background-color: @color-info; color:@white;}
+    &.t-alert {background-color: @color-alert; color:@white;}
+    &.t-error {background-color: @color-error; color:@white;}
+    &:hover, &:focus {
+        @media (max-width: @bp-medium) {
+            .shadow(1);
+        }
+    }
+    &:active {
+        background-color: @gray-100;
+        &.t-primary {background-color: @brand-color-focus;}
+        &.t-success {background-color: @color-success-focus;}
+        &.t-info {background-color: @color-info-focus;}
+        &.t-alert {background-color: @color-alert-focus;}
+        &.t-error {background-color: @color-error-focus;}
+    }
+    &:disabled,
+    &[disabled],
+    &.disabled {
+        &:hover {
+            .shadow(1);
+        }
+    }
+    
+    @media (max-width: @bp-medium) {
+        &:hover, &:focus {
+            .shadow(1);
+            cursor: pointer;
+        }
+    }
+}
+
+
+//Botones circulares
+.md-float() {
+    .md-raised();
+    .circle(56px);
+    line-height: 56px;
+    font-size: 26px;
+    &[data-icon]:before {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        margin: 0;
+    }
+    
+    @media (max-width: @bp-medium) {
+        &:hover, &:focus {
+            .shadow(1);
+            cursor: pointer;
+        }
+    }
+}
+
+//Botones circulares pequeños
+.md-float-mini() {
+    .md-raised();
+    .circle(40px);
+    line-height: 40px;
+    font-size: 26px;
+    &[data-icon]:before {
+        position: absolute;
+        top: 7px;
+        left: 7px;
+        margin: 0;
+    }
+    
+    @media (max-width: @bp-medium) {
+        &:hover, &:focus {
+            .shadow(1);
+            cursor: pointer;
+        }
+    }
+}

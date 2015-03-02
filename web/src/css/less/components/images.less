@@ -1,0 +1,25 @@
+/*------------------------------------*\
+    $IMÁGENES
+\*------------------------------------*/
+
+@images-folder: "../img/";
+
+figure {
+    width: auto;
+    .margin-vertical(@margin-bottom-base);
+}
+
+img {
+    border: 0;  /* Remove border when inside `a` element in IE 8/9/10.*/
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+//Leyenda de la imagen
+figcaption {
+    color: @text-color-light;
+    font-size: @font-size-small;
+    font-style: italic;
+}

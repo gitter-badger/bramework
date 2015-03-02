@@ -1,0 +1,89 @@
+/*------------------------------------*\
+    $PLACEHOLDERS
+\*------------------------------------*/
+
+/* Introduccir en los HTML no en los CSS */
+
+//Oculta un elemento
+.mobile-element, .tablet-element, .hide {display: none !important;}
+
+//No muestra un elemento, pero lo mantiene en la interfaz
+.invisible {visibility: hidden;}
+
+//Muestra el elemento en linea con otros
+.inline-block {display: inline-block;}
+
+//Oculta un elemento, pero lo mantiene para los lectores de pantalla
+.screenreader {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+// Alineamiento
+.text-left    {text-align : left;}
+.text-right   {text-align : right;}
+.text-center  {text-align : center;}
+.text-justify {text-align : justify;}
+
+// Transformación de texto
+.text-lowercase  {text-transform : lowercase;}
+.text-uppercase  {text-transform : uppercase;}
+.text-capitalize {text-transform : capitalize;}
+
+//Mostrar las letras mas juntas o mas separadas
+.text-narrow {letter-spacing: @letter-spacing-narrow;}
+.text-wide {letter-spacing: @letter-spacing-wide;}
+
+//Hace flotar a un elemento a un lado
+.float-right {float: right;}
+.float-left  {float: left;}
+
+//El elemento no se puede seleccionar
+.unselectable {.user-select (none);}
+
+
+@media (max-width: @bp-medium) {
+    .desktop-element {display: none !important;}
+    .tablet-element {display: inline-block !important;}
+    article,
+    ul,
+    aside,
+    figcaption,
+    figure,
+    footer,
+    header,
+    main,
+    nav,
+    section {
+        &.tablet-element {display: block !important;}
+    }
+}
+
+@media (max-width: @bp-small) {
+    //Muestra el contenido con ancho completo en pantallas pequeñas
+    .extra-width {
+        width: 111%;
+        margin-left: -5.5%;
+    }
+
+    .desktop-element {display: none !important;}
+    .mobile-element {display: inline-block !important;}
+    article,
+    ul,
+    aside,
+    figcaption,
+    figure,
+    footer,
+    header,
+    main,
+    nav,
+    section {
+        &.mobile-element {display: block !important;}
+    }
+}

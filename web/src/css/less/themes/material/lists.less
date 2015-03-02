@@ -1,0 +1,173 @@
+//Listas
+//http://www.google.com/design/spec/components/lists.html#lists-specs
+
+//Colocar en un DIV padre de los UL
+.md-list() {
+    background-color: @white;
+    ul {
+        padding: 8px 0;
+        border-bottom: 1px solid #e5e5e5;
+        list-style-type: none;
+        margin-bottom: 0;
+        &:last-child {
+            border-bottom: 0;
+        }
+        ul {
+            margin-left: 0;
+            padding-top: 0;
+            li a, li summary {
+               padding-left: 48px;
+           }
+        }
+    }
+    
+    li a, li summary  {
+        display: inline-block;
+        width: 100%;
+        line-height: 48px;
+        padding: 0 24px;
+        vertical-align: middle;
+        &:hover,
+        &:focus,
+        &.js-nav-active{
+            background-color: @gray-50;
+            cursor: pointer;
+        }
+    }
+    
+    [data-icon]:before {
+        margin-right: 24px;
+        font-size: 24px;
+        vertical-align: middle;
+        width: 24px;
+        height: 48px;
+        line-height: 48px;
+        color: @gray-500;
+    }
+    
+    a {
+        text-decoration: none;
+        color: inherit;
+        &:hover,
+        &:focus {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+    
+    hr {
+        margin: 8px 0;
+    }
+    
+    details {
+        summary {
+            &:after {
+                margin-left: 24px;
+                font-size: 24px;
+                vertical-align: middle;
+                width: 24px;
+                height: 48px;
+                line-height: 48px;
+                float: right;
+            }
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        &[open] {
+            summary {
+                &:after {
+                }
+            }
+        }
+    }
+    
+    .list-title {
+        color: @gray-400;
+        height: 24px;
+        line-height: 24px;
+        font-size: 0.75rem;
+        margin-left: 24px;
+        margin-bottom: 10px;
+    }
+}
+
+//Lista estilo Material Design pequeña
+//Colocar directamente en los UL
+.md-list-small() {
+    padding: 8px 0;
+    background-color: @white;
+    border-bottom: 1px solid #e5e5e5;
+    list-style-type: none;
+    margin-bottom: 0;
+    &:last-child {
+        border-bottom: 0;
+    }
+    ul {
+        list-style-type: none;
+        margin-left: 0;
+        padding-bottom: 8px;
+        li a, li summary {
+            padding-left: 32px;
+        }
+    }
+
+    li a, li summary {
+        display: block;
+        width: 100%;
+        line-height: 32px;
+        padding: 0 16px;
+        vertical-align: middle;
+        &:hover,
+        &:focus {
+            background-color: @gray-50;
+            cursor: pointer;
+        }
+    }
+    
+    [data-icon]:before {
+        margin-right: 16px;
+        font-size: 16px;
+        width: 16px;
+        height: 32px;
+        line-height: 32px;
+        vertical-align: bottom;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        &:hover,
+        &:focus {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+    
+    hr {
+        margin: 8px 0;
+    }
+    
+    details {
+        summary {
+            &:after {
+                margin-left: 24px;
+                font-size: 24px;
+                vertical-align: middle;
+                width: 24px;
+                height: 32px;
+                line-height: 32px;
+                float: right;
+            }
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        &[open] {
+            summary {
+                &:after {
+                }
+            }
+        }
+    }
+}

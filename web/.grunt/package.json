@@ -1,0 +1,13 @@
+{
+  "name": "bramework",
+  "version": "0.1.0",
+  "description": "Bramework grunt package",
+  "homepage": "https://github.com/barcia/bramework",
+  "author": "Iván Barcia",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-less": "^1.0.0",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}
