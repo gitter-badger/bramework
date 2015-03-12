@@ -23,7 +23,7 @@
 
 Realmente no está creado con el objetivo de ser un *framework* de uso general, de hecho estoy bastante en contra de utilizar *frameworks* genéricos, sinó que se trata de un proyecto personal y es por eso que está adaptado a mis necesidades y forma de trabajo. Aún así, está disponible para todo el mundo y mínimamente documentado, por si a alguien le puede resultar de utilidad.
 
-El objetivo principal es dar una base para agilizar la creación de sitios web en HTML, aunque también inclúye los archivos básicos para adaptarlo fácilmente a la creación de temas para Wordpress.
+El objetivo principal es dar una base para agilizar la creación de sitios web en HTML, aunque también inclúye los archivos básicos para adaptarlo fácilmente a la creación de temas para Wordpress. No sólo lo creo como base, sinó para experimentar y explorar todos los elementos posibles que existen en el desarrollo web (etiquetas, funciones, etc.)
 
 Para los estilos utilizo el preprocesador [Less.js](http://lesscss.org/). Intento utilizar muchos [*mixings paramétricos*](http://lesscss.org/features/#mixins-feature), de forma que si no se utilizan no se compilen. Así, puedo añadir un número alto de estilos predefinidos, temas, etc. sin que eso signifique que aumenta el tamaño final del CSS, evitando compilar (en la medida de lo posible) código que no utilizaremos.
 

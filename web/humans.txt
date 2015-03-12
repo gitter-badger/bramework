@@ -1,0 +1,23 @@
+/* TEAM */                         
+Designer & Developer: Iván Barcia.
+Contact: barcia[at]openboxmail[dot]org
+Site: http://ivanbarcia.eu
+Google+: https://plus.google.com/+IvánBarcia                     
+Twitter: @bartzia
+Ello: @barcia
+Github: https://github.com/barcia
+Location: Galicia (SPAIN).
+
+                        [...]
+						
+/* THANKS */							
+Name: nombre o url
+             
+                        [...]
+                         
+/* SITE */     
+Creation: YYYY/MM/DD  
+Last update: YYYY/MM/DD                    
+Standards: HTML5, CSS3, JavaScript.                         
+Components: Less.js, Normalize.css, Material Design Icon Font.                      
+Software: Ubuntu, Brackets, Google Chrome, Git, Grunt.js.
