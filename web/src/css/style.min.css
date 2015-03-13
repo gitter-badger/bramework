@@ -488,6 +488,9 @@ address {
 /*------------------------------------*\
     $BOTONES
 \*------------------------------------*/
+/**
+* Estilos por defecto de los botones
+*/
 button,
 input[type=submit],
 input[type=button],
@@ -621,6 +624,11 @@ input[type=button].disabled:hover,
 input[type=reset].disabled:hover {
   box-shadow: none;
 }
+/**
+* Clases para modificar el estilo por defecto de los botones.
+* Es recomendable borrar las que no se utilizen, ya que pueden
+* llegar a ocupar bastante espacio.
+*/
 .btn-flat {
   position: relative;
   height: 36px;
@@ -1012,6 +1020,9 @@ input[type=reset].disabled:hover {
     cursor: pointer;
   }
 }
+/*------------------------------------*\
+    $TARJETAS
+\*------------------------------------*/
 .card {
   position: relative;
   display: inline-block;
@@ -1087,44 +1098,47 @@ pre kbd {
 /*------------------------------------*\
     $LISTAS
 \*------------------------------------*/
-[data-list-type="md-list"] {
+/**
+* Colocar en un DIV padre de los UL.
+*/
+.list {
   background-color: #ffffff;
 }
-[data-list-type="md-list"] ul {
+.list ul {
   padding: 8px 0;
   border-bottom: 1px solid #e5e5e5;
   list-style-type: none;
   margin-bottom: 0;
 }
-[data-list-type="md-list"] ul:last-child {
+.list ul:last-child {
   border-bottom: 0;
 }
-[data-list-type="md-list"] ul ul {
+.list ul ul {
   margin-left: 0;
   padding-top: 0;
 }
-[data-list-type="md-list"] ul ul li a,
-[data-list-type="md-list"] ul ul li summary {
+.list ul ul li a,
+.list ul ul li summary {
   padding-left: 48px;
 }
-[data-list-type="md-list"] li a,
-[data-list-type="md-list"] li summary {
+.list li a,
+.list li summary {
   display: inline-block;
   width: 100%;
   line-height: 48px;
   padding: 0 24px;
   vertical-align: middle;
 }
-[data-list-type="md-list"] li a:hover,
-[data-list-type="md-list"] li summary:hover,
-[data-list-type="md-list"] li a:focus,
-[data-list-type="md-list"] li summary:focus,
-[data-list-type="md-list"] li a.js-nav-active,
-[data-list-type="md-list"] li summary.js-nav-active {
+.list li a:hover,
+.list li summary:hover,
+.list li a:focus,
+.list li summary:focus,
+.list li a.js-nav-active,
+.list li summary.js-nav-active {
   background-color: #f2f2f2;
   cursor: pointer;
 }
-[data-list-type="md-list"] [data-icon]:before {
+.list [data-icon]:before {
   margin-right: 24px;
   font-size: 24px;
   vertical-align: middle;
@@ -1133,19 +1147,19 @@ pre kbd {
   line-height: 48px;
   color: #808080;
 }
-[data-list-type="md-list"] a {
+.list a {
   text-decoration: none;
   color: inherit;
 }
-[data-list-type="md-list"] a:hover,
-[data-list-type="md-list"] a:focus {
+.list a:hover,
+.list a:focus {
   text-decoration: none;
   color: inherit;
 }
-[data-list-type="md-list"] hr {
+.list hr {
   margin: 8px 0;
 }
-[data-list-type="md-list"] details summary:after {
+.list details summary:after {
   margin-left: 24px;
   font-size: 24px;
   vertical-align: middle;
@@ -1154,10 +1168,10 @@ pre kbd {
   line-height: 48px;
   float: right;
 }
-[data-list-type="md-list"] details summary:hover {
+.list details summary:hover {
   cursor: pointer;
 }
-[data-list-type="md-list"] .list-title {
+.list .list-title {
   color: #999999;
   height: 24px;
   line-height: 24px;
@@ -1165,41 +1179,44 @@ pre kbd {
   margin-left: 24px;
   margin-bottom: 10px;
 }
-[data-list-type="md-list-small"] {
+/**
+* Colocar directamente en los UL.
+*/
+.list-small {
   padding: 8px 0;
   background-color: #ffffff;
   border-bottom: 1px solid #e5e5e5;
   list-style-type: none;
   margin-bottom: 0;
 }
-[data-list-type="md-list-small"]:last-child {
+.list-small:last-child {
   border-bottom: 0;
 }
-[data-list-type="md-list-small"] ul {
+.list-small ul {
   list-style-type: none;
   margin-left: 0;
   padding-bottom: 8px;
 }
-[data-list-type="md-list-small"] ul li a,
-[data-list-type="md-list-small"] ul li summary {
+.list-small ul li a,
+.list-small ul li summary {
   padding-left: 32px;
 }
-[data-list-type="md-list-small"] li a,
-[data-list-type="md-list-small"] li summary {
+.list-small li a,
+.list-small li summary {
   display: block;
   width: 100%;
   line-height: 32px;
   padding: 0 16px;
   vertical-align: middle;
 }
-[data-list-type="md-list-small"] li a:hover,
-[data-list-type="md-list-small"] li summary:hover,
-[data-list-type="md-list-small"] li a:focus,
-[data-list-type="md-list-small"] li summary:focus {
+.list-small li a:hover,
+.list-small li summary:hover,
+.list-small li a:focus,
+.list-small li summary:focus {
   background-color: #f2f2f2;
   cursor: pointer;
 }
-[data-list-type="md-list-small"] [data-icon]:before {
+.list-small [data-icon]:before {
   margin-right: 16px;
   font-size: 16px;
   width: 16px;
@@ -1207,19 +1224,19 @@ pre kbd {
   line-height: 32px;
   vertical-align: bottom;
 }
-[data-list-type="md-list-small"] a {
+.list-small a {
   text-decoration: none;
   color: inherit;
 }
-[data-list-type="md-list-small"] a:hover,
-[data-list-type="md-list-small"] a:focus {
+.list-small a:hover,
+.list-small a:focus {
   text-decoration: none;
   color: inherit;
 }
-[data-list-type="md-list-small"] hr {
+.list-small hr {
   margin: 8px 0;
 }
-[data-list-type="md-list-small"] details summary:after {
+.list-small details summary:after {
   margin-left: 24px;
   font-size: 24px;
   vertical-align: middle;
@@ -1228,7 +1245,7 @@ pre kbd {
   line-height: 32px;
   float: right;
 }
-[data-list-type="md-list-small"] details summary:hover {
+.list-small details summary:hover {
   cursor: pointer;
 }
 /*------------------------------------*\
@@ -1241,7 +1258,7 @@ figure {
 }
 img {
   border: 0;
-  /* Remove border when inside `a` element in IE 8/9/10.*/
+  /* Elimina el borde dentro de `a` en IE 8/9/10.*/
   width: auto;
   height: auto;
   max-width: 100%;
@@ -1263,14 +1280,10 @@ hr {
   border-top: 1px solid #d9d9d9;
   margin: 3rem 0;
   padding: 0;
-}
-/**
- * Address differences between Firefox and other browsers.
- */
-hr {
   -moz-box-sizing: content-box;
+  /* Consistencia entre navegadores */
   box-sizing: content-box;
-  height: 0;
+  /* Consistencia entre navegadores */
 }
 details summary::-webkit-details-marker {
   display: none;

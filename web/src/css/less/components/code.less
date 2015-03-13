@@ -3,13 +3,13 @@
 \*------------------------------------*/
 
 .code() {
-    padding: 1px 5px;
-    border-radius: @border-radius;
-    background-color: @gray-50;
-    color: inherit;
-    border: 1px solid @gray-150;
-
+  padding: 1px 5px;
+  border-radius: @border-radius;
+  background-color: @gray-50;
+  color: inherit;
+  border: 1px solid @gray-150;
 }
+
 
 code,
 kbd,
@@ -20,39 +20,40 @@ samp {
 
 code,
 kbd {
-    font-size: @font-size-base*0.9;
-    display: inline-block;
-    vertical-align: middle;
-    line-height: @line-height-base;
-    cursor: text;
-    .code;
-    &.code-dark {
-        background-color: @bluegray-800;
-        color: @white;
-        border-color: @bluegray-800;
-    }
+  font-size: @font-size-base*0.9;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: @line-height-base;
+  cursor: text;
+  .code;
+  &.code-dark {
+    background-color: @bluegray-800;
+    color: @white;
+    border-color: @bluegray-800;
+  }
 }
 
+
 kbd {
-    box-shadow: 0 2px @gray-150;
+  box-shadow: 0 2px @gray-150;
 }
 
 
 //Texto preformateado
 pre {
-    overflow: auto;///
-    display: block;
-    text-align: left;
-    margin-bottom: 1rem;
-    &:last-child {margin-bottom: 0px;}
+  overflow: auto;
+  display: block;
+  text-align: left;
+  margin-bottom: 1rem;
+  &:last-child {margin-bottom: 0px;}
 }
 
 pre {
-    & code,
-    & kbd {
-        display: block;
-        padding: 5px 10px;
-        overflow-x: auto;
-        overflow-y: auto;
-    }
+  & code,
+  & kbd {
+    display: block;
+    padding: 5px 10px;
+    overflow-x: auto;
+    overflow-y: auto;
+  }
 }

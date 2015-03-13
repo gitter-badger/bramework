@@ -43,7 +43,7 @@ Todos los estilos relativos a la tipografía del sitio (y sus variables LESS). A
 
 
 ###components/
-Aquí van todos los componentes que se utilizan en el *framework*. Puedes añadir los que quieras o modificarlos a tu gusto. El estilo de la mayoría varía según los temas que utilices.
+Aquí van todos los componentes que se utilizan en el *framework*. Puedes añadir los que quieras o modificarlos a tu gusto. El estilo de la mayoría varía según los temas que le apliques.
 
 ###libraries/
 *Mixings* y variables que pueden agilizar el desarrollo web.
