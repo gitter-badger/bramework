@@ -1,104 +1,196 @@
 #Arquitectura LESS
 
-* Flujo de trabajo
-* Comentarios
-* Iconos
-* Variables (iran las necesarias en cada archivo)
-* Temas (incluiran un prefijo identificativo md-*)
+* [Introducción]("Introducción")
+* [Flujo de trabajo]("Flujo-de-trabajo")
+* [Iconos]("Flujo-de-trabajo")
+* [Arquitectura]("#Arquitectura")
 
-##Comentarios
-Todo lo que pueda dar lugar a confusión irá acompañado de un comentario explicatorio.
+---
 
-Los comentarios relativos a funciones de LESS que no se muestren una vez compiladas (variables, algunos mixings, etc), se escribirán con las dos barras `//`, de ésta manera tampoco se mostrará el comentario.
+##Introducción
+
+Todos los estilos *CSS* del sitio se encuentran en `/src/css/`.
+
+Dentro de ese directorio nos encontramos el directorio `less/` y el archivo donde se encuentran todos los estilos del sitio, el `style.css` (además, puede haber un `style.min.css`).
+
+Dentro del directorio `/src/css/less/`, en los distintos archivos que tenemos ahí, es donde nosotros aplicaremos nuestros propios estilos. Estos archivos están unificados en el archivo `style.less`, que una vez procesado nos crea el `style.css` el directorio `/src/css/`.
+
+En el código que hay escrito, odo lo que pueda dar lugar a confusión intentaré acompañarlo de un comentario explicatorio. Además, en el [tablón de Trello]("https://trello.com/b/IzLg4nk4") puede haber explicaciones o alternativas a algunos elementos.
+
+Los comentarios relativos a funciones de *LESS* que no se muestren una vez procesadas (variables, algunos mixings, etc), se escribirán con las dos barras `//`, de ésta manera tampoco se mostrará el comentario.
+
+Las **variables**, a diferencia de otros *frameworks*, no se muestran todas en un mismo archivo. Considero mas productivo colocar cada variable en el archivo en el cual la usaremos por norma general. Por ejemplo, las variables correspondientes a la tipografía estás todas en el archivo [`typography.less`]("#typography.less"), los colores en [`colors.less`]("colors.less"), etc.
+
+##Flujo de trabajo
+Lo primero y más recomendable es tener ***grunt* «escuchando»** simplemente escribiendo el comando `grunt` en la terminal, estando en el directorio apropiado. (Ver [README.md]("/README.md")).
+
+Haciendo esto, cada vez que guardemos cualquier cambio en un archivo `.less`, todo el código se procesará automáticamente creando el `.css`.
+
+Principalmente escribiremos código en los directorios `layout/` para crear bloques de código o «trozos» de interfaz y en el directorio `pages/` para añadir estilos más específicos.
+
+Además, **antes** de comenzar con la maquetación, podemos crear los [componentes]("#components/") que necesitemos, configurar los estilos [mas básicos]("basic.less") y generales o añadir [temas]("#themes/").
 
 
+##Iconos
+Para los iconos no utilizo clases sinó los ***data-atributes***. Aunque por especificación no están creados para tal cometiddo, tampoco está restringido su uso, y considero que se consigue un HTML más limpio y legible.
 
+Para añadir un icono a un elemento simplemente añadimos el atributo **`data-icon="{nombre del icono}"`**.
 
+Por ejemplo:
 
-[Arquitectura](#arquitectura)
+```html
+<button data-icon="add">Añadir</button>
+```
 
-* [base/](#base/)
-    * [basic.less](#basic)
-    * [typography.less](#typography)
-* [components/](#components/)
-* [libraries/](#libraries)
-    * [color.less](#color)
-    * [mixings.less](#mixings)
-    * [mixings/](#mixings)
-        * [animation](#animation)
+El archivo `.css` de las fuentes de iconos está en el directorio [`vendor/`]("#vendor/") ya que suelen ser librerías externas. Cambiamos el formato a `.less` y lo añadimos al archivo principal `style.less` para que se procesen todos los estilos juntos en un solo `.css`.
 
+Los archivos de la tipografía se almacenan en `/src/font/` por lo que debemos asegurarnos que ponemos el directorio correcto en el archivo `.css` (o el recién renombrado `.less`).
+
+Por ejemplo:
+
+```css
+@font-face {
+  font-family: 'material-design';
+  src:url('../font/material/material.eot?-4ykr4x');
+  src:url('../font/material/material.eot?#iefix-4ykr4x') format('embedded-opentype'),
+  url('../font/material/material.woff?-4ykr4x') format('woff'),
+  url('../font/material/material.ttf?-4ykr4x') format('truetype'),
+  url('../font/material/material.svg?-4ykr4x#material-design') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+```
+
+Como cada fuente de iconos suele tener muchos mas iconos de los que utilizamos, una **buena práctica** es comentarlos todos con dos barras `//` para que no se procesen, y descomentar sólo los que vayamos a utilizar. Así reduciremos mucho el tamaño de nuestro `.css` final.
 
 
 ##Arquitectura
 
+```
+less/
+|
+|– base/
+|   |– basic.less
+|   |– typography.less
+|
+|– components/
+|   |– buttons.less
+|   |– cards.less
+|   |– code.less
+|   |– images.less
+|   |– lists.less
+|   |– misc.less
+|   |-...
+|
+|– layout/
+|   |– ...
+|
+|– libraries/
+|   |– mixings/
+|   |   |-animation.less
+|   |   |-border.less
+|   |   |-columns.less
+|   |   |-{etc...}
+|   |
+|   |– color.less
+|   |– development.less
+|   |– mixings.less
+|   |– placeholders.less
+|   |– print.less
+|
+|– pages/
+|   |– ...
+|
+|– themes/
+|   |– flat/
+|   |   |-...
+|   |
+|   |– material/
+|   |   |-...
+|   |
+|   |- flat.less
+|   |- material.less
+|
+|– vendor/
+|   |– material-fonts.less
+|
+|– style.less
+```
+
 ###base/
 
-####basic.less
-Son los estilos básicos para unificar criterios entre distintos navegadores y establecer estilos muy globales. Creado a partir de una mezcla de estilos y directrices propias con [normalize.css](http://necolas.github.io/normalize.css/) (3.0.2).
+  #####basic.less
+  Son los **estilos básicos** para unificar criterios entre distintos navegadores y establecer estilos muy globales. Creado a partir de una mezcla de estilos y directrices propias con [normalize.css](http://necolas.github.io/normalize.css/) (3.0.2).
 
-También están aquí las variables relativas a la interfaz general así como los **_breackpoints_**.
+  También están aquí las variables relativas a la interfaz general así como los **_breackpoints_**.
 
-####typography.less
-Todos los estilos relativos a la tipografía del sitio (y sus variables LESS). Además incluye todos los elementos relacionados con el texto (listas, citas, etc.).
+  #####typography.less
+  Todos los estilos relativos a la **tipografía** del sitio (y sus variables). Además incluye la mayoría de los elementos relacionados con el texto (listas, citas, etc.).
 
 
 ###components/
-Aquí van todos los componentes que se utilizan en el *framework*. Puedes añadir los que quieras o modificarlos a tu gusto. El estilo de la mayoría varía según los temas que le apliques.
+Aquí van todos los **componentes** que se utilizan en el *framework*. Puedes añadir los que quieras o modificarlos a tu gusto. Puedes cambiar muy fácilmente los estilos de la mayoría según los temas que le apliques.
+
+Ojo, no confundir componentes con los bloques de *layout*. Los componentes son elementos mas pequeños, y los bloques de *layout* son elementos mas grandes creados con varios componentes.
+
+###layout/
+Aquí debes colocar los módulos que crees usando mayormente los componentes. Son **bloques de código** mas grandes que deberían ser reutilizables en varios sitios de la web. Por ejemplo un *footer*, un *sidebar*, un menú, un formulario, etc.
 
 ###libraries/
 *Mixings* y variables que pueden agilizar el desarrollo web.
 
+  #####color.less
+  Una librería de variables que contiene todos los **colores** que se utilizan en el proyecto. Debería ser el único lugar en el que aparezcan colores en formato hexadecimal o rgb.
 
+  #####development.less
+  Por defecto, este archivo no lo procesaremos. Lo utilizamos sólo cuando queremos **depurar** nuestro HTML. Añade cajas rojas o amarillas en los elementos el los que falta algo.
 
-####placeholders
-Son una serie de clases para utilizar en el HTML de forma puntual. S el proyecto está bien planificado, seguramente utilices pocos y podrás eliminar (o mejor comentar con dos barras `//`) la mayoría, puesto que utilizarás uno o dos, pero estos sí se compilan todos.
+  Por ejemplo, añadirá una caja roja a todos los `<a>` que no tengan un `href` correcto, y una caja amarilla a todos los `<a>` que no tengan un `title` (puesto que no es obligatorio, pero sí muy recomendable).
 
+  #####mixings.less
+  El archivo que contiene los enlaces a todos los mixings. Si añadimos algún archivo nuevo en la carpeta `mixings/` debemos acordarnos de **añadir aquí la ruta** correcta.
 
+  #####placeholders.less
+  Son una serie de clases para utilizar en el HTML de forma puntual. Si el proyecto está bien planificado, seguramente utilices pocos y podrás eliminar (o mejor comentar con dos barras `//`) la mayoría, puesto que utilizarás uno o dos, pero si no están comentados sí se procesan todos.
 
+  #####print.less
+  Son estilos que solo se aplicarán en caso de que alguien *imprima* nuestra web. Es recomendable dejarlos, sobretodo si en nuestra web hay artículos u otro contenido que alguien pueda querer imprimir.
+
+  No son propios, están importados de [Boilerplate]("https://html5boilerplate.com/").
+
+###pages/
+Aquí debes colocar archivos con los estilos de las **páginas únicas**. Por ejemplo los estilos del `index.html`, de la página de contacto, etc.
+
+###themes/
+Aquí, cada uno dentro de su respectiva carpeta, colocarás los **temas** que vayas creando. Cuando crees un tema puedes crear estilos para todos los componentes que creas oportunos.
+
+La forma de hacerlo es creando **SIEMPRE _mixings_ paramétricos** para que sólo se procesen los estilos de los componentes que utilicemos, y así podremos tener temas lo más extensos y completos que queramos, sin que eso signifique necesariamente que aumente el tamaño de nuestro archivo final de CSS.
+
+Una **buena práctica** para evitar conflictos si usamos elementos de varios temas al mismo tiempo es añadir un prefijo identificativo a cada *mixing* dependiendo del tema. Por ejemplo, si creas un tema basado en el estilo *material design* el *mixing* para los botones puede ser `.md-button` mientras que el *mixing* para los botones del estilo *flat design* podría ser `.flat-button`.
+
+Una vez creados los *mixings* los añadimos al componente que queramos en el directorio `components/`.
+
+Ejemplo:
+
+* *Mixing* paramétrico creado en `themes/`:
+
+```less
+.md-button-base() {
+  height: 36px;
+  padding: 0px 12px;
+  margin: 6px 4px;
+  text-transform: uppercase;
+  text-align: center;
+}
 ```
-less/
-|
-|– base/             # Engloba todos los estilos básicos
-|   |– basic.less        # Reset/normalize
-|   |– typography.less   # Reglas tipográficas y elementos relacionados con el texto
-|
-|– components/       # Componentes pequeños y reutilizables
-|   |– _buttons.scss     # Botones
-|   |– _carousel.scss    # Carousel
-|   |– _cover.scss       # Cubierta
-|   |– _dropdown.scss    # Dropdown
-|   ...                  # Etc…
-|
-|– layout/           # Módulos formados por componetes que forman las partes principales del sitio
-|   |– _navigation.scss  # Navegación
-|   |– _grid.scss        # Sistema de retícula
-|   |– _header.scss      # Encabezamiento
-|   |– _footer.scss      # Pie de página
-|   |– _sidebar.scss     # Barra lateral
-|   |– _forms.scss       # Formularios
-|   ...                  # Etc…
-|
-|– pages/
-|   |– _home.scss        # Estilos específicos para la página de inicio
-|   |– _contact.scss     # Estilos específicos para la página de contacto
-|   ...                  # Etc…
-|
-|– temas/            # Estilos específicos para páginas concretas
-|   |– _theme.scss       # Tema por defecto
-|   |– _admin.scss       # Tema del administrador
-|   ...                  # Etc…
-|
-|– libraries/        # Herramientas, mixings, helpers, etc
-|   |– _variables.scss   # Variables Sass
-|   |– _functions.scss   # Funciones Sass
-|   |– _mixins.scss      # Mixins Sass
-|   |– _helpers.scss     # Clases & placeholders
-|
-|– vendor/           # Librerías externas
-|   |– _bootstrap.scss   # Bootstrap
-|   |– _jquery-ui.scss   # jQuery UI
-|   ...                  # Etc…
-|
-|
-`– style.less             # Archivo principal de Less que engloba todos los demás.
+
+* Lo aplicamos al componente que queremos en `components/`:
+
+```css
+button {
+  .md-button-base();
+}
 ```
+
+###vendor/
+Aquí van las librerías y estilos de **elementos externos**.

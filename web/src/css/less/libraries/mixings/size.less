@@ -1,26 +1,26 @@
 //Establece las medidas de un elemento. Ancho x Alto.
 .size(@width; @height) {
-    width : @width;
-    height: @height;
+  width : @width;
+  height: @height;
 }
 
 //Hace un elemento cuadrado
 .square(@size) {
-    width        : @size;
-    height       : @size;
-    border-radius: 0%;
+  width        : @size;
+  height       : @size;
+  border-radius: 0%;
 }
 
 //Hace un elemento circular
 .circle(@size) {
-    width        : @size;
-    height       : @size;
-    border-radius: 100%;
+  width        : @size;
+  height       : @size;
+  border-radius: 100%;
 }
 
 //Modelo de caja: 'border-box', 'padding-box', 'content-box'
 .box-sizing(@value: border-box) {
-    -webkit-box-sizing: @value;
-       -moz-box-sizing: @value;
-            box-sizing: @value;
+  -webkit-box-sizing: @value;
+     -moz-box-sizing: @value;
+          box-sizing: @value;
 }

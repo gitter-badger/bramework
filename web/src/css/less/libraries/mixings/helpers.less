@@ -1,23 +1,25 @@
-//Mixings que pueden ser útiles para posicionar elementos
-//durante el diseño y programación del CSS
+/**
+* Mixings que pueden ser útiles para posicionar elementos
+* durante el diseño y programación del CSS
+*/
 
 //Recuadro rojo que rodea un elemento.
 .loc(@color: red;) {
-    outline: 1px solid @color;
+  outline: 1px solid @color;
 }
 
 //Recuadro rojo sombra de fondo en el elemento
 .loc-s(@color: red;) {
-    outline: 1px solid @color;
-    background-color: rgba(0, 0, 0, 0.1);
+  outline: 1px solid @color;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 //Recuadro rojo elaborado con "border" (ocupa 1px de espacio, en "outline" no)
 .loc-border(@color: red;) {
-    border: 1px solid @color;
+  border: 1px solid @color;
 }
 
 .loc-border-s(@color: red;) {
-    border: 1px solid @color;
-    background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid @color;
+  background-color: rgba(0, 0, 0, 0.1);
 }

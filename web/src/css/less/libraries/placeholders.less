@@ -1,8 +1,10 @@
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
-
-/* Introduccir en los HTML no en los CSS */
+/**
+* https://trello.com/c/HKwHL2lT
+* Introduccir en los HTML no en los CSS
+*/
 
 //Oculta un elemento
 .mobile-element, .tablet-element, .hide {display: none !important;}
@@ -49,41 +51,41 @@
 
 
 @media (max-width: @bp-medium) {
-    .desktop-element {display: none !important;}
-    .tablet-element {display: inline-block !important;}
-    article,
-    ul,
-    aside,
-    figcaption,
-    figure,
-    footer,
-    header,
-    main,
-    nav,
-    section {
-        &.tablet-element {display: block !important;}
-    }
+  .desktop-element {display: none !important;}
+  .tablet-element {display: inline-block !important;}
+  article,
+  ul,
+  aside,
+  figcaption,
+  figure,
+  footer,
+  header,
+  main,
+  nav,
+  section {
+    &.tablet-element {display: block !important;}
+  }
 }
 
 @media (max-width: @bp-small) {
-    //Muestra el contenido con ancho completo en pantallas pequeñas
-    .extra-width {
-        width: 111%;
-        margin-left: -5.5%;
-    }
+  //Muestra el contenido con ancho completo en pantallas pequeñas
+  .extra-width {
+    width: 111%;
+    margin-left: -5.5%;
+  }
 
-    .desktop-element {display: none !important;}
-    .mobile-element {display: inline-block !important;}
-    article,
-    ul,
-    aside,
-    figcaption,
-    figure,
-    footer,
-    header,
-    main,
-    nav,
-    section {
-        &.mobile-element {display: block !important;}
-    }
+  .desktop-element {display: none !important;}
+  .mobile-element {display: inline-block !important;}
+  article,
+  ul,
+  aside,
+  figcaption,
+  figure,
+  footer,
+  header,
+  main,
+  nav,
+  section {
+    &.mobile-element {display: block !important;}
+  }
 }

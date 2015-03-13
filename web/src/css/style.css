@@ -572,13 +572,13 @@ button.t-success,
 input[type=submit].t-success,
 input[type=button].t-success,
 input[type=reset].t-success {
-  color: #2baf2b;
+  color: #66bb6a;
 }
 button.t-info,
 input[type=submit].t-info,
 input[type=button].t-info,
 input[type=reset].t-info {
-  color: #738ffe;
+  color: #42a5f5;
 }
 button.t-alert,
 input[type=submit].t-alert,
@@ -590,7 +590,7 @@ button.t-error,
 input[type=submit].t-error,
 input[type=button].t-error,
 input[type=reset].t-error {
-  color: #e84e40;
+  color: #ef5350;
 }
 @media (max-width: 800px) {
   button:hover,
@@ -671,16 +671,16 @@ input[type=reset].disabled:hover {
   color: #26a69a;
 }
 .btn-flat.t-success {
-  color: #2baf2b;
+  color: #66bb6a;
 }
 .btn-flat.t-info {
-  color: #738ffe;
+  color: #42a5f5;
 }
 .btn-flat.t-alert {
   color: #ffca28;
 }
 .btn-flat.t-error {
-  color: #e84e40;
+  color: #ef5350;
 }
 @media (max-width: 800px) {
   .btn-flat:hover,
@@ -741,11 +741,11 @@ input[type=reset].disabled:hover {
   color: #ffffff;
 }
 .btn-raised.t-success {
-  background-color: #2baf2b;
+  background-color: #66bb6a;
   color: #ffffff;
 }
 .btn-raised.t-info {
-  background-color: #738ffe;
+  background-color: #42a5f5;
   color: #ffffff;
 }
 .btn-raised.t-alert {
@@ -753,7 +753,7 @@ input[type=reset].disabled:hover {
   color: #ffffff;
 }
 .btn-raised.t-error {
-  background-color: #e84e40;
+  background-color: #ef5350;
   color: #ffffff;
 }
 @media (max-width: 800px) {
@@ -769,16 +769,16 @@ input[type=reset].disabled:hover {
   background-color: #009688;
 }
 .btn-raised:active.t-success {
-  background-color: #259b24;
+  background-color: #4caf50;
 }
 .btn-raised:active.t-info {
-  background-color: #5677fc;
+  background-color: #2196f3;
 }
 .btn-raised:active.t-alert {
   background-color: #ffc107;
 }
 .btn-raised:active.t-error {
-  background-color: #e51c23;
+  background-color: #f44336;
 }
 .btn-raised:disabled:hover,
 .btn-raised[disabled]:hover,
@@ -842,11 +842,11 @@ input[type=reset].disabled:hover {
   color: #ffffff;
 }
 .btn-float.t-success {
-  background-color: #2baf2b;
+  background-color: #66bb6a;
   color: #ffffff;
 }
 .btn-float.t-info {
-  background-color: #738ffe;
+  background-color: #42a5f5;
   color: #ffffff;
 }
 .btn-float.t-alert {
@@ -854,7 +854,7 @@ input[type=reset].disabled:hover {
   color: #ffffff;
 }
 .btn-float.t-error {
-  background-color: #e84e40;
+  background-color: #ef5350;
   color: #ffffff;
 }
 @media (max-width: 800px) {
@@ -870,16 +870,16 @@ input[type=reset].disabled:hover {
   background-color: #009688;
 }
 .btn-float:active.t-success {
-  background-color: #259b24;
+  background-color: #4caf50;
 }
 .btn-float:active.t-info {
-  background-color: #5677fc;
+  background-color: #2196f3;
 }
 .btn-float:active.t-alert {
   background-color: #ffc107;
 }
 .btn-float:active.t-error {
-  background-color: #e51c23;
+  background-color: #f44336;
 }
 .btn-float:disabled:hover,
 .btn-float[disabled]:hover,
@@ -956,11 +956,11 @@ input[type=reset].disabled:hover {
   color: #ffffff;
 }
 .btn-float-mini.t-success {
-  background-color: #2baf2b;
+  background-color: #66bb6a;
   color: #ffffff;
 }
 .btn-float-mini.t-info {
-  background-color: #738ffe;
+  background-color: #42a5f5;
   color: #ffffff;
 }
 .btn-float-mini.t-alert {
@@ -968,7 +968,7 @@ input[type=reset].disabled:hover {
   color: #ffffff;
 }
 .btn-float-mini.t-error {
-  background-color: #e84e40;
+  background-color: #ef5350;
   color: #ffffff;
 }
 @media (max-width: 800px) {
@@ -984,16 +984,16 @@ input[type=reset].disabled:hover {
   background-color: #009688;
 }
 .btn-float-mini:active.t-success {
-  background-color: #259b24;
+  background-color: #4caf50;
 }
 .btn-float-mini:active.t-info {
-  background-color: #5677fc;
+  background-color: #2196f3;
 }
 .btn-float-mini:active.t-alert {
   background-color: #ffc107;
 }
 .btn-float-mini:active.t-error {
-  background-color: #e51c23;
+  background-color: #f44336;
 }
 .btn-float-mini:disabled:hover,
 .btn-float-mini[disabled]:hover,
@@ -1332,10 +1332,17 @@ span[data-role="close"]:before {
   top: -4px;
   right: 1.5px;
 }
+/**
+* Mixings que pueden ser útiles para posicionar elementos
+* durante el diseño y programación del CSS
+*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
-/* Introduccir en los HTML no en los CSS */
+/**
+* https://trello.com/c/HKwHL2lT
+* Introduccir en los HTML no en los CSS
+*/
 .mobile-element,
 .tablet-element,
 .hide {
@@ -1449,7 +1456,6 @@ span[data-role="close"]:before {
   *:after {
     background: transparent !important;
     color: #000 !important;
-    /* Black prints faster: h5bp.com/s */
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -1464,9 +1470,9 @@ span[data-role="close"]:before {
     content: " (" attr(title) ")";
   }
   /*
-    * No muestra los links que son identificadores,
-    * o usan el pseudo protocolo 'javascript:'
-    */
+  * No muestra los links que son identificadores,
+  * o usan el pseudo protocolo 'javascript:'
+  */
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
     content: "";
@@ -1501,7 +1507,7 @@ span[data-role="close"]:before {
   }
 }
 /*------------------------------------*\
-    $ICON FONT MATERIAL DESIGN
+    $ICONOS «MATERIAL DESIGN»
 \*------------------------------------*/
 @font-face {
   font-family: 'material-design';

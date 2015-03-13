@@ -1,8 +1,8 @@
 .animation-backgrounds() {
-    0%   {background: red;}
-    25%  {background: yellow;}
-    50%  {background: blue;}
-    100% {background: green;}
+  0%   {background: red;}
+  25%  {background: yellow;}
+  50%  {background: blue;}
+  100% {background: green;}
 }
 
 //@-webkit-keyframes animation-backgrounds {
@@ -14,19 +14,19 @@
 //}
 
 .animation (@name, @duration, @function: linear, @delay: 0s, @count: infinite, @direction, alternate, @play-state) {
-    -webkit-animation-name: @name;
-    -webkit-animation-duration: @duration;
-    -webkit-animation-timing-function: @function;
-    -webkit-animation-delay: @delay;
-    -webkit-animation-iteration-count: @count;
-    -webkit-animation-direction: @direction;
-    -webkit-animation-play-state: @play-state;
-    
-    animation-name: @name;
-    animation-duration: @duration; //En segundos
-    animation-timing-function: @function; //(http://goo.gl/2rbYlE  |  http://goo.gl/3btZHf)
-    animation-delay: @delay; //Tiempo que tarda en empezar la animación. En segundos
-    animation-iteration-count: @count; //Numero de veces que se realiza la animación
-    animation-direction: @direction; //Indica como se debe reproducir la animación 'normal', 'reverte', 'alternate'
-    animation-play-state: @play-state; //Estado de la animación 'running' o 'paused'
+  -webkit-animation-name: @name;
+  -webkit-animation-duration: @duration;
+  -webkit-animation-timing-function: @function;
+  -webkit-animation-delay: @delay;
+  -webkit-animation-iteration-count: @count;
+  -webkit-animation-direction: @direction;
+  -webkit-animation-play-state: @play-state;
+
+  animation-name: @name;
+  animation-duration: @duration; //En segundos
+  animation-timing-function: @function; //(http://goo.gl/2rbYlE  |  http://goo.gl/3btZHf)
+  animation-delay: @delay; //Tiempo que tarda en empezar la animación. En segundos
+  animation-iteration-count: @count; //Numero de veces que se realiza la animación
+  animation-direction: @direction; //Indica como se debe reproducir la animación 'normal', 'reverte', 'alternate'
+  animation-play-state: @play-state; //Estado de la animación 'running' o 'paused'
 }

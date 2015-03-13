@@ -1,48 +1,46 @@
-//http://css-tricks.com/snippets/css/a-guide-to-flexbox/
-//(Vídeo de Wakkos) https://www.youtube.com/watch?v=2fO_daRvkZw&list=UUQZyH9sRRjvtZhMw-ldRvXQ
-//Ejemplo: https://gist.github.com/ivarcia/b9263fb0fe9e8f3fa996
+//https://trello.com/c/n3Bj5iJq
 
-//Convierte en 'flexbox' un elemento 
+//Convierte en 'flexbox' un elemento
 .flexbox() {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
 }
 
 //Dirección de los elementos
 //row | row-reverse | column | column-reverse
 .flex-direction(@direction) {
-    -webkit-flex-direction: @direction;
-       -moz-flex-direction: @direction;
-         -o-flex-direction: @direction;
-            flex-direction: @direction;
+  -webkit-flex-direction: @direction;
+     -moz-flex-direction: @direction;
+       -o-flex-direction: @direction;
+          flex-direction: @direction;
 }
 
 //Alinea horizontalmente los elementos
 //flex-start | flex-end | center | space-between | space-around
 .justify-content(@justify) {
-    -webkit-justify-content: @justify;
-       -moz-justify-content: @justify;
-         -o-justify-content: @justify;
-            justify-content: @justify;
+  -webkit-justify-content: @justify;
+     -moz-justify-content: @justify;
+       -o-justify-content: @justify;
+          justify-content: @justify;
 }
 
 //Alinea verticalmente los elementos (muy parecido a 'justify-content')
 //flex-start | flex-end | center | baseline | STRETCH
 .align-items(@align) {
-    -webkit-align-items: @align;
-       -moz-align-items: @align;
-         -o-align-items: @align;
-            align-items: @align;
+  -webkit-align-items: @align;
+     -moz-align-items: @align;
+       -o-align-items: @align;
+          align-items: @align;
 }
 
 //Altera el orden semántico de los elementos
 .order(@order) {
-    -webkit-box-ordinal-group : @order;
-       -moz-box-ordinal-group : @order;
-               -ms-flex-order : @order;
-                -webkit-order : @order;
-                        order : @order;
+  -webkit-box-ordinal-group : @order;
+     -moz-box-ordinal-group : @order;
+             -ms-flex-order : @order;
+              -webkit-order : @order;
+                      order : @order;
 }

@@ -6,96 +6,87 @@
 
 //Detecta los elementos vacíos
 :empty{
-    outline:5px solid yellow;
-    input&,
-    textarea&,
-    img&,
-    hr& {
-         .dev-ok;   
-    }
+  outline:5px solid yellow;
+  input&,
+  textarea&,
+  img&,
+  hr& {
+    .dev-ok;
+  }
 }
 
 //Detecta las imágenes sin "alt" o con un "alt" vacío.
 img{
-    .dev-danger;
+  .dev-danger;
 }
 img[alt]{
-    .dev-ok;
+  .dev-ok;
 }
 img[alt=""]{
-    .dev-alert;
+  .dev-alert;
 }
 
 //Detecta errores en los links. Deben tener un 'href' y es muy recomendable que tengan un 'title'
 a{
-    .dev-alert;
+  .dev-alert;
 }
 a[title]{
-    .dev-ok;
+  .dev-ok;
 }
 
 a[href="#"], a[href=""] {
-    .dev-alert;
+  .dev-alert;
 }
 
 //Una lista solo debe anidar 'li'
 ul,
 ol{
-    &>*:not(li) {
-        .dev-danger;
-    }
+  &>*:not(li) {
+    .dev-danger;
+  }
 }
 
 // los 'table' no deben tener de hijo directamente a un 'tr'. Debe ser un 'thead', 'tfoot' y 'tbody'
 table > tr{
-    .dev-alert;
+  .dev-alert;
 }
 
 //El 'tfoot' se debe colocar antes del 'tbody'
 tbody + tfoot{
-    .dev-alert;
+  .dev-alert;
 }
 
 //Los formularios necesitan el atributo 'action'
 form{
-    .dev-danger
+  .dev-danger
 }
 form[action]{
-    .dev-ok;
+  .dev-ok;
 }
 
 //Elementos que necesitan los input
 input {
-     .dev-danger;   
+   .dev-danger;
 }
 input[type]{
-    .dev-ok;
+  .dev-ok;
 }
 textarea[rows][cols]{
-    .dev-ok;
+  .dev-ok;
 }
 
 //Se recomienda que los 'label' estén conectados con su 'input' correspondiente mediante el atributo 'for'
 label{
-    .dev-alert;
+  .dev-alert;
 }
 label[for]{
-    .dev-ok;
+  .dev-ok;
 }
 
 //Todos los 'submit' deben tener un 'value'
 input[type=submit]{
-    .dev-danger; 
+  .dev-danger;
 }
 input[type=submit][value]{
-    .dev-ok;
-}
-
-//Estilos para la consola JavaScript
-#js-console {
-    p {
-        margin-bottom: 0;
-        text-align: right;
-        font-size: @font-size-small;
-    }
+  .dev-ok;
 }
