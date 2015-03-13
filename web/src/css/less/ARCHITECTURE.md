@@ -2,8 +2,8 @@
 
 * [Introducción](#introducci%C3%B3n)
 * [Flujo de trabajo](#flujo-de-trabajo)
-* [Iconos](Flujo-de-trabajo)
-* [Arquitectura](#Arquitectura)
+* [Iconos](#iconos)
+* [Arquitectura](#arquitectura)
 
 ---
 
@@ -19,7 +19,7 @@ En el código que hay escrito, todo lo que pueda dar lugar a confusión intentar
 
 Los comentarios relativos a funciones de *LESS* que no se muestren una vez procesadas (variables, algunos mixings, etc), se escribirán con las dos barras `//`, de ésta manera tampoco se mostrará el comentario.
 
-Las **variables**, a diferencia de otros *frameworks*, no se muestran todas en un mismo archivo. Considero mas productivo colocar cada variable en el archivo en el cual la usaremos por norma general. Por ejemplo, las variables correspondientes a la tipografía estás todas en el archivo [`typography.less`](#typography.less), los colores en [`colors.less`](colors.less), etc.
+Las **variables**, a diferencia de otros *frameworks*, no se muestran todas en un mismo archivo. Considero mas productivo colocar cada variable en el archivo en el cual la usaremos por norma general. Por ejemplo, las variables correspondientes a la tipografía estás todas en el archivo `typography.less`, los colores en `colors.less`, etc.
 
 ##Flujo de trabajo
 Lo primero y más recomendable es tener ***grunt* «escuchando»** simplemente escribiendo el comando `grunt` en la terminal, estando en el directorio apropiado. (Ver [README.md](https://github.com/barcia/bramework/blob/master/README.md)).
@@ -28,7 +28,7 @@ Haciendo esto, cada vez que guardemos cualquier cambio en un archivo `.less`, to
 
 Principalmente escribiremos código en los directorios `layout/` para crear bloques de código o «trozos» de interfaz y en el directorio `pages/` para añadir estilos más específicos.
 
-Además, **antes** de comenzar con la maquetación, podemos crear los [componentes](#components/) que necesitemos, configurar los estilos [mas básicos](basic.less) y generales o añadir [temas](#themes/).
+Además, **antes** de comenzar con la maquetación, podemos crear los [componentes](#components) que necesitemos, configurar los estilos [mas básicos](#base) y generales o aña#dir [temas](#themes).
 
 
 ##Iconos
@@ -42,7 +42,7 @@ Por ejemplo:
 <button data-icon="add">Añadir</button>
 ```
 
-El archivo `.css` de las fuentes de iconos está en el directorio [`vendor/`](#vendor/) ya que suelen ser librerías externas. Cambiamos el formato a `.less` y lo añadimos al archivo principal `style.less` para que se procesen todos los estilos juntos en un solo `.css`.
+El archivo `.css` de las fuentes de iconos está en el directorio [`vendor/`](#vendor) ya que suelen ser librerías externas. Cambiamos el formato a `.less` y lo añadimos al archivo principal `style.less` para que se procesen todos los estilos juntos en un solo `.css`.
 
 Los archivos de la tipografía se almacenan en `/src/font/` por lo que debemos asegurarnos que ponemos el directorio correcto en el archivo `.css` (o el recién renombrado `.less`).
 
@@ -119,12 +119,12 @@ less/
 
 ###base/
 
-  ####basic.less
+  * **basic.less:**
   Son los **estilos básicos** para unificar criterios entre distintos navegadores y establecer estilos muy globales. Creado a partir de una mezcla de estilos y directrices propias con [normalize.css](http://necolas.github.io/normalize.css/) (3.0.2).
 
   También están aquí las variables relativas a la interfaz general así como los **_breackpoints_**.
 
-  ####typography.less
+  * **typography.less:**
   Todos los estilos relativos a la **tipografía** del sitio (y sus variables). Además incluye la mayoría de los elementos relacionados con el texto (listas, citas, etc.).
 
 
@@ -139,21 +139,24 @@ Aquí debes colocar los módulos que crees usando mayormente los componentes. So
 ###libraries/
 *Mixings* y variables que pueden agilizar el desarrollo web.
 
-  ####color.less
+* **color.less:**
   Una librería de variables que contiene todos los **colores** que se utilizan en el proyecto. Debería ser el único lugar en el que aparezcan colores en formato hexadecimal o rgb.
 
-  ####development.less
+
+* **development.less:**
   Por defecto, este archivo no lo procesaremos. Lo utilizamos sólo cuando queremos **depurar** nuestro HTML. Añade cajas rojas o amarillas en los elementos el los que falta algo.
 
   Por ejemplo, añadirá una caja roja a todos los `<a>` que no tengan un `href` correcto, y una caja amarilla a todos los `<a>` que no tengan un `title` (puesto que no es obligatorio, pero sí muy recomendable).
 
-  ####mixings.less
+
+* **mixings.less:**
   El archivo que contiene los enlaces a todos los mixings. Si añadimos algún archivo nuevo en la carpeta `mixings/` debemos acordarnos de **añadir aquí la ruta** correcta.
 
-  ####placeholders.less
+
+* **placeholders.less:**
   Son una serie de clases para utilizar en el HTML de forma puntual. Si el proyecto está bien planificado, seguramente utilices pocos y podrás eliminar (o mejor comentar con dos barras `//`) la mayoría, puesto que utilizarás uno o dos, pero si no están comentados sí se procesan todos.
 
-  ####print.less
+* **print.less:**
   Son estilos que solo se aplicarán en caso de que alguien *imprima* nuestra web. Es recomendable dejarlos, sobretodo si en nuestra web hay artículos u otro contenido que alguien pueda querer imprimir.
 
   No son propios, están importados de [Boilerplate](https://html5boilerplate.com/).
