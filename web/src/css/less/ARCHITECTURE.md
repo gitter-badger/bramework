@@ -28,7 +28,7 @@ Haciendo esto, cada vez que guardemos cualquier cambio en un archivo `.less`, to
 
 Principalmente escribiremos código en los directorios `layout/` para crear bloques de código o «trozos» de interfaz y en el directorio `pages/` para añadir estilos más específicos.
 
-Además, **antes** de comenzar con la maquetación, podemos crear los [componentes](#components) que necesitemos, configurar los estilos [mas básicos](#base) y generales o aña#dir [temas](#themes).
+Además, **antes** de comenzar con la maquetación, podemos crear los [componentes](#components) que necesitemos, configurar los estilos [mas básicos](#base) y generales o añadir [temas](#themes).
 
 
 ##Iconos
@@ -165,7 +165,7 @@ Aquí debes colocar los módulos que crees usando mayormente los componentes. So
 Aquí debes colocar archivos con los estilos de las **páginas únicas**. Por ejemplo los estilos del `index.html`, de la página de contacto, etc.
 
 ###themes/
-Aquí, cada uno dentro de su respectiva carpeta, colocarás los **temas** que vayas creando. Cuando crees un tema puedes crear estilos para todos los componentes que creas oportunos.
+Aquí, cada uno dentro de su respectiva carpeta, colocarás los **temas** que vayas creando. Cuando crees un tema puedes crear estilos para todos los componentes que creas oportunos. Son simplemente estilos predefinidos.
 
 La forma de hacerlo es creando **SIEMPRE _mixings_ paramétricos** para que sólo se procesen los estilos de los componentes que utilicemos, y así podremos tener temas lo más extensos y completos que queramos, sin que eso signifique necesariamente que aumente el tamaño de nuestro archivo final de CSS.
 

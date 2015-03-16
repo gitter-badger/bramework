@@ -1,4 +1,4 @@
 #Registro de cambios
 
-###1.0
+###0.1-ALPHA
 * Versión inicial
