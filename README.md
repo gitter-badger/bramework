@@ -18,8 +18,8 @@
 ##Presentación
 **Bramework** es un *framework* para crear sitios web.
 
-* Autor: [Iván Barcia](http://ivanbarcia.eu).
-* Version: X
+* Autor: [Iván Barcia](http://ivanbarcia.eu)
+* Version: 0.1-ALPHA
 * Trello: https://trello.com/b/IzLg4nk4
 * Comunidad: [Google+](https://plus.google.com/communities/104938291205143609131/stream/957ba9b5-234b-4260-a6e7-f6a8ab29a7a3)
 
