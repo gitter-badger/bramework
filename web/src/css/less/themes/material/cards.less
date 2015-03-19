@@ -2,25 +2,69 @@
 //http://www.google.com/design/spec/components/cards.html#cards-behavior
 
 .md-card() {
-    position: relative; //Es necesario para situar dentro elementos con 'position: absolute'
-    display: inline-block;
-    vertical-align: top;
-    text-align: left;
-    background-color: @white;
-    padding: 16px;
-    border-radius: @md-border-radius;
-    margin-bottom: 30px;
-    .shadow(2);
-    .margin-horizontal (15px);
-    &.card-dark {
-        background-color: @bg-dark;
-        color: @white;
+  position: relative; //Es necesario para situar dentro elementos con 'position: absolute'
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+  background-color: @white;
+  border-radius: @md-border-radius;
+  padding: 16px;
+  margin-bottom: 30px;
+  .margin-horizontal (14px);
+  .shadow(2);
+  footer {
+    text-align: right;
+    margin-top: 24px;
+    button {
+      .margin-vertical(0);
     }
-    footer {
-        text-align: right;
-        margin-top: 24px;
-        button {
-            .margin-vertical(0);
-        }
+  }
+
+  //Tarjetas oscuras
+  & ~ .dark {
+    background-color: @bg-dark;
+    color: @white;
+    h3 {
+      color: @white;
     }
+  }
+
+  //Estilos para las tarjetas que además son un enlace en sí mismas
+  a & {
+    .transition (box-shadow;);
+    will-change: box-shadow;
+    transition-duration: 0.1s;
+    cursor: pointer;
+    &:hover, &:focus {
+      .shadow(3);
+    }
+
+    /**
+     * Debes poner aquí todos los elementos que estén dentro de tus
+     * tarjetas que a su vez son todas ellas un enlace.
+     * Así evitamos el uso del selector global '*'.
+     * Además, se desaconseja poner enlaces o botones dentro
+     * de estas tarjetas.
+     */
+    h3, p {
+      color: @text-color;
+      cursor: pointer;
+    }
+  }
+
+  //Mediaqueries
+  @media (max-width: @bp-medium) {
+    margin-bottom: 20px;
+    .margin-horizontal (10px);
+  }
+}
+
+//Hace que las tarjetas-enlace se comporten correctamente con ':focus'
+.md-link-card() {
+  &:focus {
+    outline: 0;
+    .card {
+      .shadow(3);
+    }
+  }
 }
