@@ -1,10 +1,3 @@
-/*
-
-$Básico
-
-
-
-*/
 /*------------------------------------*\
     $BÁSICO
 \*------------------------------------*/
@@ -504,11 +497,11 @@ input[type=reset] {
   white-space: nowrap;
   border-radius: 2px;
   font-size: 0.85rem;
-  transition-property: box-shadow;
-  transition-duration: 0.3s;
-  transition-timing-function: ease-out;
-  transition-delay: 0s;
   transition-duration: 0.1s;
+  will-change: box-shadow;
+  transition-property: box-shadow;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
   background-color: transparent;
 }
 button:hover,
@@ -521,6 +514,12 @@ input[type=button]:focus,
 input[type=reset]:focus {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   cursor: pointer;
+}
+button:active,
+input[type=submit]:active,
+input[type=button]:active,
+input[type=reset]:active {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 button:disabled,
 input[type=submit]:disabled,
@@ -604,12 +603,6 @@ input[type=reset].t-error {
     box-shadow: none;
   }
 }
-button:active,
-input[type=submit]:active,
-input[type=button]:active,
-input[type=reset]:active {
-  background-color: rgba(0, 0, 0, 0.1);
-}
 button:disabled:hover,
 input[type=submit]:disabled:hover,
 input[type=button]:disabled:hover,
@@ -639,17 +632,20 @@ input[type=reset].disabled:hover {
   white-space: nowrap;
   border-radius: 2px;
   font-size: 0.85rem;
-  transition-property: box-shadow;
-  transition-duration: 0.3s;
-  transition-timing-function: ease-out;
-  transition-delay: 0s;
   transition-duration: 0.1s;
+  will-change: box-shadow;
+  transition-property: box-shadow;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
   background-color: transparent;
 }
 .btn-flat:hover,
 .btn-flat:focus {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   cursor: pointer;
+}
+.btn-flat:active {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 .btn-flat:disabled,
 .btn-flat[disabled],
@@ -688,9 +684,6 @@ input[type=reset].disabled:hover {
     box-shadow: none;
   }
 }
-.btn-flat:active {
-  background-color: rgba(0, 0, 0, 0.1);
-}
 .btn-flat:disabled:hover,
 .btn-flat[disabled]:hover,
 .btn-flat.disabled:hover {
@@ -706,12 +699,11 @@ input[type=reset].disabled:hover {
   white-space: nowrap;
   border-radius: 2px;
   font-size: 0.85rem;
-  transition-property: box-shadow;
-  transition-duration: 0.3s;
-  transition-timing-function: ease-out;
-  transition-delay: 0s;
   transition-duration: 0.1s;
-  transition-duration: 0.05s;
+  will-change: box-shadow;
+  transition-property: box-shadow;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.22);
   background-color: #ffffff;
 }
@@ -719,6 +711,9 @@ input[type=reset].disabled:hover {
 .btn-raised:focus {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   cursor: pointer;
+}
+.btn-raised:active {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 .btn-raised:disabled,
 .btn-raised[disabled],
@@ -762,9 +757,6 @@ input[type=reset].disabled:hover {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.22);
   }
 }
-.btn-raised:active {
-  background-color: #e6e6e6;
-}
 .btn-raised:active.t-primary {
   background-color: #009688;
 }
@@ -785,13 +777,6 @@ input[type=reset].disabled:hover {
 .btn-raised.disabled:hover {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.22);
 }
-@media (max-width: 800px) {
-  .btn-raised:hover,
-  .btn-raised:focus {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.22);
-    cursor: pointer;
-  }
-}
 .btn-float {
   position: relative;
   height: 36px;
@@ -802,12 +787,11 @@ input[type=reset].disabled:hover {
   white-space: nowrap;
   border-radius: 2px;
   font-size: 0.85rem;
-  transition-property: box-shadow;
-  transition-duration: 0.3s;
-  transition-timing-function: ease-out;
-  transition-delay: 0s;
   transition-duration: 0.1s;
-  transition-duration: 0.05s;
+  will-change: box-shadow;
+  transition-property: box-shadow;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.22);
   background-color: #ffffff;
   width: 56px;
@@ -820,6 +804,9 @@ input[type=reset].disabled:hover {
 .btn-float:focus {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   cursor: pointer;
+}
+.btn-float:active {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 .btn-float:disabled,
 .btn-float[disabled],
@@ -863,9 +850,6 @@ input[type=reset].disabled:hover {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.22);
   }
 }
-.btn-float:active {
-  background-color: #e6e6e6;
-}
 .btn-float:active.t-primary {
   background-color: #009688;
 }
@@ -886,25 +870,11 @@ input[type=reset].disabled:hover {
 .btn-float.disabled:hover {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.22);
 }
-@media (max-width: 800px) {
-  .btn-float:hover,
-  .btn-float:focus {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.22);
-    cursor: pointer;
-  }
-}
 .btn-float[data-icon]:before {
   position: absolute;
   top: 15px;
   left: 15px;
   margin: 0;
-}
-@media (max-width: 800px) {
-  .btn-float:hover,
-  .btn-float:focus {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.22);
-    cursor: pointer;
-  }
 }
 .btn-float-mini {
   position: relative;
@@ -916,12 +886,11 @@ input[type=reset].disabled:hover {
   white-space: nowrap;
   border-radius: 2px;
   font-size: 0.85rem;
-  transition-property: box-shadow;
-  transition-duration: 0.3s;
-  transition-timing-function: ease-out;
-  transition-delay: 0s;
   transition-duration: 0.1s;
-  transition-duration: 0.05s;
+  will-change: box-shadow;
+  transition-property: box-shadow;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.22);
   background-color: #ffffff;
   width: 40px;
@@ -934,6 +903,9 @@ input[type=reset].disabled:hover {
 .btn-float-mini:focus {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   cursor: pointer;
+}
+.btn-float-mini:active {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 .btn-float-mini:disabled,
 .btn-float-mini[disabled],
@@ -977,9 +949,6 @@ input[type=reset].disabled:hover {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.22);
   }
 }
-.btn-float-mini:active {
-  background-color: #e6e6e6;
-}
 .btn-float-mini:active.t-primary {
   background-color: #009688;
 }
@@ -1000,25 +969,11 @@ input[type=reset].disabled:hover {
 .btn-float-mini.disabled:hover {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.22);
 }
-@media (max-width: 800px) {
-  .btn-float-mini:hover,
-  .btn-float-mini:focus {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.22);
-    cursor: pointer;
-  }
-}
 .btn-float-mini[data-icon]:before {
   position: absolute;
   top: 7px;
   left: 7px;
   margin: 0;
-}
-@media (max-width: 800px) {
-  .btn-float-mini:hover,
-  .btn-float-mini:focus {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.22);
-    cursor: pointer;
-  }
 }
 /*------------------------------------*\
     $TARJETAS
@@ -1065,7 +1020,6 @@ kbd {
   line-height: 1.5em;
   cursor: text;
   padding: 1px 5px;
-  border-radius: 2px;
   background-color: #f2f2f2;
   color: inherit;
   border: 1px solid #d9d9d9;

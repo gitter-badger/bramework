@@ -2,134 +2,130 @@
 
 <html>
 <head>
-        <meta charset="utf-8">
-        <title>Components</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimal-ui">
+  <meta charset="utf-8">
+  <title>Components</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimal-ui">
 
-        <!-- Fuentes externas -->
-        <link href='http://fonts.googleapis.com/css?family=Roboto:500,900italic,900,400italic,100,700italic,300,700,500italic,100italic,300italic,400' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,700,300,400' rel='stylesheet' type='text/css'>
+  <!-- Fuentes externas -->
+  <link href='http://fonts.googleapis.com/css?family=Roboto:500,900italic,900,400italic,100,700italic,300,700,500italic,100italic,300italic,400' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,700,300,400' rel='stylesheet' type='text/css'>
 
-        <!-- Estilos CSS-->
-        <link rel="stylesheet" href="src/css/style.min.css">
+  <!-- Estilos CSS-->
+  <link rel="stylesheet" href="src/css/style.min.css">
 
-        <style>
-            body {
-                background-color: white;
-            }
+  <style>
+    body {
+      background-color: white;
+    }
 
-            header, main {
-                padding: 0 200px;
-            }
+    header, main {
+      padding: 0 200px;
+    }
 
-            header {
-                background-color: #4285f4;
-                color: white;
-                padding-top: 30px;
-                padding-bottom: 30px;
-            }
+    header {
+      background-color: #4285f4;
+      color: white;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
 
-            header a {
-                color: white;
-                text-decoration: none;
-                font-family: sans-serif;
-            }
+    header a {
+      color: white;
+      text-decoration: none;
+      font-family: sans-serif;
+    }
 
-            header a:hover {
-                color: white;
-                text-decoration: underline;
-            }
+    header a:hover {
+      color: white;
+      text-decoration: underline;
+    }
 
-            header .title {
-                color: white;
-                text-decoration: none;
-                border-bottom: 0;
-                margin-top: 0;
-            }
+    header .title {
+      color: white;
+      text-decoration: none;
+      border-bottom: 0;
+      margin-top: 0;
+    }
 
-            .title {
-                color: #aaaaaa;
-                font-size: 2.5rem;
-                text-align: left;
-                border-bottom: 1px solid #aaaaaa;
-                margin-top: 70px;
-                font-family: sans-serif;
-            }
+    .title {
+      color: #aaaaaa;
+      font-size: 2.5rem;
+      text-align: left;
+      border-bottom: 1px solid #aaaaaa;
+      margin-top: 70px;
+      font-family: sans-serif;
+    }
 
-            .subtitle {
-                color: #aaaaaa;
-                font-size: 1.5rem;
-                text-align: left;
-                font-weight: bold;
-                margin-top: 30px;
-                font-family: sans-serif;
-            }
+    .subtitle {
+      color: #aaaaaa;
+      font-size: 1.5rem;
+      text-align: left;
+      font-weight: bold;
+      margin-top: 30px;
+      font-family: sans-serif;
+    }
 
-            @media (max-width: 800px) {
-                header, main {
-                    padding-left: 0;
-                    padding-right: 0;
-                }
-            }
-        </style>
+    @media (max-width: 800px) {
+      header, main {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <header>
+    <h1 class="title">Menu</h1>
+    <ol>
+      <li><a href="#buttons">Buttons</a></li>
+      <li><a href="#cards">Cards</a></li>
+      <li><a href="#code">Code & Preformatted</a></li>
+      <li><a href="#images">Images</a></li>
+      <!-- <li><a href="#shadows">Shadows</a></li>-->
+      <!-- <li><a href="#address">Address</a></li>-->
+      <!-- <li><a href="#dialog">Dialog</a></li>-->
+      <!-- <li><a href="#forms">Forms</a></li>-->
+    </ol>
+  </header>
 
-    <header>
-        <h1 class="title">Menu</h1>
-        <ol>
-            <li><a href="#buttons">Buttons</a></li>
-            <li><a href="#cards">Cards</a></li>
-            <li><a href="#code">Code & Preformatted</a></li>
-            <li><a href="#images">Images</a></li>
+  <main>
+    <!-- Buttons -->
+    <div>
+      <h1 id="buttons" class="title">Buttons</h1>
 
-<!--            <li><a href="#shadows">Shadows</a></li>-->
-<!--            <li><a href="#address">Address</a></li>-->
-<!--            <li><a href="#dialog">Dialog</a></li>-->
-<!--            <li><a href="#forms">Forms</a></li>-->
-        </ol>
+      <h1 class="subtitle">Flat</h1>
+      <button>Normal</button>
+      <button class="t-primary">Primary</button>
+      <button class="t-info">Info</button>
+      <button class="t-success">Success</button>
+      <button class="t-alert">Alert</button>
+      <button class="t-error">Error</button>
 
-    </header>
+      <h1 class="subtitle">Raised</h1>
+      <button class="btn-raised ">Normal</button>
+      <button class="btn-raised t-primary">Primary</button>
+      <button class="btn-raised t-info">Info</button>
+      <button class="btn-raised t-success">Success</button>
+      <button class="btn-raised t-alert">Alert</button>
+      <button class="btn-raised t-error">Error</button>
 
-    <main>
+      <h1 class="subtitle">Float</h1>
+      <button class="btn-float" data-icon="back"></button>
+      <button class="btn-float t-primary" data-icon="menu"></button>
+      <button class="btn-float t-info" data-icon="home"></button>
+      <button class="btn-float t-success" data-icon="add"></button>
+      <button class="btn-float t-alert" data-icon="language"></button>
+      <button class="btn-float t-error" data-icon="arrow-drop-down"></button>
 
-        <!-- Buttons -->
-        <div>
-            <h1 id="buttons" class="title">Buttons</h1>
-
-            <h1 class="subtitle">Flat</h1>
-            <button>Normal</button>
-            <button class="t-primary">Primary</button>
-            <button class="t-info">Info</button>
-            <button class="t-success">Success</button>
-            <button class="t-alert">Alert</button>
-            <button class="t-error">Error</button>
-
-            <h1 class="subtitle">Raised</h1>
-            <button class="btn-raised ">Normal</button>
-            <button class="btn-raised t-primary">Primary</button>
-            <button class="btn-raised t-info">Info</button>
-            <button class="btn-raised t-success">Success</button>
-            <button class="btn-raised t-alert">Alert</button>
-            <button class="btn-raised t-error">Error</button>
-
-            <h1 class="subtitle">Float</h1>
-            <button class="btn-float " data-icon="back"></button>
-            <button class="btn-float t-primary" data-icon="menu"></button>
-            <button class="btn-float t-info" data-icon="home"></button>
-            <button class="btn-float t-success" data-icon="add"></button>
-            <button class="btn-float t-alert" data-icon="language"></button>
-            <button class="btn-float t-error" data-icon="arrow-drop-down"></button>
-
-            <h1 class="subtitle">Float mini</h1>
-            <button class="btn-float-mini " data-icon="back"></button>
-            <button class="btn-float-mini t-primary" data-icon="menu"></button>
-            <button class="btn-float-mini t-info" data-icon="home"></button>
-            <button class="btn-float-mini t-success" data-icon="add"></button>
-            <button class="btn-float-mini t-alert" data-icon="language"></button>
-            <button class="btn-float-mini t-error" data-icon="arrow-drop-down"></button>
-        </div>
+      <h1 class="subtitle">Float mini</h1>
+      <button class="btn-float-mini " data-icon="back"></button>
+      <button class="btn-float-mini t-primary" data-icon="menu"></button>
+      <button class="btn-float-mini t-info" data-icon="home"></button>
+      <button class="btn-float-mini t-success" data-icon="add"></button>
+      <button class="btn-float-mini t-alert" data-icon="language"></button>
+      <button class="btn-float-mini t-error" data-icon="arrow-drop-down"></button>
+    </div>
 
         <!-- Cards -->
         <div>
