@@ -3,171 +3,138 @@
 
 //Colocar en un DIV padre de los UL
 .md-list() {
-    background-color: @white;
-    ul {
-        padding: 8px 0;
-        border-bottom: 1px solid #e5e5e5;
-        list-style-type: none;
-        margin-bottom: 0;
-        &:last-child {
-            border-bottom: 0;
-        }
-        ul {
-            margin-left: 0;
-            padding-top: 0;
-            li a, li summary {
-               padding-left: 48px;
-           }
-        }
-    }
-
-    li a, li summary  {
-        display: inline-block;
-        width: 100%;
-        line-height: 48px;
-        padding: 0 24px;
-        vertical-align: middle;
-        &:hover,
-        &:focus,
-        &.js-nav-active{
-            background-color: @grey-50;
-            cursor: pointer;
-        }
-    }
-
-    [data-icon]:before {
-        margin-right: 24px;
-        font-size: 24px;
-        vertical-align: middle;
-        width: 24px;
-        height: 48px;
-        line-height: 48px;
-        color: @grey-500;
-    }
-
-    a {
-        text-decoration: none;
-        color: inherit;
-        &:hover,
-        &:focus {
-            text-decoration: none;
-            color: inherit;
-        }
-    }
-
-    hr {
-        margin: 8px 0;
-    }
-
-    details {
-        summary {
-            &:after {
-                margin-left: 24px;
-                font-size: 24px;
-                vertical-align: middle;
-                width: 24px;
-                height: 48px;
-                line-height: 48px;
-                float: right;
-            }
-            &:hover {
-                cursor: pointer;
-            }
-        }
-        &[open] {
-            summary {
-                &:after {
-                }
-            }
-        }
-    }
-
-    .list-title {
-        color: @grey-400;
-        height: 24px;
-        line-height: 24px;
-        font-size: 0.75rem;
-        margin-left: 24px;
-        margin-bottom: 10px;
-    }
-}
-
-//Lista estilo Material Design pequeña
-//Colocar directamente en los UL
-.md-list-small() {
+  background-color: @white;
+  ul {
     padding: 8px 0;
-    background-color: @white;
     border-bottom: 1px solid #e5e5e5;
     list-style-type: none;
     margin-bottom: 0;
     &:last-child {
-        border-bottom: 0;
+      border-bottom: 0;
     }
-    ul {
-        list-style-type: none;
-        margin-left: 0;
-        padding-bottom: 8px;
-        li a, li summary {
-            padding-left: 32px;
-        }
-    }
+  }
 
-    li a, li summary {
-        display: block;
-        width: 100%;
-        line-height: 32px;
-        padding: 0 16px;
-        vertical-align: middle;
-        &:hover,
-        &:focus {
-            background-color: @grey-50;
-            cursor: pointer;
-        }
-    }
+  li {
+    display: flex;
+  }
 
-    [data-icon]:before {
-        margin-right: 16px;
-        font-size: 16px;
-        width: 16px;
-        height: 32px;
-        line-height: 32px;
-        vertical-align: bottom;
+  a {
+    line-height: 48px;
+    padding: 0 16px;
+    vertical-align: middle;
+    text-decoration: none;
+    color: inherit;
+    &:first-child {
+      flex: 1;
+      &[data-number]:after {
+        content: attr(data-number);
+        float: right;
+        color: @red-700;
+      }
     }
+    &:hover,
+    &:focus,
+    &.js-list-active{
+      color: inherit;
+      background-color: @grey-50;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
 
-    a {
-        text-decoration: none;
-        color: inherit;
-        &:hover,
-        &:focus {
-            text-decoration: none;
-            color: inherit;
-        }
-    }
+  //Iconos
+  [data-icon]:before {
+    margin-right: 24px;
+    font-size: 24px;
+    vertical-align: middle;
+    width: 24px;
+    height: 48px;
+    line-height: 48px;
+    color: @grey-500;
+  }
 
-    hr {
-        margin: 8px 0;
+  //Botón extra
+  .addon {
+    width: 48px;
+    padding: 0;
+    &[data-icon]:before {
+      width: 24px;
+      padding-left: 12px;
+      padding-right: 12px;
+      margin-right: 0;
     }
+  }
 
-    details {
-        summary {
-            &:after {
-                margin-left: 24px;
-                font-size: 24px;
-                vertical-align: middle;
-                width: 24px;
-                height: 32px;
-                line-height: 32px;
-                float: right;
-            }
-            &:hover {
-                cursor: pointer;
-            }
-        }
-        &[open] {
-            summary {
-                &:after {
-                }
-            }
-        }
+  //Puedes añadir barras separadoras, dentro del mismo '<ul>'
+  hr {
+    margin: 8px 0;
+    border-top: 1px solid #e5e5e5;
+  }
+
+  //Añadir esta clase a un '<span>' justo antes de un '<ul'> para poner un titulo
+  .list-title {
+    display: block;
+    color: @grey-400;
+    height: 24px;
+    line-height: 24px;
+    font-size: 0.75rem;
+    margin-left: 15px;
+    margin-top: 8px;
+  }
+}
+
+
+//Lista pequeña
+//Colocar directamente en los UL
+.md-list-small() {
+  padding: 8px 0;
+  background-color: @white;
+  border-bottom: 1px solid #e5e5e5;
+  list-style-type: none;
+  margin-bottom: 0;
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding-bottom: 8px;
+  }
+
+  a {
+    display: block;
+    line-height: 32px;
+    padding: 0 16px;
+    vertical-align: middle;
+    text-decoration: none;
+    color: inherit;
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: inherit;
+      background-color: @grey-50;
+      cursor: pointer;
     }
+    &[data-number]:after {
+      content: attr(data-number);
+      float: right;
+      color: @red-700;
+    }
+  }
+
+  [data-icon]:before {
+    margin-right: 16px;
+    font-size: 16px;
+    width: 16px;
+    height: 32px;
+    line-height: 32px;
+    vertical-align: bottom;
+  }
+
+  //Puedes añadir barras separadoras, dentro del mismo '<ul>'
+  hr {
+    margin: 8px 0;
+    border-top: 1px solid #e5e5e5;
+  }
 }

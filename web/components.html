@@ -80,8 +80,9 @@
     <ol>
       <li><a href="#buttons">Buttons</a></li>
       <li><a href="#cards">Cards</a></li>
-      <li><a href="#code">Code & Preformatted</a></li>
-      <li><a href="#images">Images</a></li>
+      <li><a href="#lists">Lists</a></li>
+<!--      <li><a href="#code">Code & Preformatted</a></li>-->
+<!--      <li><a href="#images">Images</a></li>-->
       <!-- <li><a href="#shadows">Shadows</a></li>-->
       <!-- <li><a href="#address">Address</a></li>-->
       <!-- <li><a href="#dialog">Dialog</a></li>-->
@@ -95,7 +96,7 @@
       <h1 id="buttons" class="title">Buttons</h1>
 
       <h1 class="subtitle">Flat</h1>
-      <button>Normal</button>
+      <button data-icon="back">Normal</button>
       <button class="t-primary">Primary</button>
       <button class="t-info">Info</button>
       <button class="t-success">Success</button>
@@ -103,7 +104,7 @@
       <button class="t-error">Error</button>
 
       <h1 class="subtitle">Raised</h1>
-      <button class="btn-raised ">Normal</button>
+      <button class="btn-raised" data-icon="back">Normal</button>
       <button class="btn-raised t-primary">Primary</button>
       <button class="btn-raised t-info">Info</button>
       <button class="btn-raised t-success">Success</button>
@@ -141,7 +142,7 @@
         </footer>
       </div>
 
-      <a class="link-card" href="#">
+      <a class="link-card" href="">
         <div class="card">
           <h3>Link Card Title</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -157,6 +158,39 @@
           <button class="btn-raised t-primary">Aceptar</button>
         </footer>
       </div>
+    </div>
+
+    <!-- Lists -->
+    <div>
+      <h1 id="lists" class="title">Lists</h1>
+
+      <h1 class="subtitle">Big</h1>
+      <div class="list">
+        <span class="list-title">Lista normal</span>
+        <ul>
+          <li><a>Item</a></li>
+          <li><a>Item</a></li>
+          <li><a>Item</a></li>
+          <li><a>Item</a></li>
+        </ul>
+        <span class="list-title">Lista con iconos y extras</span>
+        <ul>
+          <li><a data-icon="menu">Item</a></li>
+          <li><a data-icon="home" data-number="32">Item</a></li>
+          <li><a data-icon="back" data-number="17">Item</a><a class="addon" data-icon="add"></a></li>
+          <li><a data-icon="add">Item</a><a class="addon" data-icon="menu"></a></li>
+          <li><a>Item</a><a class="addon" data-icon="back"></a></li>
+          <li><a>Item</a><a class="addon" data-icon="home"></a></li>
+        </ul>
+      </div>
+
+      <h1 class="subtitle">Small</h1>
+      <ul class="list-small">
+        <li><a>Item</a></li>
+        <li><a>Item</a></li>
+        <li><a data-icon="menu">Item</a></li>
+        <li><a data-icon="home" data-number="45">Item</a></li>
+      </ul>
     </div>
 
 

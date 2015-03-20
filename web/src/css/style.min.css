@@ -1108,29 +1108,30 @@ pre kbd {
 .list ul:last-child {
   border-bottom: 0;
 }
-.list ul ul {
-  margin-left: 0;
-  padding-top: 0;
+.list li {
+  display: flex;
 }
-.list ul ul li a,
-.list ul ul li summary {
-  padding-left: 48px;
-}
-.list li a,
-.list li summary {
-  display: inline-block;
-  width: 100%;
+.list a {
   line-height: 48px;
-  padding: 0 24px;
+  padding: 0 16px;
   vertical-align: middle;
+  text-decoration: none;
+  color: inherit;
 }
-.list li a:hover,
-.list li summary:hover,
-.list li a:focus,
-.list li summary:focus,
-.list li a.js-nav-active,
-.list li summary.js-nav-active {
+.list a:first-child {
+  flex: 1;
+}
+.list a:first-child[data-number]:after {
+  content: attr(data-number);
+  float: right;
+  color: #d32f2f;
+}
+.list a:hover,
+.list a:focus,
+.list a.js-list-active {
+  color: inherit;
   background-color: #f2f2f2;
+  text-decoration: none;
   cursor: pointer;
 }
 .list [data-icon]:before {
@@ -1142,37 +1143,28 @@ pre kbd {
   line-height: 48px;
   color: #808080;
 }
-.list a {
-  text-decoration: none;
-  color: inherit;
+.list .addon {
+  width: 48px;
+  padding: 0;
 }
-.list a:hover,
-.list a:focus {
-  text-decoration: none;
-  color: inherit;
+.list .addon[data-icon]:before {
+  width: 24px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-right: 0;
 }
 .list hr {
   margin: 8px 0;
-}
-.list details summary:after {
-  margin-left: 24px;
-  font-size: 24px;
-  vertical-align: middle;
-  width: 24px;
-  height: 48px;
-  line-height: 48px;
-  float: right;
-}
-.list details summary:hover {
-  cursor: pointer;
+  border-top: 1px solid #e5e5e5;
 }
 .list .list-title {
+  display: block;
   color: #999999;
   height: 24px;
   line-height: 24px;
   font-size: 0.75rem;
-  margin-left: 24px;
-  margin-bottom: 10px;
+  margin-left: 15px;
+  margin-top: 8px;
 }
 /**
 * Colocar directamente en los UL.
@@ -1192,24 +1184,25 @@ pre kbd {
   margin-left: 0;
   padding-bottom: 8px;
 }
-.list-small ul li a,
-.list-small ul li summary {
-  padding-left: 32px;
-}
-.list-small li a,
-.list-small li summary {
+.list-small a {
   display: block;
-  width: 100%;
   line-height: 32px;
   padding: 0 16px;
   vertical-align: middle;
+  text-decoration: none;
+  color: inherit;
 }
-.list-small li a:hover,
-.list-small li summary:hover,
-.list-small li a:focus,
-.list-small li summary:focus {
+.list-small a:hover,
+.list-small a:focus {
+  text-decoration: none;
+  color: inherit;
   background-color: #f2f2f2;
   cursor: pointer;
+}
+.list-small a[data-number]:after {
+  content: attr(data-number);
+  float: right;
+  color: #d32f2f;
 }
 .list-small [data-icon]:before {
   margin-right: 16px;
@@ -1219,29 +1212,9 @@ pre kbd {
   line-height: 32px;
   vertical-align: bottom;
 }
-.list-small a {
-  text-decoration: none;
-  color: inherit;
-}
-.list-small a:hover,
-.list-small a:focus {
-  text-decoration: none;
-  color: inherit;
-}
 .list-small hr {
   margin: 8px 0;
-}
-.list-small details summary:after {
-  margin-left: 24px;
-  font-size: 24px;
-  vertical-align: middle;
-  width: 24px;
-  height: 32px;
-  line-height: 32px;
-  float: right;
-}
-.list-small details summary:hover {
-  cursor: pointer;
+  border-top: 1px solid #e5e5e5;
 }
 /*------------------------------------*\
     $IMÁGENES
