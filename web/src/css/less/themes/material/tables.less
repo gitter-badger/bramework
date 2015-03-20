@@ -1,0 +1,71 @@
+//Tablas con estilo Material Design
+
+.md-table {
+//  background-color: palevioletred;
+  width: 100%;
+
+  caption {
+    font-style: italic;
+    margin-bottom: 15px;
+  }
+
+  thead {
+    border-bottom: 1px solid @grey-100;
+  }
+
+  tr {
+    height: 48px;
+  }
+
+  th, td {
+    padding: 0 10px;
+  }
+
+  //Con sombreado una linea si y otra no
+  &.stripped {
+    tbody {
+      tr:nth-child(2n-1) {
+        background-color: @grey-50;
+      }
+    }
+  }
+
+  //Con bordes
+  &.bordered {
+    tbody {
+      tr {
+        border-bottom: 1px solid @grey-100;
+      }
+    }
+  }
+
+  //Con efecto hover toda la fila
+  &.hoverable {
+    tbody {
+      tr {
+        &:hover {
+          background-color: @grey-100;
+          td {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  //Con efecto hover cada celda
+  &.hoverable-cell {
+    tbody {
+      td {
+        &:hover {
+          background-color: @grey-100;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &.centered {
+    text-align: center;
+  }
+}

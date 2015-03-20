@@ -1300,6 +1300,81 @@ span[data-role="close"]:before {
   top: -4px;
   right: 1.5px;
 }
+/*------------------------------------*\
+    $TARJETAS
+\*------------------------------------*/
+table {
+  width: 100%;
+}
+table caption {
+  font-style: italic;
+  margin-bottom: 15px;
+}
+table thead {
+  border-bottom: 1px solid #e6e6e6;
+}
+table tr {
+  height: 48px;
+}
+table th,
+table td {
+  padding: 0 10px;
+}
+table.stripped tbody tr:nth-child(2n-1) {
+  background-color: #f2f2f2;
+}
+table.bordered tbody tr {
+  border-bottom: 1px solid #e6e6e6;
+}
+table.hoverable tbody tr:hover {
+  background-color: #e6e6e6;
+}
+table.hoverable tbody tr:hover td {
+  cursor: pointer;
+}
+table.hoverable-cell tbody td:hover {
+  background-color: #e6e6e6;
+  cursor: pointer;
+}
+table.centered {
+  text-align: center;
+}
+.md-table {
+  width: 100%;
+}
+.md-table caption {
+  font-style: italic;
+  margin-bottom: 15px;
+}
+.md-table thead {
+  border-bottom: 1px solid #e6e6e6;
+}
+.md-table tr {
+  height: 48px;
+}
+.md-table th,
+.md-table td {
+  padding: 0 10px;
+}
+.md-table.stripped tbody tr:nth-child(2n-1) {
+  background-color: #f2f2f2;
+}
+.md-table.bordered tbody tr {
+  border-bottom: 1px solid #e6e6e6;
+}
+.md-table.hoverable tbody tr:hover {
+  background-color: #e6e6e6;
+}
+.md-table.hoverable tbody tr:hover td {
+  cursor: pointer;
+}
+.md-table.hoverable-cell tbody td:hover {
+  background-color: #e6e6e6;
+  cursor: pointer;
+}
+.md-table.centered {
+  text-align: center;
+}
 /**
 * Mixings que pueden ser útiles para posicionar elementos
 * durante el diseño y programación del CSS
