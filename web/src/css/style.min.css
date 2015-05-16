@@ -1059,17 +1059,7 @@ kbd {
   display: inline-block;
   vertical-align: middle;
   line-height: 1.5em;
-  cursor: text;
   padding: 1px 5px;
-  background-color: #f2f2f2;
-  color: inherit;
-  border: 1px solid #d9d9d9;
-}
-code.code-dark,
-kbd.code-dark {
-  background-color: #37474f;
-  color: #ffffff;
-  border-color: #37474f;
 }
 kbd {
   box-shadow: 0 2px #d9d9d9;
@@ -1083,12 +1073,16 @@ pre {
 pre:last-child {
   margin-bottom: 0px;
 }
-pre code,
-pre kbd {
+pre code {
   display: block;
-  padding: 5px 10px;
+  padding: 30px;
   overflow-x: auto;
   overflow-y: auto;
+}
+@media (max-width: 414px) {
+  pre code {
+    padding: 30px 20px;
+  }
 }
 /*------------------------------------*\
     $LISTAS
@@ -1101,7 +1095,7 @@ pre kbd {
 }
 .list ul {
   padding: 8px 0;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e6e6e6;
   list-style-type: none;
   margin-bottom: 0;
 }
@@ -1155,7 +1149,7 @@ pre kbd {
 }
 .list hr {
   margin: 8px 0;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #e6e6e6;
 }
 .list .list-title {
   display: block;
@@ -1172,7 +1166,7 @@ pre kbd {
 .list-small {
   padding: 8px 0;
   background-color: #ffffff;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e6e6e6;
   list-style-type: none;
   margin-bottom: 0;
 }
@@ -1214,7 +1208,7 @@ pre kbd {
 }
 .list-small hr {
   margin: 8px 0;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #e6e6e6;
 }
 /*------------------------------------*\
     $IMÁGENES
@@ -1276,6 +1270,7 @@ details summary:hover {
 details[open] summary:after {
   content: "\e671";
 }
+/*Botones-iconos*/
 span[data-role="close"] {
   font-size: 1.5rem;
   font-weight: 700;
@@ -1300,6 +1295,155 @@ span[data-role="close"]:before {
   top: -4px;
   right: 1.5px;
 }
+.navbar {
+  position: fixed;
+  width: 100%;
+  background-color: #009688;
+  font-size: 24px;
+  color: #ffffff;
+  z-index: 90;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.22);
+}
+.navbar a {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  color: #ffffff;
+  text-decoration: none;
+}
+.navbar a:hover,
+.navbar a:focus {
+  background-color: #26a69a;
+}
+.navbar a:active {
+  background-color: #4db6ac;
+}
+@media (max-width: 800px) {
+  .navbar a:hover,
+  .navbar a:focus {
+    background-color: inherit;
+  }
+  .navbar a:active {
+    background-color: #26a69a;
+  }
+}
+.navbar [data-icon]:before {
+  padding: 16px;
+  color: #ffffff;
+}
+.navbar p {
+  display: inline-block;
+  font-size: 20px;
+  line-height: 53px;
+}
+.navbar [data-badge]:after {
+  content: attr(data-badge);
+  position: absolute;
+  background-color: #c62828;
+  font-size: 14px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  border-radius: 100%;
+  top: 7px;
+  right: 9px;
+  text-align: center;
+}
+.navbar .navbar-main {
+  display: flex;
+  height: 56px;
+}
+.navbar .navbar-main a {
+  border-radius: 100%;
+}
+.navbar .navbar-main .navbar-responsive {
+  width: auto;
+  margin-left: 10px;
+}
+@media (min-width: 800px) {
+  .navbar .navbar-main .navbar-responsive {
+    display: none;
+  }
+}
+@media (max-width: 414px) {
+  .navbar .navbar-main .navbar-responsive {
+    margin-left: 0;
+  }
+}
+.navbar .navbar-main .navbar-default {
+  flex: 1;
+  margin-left: 28px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+@media (max-width: 800px) {
+  .navbar .navbar-main .navbar-default {
+    margin-left: 16px;
+  }
+}
+@media (max-width: 414px) {
+  .navbar .navbar-main .navbar-default {
+    margin-left: 0px;
+  }
+}
+.navbar .navbar-main .navbar-secondary {
+  width: auto;
+  margin-right: 10px;
+}
+@media (max-width: 414px) {
+  .navbar .navbar-main .navbar-secondary {
+    margin-right: 0;
+  }
+  .navbar .navbar-main .navbar-secondary a {
+    margin-right: -14px;
+  }
+  .navbar .navbar-main .navbar-secondary a:last-child {
+    margin-right: 0;
+  }
+}
+.navbar .navbar-title {
+  height: 100px;
+}
+.navbar .navbar-title p {
+  font-size: 2.5rem;
+  margin-left: 28px;
+  line-height: 86px;
+}
+@media (max-width: 800px) {
+  .navbar .navbar-title {
+    display: none;
+  }
+}
+.navbar .navbar-tabs {
+  flex: 1;
+  height: 48px;
+  margin-left: 16px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.navbar .navbar-tabs a {
+  font-size: 14px;
+  padding: 0 12px;
+  line-height: 46px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+.navbar .navbar-tabs a:hover,
+.navbar .navbar-tabs a.tab-active {
+  border-bottom: 2px solid #ffeb3b;
+  opacity: 1;
+}
+@media (max-width: 800px) {
+  .navbar .navbar-tabs {
+    text-align: center;
+  }
+}
+@media (max-width: 414px) {
+  .navbar .navbar-tabs {
+    margin-left: 0px;
+  }
+}
 /*------------------------------------*\
     $TARJETAS
 \*------------------------------------*/
@@ -1311,7 +1455,12 @@ table caption {
   margin-bottom: 15px;
 }
 table thead {
+  font-size: 0.85rem;
+  color: #808080;
   border-bottom: 1px solid #e6e6e6;
+}
+table thead tr {
+  height: 56px;
 }
 table tr {
   height: 48px;
@@ -1347,7 +1496,12 @@ table.centered {
   margin-bottom: 15px;
 }
 .md-table thead {
+  font-size: 0.85rem;
+  color: #808080;
   border-bottom: 1px solid #e6e6e6;
+}
+.md-table thead tr {
+  height: 56px;
 }
 .md-table tr {
   height: 48px;
@@ -1671,4 +1825,75 @@ table.centered {
 }
 [data-icon~="expand-more"]:before {
   content: "\e672";
+}
+/**
+* prism.js default theme for JavaScript, CSS and HTML
+* Based on dabblet (http://dabblet.com)
+* @author Lea Verou
+*/
+code {
+  background-color: #263238;
+  color: #ffffff;
+}
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #607d8b;
+}
+.token.punctuation {
+  color: #ffffff;
+}
+.namespace {
+  opacity: .7;
+}
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #26a69a;
+}
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #ef5350;
+}
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #ffee58;
+}
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #66bb6a;
+}
+.token.function {
+  color: #ffa726;
+}
+.token.regex,
+.token.important,
+.token.variable {
+  color: red;
+}
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+.token.entity {
+  cursor: help;
+}
+.token a {
+  color: inherit;
 }

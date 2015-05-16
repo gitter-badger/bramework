@@ -1,125 +1,162 @@
 //Barra de navegacion
 
 .md-navbar() {
-    position: fixed;
-    height: 56px;
-    width: 100%;
-    background-color: @teal-500;
-    font-size: 24px;
+  position: fixed;
+  width: 100%;
+  background-color: @teal-500;
+  font-size: 24px;
+  color: @white;
+  z-index: 90;
+  .shadow(1);
+
+  a {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
     color: @white;
-    z-index: 90;
-    .md-shadow(1);
-    .navbar-left {
-        float: left;
-        margin-left: 10px;
-        
-        @media (min-width: 801px) {
-            display: none;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      background-color: @teal-400;
+    }
+    &:active {
+      background-color: @teal-300;
+    }
+
+    @media (max-width: @bp-medium) {
+      &:hover,
+      &:focus {
+        background-color: inherit;
+      }
+      &:active {
+        background-color: @teal-400;
+      }
+    }
+  }
+
+  [data-icon]:before {
+    padding: 16px;
+    color: @white;
+  }
+
+  p {
+    display: inline-block;
+    font-size: 20px;
+    line-height: 53px;
+  }
+
+  [data-badge]:after {
+    content: attr(data-badge);
+    position: absolute;
+    background-color: @red-800;
+    font-size: 14px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 100%;
+    top: 7px;
+    right: 9px;
+    text-align: center;
+  }
+
+  //Navbar main
+  .navbar-main {
+    display: flex;
+    height: 56px;
+
+    a  {
+      border-radius: 100%;
+    }
+
+    //Icono de hamburguesa
+    .navbar-responsive {
+      width: auto;
+      margin-left: 10px;
+
+      @media (min-width: @bp-medium) {
+        display: none;
+      }
+      @media (max-width: @bp-small) {
+        margin-left: 0;
+      }
+    }
+
+    //Texto del título
+    .navbar-default {
+      flex: 1;
+      margin-left: 28px;
+      overflow-x: auto;
+      white-space: nowrap;
+
+      @media (max-width: @bp-medium) {
+        margin-left: 16px;
+      }
+
+      @media (max-width: @bp-small) {
+        margin-left: 0px;
+      }
+    }
+
+    //Iconos con acciones secundarias
+    .navbar-secondary {
+      width: auto;
+      margin-right: 10px;
+
+      @media (max-width: @bp-small) {
+        margin-right: 0;
+        a {
+          margin-right: -14px;
+          &:last-child {
+            margin-right: 0;
+          }
         }
+      }
     }
-    .navbar-right {
-        float: right;
-        margin-right: 10px;
-    }
-    
-        @media (max-width: @bp-small) {
-            .navbar-left, .navbar-right {
-                margin: 0;
-            }
-            .navbar-right {
-                a {
-                    margin-right: -14px;
-                    &:last-child {
-                        margin-right: 0;
-                    }
-                }
-            }
-        }
-    
-    .navbar-left a,
-    .navbar-right a {
-        display: inline-block;
-        vertical-align: middle;
-        position: relative;
-    }
-    a {
-        color: @white;
-        border-radius: 100%;
-        &:hover,
-        &:focus {
-            background-color: @teal-400;
-        }
-        &:active {
-            background-color: @teal-300;
-        }
-    }
-    [data-icon]:before {
-        padding: 16px;
-        color: @white;
-    }
+  }
+
+  //Título grande. Es recomendable ocultar el título
+  // de 'navbar-default
+  .navbar-title {
+    height: 100px;
     p {
-        display: inline-block;
-        font-size: 20px;
-        line-height: 53px;
-//        margin-left: 16px;
+      font-size: 2.5rem;
+      margin-left: 28px;
+      line-height: 86px
     }
-    [data-badge]:after {
-        content: attr(data-badge);
-        position: absolute;
-        background-color: @red-800;
-        font-size: 14px;
-        width: 20px;
-        height: 20px;
-        line-height: 20px;
-        border-radius: 100%;
-        top: 7px;
-        right: 9px;
+
+    @media (max-width: @bp-medium) {
+      display: none;
     }
-    
-    .navbar-ext {
-        height: 150px;
-        width: 100%;
-        background-color: @teal-500;
-        position: fixed;
-        z-index: -1;
-        .md-shadow(1);
+  }
 
-        p {
-            font-size: 2.5rem;
-            position: absolute;
-            bottom: 0;
-            left: 46px;
-        }
+  // Tabs
+  .navbar-tabs {
+    flex: 1;
+    height: 48px;
+    margin-left: 16px;
+    overflow-x: auto;
+    white-space: nowrap;
 
-        ul {
-            position: absolute;
-            bottom: 0;
-            margin-left: 30px;
-            border-bottom: 5px solid @teal-500;
-        }
+    a {
+      font-size: 14px;
+      padding: 0 12px;
+      line-height: 46px;
+      border-bottom: 2px solid rgba(0, 0, 0, 0);
+      text-transform: uppercase;
+      opacity: 0.6;
 
-        li {
-            display: inline-block;
-
-            a {
-                border-radius: 0;
-                color: inherit;
-                font-size: @font-size-small;
-                text-transform: uppercase; 
-                padding: 11px 20px;
-                opacity: 0.6;
-                &:hover, &.js-nav-active {
-                    opacity: 1;
-                    background-color: transparent;
-                    text-decoration: none;
-                    border-bottom: 5px solid @yellow-300;
-                }
-            }
-        }
-        
-        
-        @media (max-width: @bp-medium) {
-            display: none;
-        }
+      &:hover, &.tab-active {
+        border-bottom: 2px solid @yellow-500;
+        opacity: 1;
+      }
     }
+
+    @media (max-width: @bp-medium) {
+      text-align: center;
+    }
+
+    @media (max-width: @bp-small) {
+      margin-left: 0px;
+    }
+  }
 }

@@ -4,10 +4,6 @@
 
 .code() {
   padding: 1px 5px;
-//  border-radius: @border-radius;
-  background-color: @grey-50;
-  color: inherit;
-  border: 1px solid @grey-150;
 }
 
 
@@ -24,20 +20,12 @@ kbd {
   display: inline-block;
   vertical-align: middle;
   line-height: @line-height-base;
-  cursor: text;
-  .code;
-  &.code-dark {
-    background-color: @bluegrey-800;
-    color: @white;
-    border-color: @bluegrey-800;
-  }
+  .code();
 }
-
 
 kbd {
   box-shadow: 0 2px @grey-150;
 }
-
 
 //Texto preformateado
 pre {
@@ -49,11 +37,13 @@ pre {
 }
 
 pre {
-  & code,
-  & kbd {
+  & code {
     display: block;
-    padding: 5px 10px;
+    padding: 30px;
     overflow-x: auto;
     overflow-y: auto;
+    @media (max-width: @bp-small) {
+      padding: 30px 20px;
+    }
   }
 }

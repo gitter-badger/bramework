@@ -82,16 +82,20 @@
       <li><a href="#cards">Cards</a></li>
       <li><a href="#lists">Lists</a></li>
       <li><a href="#tables">Tables</a></li>
-<!--      <li><a href="#code">Code & Preformatted</a></li>-->
+      <li><a href="#code">Code & Preformatted</a></li>
 <!--      <li><a href="#images">Images</a></li>-->
       <!-- <li><a href="#shadows">Shadows</a></li>-->
       <!-- <li><a href="#address">Address</a></li>-->
       <!-- <li><a href="#dialog">Dialog</a></li>-->
       <!-- <li><a href="#forms">Forms</a></li>-->
+      <li><a href="#tables">Navbar <sup title="external">ext.</sup></a></li>
     </ol>
   </header>
 
   <main>
+
+
+
     <!-- Buttons -->
     <div>
       <h1 id="buttons" class="title">Buttons</h1>
@@ -370,31 +374,53 @@
       </table>
     </div>
 
+    <!-- Code & Preformatted -->
+    <div>
+      <h1 id="code" class="title">Code & Preformatted</h1>
 
+      <h1 class="subtitle">Code</h1>
+      <p>This parapgraph include <code class="dark">a piece of code</code> inside.</p>
 
-
-
-
-
-
-        <!-- Code & Preformatted -->
-        <div>
-            <h1 id="code" class="title">Code & Preformatted</h1>
-
-            <h1 class="subtitle">Code</h1>
-            <p>This parapgraph include <code class="code-dark">a piece of code</code> inside.</p>
-
-            <h1 class="subtitle">Code block wrapped in "pre" and "code" tags</h1>
-            <pre><code>// Loop through Divs using Javascript.
+      <h1 class="subtitle">Code block wrapped in "pre" and "code" tags</h1>
+<pre><code class="language-javascript">// Loop through Divs using Javascript.
 var divs = document.querySelectorAll('div'), i;
 
 for (i = 0; i < divs.length; ++i) {
-  divs[i].style.color = "green";
+divs[i].style.color = "green";
 }</code></pre>
 
-            <h1 class="subtitle">Monospace Text wrapped in "pre" tags</h1>
-            <pre><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p></pre>
-        </div>
+<pre><code class="line-numbers  language-css">
+code {
+  color: inherit;
+  box-shadow: 0 2px red;
+}
+</code></pre>
+
+<pre class="line-numbers"><code class="language-less">
+code {
+  color: inherit;
+  box-shadow: 0 2px red;
+  &:hover {
+    cursor: text;
+    will-change: cursor;
+  }
+}
+//http://www.google.es
+</code></pre>
+
+<pre><code class="language-markup">
+  &lt;!-- Estilos CSS--&gt;
+  &lt;p class="a"&gt;&lt;/p&gt;
+</code></pre>
+
+      <h1 class="subtitle">Monospace Text wrapped in "pre" tags</h1>
+      <pre><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p></pre>
+    </div>
+
+
+
+
+
 
         <!-- Images -->
         <div>
@@ -422,5 +448,6 @@ for (i = 0; i < divs.length; ++i) {
 
     </main>
     <script type="text/javascript" src="src/js/script.min.js"></script>
+    <script type="text/javascript" src="src/js/prism.js"></script>
 </body>
 </html>
