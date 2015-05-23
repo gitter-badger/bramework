@@ -72,43 +72,40 @@ INFO
 
     <!-- Estilos CSS-->
     <link rel="stylesheet" href="src/css/style.css">
+
+  <script type="text/javascript" src="src/js/globals.js"></script>
+  <script type="text/javascript" src="src/js/action-button.js"></script>
+  <script type="text/javascript" src="src/js/snackbar.js"></script>
 </head>
 
 <body class="test">
 
-<nav class="navbar">
-  <div class="navbar-main">
-    <div class="navbar-responsive">
-      <a  href="#" data-icon="menu"></a>
+  <header>
+
+
+  </header>
+
+  <main>
+    <button onclick="snackbar('Descarga completada');">Mensaje 1</button>
+    <button onclick="snackbar(holaa, ivi);">Mensaje 2</button>
+
+
+  </main>
+
+  <footer>
+
+    <div id="action-button" class="action-button">
+      <button class="btn-float t-primary" data-icon="add"></button>
+
+      <div class="action-button-content">
+        <button class="btn-float-mini t-info" data-icon="home"></button>
+        <button class="btn-float-mini t-alert" data-icon="home"></button>
+        <button class="btn-float-mini t-success" data-icon="home"></button>
+        <button class="btn-float-mini t-error" data-icon="home"></button>
+      </div>
     </div>
-
-    <div class="navbar-default">
-      <p>Title</p>
-    </div>
-
-    <div class="navbar-secondary">
-      <a  href="#" data-icon="home"></a>
-      <a  href="#" data-icon="back"></a>
-    </div>
-  </div>
-
-  <div class="navbar-title">
-    <p>Title big</p>
-  </div>
-
-  <div class="navbar-tabs">
-    <a href="#" class="tab-active">Item 1</a>
-    <a href="#">Item 2</a>
-    <a href="#">Item 3</a>
-    <a href="#">Item 4</a>
-  </div>
-</nav>
-
-
-
+  </footer>
 
 </body>
-
-
 
 </html>
