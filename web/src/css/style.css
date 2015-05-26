@@ -26,7 +26,7 @@ html {
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
-  color: #595959;
+  color: #4d4d4d;
   margin: 0 auto;
   background-color: #f2f2f2;
 }
@@ -280,45 +280,51 @@ h6,
 }
 h1,
 .h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 500;
-  color: #595959;
-  margin-bottom: 0.5em;
+  color: #4d4d4d;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 h2,
 .h2 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 500;
-  color: #595959;
-  margin-bottom: 0.5em;
+  color: #4d4d4d;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 h3,
 .h3 {
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: 500;
-  color: #595959;
-  margin-bottom: 0.5em;
+  color: #4d4d4d;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 h4,
 .h4 {
   font-size: 1.3rem;
   font-weight: 500;
-  color: #595959;
-  margin-bottom: 0.5em;
+  color: #4d4d4d;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 h5,
 .h5 {
   font-size: 1rem;
-  font-weight: 300;
-  color: #595959;
-  margin-bottom: 0.5em;
+  font-weight: 500;
+  color: #4d4d4d;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 h6,
 .h6 {
   font-size: 0.8rem;
-  font-weight: 300;
-  color: #595959;
-  margin-bottom: 0.5em;
+  font-weight: 500;
+  color: #4d4d4d;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 a,
 .link {
@@ -345,7 +351,7 @@ dd {
   text-align: left;
   line-height: 1.5em;
   margin-top: 0;
-  margin-bottom: 1.5em;
+  margin-bottom: 2em;
 }
 p:last-child,
 ul:last-child,
@@ -403,7 +409,7 @@ small,
   font-family: 'Roboto', sans-serif;
   font-size: 0.85rem;
   font-weight: 400;
-  color: #a5a5a5;
+  color: #9a9a9a;
 }
 cite {
   font-style: italic;
@@ -417,7 +423,7 @@ abbr {
   text-transform: uppercase;
 }
 abbr[title] {
-  border-bottom: 1px dotted #595959;
+  border-bottom: 1px dotted #4d4d4d;
 }
 abbr[title]:hover {
   cursor: help;
@@ -473,7 +479,7 @@ sub {
   bottom: -0.25em;
 }
 address {
-  border-left: 1px solid #595959;
+  border-left: 1px solid #4d4d4d;
   font-style: italic;
   margin-left: 10px;
   padding-left: 10px;
@@ -1003,7 +1009,7 @@ input[type=reset].disabled:hover {
 /*------------------------------------*\
     $TARJETAS
 \*------------------------------------*/
-.card {
+[class^="card"] {
   position: relative;
   display: inline-block;
   vertical-align: top;
@@ -1016,22 +1022,57 @@ input[type=reset].disabled:hover {
   margin-right: 14px;
   box-shadow: 0 1.5px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
-.card footer {
+[class^="card"] h3 {
+  margin-top: 0;
+}
+[class^="card"] footer {
   text-align: right;
   margin-top: 24px;
 }
-.card footer button {
+[class^="card"] footer button {
   margin-top: 0;
   margin-bottom: 0;
 }
-.card ~ .dark {
+[class^="card"][class*="dark"] {
   background-color: #37474f;
   color: #ffffff;
 }
-.card ~ .dark h3 {
+[class^="card"][class*="dark"] h3 {
   color: #ffffff;
 }
-a .card {
+[class^="card"][class*="image"] {
+  padding: 0;
+}
+[class^="card"][class*="image"] h3,
+[class^="card"][class*="image"] p,
+[class^="card"][class*="image"] footer {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+[class^="card"][class*="image"] footer {
+  padding-bottom: 16px;
+}
+[class^="card"] .title-background {
+  position: relative;
+  height: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 32px;
+}
+[class^="card"] .title-background h3 {
+  color: #ffffff;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 0;
+}
+[class^="card"] .title-background h3.title-shadow {
+  width: 100%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+  padding-top: 20px;
+  padding-bottom: 5px;
+}
+[class^="card"][class*="link"] {
   transition-property: box-shadow;
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
@@ -1039,35 +1080,27 @@ a .card {
   transition-duration: 0.1s;
   cursor: pointer;
   /**
-     * Debes poner aquí todos los elementos que estén dentro de tus
-     * tarjetas que a su vez son todas ellas un enlace.
-     * Así evitamos el uso del selector global '*'.
-     * Además, se desaconseja poner enlaces o botones dentro
-     * de estas tarjetas.
-     */
+    * Debes poner aquí todos los elementos que estén dentro de tus
+    * tarjetas que a su vez son todas ellas un enlace.
+    * Así evitamos el uso del selector global '*'.
+    * Además, se desaconseja poner enlaces o botones dentro
+    * de estas tarjetas.
+    */
 }
-a .card:hover,
-a .card:focus {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-}
-a .card h3,
-a .card p {
-  color: #595959;
+[class^="card"][class*="link"] h3,
+[class^="card"][class*="link"] p {
   cursor: pointer;
 }
+[class^="card"][class*="link"]:hover,
+[class^="card"][class*="link"]:focus {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
 @media (max-width: 800px) {
-  .card {
+  [class^="card"] {
     margin-bottom: 20px;
     margin-left: 10px;
     margin-right: 10px;
   }
-}
-/* Estilos para los '<a>' que contienen una tarjeta */
-.link-card:focus {
-  outline: 0;
-}
-.link-card:focus .card {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 /*------------------------------------*\
     $CÓDIGO
@@ -1240,8 +1273,8 @@ pre code {
 \*------------------------------------*/
 figure {
   width: auto;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 img {
   border: 0;
@@ -1252,7 +1285,7 @@ img {
   vertical-align: middle;
 }
 figcaption {
-  color: #a5a5a5;
+  color: #9a9a9a;
   font-size: 0.85rem;
   font-style: italic;
 }
@@ -1359,7 +1392,6 @@ span[data-role="close"]:before {
 .navbar p {
   display: inline-block;
   font-size: 20px;
-  line-height: 53px;
 }
 .navbar [data-badge]:after {
   content: attr(data-badge);
@@ -1376,48 +1408,44 @@ span[data-role="close"]:before {
 }
 .navbar .navbar-main {
   display: flex;
+  align-items: center;
   height: 56px;
 }
 .navbar .navbar-main a {
   border-radius: 100%;
 }
-.navbar .navbar-main .navbar-responsive {
+.navbar .navbar-main .navbar-main_left {
   width: auto;
   margin-left: 10px;
 }
 @media (max-width: 414px) {
-  .navbar .navbar-main .navbar-responsive {
+  .navbar .navbar-main .navbar-main_left {
     margin-left: 0;
   }
 }
-.navbar .navbar-main .navbar-default {
+.navbar .navbar-main .navbar-main_center {
   flex: 1;
   margin-left: 28px;
   overflow-x: auto;
   white-space: nowrap;
 }
 @media (max-width: 800px) {
-  .navbar .navbar-main .navbar-default {
+  .navbar .navbar-main .navbar-main_center {
     margin-left: 16px;
   }
 }
-@media (max-width: 414px) {
-  .navbar .navbar-main .navbar-default {
-    margin-left: 0px;
-  }
-}
-.navbar .navbar-main .navbar-secondary {
+.navbar .navbar-main .navbar-main_right {
   width: auto;
   margin-right: 10px;
 }
 @media (max-width: 414px) {
-  .navbar .navbar-main .navbar-secondary {
+  .navbar .navbar-main .navbar-main_right {
     margin-right: 0;
   }
-  .navbar .navbar-main .navbar-secondary a {
+  .navbar .navbar-main .navbar-main_right a {
     margin-right: -14px;
   }
-  .navbar .navbar-main .navbar-secondary a:last-child {
+  .navbar .navbar-main .navbar-main_right a:last-child {
     margin-right: 0;
   }
 }
@@ -1435,7 +1463,6 @@ span[data-role="close"]:before {
   }
 }
 .navbar .navbar-tabs {
-  flex: 1;
   height: 48px;
   margin-left: 16px;
   overflow-x: auto;
@@ -1664,23 +1691,6 @@ table.centered {
   align-items: center;
   transition: opacity 200ms ease-in-out;
   opacity: 0;
-}
-/*Formulario de búsqueda*/
-.search-form {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #009688;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  z-index: 97;
-}
-.search-form input[type='text'] {
-  color: #595959;
-  flex-grow: 1;
-  height: 30px;
 }
 .md-snackbar {
   position: fixed;

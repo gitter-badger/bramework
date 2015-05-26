@@ -34,15 +34,14 @@
     }
   }
 
-  [data-icon]:before {
-    padding: 16px;
-    color: @white;
-  }
+    [data-icon]:before {
+      padding: 16px;
+      color: @white;
+    }
 
   p {
     display: inline-block;
     font-size: 20px;
-    line-height: 53px;
   }
 
   [data-badge]:after {
@@ -62,27 +61,25 @@
   //Navbar main
   .navbar-main {
     display: flex;
+    align-items: center;
     height: 56px;
 
     a  {
       border-radius: 100%;
     }
 
-    //Icono de hamburguesa
-    .navbar-responsive {
+    //Icono de hamburguesa o atrás
+    .navbar-main_left {
       width: auto;
       margin-left: 10px;
 
-      @media (min-width: @bp-medium) {
-//        display: none;
-      }
       @media (max-width: @bp-small) {
         margin-left: 0;
       }
     }
 
     //Texto del título
-    .navbar-default {
+    .navbar-main_center {
       flex: 1;
       margin-left: 28px;
       overflow-x: auto;
@@ -91,14 +88,10 @@
       @media (max-width: @bp-medium) {
         margin-left: 16px;
       }
-
-      @media (max-width: @bp-small) {
-        margin-left: 0px;
-      }
     }
 
     //Iconos con acciones secundarias
-    .navbar-secondary {
+    .navbar-main_right {
       width: auto;
       margin-right: 10px;
 
@@ -131,7 +124,6 @@
 
   // Tabs
   .navbar-tabs {
-    flex: 1;
     height: 48px;
     margin-left: 16px;
     overflow-x: auto;
@@ -141,7 +133,7 @@
       font-size: 14px;
       padding: 0 12px;
       line-height: 46px;
-      border-bottom: 2px solid rgba(0, 0, 0, 0);
+      border-bottom: 2px solid @alpha;
       text-transform: uppercase;
       opacity: 0.6;
 
@@ -160,4 +152,4 @@
     }
   }
 }
-}
+
