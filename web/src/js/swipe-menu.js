@@ -21,8 +21,8 @@ var body;
 var shadow;
 var slideStartX;
 var slideEndX;
-var shadowTouchStartX;
-var shadowTouchEndX;
+var shadowSlideStartX;
+var shadowSlideEndX;
 
 //Eventos que se realizan después de cargar la página
 window.onload = function() {
@@ -50,8 +50,8 @@ function createShadow() {
     shadow.classList.add(strings.shadowOpenCLass);
   }, 0.1);
   shadow.addEventListener('click', closeAll); //Añade evento a la sombra: Al hacer clic, ejecuta la función 'closeAll'
-  shadow.addEventListener('touchstart', shadowTouchStart);
-  shadow.addEventListener('touchend', shadowTouchEnd);
+  shadow.addEventListener('touchstart', shadowSlideStart);
+  shadow.addEventListener('touchend', shadowSlideEnd);
 }
 
 //Función que reúne las dos anteriores, ya que siempre van unidas
@@ -81,23 +81,24 @@ function slideStart(event) {
 function slideEnd(event) {
   var touch = event.changedTouches[0]
   slideEndX = touch.pageX;
-  if (slideStartX < conf.slideZoneStart && slideEndX > conf.slideZoneEnd) {
+  console.log()
+  if (slideStartX < conf.slideZoneStart && slideEndX > conf.slideZoneEnd && !menu.classList.contains(strings.menuOpenClass)) {
     swipeMenu();
   }
 }
 
 //Funciones para cerrar todo deslizando desde la sombra
-function shadowTouchStart(event) {
+function shadowSlideStart(event) {
   if (event.targetTouches.length == 1) {
     var touch = event.targetTouches[0];
-    shadowTouchStartX = touch.pageX;
+    shadowSlideStartX = touch.pageX;
   }
 }
 
-function shadowTouchEnd(event) {
+function shadowSlideEnd(event) {
   var touch = event.changedTouches[0]
-  shadowTouchEndX = touch.pageX;
-  if (shadowTouchStartX > shadowTouchEndX) {
+  shadowSlideEndX = touch.pageX;
+  if (shadowSlideStartX > shadowSlideEndX) {
     closeAll();
   }
 }
