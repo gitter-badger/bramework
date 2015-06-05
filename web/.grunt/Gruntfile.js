@@ -18,6 +18,14 @@ module.exports = function (grunt) {
             }
         },
 
+        uglify: {
+          scripts: {
+            files: {
+              '../src/js/script.min.js': ['../src/js/vendor/*.js', '../src/js/polyfills/*.js', '../src/js/scripts/*.js']
+            }
+          }
+        },
+
         watch: {
             styles: {
                 files: ['../src/css/less/**/*.less', '../src/fonts  /**/*.less'],
@@ -28,8 +36,10 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('all', ['less']);
+    grunt.registerTask('all', ['less', 'uglify']);
     grunt.registerTask('css', ['less']);
+    grunt.registerTask('js', ['uglify']);
 };
