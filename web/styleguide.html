@@ -10,13 +10,14 @@
         <link href='http://fonts.googleapis.com/css?family=Roboto:500,900italic,900,400italic,100,700italic,300,700,500italic,100italic,300italic,400' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,700,300,400' rel='stylesheet' type='text/css'>
 
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!-- Estilos CSS-->
         <link rel="stylesheet" href="src/css/style.min.css">
 
         <style>
-            body {
-                background-color: white;
-            }
+          body {
+            background-color: #f2f2f2;
+          }
 
             header, main {
                 padding: 0 200px;
@@ -86,10 +87,8 @@
             <li><a href="#blockquotes">Blockquotes</a></li>
             <li><a href="#address">Address</a></li>
             <li><a href="#details">Details</a></li>
-            <li><a href="#code">Code & Preformatted</a></li>
             <li><a href="#images">Images</a></li>
             <li><a href="#media">Media</a></li>
-            <li><a href="#dialog">Dialog</a></li>
             <li><a href="#forms">Forms</a></li>
         </ol>
 
@@ -320,25 +319,6 @@
             </details>
         </div>
 
-        <!-- Code & Preformatted -->
-        <div>
-            <h1 id="code" class="title">Code & Preformatted</h1>
-
-            <h1 class="subtitle">Code</h1>
-            <p>This parapgraph include <code>a piece of code</code> inside.</p>
-
-            <h1 class="subtitle">Code block wrapped in "pre" and "code" tags</h1>
-            <pre><code>// Loop through Divs using Javascript.
-var divs = document.querySelectorAll('div'), i;
-
-for (i = 0; i < divs.length; ++i) {
-  divs[i].style.color = "green";
-}</code></pre>
-
-            <h1 class="subtitle">Monospace Text wrapped in "pre" tags</h1>
-            <pre><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p></pre>
-        </div>
-
         <!-- Images -->
         <div>
             <h1 id="images" class="title">Images</h1>
@@ -381,182 +361,180 @@ for (i = 0; i < divs.length; ++i) {
             </video>
         </div>
 
-        <!-- Dialog -->
-        <div>
-            <h1 id="dialog" class="title">Dialog</h1>
-
-            <dialog open>
-                <p>Text inside dialog</p>
-            </dialog>
-        </div>
 
         <!-- Forms -->
         <div>
             <h1 id="forms" class="title">Forms</h1>
 
-            <form name="name" action="#" method="get">
-                <p>The Form:</p>
-                <fieldset>
-                    <legend>Text Boxes</legend>
-                    <p>
-                        <label for="text_field">Text Field:</label>
-                        <input class="full-width" id="text_field" type="text" name="plaintext" placeholder="Texto orientativo" autocomplete="on" maxlenght="20" title="texto">
-                    </p>
+          <form name="name" action="#" method="get">
+            <p>The Form:</p>
+            <fieldset>
+              <legend>Text Boxes</legend>
+              <ul>
+                <li>
+                  <!--            <label  for="text_field">Text Field:</label>-->
+                  <input class="full-width" id="text_field" type="text" name="plaintext" placeholder="Texto orientativo" autocomplete="on" maxlenght="20" title="texto">
+                </li>
 
-                    <p>
-                        <label>Text disabled:</label>
-                        <input type="text" name="plaintext" placeholder="Texto desactivado" disabled>
-                    </p>
+                <li>
+                  <!--            <label>Text disabled:</label>-->
+                  <input type="text" name="plaintext" placeholder="Texto desactivado" disabled>
+                </li>
 
-                    <p>
-                        <label for="password">Password:</label>
-                        <input type="password" class="password" name="password" />
-                    </p>
+                <li>
+                  <!--            <label for="password">Password:</label>-->
+                  <input type="password" class="password" name="password" placeholder="Password"/>
+                </li>
 
-                    <p>
-                        <label for="text_area">Text Area:</label>
-                        <textarea id="text_area" cols="20" rows="5"></textarea>
-                    </p>
-                </fieldset>
-                <fieldset>
-                    <legend>Interactivity</legend>
-                    <p>
-                        <input type="radio" name="radio_button" id="radio_1" value="radio_1" checked>
-                        <label for="radio_1">Radio 1</label>
-                        <input type="radio" name="radio_button" id="radio_2" value="radio_2">
-                        <label for="radio_2">Radio 2</label>
-                        <input type="radio" name="radio_button" id="radio_3" value="radio_3" disabled>
-                        <label for="radio_3">Radio 3</label>
-                    </p>
+                <li>
+                  <!--            <label for="text_area">Text Area:</label>-->
+                  <textarea id="text_area" rows="5"></textarea>
+                </li>
+              </ul>
+            </fieldset>
+            <fieldset>
+              <legend>Interactivity</legend>
+              <ul>
+                <li>
+                  <input type="radio" name="radio_button" id="radio_1" value="radio_1" checked>
+                  <label for="radio_1">Radio 1</label>
 
-                    <p>
-                        <label for="check_1">Check 1</label>
-                        <input type="checkbox" name="vehicle" id="check_1" value="check_1" checked>
-                        <label for="check_2">Check 2</label>
-                        <input type="checkbox" name="vehicle" id="check_2" value="check_2">
-                        <label for="check_3">Check 3</label>
-                        <input type="checkbox" name="vehicle" id="check_3" value="check_3" disabled>
-                    </p>
+                  <input type="radio" name="radio_button" id="radio_2" value="radio_2">
+                  <label for="radio_2">Radio 2</label>
 
-                    <p>
-                    <label for="select_element">Select Element:</label>
-                    <select name="select_element">
-                        <optgroup label="Option Group 1">
-                            <option value="1">Option 1</option>
-                            <option value="2">Option 2</option>
-                            <option value="3">Option 3</option>
-                        </optgroup>
-                        <optgroup label="Option Group 2">
-                            <option value="1">Option 1</option>
-                            <option value="2">Option 2</option>
-                            <option value="3">Option 3</option>
-                        </optgroup>
-                    </select>
-                    </p>
+                  <input type="radio" name="radio_button" id="radio_3" value="radio_3" disabled>
+                  <label for="radio_3">Radio 3</label>
+                </li>
 
-                    <p>
-                        <label for="file">File Input:</label>
-                        <input type="file" class="file" name="file" />
-                    </p>
-                    <p>
-                        <label>Hidden Input:</label>
-                        <input type="hidden">
-                    </p>
-                    <p>
-                        <label>Image Input:</label>
-                        <input type="image" src="http://placehold.it/100x50">
-                    </p>
-                </fieldset>
-                <fieldset>
-                    <legend>HTML5-specific Form Elements</legend>
-                    <p>
-                        <label for="email">Email:</label>
-                        <input type="email" placeholder="Correo electrónico">
-                    </p>
+                <li>
+                  <input type="checkbox" name="vehicle" id="check_1" value="check_1" checked>
+                  <label for="check_1">Check 1</label>
+                  <input type="checkbox" name="vehicle" id="check_2" value="check_2">
+                  <label for="check_2">Check 2</label>
+                  <input type="checkbox" name="vehicle" id="check_3" value="check_3" disabled>
+                  <label for="check_3">Check 3</label>
+                </li>
 
-                    <p>
-                        <label for="url">URL:</label>
-                        <input type="url" placeholder="URL">
-                    </p>
+                <li>
+                  <label for="select_element">Select Element:</label>
+                  <select name="select_element">
+                    <optgroup label="Option Group 1">
+                      <option value="1">Option 1</option>
+                      <option value="2">Option 2</option>
+                      <option value="3">Option 3</option>
+                    </optgroup>
+                    <optgroup label="Option Group 2">
+                      <option value="1">Option 1</option>
+                      <option value="2">Option 2</option>
+                      <option value="3">Option 3</option>
+                    </optgroup>
+                  </select>
+                </li>
 
-                    <p>
-                        <label for="tel">Telephone:</label>
-                        <input type="tel" placeholder="Teléfono">
-                    </p>
+                <li>
+                  <label for="file">File Input:</label>
+                  <input type="file" class="file" name="file" />
+                </li>
+                <li>
+                  <label>Hidden Input:</label>
+                  <input type="hidden">
+                </li>
+                <li>
+                  <label>Image Input:</label>
+                  <input type="image" src="http://placehold.it/100x50">
+                </li>
+              </ul>
+            </fieldset>
+            <fieldset>
+              <legend>HTML5-specific Form Elements</legend>
+              <li>
+                <label for="email">Email:</label>
+                <input type="email" placeholder="Correo electrónico">
+              </li>
 
-                    <p>
-                        <label for="number">Number:</label>
-                        <input type="number" min="0" max="10" step="1" value="5">
-                    </p>
+              <li>
+                <label for="url">URL:</label>
+                <input type="url" placeholder="URL">
+              </li>
 
-                    <p>
-                        <label>Range:</label>
-                        0<input type="range" name="points" min="1" max="10">10
-                    </p>
+              <li>
+                <label for="tel">Telephone:</label>
+                <input type="tel" placeholder="Teléfono">
+              </li>
 
-                    <p>
-                        <label for="search">Search:</label>
-                        <input type="search" placeholder="Buscar" autosave>
-                    </p>
+              <li>
+                <label for="number">Number:</label>
+                <input type="number" min="0" max="10" step="1" value="5">
+              </li>
 
-                    <p>
-                        <label for="date">Date:</label>
-                        <input type="date">
-                    </p>
+              <li>
+                <label>Range:</label>
+                0<input type="range" name="points" min="1" max="10">10
+              </li>
 
-                    <p>
-                        <label>Week:</label>
-                        <input type="week">
-                    </p>
+              <li>
+                <label for="search">Search:</label>
+                <input type="search" placeholder="Buscar" autosave>
+              </li>
 
-                    <p>
-                        <label>Datetime:</label>
-                        <input type="datetime">
-                    </p>
+              <li>
+                <label for="date">Date:</label>
+                <input type="date">
+              </li>
 
-                    <p>
-                        <label>Datetime local:</label>
-                        <input type="datetime-local">
-                    </p>
+              <li>
+                <label>Week:</label>
+                <input type="week">
+              </li>
 
-                    <p>
-                        <label for="time">Time:</label>
-                        <input type="time">
-                    </p>
+              <li>
+                <label>Datetime:</label>
+                <input type="datetime">
+              </li>
 
-                    <p>
-                        <label for="color">Color:</label>
-                        <input type="color">
-                    </p>
+              <li>
+                <label>Datetime local:</label>
+                <input type="datetime-local">
+              </li>
 
-                    <p>
-                        <label for="datalist">Datalist:</label>
-                        <input list="browsers" name="browser" type="datalist">
-                        <datalist id="browsers">
-                            <option value="Internet Explorer">
-                            <option value="Firefox">
-                            <option value="Chrome">
-                            <option value="Opera">
-                            <option value="Safari">
-                        </datalist>
-                    </p>
+              <li>
+                <label for="time">Time:</label>
+                <input type="time">
+              </li>
 
-                    <p>
-                        <label>Submit Input</label>
-                        <input type="submit" value="Aceptar">
-                    </p>
+              <li>
+                <label for="color">Color:</label>
+                <input type="color">
+              </li>
 
-                    <p>
-                        <label>Button Input (disabled)</label>
-                        <input type="button" value="Button" disabled>
-                    </p>
+              <li>
+                <label for="datalist">Datalist:</label>
+                <input list="browsers" name="browser" type="datalist">
+                <datalist id="browsers">
+                  <option value="Internet Explorer">
+                  <option value="Firefox">
+                  <option value="Chrome">
+                  <option value="Opera">
+                  <option value="Safari">
+                </datalist>
+              </li>
 
-                    <p>
-                        <label>Reset Input</label>
-                        <input type="reset" value="Reset">
-                    </p>
-                </fieldset>
-            </form>
+              <li>
+                <label>Submit Input</label>
+                <input type="submit" value="Aceptar">
+              </li>
+
+              <li>
+                <label>Button Input (disabled)</label>
+                <input type="button" value="Button" disabled>
+              </li>
+
+              <li>
+                <label>Reset Input</label>
+                <input type="reset" value="Reset">
+              </li>
+            </fieldset>
+          </form>
         </div>
     </main>
     <script type="text/javascript" src="src/js/script.min.js"></script>

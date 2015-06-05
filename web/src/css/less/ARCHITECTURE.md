@@ -42,9 +42,9 @@ Por ejemplo:
 <button data-icon="add">Añadir</button>
 ```
 
-El archivo `.css` de las fuentes de iconos está en el directorio [`vendor/`](#vendor) ya que suelen ser librerías externas. Cambiamos el formato a `.less` y lo añadimos al archivo principal `style.less` para que se procesen todos los estilos juntos en un solo `.css`.
+El archivo `.less` con la configuración de las fuentes de iconos está en el directorio [`vendor/`](#vendor).
 
-Los archivos de la tipografía se almacenan en `/src/font/` por lo que debemos asegurarnos que ponemos el directorio correcto en el archivo `.css` (o el recién renombrado `.less`).
+Los archivos de las tipografías se cargan desde una fuente externa o bien se almacenan en `/src/font/` por lo que debemos asegurarnos que ponemos el directorio correcto en el archivo `.less`.
 
 Por ejemplo:
 

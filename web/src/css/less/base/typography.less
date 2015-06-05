@@ -150,8 +150,9 @@ dd {
   text-align: left;
   line-height  : @line-height-base;
   margin-top: 0;
-  margin-bottom: @margin-bottom-base;
-  &:last-child {margin-bottom: 0;}
+  &:not(:last-child) {
+    margin-bottom: @margin-bottom-base;
+  }
 }
 
 

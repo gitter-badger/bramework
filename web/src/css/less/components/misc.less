@@ -17,29 +17,35 @@ hr {
 
 
 //Details
-//details {
-//  summary::-webkit-details-marker {
-//    display: none;
-//  }
-//
-//  summary {
-//    &:after {
-//      .md-icon();
-//      content: "\e672";
-//    }
-//    &:hover {
-//      cursor: pointer;
-//    }
-//  }
-//
-//  &[open] {
-//    summary {
-//      &:after {
-//        content: "\e671";
-//      }
-//    }
-//  }
-//}
+details {
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary {
+    &:focus {
+      outline: 0;
+    }
+    &:after {
+      font-family: 'Material Icons';
+      vertical-align: middle;
+      margin-left: 10px;
+      font-size: 1.3em;
+      content: "\E5CF";
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &[open] {
+    summary {
+      &:after {
+        content: "\E5CE";
+      }
+    }
+  }
+}
 
 
 /*Botones-iconos*/

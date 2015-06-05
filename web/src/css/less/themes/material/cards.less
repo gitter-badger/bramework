@@ -35,11 +35,9 @@
   //Tarjetas con imagen de fondo
   &[class*="image"]  {
     padding: 0;
+    padding-bottom: 16px;
     h3, p, footer {
       .padding-horizontal(16px;)
-    }
-    footer {
-      padding-bottom: 16px;
     }
   }
 
@@ -57,7 +55,7 @@
         margin-bottom: 0;
         &.title-shadow {
           width: 100%;
-          background: linear-gradient( 0deg, @alpha-100, @alpha );
+          background: linear-gradient( 0deg, @alpha-150, @alpha );
           padding-top: 20px;
           padding-bottom: 5px;
         }
@@ -79,6 +77,7 @@
     * de estas tarjetas.
     */
     h3, p {
+      color: @text-color;
       cursor: pointer;
     }
 

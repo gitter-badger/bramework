@@ -39,12 +39,6 @@
 .md-flat() {
   .md-base();
   background-color: transparent;
-  &.t-white {color: @white;}
-  &.t-primary {color: @brand-color;}
-  &.t-success {color: @md-color-success;}
-  &.t-info {color: @md-color-info;}
-  &.t-alert {color: @md-color-alert;}
-  &.t-error {color: @md-color-error;}
   &:hover, &:focus {
     @media (max-width: @bp-medium) {
       box-shadow: none;
@@ -64,23 +58,10 @@
   .md-base();
   .shadow(1);
   background-color: @white;
-  &.t-white {color: @white;}
-  &.t-primary {background-color: @brand-color; color:@white;}
-  &.t-success {background-color: @md-color-success; color:@white;}
-  &.t-info {background-color: @md-color-info; color:@white;}
-  &.t-alert {background-color: @md-color-alert; color:@white;}
-  &.t-error {background-color: @md-color-error; color:@white;}
   &:hover, &:focus {
     @media (max-width: @bp-medium) {
       .shadow(1);
     }
-  }
-  &:active {
-    &.t-primary {background-color: @brand-color-focus;}
-    &.t-success {background-color: @md-color-success-focus;}
-    &.t-info {background-color: @md-color-info-focus;}
-    &.t-alert {background-color: @md-color-alert-focus;}
-    &.t-error {background-color: @md-color-error-focus;}
   }
   &:disabled,
   &[disabled],
