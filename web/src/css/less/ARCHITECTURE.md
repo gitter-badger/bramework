@@ -24,15 +24,15 @@ Las **variables**, a diferencia de otros *frameworks*, no se muestran todas en u
 ##Flujo de trabajo
 Lo primero y más recomendable es tener ***grunt* «escuchando»** simplemente escribiendo el comando `grunt` en la terminal, estando en el directorio apropiado. (Ver [README.md](https://github.com/barcia/bramework/blob/master/README.md)).
 
-Haciendo esto, cada vez que guardemos cualquier cambio en un archivo `.less`, todo el código se procesará automáticamente creando el `.css`.
+Haciendo esto, cada vez que guardemos cualquier cambio en un archivo `.less` o `.js`, todo el código se procesará y juntará automáticamente.
 
 Principalmente escribiremos código en los directorios `layout/` para crear bloques de código o «trozos» de interfaz y en el directorio `pages/` para añadir estilos más específicos.
 
-Además, **antes** de comenzar con la maquetación, podemos crear los [componentes](#components) que necesitemos, configurar los estilos [mas básicos](#base) y generales o añadir [temas](#themes).
+Además, **antes** de comenzar con la maquetación, podemos crear o editar los [componentes](#components) que necesitemos, configurar los estilos [mas básicos y generales](#base) o añadir [temas](#themes).
 
 
 ##Iconos
-Para los iconos no utilizo clases sinó los ***data-atributes***. Aunque por especificación no están creados para tal cometiddo, tampoco está restringido su uso, y considero que se consigue un HTML más limpio y legible.
+Para los iconos no utilizo clases sino los **_data-* attributes_**. Aunque por especificación no estén diseñados para eso, sino para «almacenar datos personalizados privados a la página o aplicación», no están restringidos únicamente a ese uso, y considero que se consigue un HTML más limpio y legible.
 
 Para añadir un icono a un elemento simplemente añadimos el atributo **`data-icon="{nombre del icono}"`**.
 
@@ -124,6 +124,7 @@ less/
 
   También están aquí las variables relativas a la interfaz general así como los **_breackpoints_**.
 
+
   * **typography.less:**
   Todos los estilos relativos a la **tipografía** del sitio (y sus variables). Además incluye la mayoría de los elementos relacionados con el texto (listas, citas, etc.).
 
@@ -131,7 +132,7 @@ less/
 ###components/
 Aquí van todos los **componentes** que se utilizan en el *framework*. Puedes añadir los que quieras o modificarlos a tu gusto. Puedes cambiar muy fácilmente los estilos de la mayoría según los temas que le apliques.
 
-Ojo, no confundir componentes con los bloques de *layout*. Los componentes son elementos mas pequeños, y los bloques de *layout* son elementos mas grandes creados con varios componentes.
+Ojo, no confundir componentes con los bloques de *layout*. Los componentes son elementos mas pequeños, y los bloques de *layout* son elementos mas grandes creados, en parte, con varios componentes.
 
 ###layout/
 Aquí debes colocar los módulos que crees usando mayormente los componentes. Son **bloques de código** mas grandes que deberían ser reutilizables en varios sitios de la web. Por ejemplo un *footer*, un *sidebar*, un menú, un formulario, etc.
@@ -146,7 +147,7 @@ Aquí debes colocar los módulos que crees usando mayormente los componentes. So
 * **development.less:**
   Por defecto, este archivo no lo procesaremos. Lo utilizamos sólo cuando queremos **depurar** nuestro HTML. Añade cajas rojas o amarillas en los elementos el los que falta algo.
 
-  Por ejemplo, añadirá una caja roja a todos los `<a>` que no tengan un `href` correcto, y una caja amarilla a todos los `<a>` que no tengan un `title` (puesto que no es obligatorio, pero sí muy recomendable).
+>  Por ejemplo, añadirá una caja roja a todos los `<a>` que no tengan un `href` correcto, y una caja amarilla a todos los `<a>` que no tengan un `title` (puesto que no es obligatorio, pero sí muy recomendable).
 
 
 * **mixings.less:**

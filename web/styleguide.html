@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <title>Styleguide</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimal-ui">
+  <meta name="theme-color" content="#4285f4">
 
   <!-- Estilos CSS-->
   <link rel="stylesheet" href="src/css/style.min.css">
@@ -72,8 +73,8 @@
 
       @media (max-width: 800px) {
           header, main {
-              padding-left: 0;
-              padding-right: 0;
+              padding-left: 10px;
+              padding-right: 10px;
           }
       }
   </style>
@@ -82,7 +83,7 @@
 <body>
 
     <header>
-        <h1 class="title">Menu</h1>
+        <h1 class="title">Styleguide</h1>
         <ol>
             <li><a href="#headings">Headings</a></li>
             <li><a href="#typography">Typography</a></li>
@@ -341,9 +342,9 @@
 
             <h1 class="subtitle">Responsive image</h1>
             <picture>
-                <source  media="(min-width: 1000px)" srcset="http://placehold.it/550x150">
-                <source  media="(min-width: 800px)" srcset="http://placehold.it/450x150">
-                <img srcset="http://placehold.it/350x150" alt="Alt text">
+              <source  media="(min-width: 1000px)" srcset="http://placehold.it/1000x150" type="image/png">
+              <source  media="(min-width: 500px)" srcset="http://placehold.it/500x150" type="image/png">
+                <img srcset="http://placehold.it/300x150" alt="Alt text" title="img title">
             </picture>
         </div>
 
@@ -365,7 +366,6 @@
                 Your browser does not support the video tag.
             </video>
         </div>
-
 
         <!-- Forms -->
         <div>
@@ -403,10 +403,12 @@
                 <li>
                   <input type="radio" name="radio_button" id="radio_1" value="radio_1" checked>
                   <label for="radio_1">Radio 1</label>
-
+                </li>
+                <li>
                   <input type="radio" name="radio_button" id="radio_2" value="radio_2">
                   <label for="radio_2">Radio 2</label>
-
+                </li>
+                <li>
                   <input type="radio" name="radio_button" id="radio_3" value="radio_3" disabled>
                   <label for="radio_3">Radio 3</label>
                 </li>
@@ -414,8 +416,12 @@
                 <li>
                   <input type="checkbox" name="vehicle" id="check_1" value="check_1" checked>
                   <label for="check_1">Check 1</label>
+                </li>
+                <li>
                   <input type="checkbox" name="vehicle" id="check_2" value="check_2">
                   <label for="check_2">Check 2</label>
+                </li>
+                <li>
                   <input type="checkbox" name="vehicle" id="check_3" value="check_3" disabled>
                   <label for="check_3">Check 3</label>
                 </li>
@@ -437,12 +443,10 @@
                 </li>
 
                 <li>
-                  <label for="file">File Input:</label>
+<!--
+                  <label for="file">File Input:</label> <br>
                   <input type="file" class="file" name="file" />
-                </li>
-                <li>
-                  <label>Hidden Input:</label>
-                  <input type="hidden">
+-->
                 </li>
                 <li>
                   <label>Image Input:</label>

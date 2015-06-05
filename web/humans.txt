@@ -1,23 +1,22 @@
-/* TEAM */                         
+/* TEAM */
 Designer & Developer: Iván Barcia.
-Contact: barcia[at]openboxmail[dot]org
+Contact: barcia[at]openmailbox[dot]org
 Site: http://ivanbarcia.eu
-Google+: https://plus.google.com/+IvánBarcia                     
+Google+: https://plus.google.com/+IvánBarcia
 Twitter: @bartzia
-Ello: @barcia
 Github: https://github.com/barcia
 Location: Galicia (SPAIN).
 
                         [...]
-						
-/* THANKS */							
+
+/* THANKS */
 Name: nombre o url
-             
+
                         [...]
-                         
-/* SITE */     
-Creation: YYYY/MM/DD  
-Last update: YYYY/MM/DD                    
-Standards: HTML5, CSS3, JavaScript.                         
-Components: Less.js, Normalize.css, Material Design Icon Font.                      
-Software: Ubuntu, Brackets, Google Chrome, Git, Grunt.js.
+
+/* SITE */
+Creation: YYYY/MM/DD
+Last update: YYYY/MM/DD
+Standards: HTML5, CSS3, JavaScript.
+Components: Less.js, Normalize.css, Material Design Icon Font.
+Software: Linux, Android, Brackets, Google Chrome, Ngrok, Git, Grunt.js.

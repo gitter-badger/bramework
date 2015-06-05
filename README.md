@@ -19,20 +19,22 @@
 **Bramework** es un *framework* para crear sitios web.
 
 * Autor: [Iván Barcia](http://ivanbarcia.eu)
-* Version: 0.1-ALPHA
+* Version: 0.2-BETA
 * Trello: https://trello.com/b/IzLg4nk4
 * Comunidad: [Google+](https://plus.google.com/communities/104938291205143609131/stream/957ba9b5-234b-4260-a6e7-f6a8ab29a7a3)
 
 ##Descripción
-**Bramework** realmente no está creado con el objetivo de ser un *framework* de uso general, de hecho estoy bastante en contra de utilizar *frameworks* «genéricos», sinó que se trata de un proyecto personal y es por eso que está adaptado a mis necesidades y forma de trabajo. Aún así, está disponible para todo el mundo y mínimamente documentado, por si a alguien le puede resultar de utilidad.
+**Bramework** realmente no está creado con el objetivo de ser un *framework* de uso general, de hecho estoy bastante en contra de utilizar *frameworks* «genéricos», sino que se trata de un proyecto personal y es por eso que está adaptado a mis necesidades y forma de trabajo. Aún así, está disponible para todo el mundo y mínimamente documentado, por si a alguien le puede resultar de utilidad.
 
-El objetivo principal es tener una base para agilizar la creación de sitios web en HTML y CSS, aunque también incluye los archivos básicos para adaptarlo fácilmente a la creación de temas para algunos CMS. Pero no sólo me sirve como base para mis proyectos, sinó como un lugar donde  explorar y experimentar en torno a todo lo relacionado con el desarrollo web.
+El objetivo principal es tener una base para agilizar la creación de sitios web en HTML y CSS, aunque poco a poco también incluiré los archivos básicos para adaptarlo fácilmente a la creación de temas para algunos CMS. Pero no sólo me sirve como base para mis proyectos, sino como un lugar donde  explorar y experimentar en torno a todo lo relacionado con el desarrollo web.
 
 Está creado desde cero a partir de conocimientos propios, pero adquiriendo ideas, conceptos y trozos de código de multitud de *frameworks*. Tampoco sigue ninguna tendencia o guía de estilo en concreto, pero después de leer y estudiar algunas, puede tener influencias o conceptos de varias como pueden ser [BEM](https://en.bem.info/), [SMACSS](https://smacss.com/), [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/), [OOCSS](http://oocss.org/), [KISS](http://es.wikipedia.org/wiki/Principio_KISS), etc.
 
-No se utilizan *grids* por decisión personal. Raramente encuentro utilidad a un *grid* predefinido, puesto que el tiempo que me llevaría adaptarlo a mi proyecto suele ser superior al que lleva crear esa interfaz desde cero, perfectamente adaptada a mis necesidades. Además, suelen estar construídos simplemente con `<div>`, algo que puede resultar en un HTML poco semántico.
+En cuanto al diseño, intento crear un sistema de componentes que sean fácilmente modificables sólo cambiando el tema, pero aún así el _framework_ tiene un claro enfoque al [Material Design](https://google.com/design).
 
-Tampoco cuenta con *mediaqueries* específicos para cada dispositivo, sinó que los creo simplemente cuando considero que la interfaz debe cambiar para seguir siendo agradable el uso de la web. Una web debe ser global y flexible, teniendo en cuenta que hoy en día se visita con infinidad de pantallas, sistemas operativos, teléfonos móviles, *tablets*, ordenadores, TV's, videoconsolas e incluso *smartwatches*.
+No se utilizan *grids* por decisión personal. Raramente encuentro utilidad a un *grid* predefinido, puesto que el tiempo que me llevaría adaptarlo a mi proyecto suele ser superior al que lleva crear esa interfaz desde cero y perfectamente adaptada a mis necesidades. Además, suelen estar construídos simplemente con `<div>`, algo que puede resultar en un HTML poco semántico.
+
+Tampoco cuenta con *mediaqueries* específicos para cada dispositivo, sino que los creo simplemente cuando considero que la interfaz debe cambiar para seguir manteniendo una correcta experiencia de usuario. Una web debe ser global y flexible, teniendo en cuenta que hoy en día se visita con infinidad de pantallas, sistemas operativos, teléfonos móviles, *tablets*, ordenadores, TV's, videoconsolas e incluso *smartwatches*.
 
 Puedes seguir el desarrollo de éste *framework* en su [repositorio de Github](https://github.com/barcia/bramework), pero también utilizo continuamente un [tablón de Trello](https://trello.com/b/IzLg4nk4) público donde hay muchas explicaciones de ciertos elementos, una hoja de ruta, un registro de los errores detectados o mejoras en proceso, y muchas mas cosas interesantes. Además, también hay una [comunidad en Google+](https://plus.google.com/communities/104938291205143609131/stream/957ba9b5-234b-4260-a6e7-f6a8ab29a7a3) donde puedes dejar comentarios, preguntar dudas, ayudar a otras personas, etc.
 
@@ -46,13 +48,11 @@ Ejemplo:
   <h1>Title</h1>
   <p>Content</p>
 </div>
-```
-Ciertos elementos, como por ejemplo los iconos, se introduccen con _data-* attributes_. Aunque por especificación no estén diseñados para eso, sinó para «almacenar datos personalizados privados a la página o aplicación», no están restringidos únicamente a ese uso.
 
 ##Funcionamiento
 
 ###Navegadores
-En el diseño web siempre intento estudiar y utilizar los últimos estándares. Es por eso que en éste *framework* no garantiza el soporte a navegadores web obsoletos o antiguos.
+En el diseño web siempre intento estudiar y utilizar los últimos estándares. Es por eso que éste *framework* no garantiza el soporte a navegadores web obsoletos o antiguos.
 
 ###Lenguajes
 * HTML
@@ -64,7 +64,7 @@ En el diseño web siempre intento estudiar y utilizar los últimos estándares. 
 * [Grunt.js](http://gruntjs.com/)
 * [Git](http://git-scm.com/)
 * [Normalize.css](http://necolas.github.io/normalize.css/)
-* [Material design icons](https://github.com/google/material-design-icons)
+* [Material design icons](http://google.github.io/material-design-icons/)
 
 ###Directorios y archivos adjuntos
 * **README.md:** Archivo en formato *Markdown* que contiene toda la información del proyecto.
@@ -73,8 +73,9 @@ En el diseño web siempre intento estudiar y utilizar los últimos estándares. 
 * **CHANGELOG.md:** Archivo en formato *Markdown* que registra los cambios de cada versión.
 * **web/:** Directorio que contiene todo el código.
   * **index.html:** Página de inicio. Es un HTML base completamente preconfigurado.
-  * **styleguide.html:** Contiene los elementos mas importantes de HTML para comprobar como se ven con los estilos del sitio.
-  * **components.html:** Un documento que contiene la mayoría de los componentes del sitio (tarjetas, mensajes, etc.), para poder ver cómo se construyen.
+  * **styleguide.html:** Contiene los elementos mas importantes de HTML para comprobar como se ven con los estilos del sitio. Es extrapolable a cualquier otro `.css`
+  * **components.html:** Un documento que contiene la mayoría de los componentes del sitio (tarjetas, botones, etc.), para poder ver cómo se construyen.
+  * **components-fixed.html:** Igual que el anterior, pero contiene los elementos fijos.
   * **manifest.json:** Contiene metadatos asociados a aplicaciones web. [+info](https://trello.com/c/phxju5pj)
   * **browserconfig.xml:** Contiene metadatos para aplicaciones web en sistemas operativos de Microsoft. [+info](https://trello.com/c/Gm5FWYJt)
   * **humans.txt:** Es un archivo que muestra, entre otras cosas, información de las personas que han intervenido en la web. [+info](https://trello.com/c/WrNFJ047)
@@ -94,8 +95,8 @@ Todos los archivos de *Grunt* se encuentran en el directorio oculto: `/web/.grun
 ###Comandos:
 * **`grunt`** - pone a *grunt* en escucha, y ante cualquier cambio en un .LESS o un .JS ejecuta las tareas correspondientes.
 * **`grunt all`** - Ejecuta todas las tareas del proyecto.
-* **`grunt css`** - Procesa el `style.less` creando así un `style.css`.
-* **`grunt script`** - Junta todos los .JS en un solo archivo.
+* **`grunt css`** - Procesa el `style.less` creando así un `style.css` y un `style.min.css`.
+* **`grunt js`** - Junta todos los `.JS` en un solo archivo creando un `script.min.js`.
 
 ##Registro de cambios
 Ver [registro de cambios](CHANGELOG.md).
@@ -108,4 +109,7 @@ Todo el código es software libre bajo una [licencia MIT](LICENSE.md) ([+info](h
 Las librerías y herramientas externas tienen su propia licencia y podría no ser la misma.
 
 ##Créditos
-Desarrollado por Iván Barcia en Galicia, SPAIN.
+Desarrollado con :heart: por [Iván Barcia](http://ivanbarcia.eu) en Galicia, SPAIN.
+
+* [@bartzia](https://twitter.com/bartzia)
+* [+Iván Barcia](https://plus.google.com/+IvánBarcia)

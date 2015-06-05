@@ -1,11 +1,7 @@
-#Registro de cambios
+#Registro de Cambios
 
-###0.2-BETA
->
+* [Todo el de Cambios](https://github.com/barcia/bramework/commits/master)
 
-*
+* [Versiones publicadas](https://github.com/barcia/bramework/releases)
 
-###0.1-ALPHA
-> 16 - 03 -2015
-
-* Versión inicial
+> Hasta la versión _BETA_ puede que todos los cambios non estén perfectamente indicados debido simplemente al alto número de cambios que en código que se realiza en estas etapas. A partir de versiones mas estables, los cambios estarán perfectamente indicados y documentados.

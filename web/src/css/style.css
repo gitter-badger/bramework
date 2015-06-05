@@ -339,14 +339,14 @@ h6,
 }
 a,
 .link {
-  color: #3f51b5;
+  color: #009688;
   text-decoration: none;
 }
 a:hover,
 .link:hover,
 a:focus,
 .link:focus {
-  color: #abb4e2;
+  color: #30ffec;
   cursor: pointer;
   text-decoration: underline;
 }
@@ -494,6 +494,9 @@ address {
   margin-left: 10px;
   padding-left: 10px;
 }
+/*------------------------------------*\
+    $ACTION-BUTTON
+\*------------------------------------*/
 .action-button {
   position: fixed;
   bottom: 10px;
@@ -991,7 +994,7 @@ form li {
   min-height: 50px;
 }
 form label {
-  min-width: 200px;
+  min-width: 150px;
   font-family: 'Roboto', sans-serif;
   font-size: 0.85rem;
   font-weight: 400;
@@ -1050,7 +1053,7 @@ form input:hover {
 }
 form input:focus {
   outline: 0;
-  border-bottom-color: #5c6bc0;
+  border-bottom-color: #26a69a;
 }
 form input:disabled {
   border-bottom-style: dotted;
@@ -1088,7 +1091,7 @@ textarea:hover {
 }
 textarea:focus {
   outline: 0;
-  border-bottom-color: #5c6bc0;
+  border-bottom-color: #26a69a;
 }
 /*------------------------------------*\
     $LISTAS
@@ -1286,10 +1289,13 @@ span[data-role="close"]:before {
   top: -4px;
   right: 1.5px;
 }
+/*------------------------------------*\
+    $NAVBAR
+\*------------------------------------*/
 .navbar {
   position: fixed;
   width: 100%;
-  background-color: #3f51b5;
+  background-color: #009688;
   font-size: 24px;
   color: #ffffff;
   z-index: 97;
@@ -1304,10 +1310,10 @@ span[data-role="close"]:before {
 }
 .navbar a:hover,
 .navbar a:focus {
-  background-color: #5c6bc0;
+  background-color: #26a69a;
 }
 .navbar a:active {
-  background-color: #7986cb;
+  background-color: #4db6ac;
 }
 @media (max-width: 800px) {
   .navbar a:hover,
@@ -1315,7 +1321,7 @@ span[data-role="close"]:before {
     background-color: inherit;
   }
   .navbar a:active {
-    background-color: #5c6bc0;
+    background-color: #26a69a;
   }
 }
 .navbar [data-icon]:before {
@@ -1421,6 +1427,9 @@ span[data-role="close"]:before {
     margin-left: 0px;
   }
 }
+/*------------------------------------*\
+    $SNACKBAR
+\*------------------------------------*/
 .snackbar {
   position: fixed;
   bottom: -68px;
@@ -1458,6 +1467,9 @@ span[data-role="close"]:before {
     width: 100%;
   }
 }
+/*------------------------------------*\
+    $SWIPE-MENU
+\*------------------------------------*/
 .swipe-menu {
   background-color: #ffffff;
   width: 300px;
@@ -1544,7 +1556,7 @@ span[data-role="close"]:before {
   opacity: 0.6;
 }
 /*------------------------------------*\
-    $TARJETAS
+    $TABLAS
 \*------------------------------------*/
 table {
   width: 100%;
@@ -1875,18 +1887,18 @@ table.centered {
 }
 .primary.btn-flat,
 button.primary {
-  color: #3f51b5;
+  color: #009688;
 }
 .primary.btn-raised,
 .primary.btn-float,
 .primary.btn-float-mini {
-  background-color: #3f51b5;
+  background-color: #009688;
   color: #ffffff;
 }
 .primary.btn-raised:active,
 .primary.btn-float:active,
 .primary.btn-float-mini:active {
-  background-color: #5c6bc0;
+  background-color: #26a69a;
 }
 .info {
   /*Buttons*/
