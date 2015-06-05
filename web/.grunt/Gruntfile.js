@@ -3,15 +3,16 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         less: {
-            development: {
+            production: {
                 options: {
-                    cleancss: true
+                    cleancss: true,
+                    compress: true
                 },
                 files: {
                     '../src/css/style.min.css': '../src/css/less/style.less'
                 }
             },
-            prodution: {
+          development: {
                 files: {
                     '../src/css/style.css': '../src/css/less/style.less'
                 }
