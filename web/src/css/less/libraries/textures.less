@@ -1,4 +1,14 @@
+/*------------------------------------*\
+    $TEXTURAS
+\*------------------------------------*/
+
+//Cambios globales en todas las texturas
 .primary, .info, .success, .alert, .error {
+
+  /*Buttons*/
+  &.btn-raised, &.btn-float, &.btn-float-mini {
+    color:@white;
+  }
 
   /*blockquote*/
   blockquote& {
@@ -7,6 +17,8 @@
   }
 }
 
+
+//Específicos de cada textura
 .primary {
   /*Buttons*/
   &.btn-flat, button& {
@@ -15,7 +27,6 @@
 
   &.btn-raised, &.btn-float, &.btn-float-mini {
     background-color: @brand-color;
-    color:@white;
     &:active {
       background-color: @brand-color-focus;
     }
@@ -35,7 +46,6 @@
 
   &.btn-raised, &.btn-float, &.btn-float-mini {
     background-color: @md-color-info;
-    color:@white;
     &:active {
       background-color: @md-color-info-focus;
     }
@@ -55,7 +65,6 @@
 
   &.btn-raised, &.btn-float, &.btn-float-mini {
     background-color: @md-color-success;
-    color:@white;
     &:active {
       background-color: @md-color-success-focus;
     }
@@ -75,7 +84,6 @@
 
   &.btn-raised, &.btn-float, &.btn-float-mini {
     background-color: @md-color-alert;
-    color:@white;
     &:active {
       background-color: @md-color-alert-focus;
     }
@@ -95,7 +103,6 @@
 
   &.btn-raised, &.btn-float, &.btn-float-mini {
     background-color: @md-color-error;
-    color:@white;
     &:active {
       background-color: @md-color-error-focus;
     }

@@ -457,8 +457,6 @@ dfn {
   font-style: italic;
 }
 blockquote {
-  font-family: 'Roboto', sans-serif;
-  text-align: left;
   font-size: 1.2rem;
   font-style: italic;
   color: #8c8c8c;
@@ -1905,12 +1903,33 @@ table.centered {
     background: #fff !important;
   }
 }
+/*------------------------------------*\
+    $TEXTURAS
+\*------------------------------------*/
 .primary,
 .info,
 .success,
 .alert,
 .error {
+  /*Buttons*/
   /*blockquote*/
+}
+.primary.btn-raised,
+.info.btn-raised,
+.success.btn-raised,
+.alert.btn-raised,
+.error.btn-raised,
+.primary.btn-float,
+.info.btn-float,
+.success.btn-float,
+.alert.btn-float,
+.error.btn-float,
+.primary.btn-float-mini,
+.info.btn-float-mini,
+.success.btn-float-mini,
+.alert.btn-float-mini,
+.error.btn-float-mini {
+  color: #ffffff;
 }
 blockquote.primary,
 blockquote.info,
@@ -1932,7 +1951,6 @@ button.primary {
 .primary.btn-float,
 .primary.btn-float-mini {
   background-color: #009688;
-  color: #ffffff;
 }
 .primary.btn-raised:active,
 .primary.btn-float:active,
@@ -1954,7 +1972,6 @@ button.info {
 .info.btn-float,
 .info.btn-float-mini {
   background-color: #42a5f5;
-  color: #ffffff;
 }
 .info.btn-raised:active,
 .info.btn-float:active,
@@ -1976,7 +1993,6 @@ button.success {
 .success.btn-float,
 .success.btn-float-mini {
   background-color: #66bb6a;
-  color: #ffffff;
 }
 .success.btn-raised:active,
 .success.btn-float:active,
@@ -1998,7 +2014,6 @@ button.alert {
 .alert.btn-float,
 .alert.btn-float-mini {
   background-color: #ffca28;
-  color: #ffffff;
 }
 .alert.btn-raised:active,
 .alert.btn-float:active,
@@ -2020,7 +2035,6 @@ button.error {
 .error.btn-float,
 .error.btn-float-mini {
   background-color: #ef5350;
-  color: #ffffff;
 }
 .error.btn-raised:active,
 .error.btn-float:active,
