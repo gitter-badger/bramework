@@ -32,22 +32,22 @@
   font-feature-settings: 'liga';
 }
 
-[data-icon~="llight"]:before {
+[data-icon].light:before {
   color: @white;
 }
 
-[data-icon~="lg"]:before {
+[data-icon].lg:before {
   font-size: 1.33333333em;
   line-height: .75em;
   vertical-align: -15%;
 }
 
-[data-icon~="fw"]:before {
+[data-icon].fw:before {
   width: 1.28571429em;
   text-align: center;
 }
 
-[data-icon~="spin"]:before {
+[data-icon].spin:before {
   -webkit-animation: spin 2s infinite linear;
   -moz-animation: spin 2s infinite linear;
   -o-animation: spin 2s infinite linear;
@@ -72,7 +72,7 @@
     transform: rotate(359deg)};
 }
 
-[data-icon~="rotate-90"]:before {
+[data-icon].rotate-90:before {
   //    filter: progid: DXImageTransform.Microsoft.BasicImage(rotation=1);
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);

@@ -1973,6 +1973,82 @@ button.error {
   background-color: #f44336;
 }
 /*------------------------------------*\
+    $EMOJI TWITTER
+\*------------------------------------*/
+[data-emoji] {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  margin: 0 .05em 0 .1em;
+  vertical-align: -0.1em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 1em 1em;
+}
+[data-emoji].laught {
+  -webkit-animation-name: laught;
+  -webkit-animation-duration: 150ms;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-play-state: running;
+  animation-name: laught;
+  animation-duration: 150ms;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-play-state: running;
+}
+@keyframes laught {
+  from {
+    transform: translateY(1px);
+  }
+  to {
+    transform: translateY(-1px);
+  }
+}
+[data-emoji].beat {
+  -webkit-animation-name: beat;
+  -webkit-animation-duration: 400ms;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-play-state: running;
+  animation-name: beat;
+  animation-duration: 400ms;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-play-state: running;
+}
+@keyframes beat {
+  from {
+    height: 1em;
+    width: 1em;
+    vertical-align: -0.1em;
+    background-size: 1em 1em;
+  }
+  to {
+    height: 1.33em;
+    width: 1.33em;
+    vertical-align: -0.133em;
+    background-size: 1.33em 1.33em;
+  }
+}
+[data-emoji="smile"] {
+  background-image: url("../img/svg/emoji/twitter/1f604.svg");
+}
+[data-emoji="joy"] {
+  background-image: url("../img/svg/emoji/twitter/1f602.svg");
+}
+[data-emoji="heart"] {
+  background-image: url("../img/svg/emoji/twitter/2764.svg");
+}
+/*------------------------------------*\
     $MATERIAL ICONS
 \*------------------------------------*/
 [data-icon]:before {
@@ -1997,19 +2073,19 @@ button.error {
   /* Support for IE. */
   font-feature-settings: 'liga';
 }
-[data-icon~="llight"]:before {
+[data-icon].light:before {
   color: #ffffff;
 }
-[data-icon~="lg"]:before {
+[data-icon].lg:before {
   font-size: 1.33333333em;
   line-height: .75em;
   vertical-align: -15%;
 }
-[data-icon~="fw"]:before {
+[data-icon].fw:before {
   width: 1.28571429em;
   text-align: center;
 }
-[data-icon~="spin"]:before {
+[data-icon].spin:before {
   -webkit-animation: spin 2s infinite linear;
   -moz-animation: spin 2s infinite linear;
   -o-animation: spin 2s infinite linear;
@@ -2049,7 +2125,7 @@ button.error {
     transform: rotate(359deg);
   }
 }
-[data-icon~="rotate-90"]:before {
+[data-icon].rotate-90:before {
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
