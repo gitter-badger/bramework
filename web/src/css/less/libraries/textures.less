@@ -2,6 +2,19 @@
     $TEXTURAS
 \*------------------------------------*/
 
+@color-success: @md-color-success;
+@color-success-focus: @md-color-success-focus;
+@color-success-light: @md-color-success-light;
+@color-info: @md-color-info;
+@color-info-focus: @md-color-info-focus;
+@color-info-light: @md-color-info-light;
+@color-alert: @md-color-alert;
+@color-alert-focus: @md-color-alert-focus;
+@color-alert-light: @md-color-alert-light;
+@color-error: @md-color-error;
+@color-error-focus: @md-color-error-focus;
+@color-error-light: @md-color-error-light;
+
 //Cambios globales en todas las texturas
 .primary, .info, .success, .alert, .error {
 
@@ -41,75 +54,75 @@
 .info {
   /*Buttons*/
   &.btn-flat, button& {
-    color: @md-color-info;
+    color: @color-info;
   }
 
   &.btn-raised, &.btn-float, &.btn-float-mini {
-    background-color: @md-color-info;
+    background-color: @color-info;
     &:active {
-      background-color: @md-color-info-focus;
+      background-color: @color-info-focus;
     }
   }
 
   /*blockquote*/
   blockquote& {
-    background-color: @md-color-info;
+    background-color: @color-info;
   }
 }
 
 .success  {
   /*Buttons*/
   &.btn-flat, button& {
-    color: @md-color-success;
+    color: @color-success;
   }
 
   &.btn-raised, &.btn-float, &.btn-float-mini {
-    background-color: @md-color-success;
+    background-color: @color-success;
     &:active {
-      background-color: @md-color-success-focus;
+      background-color: @color-success-focus;
     }
   }
 
   /*blockquote*/
   blockquote& {
-    background-color: @md-color-success;
+    background-color: @color-success;
   }
 }
 
 .alert  {
   /*Buttons*/
   &.btn-flat, button& {
-    color: @md-color-alert;
+    color: @color-alert;
   }
 
   &.btn-raised, &.btn-float, &.btn-float-mini {
-    background-color: @md-color-alert;
+    background-color: @color-alert;
     &:active {
-      background-color: @md-color-alert-focus;
+      background-color: @color-alert-focus;
     }
   }
 
   /*blockquote*/
   blockquote& {
-    background-color: @md-color-alert;
+    background-color: @color-alert;
   }
 }
 
 .error  {
   /*Buttons*/
   &.btn-flat, button& {
-    color: @md-color-error;
+    color: @color-error;
   }
 
   &.btn-raised, &.btn-float, &.btn-float-mini {
-    background-color: @md-color-error;
+    background-color: @color-error;
     &:active {
-      background-color: @md-color-error-focus;
+      background-color: @color-error-focus;
     }
   }
 
   /*blockquote*/
   blockquote& {
-    background-color: @md-color-error;
+    background-color: @color-error;
   }
 }
