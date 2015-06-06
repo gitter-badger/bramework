@@ -15,8 +15,8 @@
 
 //Color texto
 @text-color      : @grey-700;
-@text-color-dark : darken(@text-color, 10%);
-@text-color-light: lighten(@text-color, 30%);
+@text-color-dark : @grey-800;
+@text-color-light: @grey-450;
 
 //Color links
 @link-color        : @brand-color;
@@ -214,6 +214,11 @@ small,
 }
 
 
+//Texto claro y oscuro
+.light-text {color: @text-color-light;}
+.dark-text {color: @text-color-dark;}
+
+
 //Cita (cita o nombra al autor o creador de algo)
 cite {
   font-style: italic;
@@ -255,19 +260,32 @@ dfn {
 
 
 //Estilos de los destacados
+//se pueden aplicar texturas. Ver 'libraries/textures.less'
 blockquote{
-  font-family: @font-family-base;
-  text-align: left;
-  font-size: @font-size-base;
+  font-size: @font-size-large;
   font-style: italic;
-  color: @grey-450;
-  margin: 20px 0;
-  padding-left: 10px;
+  color: @text-color-light;
+  line-height: @line-height-base;
+  margin: 20px;
+  padding: 40px;
+  border-radius: @border-radius;
   border-left: 10px solid @grey-100;
   footer {
-    margin-top: 0.5em;
-    font-size: 0.85em;
-    color: @grey-300;
+    margin-top: .6em;
+    font-size: @font-size-small;
+    opacity: 0.6;
+    a {
+      color: inherit;
+      &:hover {
+        color: inherit;
+      }
+    }
+  }
+
+  @media (max-width: @bp-small) {
+    .margin-horizontal(0);
+    .margin-vertical(10px);
+    padding: 20px;
   }
 }
 

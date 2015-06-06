@@ -13,7 +13,7 @@
 //    .animation-backgrounds;
 //}
 
-.animation (@name, @duration, @function: linear, @delay: 0s, @count: infinite, @direction, alternate, @play-state) {
+.animation (@name, @duration, @function: ease-in-out, @delay: 0s, @count: infinite, @direction: alternate, @play-state: running) {
   -webkit-animation-name: @name;
   -webkit-animation-duration: @duration;
   -webkit-animation-timing-function: @function;

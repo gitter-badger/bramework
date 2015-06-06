@@ -419,7 +419,13 @@ small,
   font-family: 'Roboto', sans-serif;
   font-size: 0.85rem;
   font-weight: 400;
-  color: #9a9a9a;
+  color: #8c8c8c;
+}
+.light-text {
+  color: #8c8c8c;
+}
+.dark-text {
+  color: #333333;
 }
 cite {
   font-style: italic;
@@ -451,19 +457,34 @@ dfn {
   font-style: italic;
 }
 blockquote {
-  font-family: 'Roboto', sans-serif;
-  text-align: left;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-style: italic;
   color: #8c8c8c;
-  margin: 20px 0;
-  padding-left: 10px;
+  line-height: 1.5em;
+  margin: 20px;
+  padding: 40px;
+  border-radius: 2px;
   border-left: 10px solid #e6e6e6;
 }
 blockquote footer {
-  margin-top: 0.5em;
-  font-size: 0.85em;
-  color: #b3b3b3;
+  margin-top: .6em;
+  font-size: 0.85rem;
+  opacity: 0.6;
+}
+blockquote footer a {
+  color: inherit;
+}
+blockquote footer a:hover {
+  color: inherit;
+}
+@media (max-width: 414px) {
+  blockquote {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+  }
 }
 q:before {
   content: "«";
@@ -998,7 +1019,7 @@ form label {
   font-family: 'Roboto', sans-serif;
   font-size: 0.85rem;
   font-weight: 400;
-  color: #9a9a9a;
+  color: #8c8c8c;
 }
 form input {
   background-color: transparent;
@@ -1225,7 +1246,7 @@ img {
   vertical-align: middle;
 }
 figcaption {
-  color: #9a9a9a;
+  color: #8c8c8c;
   font-size: 0.85rem;
   font-style: italic;
 }
@@ -1882,8 +1903,45 @@ table.centered {
     background: #fff !important;
   }
 }
+/*------------------------------------*\
+    $TEXTURAS
+\*------------------------------------*/
+.primary,
+.info,
+.success,
+.alert,
+.error {
+  /*Buttons*/
+  /*blockquote*/
+}
+.primary.btn-raised,
+.info.btn-raised,
+.success.btn-raised,
+.alert.btn-raised,
+.error.btn-raised,
+.primary.btn-float,
+.info.btn-float,
+.success.btn-float,
+.alert.btn-float,
+.error.btn-float,
+.primary.btn-float-mini,
+.info.btn-float-mini,
+.success.btn-float-mini,
+.alert.btn-float-mini,
+.error.btn-float-mini {
+  color: #ffffff;
+}
+blockquote.primary,
+blockquote.info,
+blockquote.success,
+blockquote.alert,
+blockquote.error {
+  color: #ffffff;
+  border-left: 0;
+}
 .primary {
   /*Buttons*/
+  /*blockquote*/
 }
 .primary.btn-flat,
 button.primary {
@@ -1893,15 +1951,18 @@ button.primary {
 .primary.btn-float,
 .primary.btn-float-mini {
   background-color: #009688;
-  color: #ffffff;
 }
 .primary.btn-raised:active,
 .primary.btn-float:active,
 .primary.btn-float-mini:active {
   background-color: #26a69a;
 }
+blockquote.primary {
+  background-color: #009688;
+}
 .info {
   /*Buttons*/
+  /*blockquote*/
 }
 .info.btn-flat,
 button.info {
@@ -1911,15 +1972,18 @@ button.info {
 .info.btn-float,
 .info.btn-float-mini {
   background-color: #42a5f5;
-  color: #ffffff;
 }
 .info.btn-raised:active,
 .info.btn-float:active,
 .info.btn-float-mini:active {
   background-color: #2196f3;
 }
+blockquote.info {
+  background-color: #42a5f5;
+}
 .success {
   /*Buttons*/
+  /*blockquote*/
 }
 .success.btn-flat,
 button.success {
@@ -1929,15 +1993,18 @@ button.success {
 .success.btn-float,
 .success.btn-float-mini {
   background-color: #66bb6a;
-  color: #ffffff;
 }
 .success.btn-raised:active,
 .success.btn-float:active,
 .success.btn-float-mini:active {
   background-color: #4caf50;
 }
+blockquote.success {
+  background-color: #66bb6a;
+}
 .alert {
   /*Buttons*/
+  /*blockquote*/
 }
 .alert.btn-flat,
 button.alert {
@@ -1947,15 +2014,18 @@ button.alert {
 .alert.btn-float,
 .alert.btn-float-mini {
   background-color: #ffca28;
-  color: #ffffff;
 }
 .alert.btn-raised:active,
 .alert.btn-float:active,
 .alert.btn-float-mini:active {
   background-color: #ffc107;
 }
+blockquote.alert {
+  background-color: #ffca28;
+}
 .error {
   /*Buttons*/
+  /*blockquote*/
 }
 .error.btn-flat,
 button.error {
@@ -1965,15 +2035,93 @@ button.error {
 .error.btn-float,
 .error.btn-float-mini {
   background-color: #ef5350;
-  color: #ffffff;
 }
 .error.btn-raised:active,
 .error.btn-float:active,
 .error.btn-float-mini:active {
   background-color: #f44336;
 }
+blockquote.error {
+  background-color: #ef5350;
+}
 /*------------------------------------*\
-    $MATERIAL ICONS
+    $EMOJI TWITTER
+\*------------------------------------*/
+[data-emoji] {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  margin: 0 .05em 0 .1em;
+  vertical-align: -0.1em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 1em 1em;
+}
+[data-emoji].laught {
+  -webkit-animation-name: laught;
+  -webkit-animation-duration: 150ms;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-play-state: running;
+  animation-name: laught;
+  animation-duration: 150ms;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-play-state: running;
+}
+@keyframes laught {
+  from {
+    transform: translateY(1px);
+  }
+  to {
+    transform: translateY(-1px);
+  }
+}
+[data-emoji].beat {
+  -webkit-animation-name: beat;
+  -webkit-animation-duration: 400ms;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-play-state: running;
+  animation-name: beat;
+  animation-duration: 400ms;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-play-state: running;
+}
+@keyframes beat {
+  from {
+    height: 1em;
+    width: 1em;
+    vertical-align: -0.1em;
+    background-size: 1em 1em;
+  }
+  to {
+    height: 1.33em;
+    width: 1.33em;
+    vertical-align: -0.133em;
+    background-size: 1.33em 1.33em;
+  }
+}
+[data-emoji="smile"] {
+  background-image: url("../img/svg/emoji/twitter/1f604.svg");
+}
+[data-emoji="joy"] {
+  background-image: url("../img/svg/emoji/twitter/1f602.svg");
+}
+[data-emoji="heart"] {
+  background-image: url("../img/svg/emoji/twitter/2764.svg");
+}
+/*------------------------------------*\
+    $MATERIAL DESIGN ICONS
 \*------------------------------------*/
 [data-icon]:before {
   font-family: 'Material Icons';
@@ -1997,19 +2145,19 @@ button.error {
   /* Support for IE. */
   font-feature-settings: 'liga';
 }
-[data-icon~="llight"]:before {
+[data-icon].light:before {
   color: #ffffff;
 }
-[data-icon~="lg"]:before {
+[data-icon].lg:before {
   font-size: 1.33333333em;
   line-height: .75em;
   vertical-align: -15%;
 }
-[data-icon~="fw"]:before {
+[data-icon].fw:before {
   width: 1.28571429em;
   text-align: center;
 }
-[data-icon~="spin"]:before {
+[data-icon].spin:before {
   -webkit-animation: spin 2s infinite linear;
   -moz-animation: spin 2s infinite linear;
   -o-animation: spin 2s infinite linear;
@@ -2049,7 +2197,7 @@ button.error {
     transform: rotate(359deg);
   }
 }
-[data-icon~="rotate-90"]:before {
+[data-icon].rotate-90:before {
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
