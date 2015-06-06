@@ -15,8 +15,8 @@
 
 //Color texto
 @text-color      : @grey-700;
-@text-color-dark : darken(@text-color, 10%);
-@text-color-light: lighten(@text-color, 30%);
+@text-color-dark : @grey-800;
+@text-color-light: @grey-500;
 
 //Color links
 @link-color        : @brand-color;
@@ -212,6 +212,11 @@ small,
   font-weight: @font-weight-base;
   color      : @text-color-light;
 }
+
+
+//Texto claro y oscuro
+.light-text {color: @text-color-light;}
+.dark-text {color: @text-color-dark;}
 
 
 //Cita (cita o nombra al autor o creador de algo)
