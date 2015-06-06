@@ -419,10 +419,10 @@ small,
   font-family: 'Roboto', sans-serif;
   font-size: 0.85rem;
   font-weight: 400;
-  color: #808080;
+  color: #8c8c8c;
 }
 .light-text {
-  color: #808080;
+  color: #8c8c8c;
 }
 .dark-text {
   color: #333333;
@@ -459,17 +459,34 @@ dfn {
 blockquote {
   font-family: 'Roboto', sans-serif;
   text-align: left;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-style: italic;
   color: #8c8c8c;
-  margin: 20px 0;
-  padding-left: 10px;
+  line-height: 1.5em;
+  margin: 20px;
+  padding: 40px;
+  border-radius: 2px;
   border-left: 10px solid #e6e6e6;
 }
 blockquote footer {
-  margin-top: 0.5em;
-  font-size: 0.85em;
-  color: #b3b3b3;
+  margin-top: .6em;
+  font-size: 0.85rem;
+  opacity: 0.6;
+}
+blockquote footer a {
+  color: inherit;
+}
+blockquote footer a:hover {
+  color: inherit;
+}
+@media (max-width: 414px) {
+  blockquote {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+  }
 }
 q:before {
   content: "«";
@@ -1004,7 +1021,7 @@ form label {
   font-family: 'Roboto', sans-serif;
   font-size: 0.85rem;
   font-weight: 400;
-  color: #808080;
+  color: #8c8c8c;
 }
 form input {
   background-color: transparent;
@@ -1231,7 +1248,7 @@ img {
   vertical-align: middle;
 }
 figcaption {
-  color: #808080;
+  color: #8c8c8c;
   font-size: 0.85rem;
   font-style: italic;
 }
@@ -1888,8 +1905,24 @@ table.centered {
     background: #fff !important;
   }
 }
+.primary,
+.info,
+.success,
+.alert,
+.error {
+  /*blockquote*/
+}
+blockquote.primary,
+blockquote.info,
+blockquote.success,
+blockquote.alert,
+blockquote.error {
+  color: #ffffff;
+  border-left: 0;
+}
 .primary {
   /*Buttons*/
+  /*blockquote*/
 }
 .primary.btn-flat,
 button.primary {
@@ -1906,8 +1939,12 @@ button.primary {
 .primary.btn-float-mini:active {
   background-color: #26a69a;
 }
+blockquote.primary {
+  background-color: #009688;
+}
 .info {
   /*Buttons*/
+  /*blockquote*/
 }
 .info.btn-flat,
 button.info {
@@ -1924,8 +1961,12 @@ button.info {
 .info.btn-float-mini:active {
   background-color: #2196f3;
 }
+blockquote.info {
+  background-color: #42a5f5;
+}
 .success {
   /*Buttons*/
+  /*blockquote*/
 }
 .success.btn-flat,
 button.success {
@@ -1942,8 +1983,12 @@ button.success {
 .success.btn-float-mini:active {
   background-color: #4caf50;
 }
+blockquote.success {
+  background-color: #66bb6a;
+}
 .alert {
   /*Buttons*/
+  /*blockquote*/
 }
 .alert.btn-flat,
 button.alert {
@@ -1960,8 +2005,12 @@ button.alert {
 .alert.btn-float-mini:active {
   background-color: #ffc107;
 }
+blockquote.alert {
+  background-color: #ffca28;
+}
 .error {
   /*Buttons*/
+  /*blockquote*/
 }
 .error.btn-flat,
 button.error {
@@ -1977,6 +2026,9 @@ button.error {
 .error.btn-float:active,
 .error.btn-float-mini:active {
   background-color: #f44336;
+}
+blockquote.error {
+  background-color: #ef5350;
 }
 /*------------------------------------*\
     $EMOJI TWITTER
