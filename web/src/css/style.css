@@ -2121,7 +2121,7 @@ blockquote.error {
   background-image: url("../img/svg/emoji/twitter/2764.svg");
 }
 /*------------------------------------*\
-    $MATERIAL ICONS
+    $MATERIAL DESIGN ICONS
 \*------------------------------------*/
 [data-icon]:before {
   font-family: 'Material Icons';
