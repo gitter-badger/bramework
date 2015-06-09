@@ -4,9 +4,12 @@ var actionButtonBox;
 
 function loadActionButton() {
   actionButtonBox = document.getElementById("action-button");
-  var button = actionButtonBox.getElementsByTagName("button")[0];
-  button.addEventListener("click", actionButton);
-  console.info("Cargado Action Button.")
+  if (actionButtonBox) {
+    activator.addEventListener('click', swipeMenu);
+    var button = actionButtonBox.getElementsByTagName("button")[0];
+    button.addEventListener("click", actionButton);
+    console.info("Cargado Action Button.")
+  }
 }
 
 function actionButton() {

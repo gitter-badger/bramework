@@ -37,11 +37,11 @@ var shadowSlideEndX;
       menu = document.getElementById(strings.menuId);
       body = document.getElementsByTagName('body')[0];
       body.addEventListener('touchstart', slideStart);
-      if (activator) {
+      if (activator && menu) {
         activator.addEventListener('click', swipeMenu);
+        body.addEventListener('touchend', slideEnd);
+        console.info("Cargado Slide Menu.")
       }
-      body.addEventListener('touchend', slideEnd);
-      console.info("Cargado Slide Menu.")
     }
 
 //Función que abre el menú
