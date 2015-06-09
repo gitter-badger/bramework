@@ -1,26 +1,40 @@
 //Función que crea y muestra un mensaje con el texto
 //que indiquemos al llamar la función.
 
-var snackBody;
-var message;
+function snackbar(text, icon) {
+  var body = document.getElementsByTagName("body")[0];
+  var message = document.createElement("div");
+    message.id = "snackbar";
+    message.classList.add("snackbar");
+  var string;
+  if (icon != undefined) {
+    string = "<p data-icon="+icon+">"+text+"</p>"
+  }
+  else {
+    string = "<p>"+text+"</p>"
+  }
+  message.innerHTML = string;
+  body.appendChild(message);
 
-function startSnackbar() {
-  snackBody = document.getElementsByTagName("body")[0];
-}
-
-function snackbar(text) {
-  snackBody.innerHTML += "<div id='snackbar' class='snackbar'><p>"+text+"</p><button class='t-alert'>Ok</button></div>";
-  message = document.getElementById("snackbar");
-
-  setTimeout(function(){
+  //Funciones
+  function openSnackbar() {
     message.classList.add("open");
-  }, 0.1);
-
-  setTimeout(function(){
+  }
+  function closeSnackbar() {
     message.classList.remove("open");
     setTimeout(function(){
       message.remove();
     }, 200);
+  }
 
+  //Eventos
+  message.addEventListener("click", closeSnackbar);
+  setTimeout(function(){
+    openSnackbar();
+  }, 0.1);
+
+  setTimeout(function(){
+    closeSnackbar();
   }, 4000);
+
 }

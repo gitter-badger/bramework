@@ -39,7 +39,7 @@ INFO
   <meta name="apple-mobile-web-app-title" content="">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <link rel="apple-touch-startup-image" href="src/img/brand/icon-196x196.png">
+<!--  <link rel="apple-touch-startup-image" href="src/img/brand/icon-196x196.png">-->
   <link rel="apple-touch-icon" sizes="152x152" href="src/img/brand/apple-touch-icon-152x152.png">
 
   <!-- Windows -->
@@ -48,7 +48,7 @@ INFO
   <meta name="msapplication-config" content="browserconfig.xml">
 
   <!-- Iconos -->
-  <link rel="icon" type="image/png" sizes="196x196" href="src/img/brand/icon-196x196.png">
+<!--  <link rel="icon" type="image/png" sizes="196x196" href="src/img/brand/icon-196x196.png">-->
 
   <!-- OpenGraph Facebook -->
   <meta property="og:type" content="web">
@@ -87,9 +87,12 @@ INFO
   </header>
 
   <main>
-    <button onclick="snackbar('Descarga completada');">Mensaje 1</button>
-    <button onclick="snackbar('mensaje');">Mensaje 2</button>
+    <button onclick="snackbar('Descarga completada', 'info');">Mensaje 1</button>
+    <button onclick="snackbar('mensaje', 'error');">Algo saiu mal</button>
+    <button onclick="snackbar('men');">Mensaje 3</button>
 
+
+    <div id="snackbar" class="snackbar"><p data-icon="menu">Descarga completada</p></div>
   </main>
 
   <footer>
