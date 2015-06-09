@@ -1456,7 +1456,7 @@ span[data-role="close"]:before {
   bottom: -68px;
   left: 0;
   color: #ffffff;
-  background-color: #263238;
+  background-color: #37474f;
   height: 48px;
   width: 350px;
   display: flex;
@@ -1477,6 +1477,11 @@ span[data-role="close"]:before {
 .snackbar p {
   flex-grow: 1;
   padding-right: 24px;
+}
+.snackbar p:before {
+  margin-right: 24px;
+  font-size: 24px;
+  vertical-align: bottom;
 }
 .snackbar.open {
   transform: translateY(-68px);
@@ -1659,7 +1664,7 @@ table.centered {
   bottom: -68px;
   left: 0;
   color: #ffffff;
-  background-color: #263238;
+  background-color: #37474f;
   height: 48px;
   width: 350px;
   display: flex;
@@ -1680,6 +1685,11 @@ table.centered {
 .md-snackbar p {
   flex-grow: 1;
   padding-right: 24px;
+}
+.md-snackbar p:before {
+  margin-right: 24px;
+  font-size: 24px;
+  vertical-align: bottom;
 }
 .md-snackbar.open {
   transform: translateY(-68px);
