@@ -77,9 +77,13 @@
 //Botones circulares
 .md-float() {
   .md-raised();
+  .shadow(2);
   .circle(56px);
   line-height: 56px;
   font-size: 26px;
+  &:hover, &:focus {
+    .shadow(3);
+  }
   &[data-icon]:before {
     position: absolute;
     top: 15px;
@@ -91,9 +95,13 @@
 //Botones circulares pequeños
 .md-float-mini() {
   .md-raised();
+  .shadow(2);
   .circle(40px);
   line-height: 40px;
   font-size: 26px;
+  &:hover, &:focus {
+    .shadow(3);
+  }
   &[data-icon]:before {
     position: absolute;
     top: 7px;

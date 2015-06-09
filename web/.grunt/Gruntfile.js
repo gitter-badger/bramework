@@ -22,7 +22,7 @@ module.exports = function (grunt) {
         uglify: {
           scripts: {
             files: {
-              '../src/js/script.min.js': ['../src/js/vendor/*.js', '../src/js/polyfills/*.js', '../src/js/scripts/*.js']
+              '../src/js/script.min.js': [ '../src/js/scripts/_onload.js',  '../src/js/scripts/*.js', '../src/js/vendor/*.js', '../src/js/polyfills/*.js']
             }
           }
         },

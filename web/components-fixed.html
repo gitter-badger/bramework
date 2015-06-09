@@ -79,19 +79,23 @@
 
   <main>
 
-
+    <!-- Snackbar -->
+    <button onclick="snackbar('Mensaje con icono', 'info');">Snackbar 1</button>
+    <button onclick="snackbar('Mensaje sin icono');">Snackbar 2</button>
 
   </main>
 
   <footer>
+    <!-- Action Button -->
     <div id="action-button" class="action-button">
-      <button class="btn-float primary" data-icon="add"></button>
+      <button class="btn-float primary" data-icon="share"></button>
 
+      <!-- Max. 4 elementos -->
       <div class="action-button-content">
-        <button class="btn-float-mini info" data-icon="home"></button>
-        <button class="btn-float-mini alert" data-icon="home"></button>
-        <button class="btn-float-mini success" data-icon="home"></button>
-        <button class="btn-float-mini error" data-icon="home"></button>
+        <button class="btn-float-mini info" data-icon="pages"></button>
+        <button class="btn-float-mini alert" data-icon="whatshot"></button>
+        <button class="btn-float-mini success" data-icon="people"></button>
+        <button class="btn-float-mini error" data-icon="school"></button>
       </div>
     </div>
   </footer>
