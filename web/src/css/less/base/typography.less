@@ -4,7 +4,7 @@
 
 //A continuación se definen todas las variables relativas a la tipografía
 //Fuente
-@font-family-sans-serif: 'Roboto', sans-serif;
+@font-family-sans-serif: "Roboto", sans-serif;
 @font-family-serif     : Georgia, "Times New Roman", Times, serif;
 @font-family-monospace : monospace;
 
@@ -20,8 +20,8 @@
 
 //Color links
 @link-color        : @brand-color;
-@link-color-hover  : lighten(@link-color, 30%);
-@link-color-active : @brand-color-focus;
+@link-color-hover  : @brand-color-focus;
+@link-color-active : @brand-color-active;
 @link-color-visited: @link-color;
 
 //Tamaños de letra
@@ -34,7 +34,7 @@
 @font-size-h3: 1.7rem;
 @font-size-h4: 1.3rem; //~20px - Title
 @font-size-h5: 1rem; //~16px
-@font-size-h6: 0.8rem;
+@font-size-h6: 1rem;
 
 //Grosores de letra. Hai que axustalos se cambiamos a tipografía.
 //Roboto 100, 300, 400, 500, 700, 900
@@ -50,7 +50,8 @@
 @font-weight-h6: 500;
 
 //Márgenes y altos de línes
-@headings-margin-vertical: 1em;
+@headings-margin-top     : 1em;
+@headings-margin-bottom  : .5em;
 @line-height-base        : 1.5em; //Alto de línea para párrafos y listas
 @margin-bottom-base      : 2em;
 
@@ -62,70 +63,54 @@
 @word-spacing-narrow: -0.05em;
 @word-spacing-wide  : 0.05em;
 
-//Encabezados
-/**
-* Las clases con nombre de encabezados sirven para dar un estilo de un
-* encabezado a otro, para cambiar el estilo visual manteniendo
-* una correcta semántica del HTML.
-*/
+
+/**ENCABEZADOS
+ * Las clases con nombre de encabezados sirven para dar un estilo de un
+ * encabezado a otro, para cambiar el estilo visual manteniendo una correcta
+ * semántica del HTML.
+ */
+
  h1,  h2,  h3,  h4,  h5,  h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: @font-family-title;
   text-rendering: optimizeLegibility;
-  margin-top: 0;
+  margin-top: @headings-margin-top;
+  margin-bottom: @headings-margin-bottom;
 }
 
 h1, .h1 {
   font-size: @font-size-h1;
   font-weight: @font-weight-h1;
-  color: @text-color;
-  .margin-vertical (@headings-margin-vertical);
-  //line-height: 0;
 }
 
 h2, .h2 {
   font-size: @font-size-h2;
   font-weight: @font-weight-h2;
-  color: @text-color;
-  .margin-vertical (@headings-margin-vertical);
-  //line-height: 0;
 }
 
 h3, .h3 {
   font-size: @font-size-h3;
   font-weight: @font-weight-h3;
-  color: @text-color;
-  .margin-vertical (@headings-margin-vertical);
-  //line-height: 0;
 }
 
 h4, .h4 {
   font-size: @font-size-h4;
   font-weight: @font-weight-h4;
-  color: @text-color;
-  .margin-vertical (@headings-margin-vertical);
-  //line-height: 0;
 }
 
 h5, .h5 {
   font-size  : @font-size-h5;
   font-weight: @font-weight-h5;
-  color: @text-color;
-  .margin-vertical (@headings-margin-vertical);
-  //line-height: 0;
 }
 
 h6, .h6 {
   font-size: @font-size-h6;
   font-weight: @font-weight-h6;
-  color: @text-color;
-  .margin-vertical (@headings-margin-vertical);
-  //line-height: 0;
 }
 
 
 //Links
-a, .link {
+a {
   color: @link-color;
   text-decoration: none;
   &:hover,
@@ -137,17 +122,18 @@ a, .link {
 }
 
 
-//Párrafo
+/**
+ * Formato básico de elemento del texto
+ */
 p,
 ul,
 ol,
-table,
 dl,
+table,
 address,
-form,
-dd {
-  font-weight  : @font-weight-base;
+form {
   text-align: left;
+  font-weight  : @font-weight-base;
   line-height  : @line-height-base;
   margin-top: 0;
   &:not(:last-child) {
@@ -157,66 +143,66 @@ dd {
 
 
 /**
-* Se identarán los párrafos con la clase '.indent' o
-* los párrafos dentro de un elemento con la clase '.indent'.
-*/
-.indent p,
-p.indent {
+ * Los párrafos con la clase '.story' se identarán y la primera letra será más
+ * grande. También se puede aplicar a un elemento padre.
+ */
+
+.story p,
+p.story {
   text-indent: 30px;
-}
-
-
-/**
-* Se mostrará la primera letra mas grande en los párrafos
-* con la clase '.first-letter-big' o en los párrafos dentro
-* de un elemento con la clase '.first-letter-big'.
-*/
-.first-letter-big p,
-p.first-letter-big {
   &:first-letter {
     font-size: 2em;
   }
 }
 
 
-//Listas
-/**
+/**LISTAS
  * El 'padding-left' elimina los estilos predefinidos de algunos navegadores
  */
+
 ul,
 ol {
   padding-left: 0;
-  //list-style-position:inside;
+  list-style-position:inside;
+
+  //Listas anidadas
+  li>& {
+    text-indent: 40px;
+    margin-bottom: inherit;
+  }
 }
 
-li>ul,
-li>ol,
-li>details>ul,
-li>details>ol {
-  margin-left: 40px;
-  margin-bottom: inherit;
+/* Van dentro de un 'dl' */
+dt {
+  font-weight: @font-weight-bold;
+  &:after {content: ":";}
+}
+
+dd {
+  text-indent: 20px;
 }
 
 
 //Negrita y cursiva
-b, strong, .bold {font-weight: @font-weight-bold;}
+b, strong {
+  font-weight: @font-weight-bold;
+}
 
-i, em, .italic {font-style: italic;}
+i, em {
+  font-style: italic;
+}
 
 
-//Small
-small,
-.small {
-  font-family: @font-family-base;
+//Small. Está como mixing para poder aplicarlo también a outros elementos.
+.small() {
   font-size  : @font-size-small;
   font-weight: @font-weight-base;
   color      : @text-color-light;
 }
 
-
-//Texto claro y oscuro
-.light-text {color: @text-color-light;}
-.dark-text {color: @text-color-dark;}
+small {
+  .small;
+}
 
 
 //Cita (cita o nombra al autor o creador de algo)
@@ -226,8 +212,7 @@ cite {
 
 
 //Texto resaltado
-mark,
-.mark {
+mark {
   background-color: yellow;
   color: inherit;
 }
@@ -243,31 +228,22 @@ abbr {
 }
 
 
-//Decripciones (dentro de 'dl')
-//Título de la descripción
-dt {
-  font-weight: @font-weight-bold;
-  &:after {content: ":";}
-}
-
-dd {margin-left: 20px; }
-
-
 //Definicion
 dfn {
   font-style: italic;
 }
 
 
-//Estilos de los destacados
-//se pueden aplicar texturas. Ver 'libraries/textures.less'
+/**
+ * Se pueden aplicar texturas. Ver 'libraries/textures.less'
+ */
 blockquote{
+  margin: 20px;
+  padding: 40px;
   font-size: @font-size-large;
   font-style: italic;
   color: @text-color-light;
   line-height: @line-height-base;
-  margin: 20px;
-  padding: 40px;
   border-radius: @border-radius;
   border-left: 10px solid @grey-100;
   footer {
@@ -289,6 +265,7 @@ blockquote{
   }
 }
 
+//Quote
 q {
   &:before {content: "«";}
   &:after {content: "»";}
@@ -296,26 +273,45 @@ q {
 
 
 /**
-* Previene que `sub` y `sup` sean afectados por
-* `line-height` en todos los navegadores
-*/
+ * Previene que `sub` y `sup` sean afectados por
+ * `line-height` en todos los navegadores
+ */
 sub,
 sup {
-  font-size: 75%;
-  line-height: 0;
   position: relative;
   vertical-align: baseline;
+  font-size: 75%;
+  line-height: 0;
 }
 
 sup {top: -0.5em;}
-
 sub {bottom: -0.25em;}
 
 
 //Direcciones
 address {
-  border-left: 1px solid @text-color;
-  font-style: italic;
   margin-left: 10px;
   padding-left: 10px;
+  border-left: 1px solid @text-color;
+  font-style: italic;
 }
+
+//Placeholders
+//Texto claro y oscuro
+.light-text {color: @text-color-light;}
+.dark-text  {color: @text-color-dark;}
+
+// Alineamiento
+.text-left    {text-align: left;}
+.text-right   {text-align: right;}
+.text-center  {text-align: center;}
+.text-justify {text-align: justify;}
+
+// Transformación de texto
+.text-lowercase  {text-transform: lowercase;}
+.text-uppercase  {text-transform: uppercase;}
+.text-capitalize {text-transform: capitalize;}
+
+//Mostrar las letras mas juntas o mas separadas
+.text-narrow {letter-spacing: @letter-spacing-narrow;}
+.text-wide   {letter-spacing: @letter-spacing-wide;}
