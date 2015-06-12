@@ -19,7 +19,7 @@ En el código que hay escrito, todo lo que pueda dar lugar a confusión intentar
 
 Los comentarios relativos a funciones de *LESS* que no se muestren una vez procesadas (variables, algunos mixings, etc), se escribirán con las dos barras `//`, de ésta manera tampoco se mostrará el comentario.
 
-Las **variables**, a diferencia de otros *frameworks*, no se muestran todas en un mismo archivo. Considero mas productivo colocar cada variable en el archivo en el cual la usaremos por norma general. Por ejemplo, las variables correspondientes a la tipografía estás todas en el archivo `typography.less`, los colores en `colors.less`, etc.
+Las **variables**, a diferencia de otros *frameworks*, no se muestran todas en un mismo archivo. Considero mas práctico colocar cada variable en el archivo en el cual la usaremos por norma general. Por ejemplo, las variables correspondientes a la tipografía estás todas en el archivo `typography.less`, los colores en `colors.less`, etc.
 
 ##Flujo de trabajo
 Lo primero y más recomendable es tener ***grunt* «escuchando»** simplemente escribiendo el comando `grunt` en la terminal, estando en el directorio apropiado. (Ver [README.md](https://github.com/barcia/bramework/blob/master/README.md)).

@@ -28,11 +28,11 @@
 
 El objetivo principal es tener una base para agilizar la creación de sitios web en HTML y CSS, aunque poco a poco también incluiré los archivos básicos para adaptarlo fácilmente a la creación de temas para algunos CMS. Pero no sólo me sirve como base para mis proyectos, sino como un lugar donde  explorar y experimentar en torno a todo lo relacionado con el desarrollo web.
 
-Está creado desde cero a partir de conocimientos propios, pero adquiriendo ideas, conceptos y trozos de código de multitud de *frameworks*. Tampoco sigue ninguna tendencia o guía de estilo en concreto, pero después de leer y estudiar algunas, puede tener influencias o conceptos de varias como pueden ser [BEM](https://en.bem.info/), [SMACSS](https://smacss.com/), [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/), [OOCSS](http://oocss.org/), [KISS](http://es.wikipedia.org/wiki/Principio_KISS), etc.
+Está creado totalmente desde cero a partir de conocimientos propios, pero adquiriendo ideas, conceptos y trozos de código de multitud de *frameworks*. Tampoco sigue ninguna tendencia o guía de estilo en concreto, pero después de leer y estudiar algunas, puede tener influencias o conceptos de varias como pueden ser [BEM](https://en.bem.info/), [SMACSS](https://smacss.com/), [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/), [OOCSS](http://oocss.org/), [KISS](http://es.wikipedia.org/wiki/Principio_KISS), etc.
 
-En cuanto al diseño, intento crear un sistema de componentes que sean fácilmente modificables sólo cambiando el tema, pero aún así el _framework_ tiene un claro enfoque al [Material Design](https://google.com/design).
+En cuanto al la arquitectura, intento crear un sistema de componentes que sean fácilmente modificables sólo cambiando el tema.
 
-No se utilizan *grids* por decisión personal. Raramente encuentro utilidad a un *grid* predefinido, puesto que el tiempo que me llevaría adaptarlo a mi proyecto suele ser superior al que lleva crear esa interfaz desde cero y perfectamente adaptada a mis necesidades. Además, suelen estar construídos simplemente con `<div>`, algo que puede resultar en un HTML poco semántico.
+No se utilizan sistemas de *grids* por decisión personal. Raramente encuentro utilidad a un *grid* predefinido, puesto que el tiempo que me llevaría adaptarlo a mi proyecto suele ser superior al que lleva crear esa interfaz desde cero y perfectamente adaptada a mis necesidades. Además, suelen estar construídos simplemente con `<div>`, algo que puede resultar en un HTML poco semántico.
 
 Tampoco cuenta con *mediaqueries* específicos para cada dispositivo, sino que los creo simplemente cuando considero que la interfaz debe cambiar para seguir manteniendo una correcta experiencia de usuario. Una web debe ser global y flexible, teniendo en cuenta que hoy en día se visita con infinidad de pantallas, sistemas operativos, teléfonos móviles, *tablets*, ordenadores, TV's, videoconsolas e incluso *smartwatches*.
 
@@ -74,13 +74,15 @@ En el diseño web siempre intento estudiar y utilizar los últimos estándares. 
 * **CHANGELOG.md:** Archivo en formato *Markdown* que registra los cambios de cada versión.
 * **web/:** Directorio que contiene todo el código.
   * **index.html:** Página de inicio. Es un HTML base completamente preconfigurado.
-  * **styleguide.html:** Contiene los elementos mas importantes de HTML para comprobar como se ven con los estilos del sitio. Es extrapolable a cualquier otro `.css`
-  * **components.html:** Un documento que contiene la mayoría de los componentes del sitio (tarjetas, botones, etc.), para poder ver cómo se construyen.
-  * **components-fixed.html:** Igual que el anterior, pero contiene los elementos fijos.
   * **manifest.json:** Contiene metadatos asociados a aplicaciones web. [+info](https://trello.com/c/phxju5pj)
   * **browserconfig.xml:** Contiene metadatos para aplicaciones web en sistemas operativos de Microsoft. [+info](https://trello.com/c/Gm5FWYJt)
   * **humans.txt:** Es un archivo que muestra, entre otras cosas, información de las personas que han intervenido en la web. [+info](https://trello.com/c/WrNFJ047)
   * **.grunt/:** Directorio oculto que contiene todos los archivos de Grunt.
+  * **styleguide/:** Directorio que contiene archivos HTML donde se pueden ver en funcionamiento todos los componentes.
+    * **styleguide.html:** Contiene los elementos mas importantes de HTML para comprobar como se ven con los estilos del sitio. Es extrapolable a cualquier otro `.css`
+    * **components.html:** Un documento que contiene la mayoría de los componentes del sitio (tarjetas, botones, etc.), para poder ver cómo se construyen.
+    * **components-fixed.html:** Igual que el anterior, pero contiene los elementos fijos.
+    * **colors.html:** Paleta de colores con todos los colores disponibles en el *framework*.
   * **src/:**
     * **css/:** Contiene todos los archivo que tengas que ver con estilos CSS o preprocesadores.
     * **font/:** Archivos de fuentes tipográficas o de iconos.
@@ -98,6 +100,8 @@ Todos los archivos de *Grunt* se encuentran en el directorio oculto: `/web/.grun
 * **`grunt all`** - Ejecuta todas las tareas del proyecto.
 * **`grunt css`** - Procesa el `style.less` creando así un `style.css` y un `style.min.css`.
 * **`grunt js`** - Junta todos los `.JS` en un solo archivo creando un `script.min.js`.
+
+> Como extra, la configuración *grunt* incluye un plugin para mostrar una notificación en nuestro escritorio cada vez que la tarea falla.
 
 ##Registro de cambios
 Ver [registro de cambios](CHANGELOG.md).
