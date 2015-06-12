@@ -2099,16 +2099,10 @@ blockquote.error {
 }
 @keyframes beat {
   from {
-    height: 1em;
-    width: 1em;
-    vertical-align: -0.1em;
-    background-size: 1em 1em;
+    transform: scale(1);
   }
   to {
-    height: 1.33em;
-    width: 1.33em;
-    vertical-align: -0.133em;
-    background-size: 1.33em 1.33em;
+    transform: scale(1.15);
   }
 }
 [data-emoji="smile"] {

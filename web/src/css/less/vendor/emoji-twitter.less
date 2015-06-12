@@ -7,14 +7,14 @@
 //Para blog, descomentalos todos y añade el fichero como un .css independiente.
 
 [data-emoji] {
-display: inline-block;
-height: 1em;
-width: 1em;
-margin: 0 .05em 0 .1em;
-vertical-align: -0.1em;
-background-repeat: no-repeat;
-background-position: center center;
-background-size: 1em 1em;
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  margin: 0 .05em 0 .1em;
+  vertical-align: -0.1em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 1em 1em;
 }
 
 //ANIMACIONES
@@ -23,34 +23,28 @@ background-size: 1em 1em;
   .animation (laught, 150ms);
 }
 
-@keyframes laught {
-  from {
-    transform: translateY(1px);
+  @keyframes laught {
+    from {
+      transform: translateY(1px);
+    }
+    to {
+      transform: translateY(-1px);
+    }
   }
-  to {
-    transform: translateY(-1px);
-  }
-}
 
 //Latido
 [data-emoji].beat {
   .animation (beat, 400ms);
 }
 
-@keyframes beat {
-  from {
-    height: 1em;
-    width: 1em;
-    vertical-align: -0.1em;
-    background-size: 1em 1em;
+  @keyframes beat {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.15);
+    }
   }
-  to {
-    height: 1.33em;
-    width: 1.33em;
-    vertical-align: -0.133em;
-    background-size: 1.33em 1.33em;
-  }
-}
 
 //EMOJIS EN USO
 
