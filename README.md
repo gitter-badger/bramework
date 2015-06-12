@@ -19,7 +19,8 @@
 **Bramework** es un *framework* para crear sitios web.
 
 * Autor: [Iván Barcia](http://ivanbarcia.eu)
-* Version: 0.2-BETA
+* Version: Beta-0.2.1
+* Web: [ivanbarcia.eu/bramework/](http://ivanbarcia.eu/bramework/)
 * Trello: https://trello.com/b/IzLg4nk4
 * Comunidad: [Google+](https://plus.google.com/communities/104938291205143609131/stream/957ba9b5-234b-4260-a6e7-f6a8ab29a7a3)
 
