@@ -74,13 +74,23 @@
       }
 
       .zone2 p {
-        position: absolute;
-        bottom: 40px;
+        margin-top: 32px;
       }
 
       .zone3 {
-        position: absolute;
-        bottom: 10px;
+        margin-top: 10px;
+      }
+
+      li {
+        list-style-type: none;
+      }
+
+      [data-icon]:before {
+        margin-right: 10px;
+        font-size: 1rem;
+        line-height: 1rem;
+        /* height: 17px; */
+        vertical-align: middle;
       }
 
       @media (max-width: 800px) {
@@ -97,30 +107,32 @@
           <h1 class="title">Bramework</h1>
           <p>Un framework para agilizar el desarrollo web.</p>
 
-           <ol>
-            <li><a href="web/styleguide/styleguide.html">Styleguide</a></li>
-            <li><a href="web/styleguide/components.html">Components</a></li>
-            <li><a href="web/styleguide/components-fixed.html">Components Fixed</a></li>
-            <li><a href="web/styleguide/color.html">Color Palette</a></li>
-          </ol>
 
-          <div class="zone1">
-            <a href="https://github.com/barcia/bramework/tree/master"><button class="btn-raised">Código</button></a>
-            <a href="https://github.com/barcia/bramework/blob/master/README.md"><button class="btn-raised">Documentación</button></a>
-            <a href="https://trello.com/b/IzLg4nk4"><button class="btn-raised">Trello</button></a>
-            <a href="https://plus.google.com/communities/104938291205143609131/stream/957ba9b5-234b-4260-a6e7-f6a8ab29a7a3"><button class="btn-raised">Comunidad</button></a>
-          </div>
+
+          <ul>
+            <li data-icon="code"><a href="https://github.com/barcia/bramework/tree/master">Código</a></li>
+            <li data-icon="&#xE236;"><a href="https://github.com/barcia/bramework/blob/master/README.md">Documentación</a>
+              <ul>
+                <li><a href="web/styleguide/styleguide.html">Styleguide</a></li>
+                <li><a href="web/styleguide/components.html">Components</a></li>
+                <li><a href="web/styleguide/components-fixed.html">Components Fixed</a></li>
+                <li><a href="web/styleguide/color.html">Color Palette</a></li>
+              </ul>
+            </li>
+            <li data-icon="&#xE241;"><a href="https://trello.com/b/IzLg4nk4">Trello</a></li>
+            <li data-icon="people"><a href="https://plus.google.com/communities/104938291205143609131/stream/957ba9b5-234b-4260-a6e7-f6a8ab29a7a3">Comunidad</a></li>
+          </ul>
 
           <div class="zone2">
-            <p>Creado con <span data-emoji="heart"></span> en Galicia por Iván Barcia</p>
+            <p>Creado con &hearts; en Galicia por Iván Barcia</p>
           </div>
           <div class="zone3">
-            <a href="">Web</a> ·
-            <a href="">Github</a> ·
-            <a href="">Twitter</a> ·
-            <a href="">Google+</a>
+            <a href="http://ivanbarcia.eu/">Web</a> ·
+            <a href="https://github.com/barcia">Github</a> ·
+            <a href="https://twitter.com/bartzia">Twitter</a> ·
+            <a href="https://plus.google.com/+Iv%C3%A1nBarcia">Google+</a>
           </div>
          </header>
 
-      
+
     </body></html>
