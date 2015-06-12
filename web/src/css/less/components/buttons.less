@@ -3,21 +3,19 @@
 \*------------------------------------*/
 
 /**
-* Estilos por defecto de los botones
-*/
-button,
-input[type=submit],
-input[type=button],
-input[type=reset]  {
-  .md-flat();
+ * Estilos por defecto de los botones
+ */
+button, .btn,
+input[type=submit], input[type=button], input[type=reset] {
+  .md-button-flat();
 }
 
 /**
-* Clases para modificar el estilo por defecto de los botones.
-* Es recomendable borrar las que no se utilizen, ya que pueden
-* llegar a ocupar bastante espacio.
-*/
-.btn-flat {.md-flat();}
-.btn-raised {.md-raised();}
-.btn-float {.md-float();}
-.btn-float-mini {.md-float-mini();}
+ * Clases para modificar el estilo por defecto de los botones.
+ * Es recomendable borrar(comentar con //) las que no se utilizen, ya que pueden
+ * llegar a ocupar bastante espacio.
+ */
+.btn-flat       {.md-button-flat();}
+.btn-raised     {.md-button-raised();}
+.btn-float      {.md-button-float();}
+.btn-float-mini {.md-button-float-mini();}

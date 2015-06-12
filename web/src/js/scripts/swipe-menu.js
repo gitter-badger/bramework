@@ -1,5 +1,3 @@
-"use strict";
-
 var strings = {
   activationId: "open-swipe-menu",
   menuId: "swipe-menu",
@@ -25,14 +23,26 @@ var shadowSlideStartX;
 var shadowSlideEndX;
 
 //Eventos que se realizan después de cargar la página
-window.onload = function() {
-  activator = document.getElementById(strings.activationId);
-  menu = document.getElementById(strings.menuId);
-  body = document.getElementsByTagName('body')[0];
-  body.addEventListener('touchstart', slideStart);
-  activator.addEventListener('click', swipeMenu);
-  body.addEventListener('touchend', slideEnd);
-}
+//window.onload = function() {
+//  activator = document.getElementById(strings.activationId);
+//  menu = document.getElementById(strings.menuId);
+//  body = document.getElementsByTagName('body')[0];
+//  body.addEventListener('touchstart', slideStart);
+//  activator.addEventListener('click', swipeMenu);
+//  body.addEventListener('touchend', slideEnd);
+//}
+
+    function loadSlideMenu() {
+      activator = document.getElementById(strings.activationId);
+      menu = document.getElementById(strings.menuId);
+      body = document.getElementsByTagName('body')[0];
+      body.addEventListener('touchstart', slideStart);
+      if (activator && menu) {
+        activator.addEventListener('click', swipeMenu);
+        body.addEventListener('touchend', slideEnd);
+        console.info("Cargado Slide Menu.")
+      }
+    }
 
 //Función que abre el menú
 function openMenu() {

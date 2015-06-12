@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Components</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimal-ui">
+  <meta name="theme-color" content="#4285f4">
+
+  <!-- Estilos CSS-->
+  <link rel="stylesheet" href="../src/css/style.css">
+
+  <!-- Scripts JS-->
+  <script type="text/javascript" src="../src/js/script.min.js"></script>
+
+  <!-- Fuentes tipográficas -->
+  <link href='http://fonts.googleapis.com/css?family=Roboto:500,900italic,900,400italic,100,700italic,300,700,500italic,100italic,300italic,400' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,700,300,400' rel='stylesheet' type='text/css'>
+
+  <!-- Fuentes iconográficas -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f2f2f2;
+    }
+
+    header, main {
+      padding: 0 200px;
+    }
+
+    header {
+      background-color: #4285f4;
+      color: white;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      font-family: sans-serif;
+    }
+
+    header a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    header .title {
+      color: white;
+      text-decoration: none;
+      border-bottom: 0;
+      margin-top: 0;
+    }
+
+    .title {
+      color: #aaaaaa;
+      font-size: 2.5rem;
+      text-align: left;
+      border-bottom: 1px solid #aaaaaa;
+      margin-top: 70px;
+      font-family: sans-serif;
+    }
+
+    .subtitle {
+      color: #aaaaaa;
+      font-size: 1.5rem;
+      text-align: left;
+      font-weight: bold;
+      margin-top: 30px;
+      font-family: sans-serif;
+    }
+
+    @media (max-width: 800px) {
+      header, main {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 class="title">Components</h1>
+    <ol>
+      <li><a href="#buttons">Buttons</a></li>
+      <li><a href="#cards">Cards</a></li>
+      <li><a href="#lists">Lists</a></li>
+      <li><a href="#tables">Tables</a></li>
+      <li><a href="#code">Code & Preformatted</a></li>
+      <li><a href="#icons">Icons & Emojis</a></li>
+      <li><a href="#blockquotes">Blockquotes</a></li>
+<!--      <li><a href="#images">Images</a></li>-->
+      <!-- <li><a href="#shadows">Shadows</a></li>-->
+      <!-- <li><a href="#address">Address</a></li>-->
+      <!-- <li><a href="#dialog">Dialog</a></li>-->
+      <!-- <li><a href="#forms">Forms</a></li>-->
+      <li><a href="components-fixed.html">Components Fixed <sup>ext.</sup></a></li>
+    </ol>
+  </header>
+
+  <main>
+    <!-- Buttons -->
+    <div>
+      <h1 id="buttons" class="title">Buttons</h1>
+
+      <h1 class="subtitle">Flat</h1>
+      <button data-icon="&#xE5C4;">Normal</button>
+      <button class="primary">Primary</button>
+      <button class="info">Info</button>
+      <button class="success">Success</button>
+      <button class="alert">Alert</button>
+      <button class="error">Error</button>
+      <button disabled>Disabled</button>
+
+      <h1 class="subtitle">Raised</h1>
+      <button class="btn-raised" data-icon="&#xE2C4;">Normal</button>
+      <button class="btn-raised primary">Primary</button>
+      <button class="btn-raised info">Info</button>
+      <button class="btn-raised success">Success</button>
+      <button class="btn-raised alert">Alert</button>
+      <button class="btn-raised error">Error</button>
+      <button class="btn-raised" disabled>Disabled</button>
+
+      <h1 class="subtitle">Float</h1>
+      <button class="btn-float" data-icon="&#xE5C4;"></button>
+      <button class="btn-float primary" data-icon="menu"></button>
+      <button class="btn-float info" data-icon="home"></button>
+      <button class="btn-float success" data-icon="add"></button>
+      <button class="btn-float alert" data-icon="language"></button>
+      <button class="btn-float error" data-icon="error"></button>
+
+      <h1 class="subtitle">Float mini</h1>
+      <button class="btn-float-mini " data-icon="&#xE5C4;"></button>
+      <button class="btn-float-mini primary" data-icon="menu"></button>
+      <button class="btn-float-mini info" data-icon="home"></button>
+      <button class="btn-float-mini success" data-icon="add"></button>
+      <button class="btn-float-mini alert" data-icon="language"></button>
+      <button class="btn-float-mini error" data-icon="error"></button>
+
+    </div>
+
+    <!-- Cards -->
+    <div>
+      <h1 id="cards" class="title">Cards</h1>
+
+      <article class="card">
+        <h3>Simple Card Title</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </article>
+
+      <a>
+        <article class="card-link">
+          <h3>Link Card Title</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </article>
+      </a>
+
+      <article class="card">
+        <h3>Card Title</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <footer>
+          <button class="float-left">Cancelar</button>
+          <button>+ Info</button>
+          <button class="info">Aceptar</button>
+        </footer>
+      </article>
+
+      <article class="card-dark">
+        <h3>Card Title</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <footer>
+          <button class="float-left">Cancelar</button>
+          <button>+Info</button>
+          <button class="btn-raised info">Aceptar</button>
+        </footer>
+      </article>
+
+      <article class="card-image">
+        <div class="title-background" style="background-image: url(http://dummyimage.com/600x400/64cc8e/fff);">
+          <h3 class="title-shadow">Card Title</h3>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <footer>
+          <button class="float-left">Cancelar</button>
+          <button>+ Info</button>
+          <button class="t-primary">Aceptar</button>
+        </footer>
+      </article>
+    </div>
+
+    <!-- Lists -->
+    <div>
+      <h1 id="lists" class="title">Lists</h1>
+
+      <h1 class="subtitle">Default</h1>
+      <div class="list">
+        <span class="list-title">Lista normal</span>
+        <ul>
+          <li><a>Item</a></li>
+          <li><a>Item</a></li>
+          <li><a>Item</a></li>
+          <li><a>Item</a></li>
+        </ul>
+        <span class="list-title">Lista con iconos y extras</span>
+        <ul>
+          <li><a data-icon="person">Item</a></li>
+          <li><a data-icon="pages" data-number="32">Item</a></li>
+          <li><a data-icon="whatshot" data-number="17">Item</a><a class="addon" data-icon="add"></a></li>
+          <li><a data-icon="cake">Item</a><a class="addon" data-icon="menu"></a></li>
+          <li><a>Item</a><a class="addon" data-icon="public"></a></li>
+          <li><a>Item</a><a class="addon" data-icon="school"></a></li>
+        </ul>
+      </div>
+
+      <h1 class="subtitle">Small</h1>
+      <ul class="list-small">
+        <li><a>Item</a></li>
+        <li><a>Item</a></li>
+        <li><a data-icon="menu">Item</a></li>
+        <li><a data-icon="home" data-number="45">Item</a></li>
+      </ul>
+    </div>
+
+    <!-- Tables -->
+    <div>
+      <h1 id="tables" class="title">Tables</h1>
+
+      <h1 class="subtitle">Tabla normal</h1>
+      <table>
+        <caption>Table title</caption>
+        <thead>
+          <tr>
+            <th>Table Header 1</th>
+            <th>Table Header 2</th>
+            <th>Table Header 3</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <td>Total 1</td>
+            <td>Total 2</td>
+            <td>Total 3</td>
+          </tr>
+        </tfoot>
+        <tbody>
+          <tr>
+            <td>Division 1</td>
+            <td>Division 2</td>
+            <td>Division 3</td>
+          </tr>
+          <tr>
+            <td>Division 1</td>
+            <td>Division 2</td>
+            <td>Division 3</td>
+          </tr>
+          <tr>
+            <td>Division 1</td>
+            <td>Division 2</td>
+            <td>Division 3</td>
+          </tr>
+          <tr>
+            <td>Division 1</td>
+            <td>Division 2</td>
+            <td>Division 3</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h1 class="subtitle">Tabla «stripped»</h1>
+      <table class="stripped">
+        <caption>Table title</caption>
+        <thead>
+          <tr>
+            <th>Table Header 1</th>
+            <th>Table Header 2</th>
+            <th>Table Header 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Division 1</td>
+            <td>Division 2</td>
+            <td>Division 3</td>
+          </tr>
+          <tr>
+            <td>Division 1</td>
+            <td>Division 2</td>
+            <td>Division 3</td>
+          </tr>
+          <tr>
+            <td>Division 1</td>
+            <td>Division 2</td>
+            <td>Division 3</td>
+          </tr>
+          <tr>
+            <td>Division 1</td>
+            <td>Division 2</td>
+            <td>Division 3</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h1 class="subtitle">Tabla con bordes</h1>
+      <table class="bordered">
+        <caption>Table title</caption>
+        <thead>
+          <tr>
+            <th>Table Header 1</th>
+            <th>Table Header 2</th>
+            <th>Table Header 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Division 1</td>
+            <td>Division 2</td>
+            <td>Division 3</td>
+          </tr>
+          <tr>
+            <td>Division 1</td>
+            <td>Division 2</td>
+            <td>Division 3</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h1 class="subtitle">Tabla con efecto «hover»</h1>
+      <table class="hoverable">
+        <caption>Table title</caption>
+        <thead>
+          <tr>
+            <th>Table Header 1</th>
+            <th>Table Header 2</th>
+            <th>Table Header 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Division 1</td>
+            <td>Division 2</td>
+            <td>Division 3</td>
+          </tr>
+          <tr>
+            <td>Division 1</td>
+            <td>Division 2</td>
+            <td>Division 3</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h1 class="subtitle">Tabla con efecto «hover» en cada celda</h1>
+      <table class="hoverable-cell">
+        <caption>Table title</caption>
+        <thead>
+          <tr>
+            <th>Table Header 1</th>
+            <th>Table Header 2</th>
+            <th>Table Header 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Division 1</td>
+            <td>Division 2</td>
+            <td>Division 3</td>
+          </tr>
+          <tr>
+            <td>Division 1</td>
+            <td>Division 2</td>
+            <td>Division 3</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h1 class="subtitle">Tabla centrada</h1>
+      <table class="centered">
+        <caption>Table title</caption>
+        <thead>
+          <tr>
+            <th>Table Header 1</th>
+            <th>Table Header 2</th>
+            <th>Table Header 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Division 1</td>
+            <td>Division 2</td>
+            <td>Division 3</td>
+          </tr>
+          <tr>
+            <td>Division 1</td>
+            <td>Division 2</td>
+            <td>Division 3</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Code & Preformatted -->
+    <div>
+      <h1 id="code" class="title">Code & Preformatted</h1>
+
+      <h1 class="subtitle">Code</h1>
+      <p>This parapgraph include <code class="dark">a piece of code</code> inside.</p>
+
+      <h1 class="subtitle">Code block wrapped in "pre" and "code" tags</h1>
+<pre><code class="language-javascript">// Loop through Divs using Javascript.
+var divs = document.querySelectorAll('div'), i;
+
+for (i = 0; i < divs.length; ++i) {
+divs[i].style.color = "green";
+}</code></pre>
+
+<pre><code class="line-numbers  language-css">
+code {
+  color: inherit;
+  box-shadow: 0 2px red;
+}
+</code></pre>
+
+<pre class="line-numbers"><code class="language-less">
+code {
+  color: inherit;
+  box-shadow: 0 2px red;
+  &:hover {
+    cursor: text;
+    will-change: cursor;
+  }
+}
+//http://www.google.es
+</code></pre>
+
+<pre><code class="language-markup">
+  &lt;!-- Estilos CSS--&gt;
+  &lt;p class="a"&gt;&lt;/p&gt;
+</code></pre>
+
+      <h1 class="subtitle">Monospace Text wrapped in "pre" tags</h1>
+      <pre><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p></pre>
+    </div>
+
+    <!-- Icons & Emojis -->
+    <div>
+      <h1 id="icons" class="title">Icons & Emojis</h1>
+
+      <h1 class="subtitle">Icons</h1>
+
+      <p><a href="https://www.google.com/design/icons/" title="Material Design Icons">https://www.google.com/design/icons/</a></p>
+
+      <span data-icon="menu"></span>
+      <span data-icon="face"></span>
+      <span data-icon="star"></span>
+      <span data-icon="&#xE14E;"></span>
+      <span data-icon="&#xE2C0;"></span>
+      <span data-icon="place"></span>
+      <span data-icon="whatshot"></span>
+      <span data-icon="person"></span>
+      <span data-icon="person" class="lg"></span>
+      <span data-icon="person" class="light"></span>
+      <span data-icon="person" class="rotate-90"></span>
+      <span data-icon="settings" class="spin"></span>
+
+      <h1 class="subtitle">Emojis</h1>
+      <p><a href="http://www.emoji-cheat-sheet.com/" title="Emoji Cheat Sheet">http://www.emoji-cheat-sheet.com/</a></p>
+      <span data-emoji="smile"></span><br>
+      <span data-emoji="joy" class="laught"></span><br>
+      <span data-emoji="heart" class="beat"></span><br>
+    </div>
+
+      <!-- Blockquotes -->
+    <div>
+      <h1 id="blockquotes" class="title">Blockquotes</h1>
+
+      <blockquote>Singulis et
+      possumus, o amet veniam nam arbitror nam e laborum instituendarum a expetendis
+      ubi doctrina qui irure eiusmod cernantur non expetendis ubi legam, doctrina
+      eruditionem o quibusdam ab expetendis e noster.
+      </blockquote>
+
+      <blockquote class="primary">Singulis et
+      possumus, o amet veniam nam arbitror nam e laborum instituendarum a expetendis
+      ubi doctrina qui irure eiusmod cernantur non expetendis ubi legam, doctrina
+      eruditionem o quibusdam ab expetendis e noster.
+        <footer>
+          <cite>The author</cite>
+        </footer>
+      </blockquote>
+
+      <blockquote class="info">Singulis et
+      possumus, o amet veniam nam arbitror nam e laborum instituendarum a expetendis
+      ubi doctrina qui irure eiusmod cernantur non expetendis ubi legam, doctrina
+      eruditionem o quibusdam ab expetendis e noster.
+        <footer>
+          <cite>-<a href="#">The font</a></cite>
+        </footer>
+      </blockquote>
+
+      <blockquote class="success">Singulis et
+      possumus, o amet veniam nam arbitror nam e laborum instituendarum a expetendis
+      ubi doctrina qui irure eiusmod cernantur non expetendis ubi legam, doctrina
+      eruditionem o quibusdam ab expetendis e noster.</blockquote>
+
+      <blockquote class="alert">Singulis et
+      possumus, o amet veniam nam arbitror nam e laborum instituendarum a expetendis
+      ubi doctrina qui irure eiusmod cernantur non expetendis ubi legam, doctrina
+      eruditionem o quibusdam ab expetendis e noster.</blockquote>
+
+      <blockquote class="error">Singulis et
+      possumus, o amet veniam nam arbitror nam e laborum instituendarum a expetendis
+      ubi doctrina qui irure eiusmod cernantur non expetendis ubi legam, doctrina
+      eruditionem o quibusdam ab expetendis e noster.</blockquote>
+    </div>
+  </main>
+</body>
+</html>

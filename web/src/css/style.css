@@ -1,5 +1,20 @@
+/* CONTENIDO
+ *
+ * BASE
+ * $Base
+ * $Tipografía
+ *
+ * COMPONENTS
+ *
+ * LAYOUT
+ *
+ * PAGES
+ *
+ * VENDOR
+ *
+ */
 /*------------------------------------*\
-    $BÁSICO
+    $Base
 \*------------------------------------*/
 * {
   box-sizing: border-box;
@@ -24,13 +39,13 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
   color: #4d4d4d;
   margin: 0 auto;
   background-color: #f2f2f2;
 }
-/*
+/**
  * Corrige 'display block' para todos los elementos HTML5 en IE 8/9
  * Corrige 'display block' para 'details' y 'summary' en IE 10/11
  * Corrige 'display block' para 'main' en IE 11
@@ -78,7 +93,7 @@ input[type=button]:focus,
 input[type=reset]:focus {
   outline: 0;
 }
-/*
+/**
  * No muestra los `audio` sin controles.
  * Elimina el exceso de altura en dispositivos iOS 5.
  */
@@ -121,9 +136,9 @@ dd {
   margin-bottom: 0;
 }
 /**
-* Corrige el color y la fuente heredados.
-* Elimina los bordes que muestra algún navegador.
-*/
+ * Corrige el color y la fuente heredados.
+ * Elimina los bordes que muestra algún navegador.
+ */
 button,
 input,
 optgroup,
@@ -134,26 +149,26 @@ textarea {
   margin: 0;
 }
 /**
-* Corrige `overflow` en IE 8/9/10/11.
-*/
+ * Corrige `overflow` en IE 8/9/10/11.
+ */
 button {
   overflow: visible;
 }
 /**
-* Unifica criterios del `text-transform` en varios navegadores:
-* `button` en Firefox, IE 8/9/10/11, y Opera.
-* `select` en Firefox.
-*/
+ * Unifica criterios del `text-transform` en varios navegadores:
+ * `button` en Firefox, IE 8/9/10/11, y Opera.
+ * `select` en Firefox.
+ */
 button,
 select {
   text-transform: none;
 }
 /**
-* 1. Corrige el bug de WebKit en Android 4.0.* que no muestra
-* los controles de `audio` y `video`.
-* 2. Consistencia en todos los tipos de `input` en iOS.
-* 3. Mejora la usabilidad y la consistencia en distintos navegadores.
-*/
+ * 1. Corrige el bug de WebKit en Android 4.0.* que no muestra
+ * los controles de `audio` y `video`.
+ * 2. Consistencia en todos los tipos de `input` en iOS.
+ * 3. Mejora la usabilidad y la consistencia en distintos navegadores.
+ */
 button,
 html input[type="button"],
 input[type="reset"],
@@ -164,33 +179,33 @@ input[type="submit"] {
   /* 3 */
 }
 /**
-* Cursor `dafault` para elementos inhabilitados.
-*/
+ * Cursor `dafault` para elementos inhabilitados.
+ */
 button[disabled],
 html input[disabled] {
   cursor: default;
 }
 /**
-* Elimina borde y padding en Firefox 4+.
-*/
+ * Elimina borde y padding en Firefox 4+.
+ */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
 /**
-* Corrige line-height en los `input` en Firefox 4+.
-*/
+ * Corrige line-height en los `input` en Firefox 4+.
+ */
 input {
   line-height: normal;
 }
 /**
-* Es recomendable que no intentes dar estilos a estos elementos.
-* Firefox no respeta el `box-sizing`, `padding` y `width`.
-*
-* 1. Corrección de `content-box` en IE 8/9/10.
-* 2. Elimina el exceso de `padding` en IE 8/9/10.
-*/
+ * Es recomendable que no intentes dar estilos a estos elementos.
+ * Firefox no respeta el `box-sizing`, `padding` y `width`.
+ *
+ * 1. Corrección de `content-box` en IE 8/9/10.
+ * 2. Elimina el exceso de `padding` en IE 8/9/10.
+ */
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
@@ -199,18 +214,18 @@ input[type="radio"] {
   /* 2 */
 }
 /**
-* Corrige el estilo de los botones de incremento/decremento
-* en Chrome.
-*/
+ * Corrige el estilo de los botones de incremento/decremento
+ * en Chrome.
+ */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 /**
-* 1. Corrige `appearance` para `searchfield` en Safari y Chrome.
-* 2. Corrige `box-sizing` para `border-box` en Safari y Chrome
-*    (incluye `-moz` para el futuro).
-*/
+ * 1. Corrige `appearance` para `searchfield` en Safari y Chrome.
+ * 2. Corrige `box-sizing` para `border-box` en Safari y Chrome
+ *    (incluye `-moz` para el futuro).
+ */
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -220,22 +235,22 @@ input[type="search"] {
   box-sizing: content-box;
 }
 /**
-* Elimina el padding interior y el botón de cancelar
-* búsqueda en Safari y Chrome en OSX
-*/
+ * Elimina el padding interior y el botón de cancelar
+ * búsqueda en Safari y Chrome en OSX
+ */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 /**
-* Establece consistencia en `border`, `margin`, y `padding`.
-*/
+ * Establece consistencia en `border`, `margin`, y `padding`.
+ */
 fieldset {
   border: 0;
 }
-/**
-* Establece consistencias para IE.
-*/
+/*
+ * Establece consistencias para IE.
+ */
 legend {
   border: 0;
   /* 1 */
@@ -243,20 +258,20 @@ legend {
   /* 2 */
 }
 /**
-* Corrige el scroll vertical por defecto en IE 8/9/10/11.
-*/
+ * Corrige el scroll vertical por defecto en IE 8/9/10/11.
+ */
 textarea {
   overflow: auto;
 }
 /**
-* Establece consistencias para Chrome y Safari en OS X.
-*/
+ * Establece consistencias para Chrome y Safari en OS X.
+ */
 optgroup {
   font-weight: bold;
 }
 /**
-* Elimina espacios entre celdas.
-*/
+ * Elimina espacios entre celdas.
+ */
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -268,11 +283,11 @@ th {
 /*------------------------------------*\
     $TIPOGRAFÍA
 \*------------------------------------*/
-/**
-* Las clases con nombre de encabezados sirven para dar un estilo de un
-* encabezado a otro, para cambiar el estilo visual manteniendo
-* una correcta semántica del HTML.
-*/
+/**ENCABEZADOS
+ * Las clases con nombre de encabezados sirven para dar un estilo de un
+ * encabezado a otro, para cambiar el estilo visual manteniendo una correcta
+ * semántica del HTML.
+ */
 h1,
 h2,
 h3,
@@ -287,145 +302,125 @@ h6,
 .h6 {
   font-family: 'Roboto Condensed', sans-serif;
   text-rendering: optimizeLegibility;
-  margin-top: 0;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
 }
 h1,
 .h1 {
   font-size: 3rem;
   font-weight: 500;
-  color: #4d4d4d;
-  margin-top: 1em;
-  margin-bottom: 1em;
 }
 h2,
 .h2 {
   font-size: 2rem;
   font-weight: 500;
-  color: #4d4d4d;
-  margin-top: 1em;
-  margin-bottom: 1em;
 }
 h3,
 .h3 {
   font-size: 1.7rem;
   font-weight: 500;
-  color: #4d4d4d;
-  margin-top: 1em;
-  margin-bottom: 1em;
 }
 h4,
 .h4 {
   font-size: 1.3rem;
   font-weight: 500;
-  color: #4d4d4d;
-  margin-top: 1em;
-  margin-bottom: 1em;
 }
 h5,
 .h5 {
   font-size: 1rem;
   font-weight: 500;
-  color: #4d4d4d;
-  margin-top: 1em;
-  margin-bottom: 1em;
 }
 h6,
 .h6 {
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 500;
-  color: #4d4d4d;
-  margin-top: 1em;
-  margin-bottom: 1em;
 }
-a,
-.link {
+a {
   color: #009688;
   text-decoration: none;
 }
 a:hover,
-.link:hover,
-a:focus,
-.link:focus {
-  color: #30ffec;
+a:focus {
+  color: #26a69a;
   cursor: pointer;
   text-decoration: underline;
 }
+/**
+ * Formato básico de elemento del texto
+ */
 p,
 ul,
 ol,
-table,
 dl,
+table,
 address,
-form,
-dd {
-  font-weight: 400;
+form {
   text-align: left;
+  font-weight: 400;
   line-height: 1.5em;
   margin-top: 0;
 }
 p:not(:last-child),
 ul:not(:last-child),
 ol:not(:last-child),
-table:not(:last-child),
 dl:not(:last-child),
+table:not(:last-child),
 address:not(:last-child),
-form:not(:last-child),
-dd:not(:last-child) {
+form:not(:last-child) {
   margin-bottom: 2em;
 }
 /**
-* Se identarán los párrafos con la clase '.indent' o
-* los párrafos dentro de un elemento con la clase '.indent'.
-*/
-.indent p,
-p.indent {
+ * Los párrafos con la clase '.story' se identarán y la primera letra será más
+ * grande. También se puede aplicar a un elemento padre.
+ */
+.story p,
+p.story {
   text-indent: 30px;
 }
-/**
-* Se mostrará la primera letra mas grande en los párrafos
-* con la clase '.first-letter-big' o en los párrafos dentro
-* de un elemento con la clase '.first-letter-big'.
-*/
-.first-letter-big p:first-letter,
-p.first-letter-big:first-letter {
+.story p:first-letter,
+p.story:first-letter {
   font-size: 2em;
 }
-/**
+/**LISTAS
  * El 'padding-left' elimina los estilos predefinidos de algunos navegadores
  */
 ul,
 ol {
   padding-left: 0;
+  list-style-position: inside;
 }
 li > ul,
-li > ol,
-li > details > ul,
-li > details > ol {
-  margin-left: 40px;
+li > ol {
+  text-indent: 40px;
   margin-bottom: inherit;
 }
+/* Van dentro de un 'dl' */
+dt {
+  font-weight: 700;
+}
+dt:after {
+  content: ":";
+}
+dd {
+  text-indent: 20px;
+}
 b,
-strong,
-.bold {
+strong {
   font-weight: 700;
 }
 i,
-em,
-.italic {
+em {
   font-style: italic;
 }
-small,
-.small {
-  font-family: 'Roboto', sans-serif;
+small {
   font-size: 0.85rem;
   font-weight: 400;
-  color: #9a9a9a;
+  color: #8c8c8c;
 }
 cite {
   font-style: italic;
 }
-mark,
-.mark {
+mark {
   background-color: yellow;
   color: inherit;
 }
@@ -438,32 +433,41 @@ abbr[title] {
 abbr[title]:hover {
   cursor: help;
 }
-dt {
-  font-weight: 700;
-}
-dt:after {
-  content: ":";
-}
-dd {
-  margin-left: 20px;
-}
 dfn {
   font-style: italic;
 }
+/**
+ * Se pueden aplicar texturas. Ver 'libraries/textures.less'
+ */
 blockquote {
-  font-family: 'Roboto', sans-serif;
-  text-align: left;
-  font-size: 1rem;
+  margin: 20px;
+  padding: 40px;
+  font-size: 1.2rem;
   font-style: italic;
   color: #8c8c8c;
-  margin: 20px 0;
-  padding-left: 10px;
+  line-height: 1.5em;
+  border-radius: 2px;
   border-left: 10px solid #e6e6e6;
 }
 blockquote footer {
-  margin-top: 0.5em;
-  font-size: 0.85em;
-  color: #b3b3b3;
+  margin-top: .6em;
+  font-size: 0.85rem;
+  opacity: 0.6;
+}
+blockquote footer a {
+  color: inherit;
+}
+blockquote footer a:hover {
+  color: inherit;
+}
+@media (max-width: 414px) {
+  blockquote {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+  }
 }
 q:before {
   content: "«";
@@ -472,15 +476,15 @@ q:after {
   content: "»";
 }
 /**
-* Previene que `sub` y `sup` sean afectados por
-* `line-height` en todos los navegadores
-*/
+ * Previene que `sub` y `sup` sean afectados por
+ * `line-height` en todos los navegadores
+ */
 sub,
 sup {
-  font-size: 75%;
-  line-height: 0;
   position: relative;
   vertical-align: baseline;
+  font-size: 75%;
+  line-height: 0;
 }
 sup {
   top: -0.5em;
@@ -489,10 +493,43 @@ sub {
   bottom: -0.25em;
 }
 address {
-  border-left: 1px solid #4d4d4d;
-  font-style: italic;
   margin-left: 10px;
   padding-left: 10px;
+  border-left: 1px solid #4d4d4d;
+  font-style: italic;
+}
+.light-text {
+  color: #8c8c8c;
+}
+.dark-text {
+  color: #333333;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.text-justify {
+  text-align: justify;
+}
+.text-lowercase {
+  text-transform: lowercase;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+.text-capitalize {
+  text-transform: capitalize;
+}
+.text-narrow {
+  letter-spacing: -0.05em;
+}
+.text-wide {
+  letter-spacing: 0.05em;
 }
 /*------------------------------------*\
     $ACTION-BUTTON
@@ -503,170 +540,189 @@ address {
   right: 10px;
   display: flex;
   flex-direction: column-reverse;
+  z-index: 98;
 }
 .action-button > button {
-  transition: transform 200ms ease-in-out;
+  transition: box-shadow 200ms ease-in-out;
   z-index: 97;
 }
-.action-button.open > button {
-  transform: rotate(45deg);
-}
-.action-button.open .action-button-content {
-  display: flex;
-  opacity: 1;
+.action-button > button:before {
+  transition: transform 200ms ease-in-out;
 }
 .action-button .action-button-content {
-  display: none;
+  display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  transition: opacity 200ms ease-in-out;
-  opacity: 0;
+}
+.action-button .action-button-content button {
+  position: fixed;
+  bottom: 26px;
+  right: 18px;
+  will-change: bottom;
+  transition: bottom 200ms linear;
+}
+.action-button .action-button-content button:nth-child(4) {
+  z-index: 93;
+}
+.action-button .action-button-content button:nth-child(3) {
+  z-index: 94;
+}
+.action-button .action-button-content button:nth-child(2) {
+  z-index: 95;
+}
+.action-button .action-button-content button:nth-child(1) {
+  z-index: 96;
+}
+.action-button.open > button {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+.action-button.open > button:before {
+  transform: rotate(90deg);
+}
+.action-button.open .action-button-content button:nth-child(1) {
+  bottom: 78px;
+}
+.action-button.open .action-button-content button:nth-child(2) {
+  bottom: 130px;
+}
+.action-button.open .action-button-content button:nth-child(3) {
+  bottom: 182px;
+}
+.action-button.open .action-button-content button:nth-child(4) {
+  bottom: 234px;
 }
 /*------------------------------------*\
     $BOTONES
 \*------------------------------------*/
 /**
-* Estilos por defecto de los botones
-*/
+ * Estilos por defecto de los botones
+ */
 button,
+.btn,
 input[type=submit],
 input[type=button],
 input[type=reset] {
   position: relative;
-  height: 36px;
   padding: 0px 12px;
   margin: 6px 4px;
+  will-change: box-shadow;
+  transition: box-shadow 0.1s ease-in-out;
+  height: 36px;
   text-transform: uppercase;
   text-align: center;
   white-space: nowrap;
   border-radius: 2px;
   font-size: 0.85rem;
-  transition-duration: 0.1s;
-  will-change: box-shadow;
-  transition-property: box-shadow;
-  transition-timing-function: ease-in-out;
-  transition-delay: 0s;
   background-color: transparent;
 }
 button:hover,
+.btn:hover,
 input[type=submit]:hover,
 input[type=button]:hover,
 input[type=reset]:hover,
 button:focus,
+.btn:focus,
 input[type=submit]:focus,
 input[type=button]:focus,
 input[type=reset]:focus {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   cursor: pointer;
 }
-button:active,
-input[type=submit]:active,
-input[type=button]:active,
-input[type=reset]:active {
-  background-color: rgba(0, 0, 0, 0.05);
-}
 button:disabled,
+.btn:disabled,
 input[type=submit]:disabled,
 input[type=button]:disabled,
-input[type=reset]:disabled,
-button[disabled],
-input[type=submit][disabled],
-input[type=button][disabled],
-input[type=reset][disabled],
-button.disabled,
-input[type=submit].disabled,
-input[type=button].disabled,
-input[type=reset].disabled {
+input[type=reset]:disabled {
   opacity: 0.5;
 }
 button:disabled:hover,
+.btn:disabled:hover,
 input[type=submit]:disabled:hover,
 input[type=button]:disabled:hover,
-input[type=reset]:disabled:hover,
-button[disabled]:hover,
-input[type=submit][disabled]:hover,
-input[type=button][disabled]:hover,
-input[type=reset][disabled]:hover,
-button.disabled:hover,
-input[type=submit].disabled:hover,
-input[type=button].disabled:hover,
-input[type=reset].disabled:hover {
+input[type=reset]:disabled:hover {
   cursor: not-allowed;
 }
 button[data-icon]:before,
+.btn[data-icon]:before,
 input[type=submit][data-icon]:before,
 input[type=button][data-icon]:before,
 input[type=reset][data-icon]:before {
   margin-right: 8px;
 }
+button:hover,
+.btn:hover,
+input[type=submit]:hover,
+input[type=button]:hover,
+input[type=reset]:hover,
+button:focus,
+.btn:focus,
+input[type=submit]:focus,
+input[type=button]:focus,
+input[type=reset]:focus {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
 @media (max-width: 800px) {
   button:hover,
+  .btn:hover,
   input[type=submit]:hover,
   input[type=button]:hover,
   input[type=reset]:hover,
   button:focus,
+  .btn:focus,
   input[type=submit]:focus,
   input[type=button]:focus,
   input[type=reset]:focus {
     box-shadow: none;
   }
 }
+button:active,
+.btn:active,
+input[type=submit]:active,
+input[type=button]:active,
+input[type=reset]:active {
+  background-color: rgba(0, 0, 0, 0.05);
+}
 button:disabled:hover,
+.btn:disabled:hover,
 input[type=submit]:disabled:hover,
 input[type=button]:disabled:hover,
-input[type=reset]:disabled:hover,
-button[disabled]:hover,
-input[type=submit][disabled]:hover,
-input[type=button][disabled]:hover,
-input[type=reset][disabled]:hover,
-button.disabled:hover,
-input[type=submit].disabled:hover,
-input[type=button].disabled:hover,
-input[type=reset].disabled:hover {
+input[type=reset]:disabled:hover {
   box-shadow: none;
 }
 /**
-* Clases para modificar el estilo por defecto de los botones.
-* Es recomendable borrar las que no se utilizen, ya que pueden
-* llegar a ocupar bastante espacio.
-*/
+ * Clases para modificar el estilo por defecto de los botones.
+ * Es recomendable borrar(comentar con //) las que no se utilizen, ya que pueden
+ * llegar a ocupar bastante espacio.
+ */
 .btn-flat {
   position: relative;
-  height: 36px;
   padding: 0px 12px;
   margin: 6px 4px;
+  will-change: box-shadow;
+  transition: box-shadow 0.1s ease-in-out;
+  height: 36px;
   text-transform: uppercase;
   text-align: center;
   white-space: nowrap;
   border-radius: 2px;
   font-size: 0.85rem;
-  transition-duration: 0.1s;
-  will-change: box-shadow;
-  transition-property: box-shadow;
-  transition-timing-function: ease-in-out;
-  transition-delay: 0s;
   background-color: transparent;
 }
 .btn-flat:hover,
 .btn-flat:focus {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   cursor: pointer;
 }
-.btn-flat:active {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-.btn-flat:disabled,
-.btn-flat[disabled],
-.btn-flat.disabled {
+.btn-flat:disabled {
   opacity: 0.5;
 }
-.btn-flat:disabled:hover,
-.btn-flat[disabled]:hover,
-.btn-flat.disabled:hover {
+.btn-flat:disabled:hover {
   cursor: not-allowed;
 }
 .btn-flat[data-icon]:before {
   margin-right: 8px;
+}
+.btn-flat:hover,
+.btn-flat:focus {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 @media (max-width: 800px) {
   .btn-flat:hover,
@@ -674,45 +730,35 @@ input[type=reset].disabled:hover {
     box-shadow: none;
   }
 }
-.btn-flat:disabled:hover,
-.btn-flat[disabled]:hover,
-.btn-flat.disabled:hover {
+.btn-flat:active {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.btn-flat:disabled:hover {
   box-shadow: none;
 }
 .btn-raised {
   position: relative;
-  height: 36px;
   padding: 0px 12px;
   margin: 6px 4px;
+  will-change: box-shadow;
+  transition: box-shadow 0.1s ease-in-out;
+  height: 36px;
   text-transform: uppercase;
   text-align: center;
   white-space: nowrap;
   border-radius: 2px;
   font-size: 0.85rem;
-  transition-duration: 0.1s;
-  will-change: box-shadow;
-  transition-property: box-shadow;
-  transition-timing-function: ease-in-out;
-  transition-delay: 0s;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   background-color: #ffffff;
 }
 .btn-raised:hover,
 .btn-raised:focus {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   cursor: pointer;
 }
-.btn-raised:active {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-.btn-raised:disabled,
-.btn-raised[disabled],
-.btn-raised.disabled {
+.btn-raised:disabled {
   opacity: 0.5;
 }
-.btn-raised:disabled:hover,
-.btn-raised[disabled]:hover,
-.btn-raised.disabled:hover {
+.btn-raised:disabled:hover {
   cursor: not-allowed;
 }
 .btn-raised[data-icon]:before {
@@ -721,139 +767,103 @@ input[type=reset].disabled:hover {
 @media (max-width: 800px) {
   .btn-raised:hover,
   .btn-raised:focus {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
 }
-.btn-raised:disabled:hover,
-.btn-raised[disabled]:hover,
-.btn-raised.disabled:hover {
+.btn-raised:active {
+  background-color: #e6e6e6;
+}
+.btn-raised:disabled:hover {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 .btn-float {
   position: relative;
-  height: 36px;
   padding: 0px 12px;
   margin: 6px 4px;
-  text-transform: uppercase;
-  text-align: center;
-  white-space: nowrap;
-  border-radius: 2px;
-  font-size: 0.85rem;
-  transition-duration: 0.1s;
   will-change: box-shadow;
-  transition-property: box-shadow;
-  transition-timing-function: ease-in-out;
-  transition-delay: 0s;
+  transition: box-shadow 0.1s ease-in-out;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   background-color: #ffffff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  font-size: 26px;
   width: 56px;
   height: 56px;
   border-radius: 100%;
   line-height: 56px;
-  font-size: 26px;
 }
 .btn-float:hover,
 .btn-float:focus {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   cursor: pointer;
-}
-.btn-float:active {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-.btn-float:disabled,
-.btn-float[disabled],
-.btn-float.disabled {
-  opacity: 0.5;
-}
-.btn-float:disabled:hover,
-.btn-float[disabled]:hover,
-.btn-float.disabled:hover {
-  cursor: not-allowed;
-}
-.btn-float[data-icon]:before {
-  margin-right: 8px;
 }
 @media (max-width: 800px) {
   .btn-float:hover,
   .btn-float:focus {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
 }
-.btn-float:disabled:hover,
-.btn-float[disabled]:hover,
-.btn-float.disabled:hover {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+.btn-float:active {
+  background-color: #e6e6e6;
+}
+.btn-float:hover,
+.btn-float:focus {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 .btn-float[data-icon]:before {
   position: absolute;
+  margin: 0;
+}
+.btn-float[data-icon]:before {
   top: 15px;
   left: 15px;
-  margin: 0;
 }
 .btn-float-mini {
   position: relative;
-  height: 36px;
   padding: 0px 12px;
   margin: 6px 4px;
-  text-transform: uppercase;
-  text-align: center;
-  white-space: nowrap;
-  border-radius: 2px;
-  font-size: 0.85rem;
-  transition-duration: 0.1s;
   will-change: box-shadow;
-  transition-property: box-shadow;
-  transition-timing-function: ease-in-out;
-  transition-delay: 0s;
+  transition: box-shadow 0.1s ease-in-out;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   background-color: #ffffff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  font-size: 26px;
   width: 40px;
   height: 40px;
   border-radius: 100%;
   line-height: 40px;
-  font-size: 26px;
 }
 .btn-float-mini:hover,
 .btn-float-mini:focus {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   cursor: pointer;
-}
-.btn-float-mini:active {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-.btn-float-mini:disabled,
-.btn-float-mini[disabled],
-.btn-float-mini.disabled {
-  opacity: 0.5;
-}
-.btn-float-mini:disabled:hover,
-.btn-float-mini[disabled]:hover,
-.btn-float-mini.disabled:hover {
-  cursor: not-allowed;
-}
-.btn-float-mini[data-icon]:before {
-  margin-right: 8px;
 }
 @media (max-width: 800px) {
   .btn-float-mini:hover,
   .btn-float-mini:focus {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
 }
-.btn-float-mini:disabled:hover,
-.btn-float-mini[disabled]:hover,
-.btn-float-mini.disabled:hover {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+.btn-float-mini:active {
+  background-color: #e6e6e6;
+}
+.btn-float-mini:hover,
+.btn-float-mini:focus {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 .btn-float-mini[data-icon]:before {
   position: absolute;
+  margin: 0;
+}
+.btn-float-mini[data-icon]:before {
   top: 7px;
   left: 7px;
-  margin: 0;
 }
 /*------------------------------------*\
     $TARJETAS
 \*------------------------------------*/
+/**
+ * A todos los elementes que tengan una clase que comience por
+ * la palabra 'card*', se convertirán en tarjetas.
+ * Se recomienda que sea un 'div' o un 'article'.
+ */
 [class^="card"] {
   position: relative;
   display: inline-block;
@@ -862,9 +872,7 @@ input[type=reset].disabled:hover {
   background-color: #ffffff;
   border-radius: 2px;
   padding: 16px;
-  margin-bottom: 30px;
-  margin-left: 14px;
-  margin-right: 14px;
+  margin: 0 14px 30px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 [class^="card"] h3 {
@@ -995,10 +1003,9 @@ form li {
 }
 form label {
   min-width: 150px;
-  font-family: 'Roboto', sans-serif;
   font-size: 0.85rem;
   font-weight: 400;
-  color: #9a9a9a;
+  color: #8c8c8c;
 }
 form input {
   background-color: transparent;
@@ -1225,7 +1232,7 @@ img {
   vertical-align: middle;
 }
 figcaption {
-  color: #9a9a9a;
+  color: #8c8c8c;
   font-size: 0.85rem;
   font-style: italic;
 }
@@ -1435,7 +1442,7 @@ span[data-role="close"]:before {
   bottom: -68px;
   left: 0;
   color: #ffffff;
-  background-color: #263238;
+  background-color: #37474f;
   height: 48px;
   width: 350px;
   display: flex;
@@ -1456,6 +1463,11 @@ span[data-role="close"]:before {
 .snackbar p {
   flex-grow: 1;
   padding-right: 24px;
+}
+.snackbar p:before {
+  margin-right: 24px;
+  font-size: 24px;
+  vertical-align: bottom;
 }
 .snackbar.open {
   transform: translateY(-68px);
@@ -1599,30 +1611,70 @@ table.hoverable-cell tbody td:hover {
 table.centered {
   text-align: center;
 }
+main {
+  padding-top: 204px;
+}
+@media (max-width: 800px) {
+  main {
+    padding-top: 104px;
+  }
+}
 .md-action-button {
   position: fixed;
   bottom: 10px;
   right: 10px;
   display: flex;
   flex-direction: column-reverse;
+  z-index: 98;
 }
 .md-action-button > button {
-  transition: transform 200ms ease-in-out;
+  transition: box-shadow 200ms ease-in-out;
   z-index: 97;
 }
-.md-action-button.open > button {
-  transform: rotate(45deg);
-}
-.md-action-button.open .action-button-content {
-  display: flex;
-  opacity: 1;
+.md-action-button > button:before {
+  transition: transform 200ms ease-in-out;
 }
 .md-action-button .action-button-content {
-  display: none;
+  display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  transition: opacity 200ms ease-in-out;
-  opacity: 0;
+}
+.md-action-button .action-button-content button {
+  position: fixed;
+  bottom: 26px;
+  right: 18px;
+  will-change: bottom;
+  transition: bottom 200ms linear;
+}
+.md-action-button .action-button-content button:nth-child(4) {
+  z-index: 93;
+}
+.md-action-button .action-button-content button:nth-child(3) {
+  z-index: 94;
+}
+.md-action-button .action-button-content button:nth-child(2) {
+  z-index: 95;
+}
+.md-action-button .action-button-content button:nth-child(1) {
+  z-index: 96;
+}
+.md-action-button.open > button {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+.md-action-button.open > button:before {
+  transform: rotate(90deg);
+}
+.md-action-button.open .action-button-content button:nth-child(1) {
+  bottom: 78px;
+}
+.md-action-button.open .action-button-content button:nth-child(2) {
+  bottom: 130px;
+}
+.md-action-button.open .action-button-content button:nth-child(3) {
+  bottom: 182px;
+}
+.md-action-button.open .action-button-content button:nth-child(4) {
+  bottom: 234px;
 }
 .list-title {
   display: block;
@@ -1638,7 +1690,7 @@ table.centered {
   bottom: -68px;
   left: 0;
   color: #ffffff;
-  background-color: #263238;
+  background-color: #37474f;
   height: 48px;
   width: 350px;
   display: flex;
@@ -1659,6 +1711,11 @@ table.centered {
 .md-snackbar p {
   flex-grow: 1;
   padding-right: 24px;
+}
+.md-snackbar p:before {
+  margin-right: 24px;
+  font-size: 24px;
+  vertical-align: bottom;
 }
 .md-snackbar.open {
   transform: translateY(-68px);
@@ -1739,33 +1796,6 @@ table.centered {
   padding: 0;
   position: absolute;
   width: 1px;
-}
-.text-left {
-  text-align: left;
-}
-.text-right {
-  text-align: right;
-}
-.text-center {
-  text-align: center;
-}
-.text-justify {
-  text-align: justify;
-}
-.text-lowercase {
-  text-transform: lowercase;
-}
-.text-uppercase {
-  text-transform: uppercase;
-}
-.text-capitalize {
-  text-transform: capitalize;
-}
-.text-narrow {
-  letter-spacing: -0.05em;
-}
-.text-wide {
-  letter-spacing: 0.05em;
 }
 .float-right {
   float: right;
@@ -1882,8 +1912,45 @@ table.centered {
     background: #fff !important;
   }
 }
+/*------------------------------------*\
+    $TEXTURAS
+\*------------------------------------*/
+.primary,
+.info,
+.success,
+.alert,
+.error {
+  /*Buttons*/
+  /*blockquote*/
+}
+.primary.btn-raised,
+.info.btn-raised,
+.success.btn-raised,
+.alert.btn-raised,
+.error.btn-raised,
+.primary.btn-float,
+.info.btn-float,
+.success.btn-float,
+.alert.btn-float,
+.error.btn-float,
+.primary.btn-float-mini,
+.info.btn-float-mini,
+.success.btn-float-mini,
+.alert.btn-float-mini,
+.error.btn-float-mini {
+  color: #ffffff;
+}
+blockquote.primary,
+blockquote.info,
+blockquote.success,
+blockquote.alert,
+blockquote.error {
+  color: #ffffff;
+  border-left: 0;
+}
 .primary {
   /*Buttons*/
+  /*blockquote*/
 }
 .primary.btn-flat,
 button.primary {
@@ -1893,15 +1960,18 @@ button.primary {
 .primary.btn-float,
 .primary.btn-float-mini {
   background-color: #009688;
-  color: #ffffff;
 }
 .primary.btn-raised:active,
 .primary.btn-float:active,
 .primary.btn-float-mini:active {
   background-color: #26a69a;
 }
+blockquote.primary {
+  background-color: #009688;
+}
 .info {
   /*Buttons*/
+  /*blockquote*/
 }
 .info.btn-flat,
 button.info {
@@ -1911,15 +1981,18 @@ button.info {
 .info.btn-float,
 .info.btn-float-mini {
   background-color: #42a5f5;
-  color: #ffffff;
 }
 .info.btn-raised:active,
 .info.btn-float:active,
 .info.btn-float-mini:active {
   background-color: #2196f3;
 }
+blockquote.info {
+  background-color: #42a5f5;
+}
 .success {
   /*Buttons*/
+  /*blockquote*/
 }
 .success.btn-flat,
 button.success {
@@ -1929,15 +2002,18 @@ button.success {
 .success.btn-float,
 .success.btn-float-mini {
   background-color: #66bb6a;
-  color: #ffffff;
 }
 .success.btn-raised:active,
 .success.btn-float:active,
 .success.btn-float-mini:active {
   background-color: #4caf50;
 }
+blockquote.success {
+  background-color: #66bb6a;
+}
 .alert {
   /*Buttons*/
+  /*blockquote*/
 }
 .alert.btn-flat,
 button.alert {
@@ -1947,15 +2023,18 @@ button.alert {
 .alert.btn-float,
 .alert.btn-float-mini {
   background-color: #ffca28;
-  color: #ffffff;
 }
 .alert.btn-raised:active,
 .alert.btn-float:active,
 .alert.btn-float-mini:active {
   background-color: #ffc107;
 }
+blockquote.alert {
+  background-color: #ffca28;
+}
 .error {
   /*Buttons*/
+  /*blockquote*/
 }
 .error.btn-flat,
 button.error {
@@ -1965,15 +2044,87 @@ button.error {
 .error.btn-float,
 .error.btn-float-mini {
   background-color: #ef5350;
-  color: #ffffff;
 }
 .error.btn-raised:active,
 .error.btn-float:active,
 .error.btn-float-mini:active {
   background-color: #f44336;
 }
+blockquote.error {
+  background-color: #ef5350;
+}
 /*------------------------------------*\
-    $MATERIAL ICONS
+    $EMOJI TWITTER
+\*------------------------------------*/
+[data-emoji] {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  margin: 0 .05em 0 .1em;
+  vertical-align: -0.1em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 1em 1em;
+}
+[data-emoji].laught {
+  -webkit-animation-name: laught;
+  -webkit-animation-duration: 150ms;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-play-state: running;
+  animation-name: laught;
+  animation-duration: 150ms;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-play-state: running;
+}
+@keyframes laught {
+  from {
+    transform: translateY(1px);
+  }
+  to {
+    transform: translateY(-1px);
+  }
+}
+[data-emoji].beat {
+  -webkit-animation-name: beat;
+  -webkit-animation-duration: 400ms;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-play-state: running;
+  animation-name: beat;
+  animation-duration: 400ms;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-play-state: running;
+}
+@keyframes beat {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.15);
+  }
+}
+[data-emoji="smile"] {
+  background-image: url("../img/svg/emoji/twitter/1f604.svg");
+}
+[data-emoji="joy"] {
+  background-image: url("../img/svg/emoji/twitter/1f602.svg");
+}
+[data-emoji="heart"] {
+  background-image: url("../img/svg/emoji/twitter/2764.svg");
+}
+/*------------------------------------*\
+    $MATERIAL DESIGN ICONS
 \*------------------------------------*/
 [data-icon]:before {
   font-family: 'Material Icons';
@@ -1997,19 +2148,19 @@ button.error {
   /* Support for IE. */
   font-feature-settings: 'liga';
 }
-[data-icon~="llight"]:before {
+[data-icon].light:before {
   color: #ffffff;
 }
-[data-icon~="lg"]:before {
+[data-icon].lg:before {
   font-size: 1.33333333em;
   line-height: .75em;
   vertical-align: -15%;
 }
-[data-icon~="fw"]:before {
+[data-icon].fw:before {
   width: 1.28571429em;
   text-align: center;
 }
-[data-icon~="spin"]:before {
+[data-icon].spin:before {
   -webkit-animation: spin 2s infinite linear;
   -moz-animation: spin 2s infinite linear;
   -o-animation: spin 2s infinite linear;
@@ -2049,7 +2200,7 @@ button.error {
     transform: rotate(359deg);
   }
 }
-[data-icon~="rotate-90"]:before {
+[data-icon].rotate-90:before {
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
   -ms-transform: rotate(90deg);

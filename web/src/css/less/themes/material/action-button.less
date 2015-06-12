@@ -1,3 +1,6 @@
+//Botón flotante
+//https://www.google.com/design/spec/components/buttons-floating-action-button.html#buttons-floating-action-button-floating-action-button
+
 @animationTime: 200ms;
 
 .md-action-button {
@@ -6,29 +9,49 @@
   right: 10px;
   display: flex;
   flex-direction: column-reverse;
+  z-index: 98;
 
   &>button {
-    transition: transform @animationTime ease-in-out ;
+    transition: box-shadow @animationTime ease-in-out ;
+    &:before {
+      transition: transform @animationTime ease-in-out ;
+    }
     z-index: 97;
+  }
+
+  .action-button-content {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    & button {
+      position: fixed;
+      bottom: 26px;
+      right: 18px;
+      will-change: bottom;
+      transition: bottom @animationTime linear;
+      &:nth-child(4) {z-index: 93;}
+      &:nth-child(3) {z-index: 94;}
+      &:nth-child(2) {z-index: 95;}
+      &:nth-child(1) {z-index: 96;}
+
+    }
   }
 
   &.open {
     &>button {
-      transform: rotate(45deg);
+      .shadow(3);
+      &:before {
+        transform: rotate(90deg);
+      }
     }
 
     .action-button-content {
-      display: flex;
-      opacity: 1;
+      & button {
+        &:nth-child(1) {bottom: 78px;}
+        &:nth-child(2) {bottom: 130px;}
+        &:nth-child(3) {bottom: 182px;}
+        &:nth-child(4) {bottom: 234px;}
+      }
     }
   }
-
-  .action-button-content {
-    display: none;
-    flex-direction: column-reverse;
-    align-items: center;
-    transition: opacity @animationTime ease-in-out ;
-    opacity: 0;
-  }
 }
-
