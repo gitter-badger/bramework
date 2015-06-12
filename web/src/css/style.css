@@ -770,6 +770,9 @@ input[type=reset]:disabled:hover {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
 }
+.btn-raised:active {
+  background-color: #e6e6e6;
+}
 .btn-raised:disabled:hover {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
@@ -797,6 +800,9 @@ input[type=reset]:disabled:hover {
   .btn-float:focus {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
+}
+.btn-float:active {
+  background-color: #e6e6e6;
 }
 .btn-float:hover,
 .btn-float:focus {
@@ -834,6 +840,9 @@ input[type=reset]:disabled:hover {
   .btn-float-mini:focus {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
+}
+.btn-float-mini:active {
+  background-color: #e6e6e6;
 }
 .btn-float-mini:hover,
 .btn-float-mini:focus {
