@@ -1,20 +1,10 @@
 var navbar = document.getElementsByClassName("js-navbar");
 
-window.onscroll = function () {
-
+function navbarScroll() {
   if (window.scrollY < 1) {
-    scrollTop();
+    navbar[0].classList.remove("navbar-scrolled")
   }
   else {
-    scrollMiddle();
+    navbar[0].classList.add("navbar-scrolled")
   }
-
-}
-
-function scrollTop() {
-  navbar[0].classList.remove("navbar-scrolled")
-}
-
-function scrollMiddle() {
-  navbar[0].classList.add("navbar-scrolled")
 }

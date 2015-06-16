@@ -3,55 +3,51 @@
 
 @animationTime: 200ms;
 
-.md-action-button {
+.action-button {
   position: fixed;
   bottom: 10px;
   right: 10px;
   display: flex;
   flex-direction: column-reverse;
   z-index: 98;
+  transition: bottom @animationTime ease-in-out ;
 
   &>button {
-    transition: box-shadow @animationTime ease-in-out ;
     &:before {
       transition: transform @animationTime ease-in-out ;
-    }
-    z-index: 97;
-  }
-
-  .action-button-content {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    & button {
-      position: fixed;
-      bottom: 26px;
-      right: 18px;
-      will-change: bottom;
-      transition: bottom @animationTime linear;
-      &:nth-child(4) {z-index: 93;}
-      &:nth-child(3) {z-index: 94;}
-      &:nth-child(2) {z-index: 95;}
-      &:nth-child(1) {z-index: 96;}
-
-    }
-  }
-
-  &.open {
-    &>button {
-      .shadow(3);
-      &:before {
+      .action-button_open& {
         transform: rotate(90deg);
       }
     }
+    z-index: 97;
+  }
+}
 
-    .action-button-content {
-      & button {
-        &:nth-child(1) {bottom: 78px;}
-        &:nth-child(2) {bottom: 130px;}
-        &:nth-child(3) {bottom: 182px;}
-        &:nth-child(4) {bottom: 234px;}
-      }
+.action-button_hidden {
+  bottom: -68px;
+}
+
+//Sub-elementos del botón flotante
+.action-button-content {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  & button {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    will-change: bottom;
+    transition: bottom @animationTime linear;
+    &:nth-child(4) {z-index: 93;}
+    &:nth-child(3) {z-index: 94;}
+    &:nth-child(2) {z-index: 95;}
+    &:nth-child(1) {z-index: 96;}
+
+    .action-button_open & {
+      &:nth-child(1) {bottom: 78px;}
+      &:nth-child(2) {bottom: 130px;}
+      &:nth-child(3) {bottom: 182px;}
+      &:nth-child(4) {bottom: 234px;}
     }
   }
 }

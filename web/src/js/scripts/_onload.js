@@ -1,8 +1,19 @@
 "use strict";
 
-//Ejecutar al cargar la página
+//Load
 window.onload = function() {
   loadSlideMenu()
-  loadActionButton();
-//  loadExpandible();
+  actionButtonLoad();
 };
+
+
+//Scroll
+var currentScroll;
+
+window.onscroll = function(){
+
+  navbarScroll();
+  actionButtonScroll();
+
+  currentScroll = window.scrollY;
+}
