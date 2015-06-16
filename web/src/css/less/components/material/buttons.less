@@ -1,0 +1,122 @@
+//Botones
+//https://www.google.com/design/spec/components/buttons.html#buttons-usage
+//https://www.google.com/design/spec/components/bottom-sheets.html#bottom-sheets-specs
+//https://www.google.com/design/spec/components/buttons-floating-action-button.html#buttons-floating-action-button-floating-action-button
+
+//Base
+.md-button-base() {
+  position: relative;
+  padding: 0px 12px;
+  margin: 6px 4px;
+  will-change: box-shadow;
+  transition: box-shadow .1s ease-in-out;
+  &:hover, &:focus {
+    cursor: pointer;
+  }
+}
+
+  //Estilos para todos los botones rectangulares
+  .md-button-base-square() {
+    height: 36px;
+    text-transform: uppercase;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: @md-border-radius;
+    font-size: @font-size-small;
+    &:disabled {
+      opacity: 0.5;
+      &:hover {
+        cursor: not-allowed;
+      }
+    }
+    &[data-icon]:before {
+      margin-right: 8px;
+    }
+  }
+
+  //Estilos todos los botones elevados
+  .md-button-base-raised() {
+    .shadow(1);
+    background-color: @white;
+    &:hover, &:focus {
+      @media (max-width: @bp-medium) {
+        .shadow(2);
+      }
+    }
+    &:active {
+      background-color: @grey-100;
+    }
+  }
+
+  //Estilos para todos los botones circulares
+  .md-button-base-circle() {
+    .shadow(2);
+    font-size: 26px;
+    &:hover, &:focus {
+      .shadow(3);
+    }
+    &[data-icon]:before {
+      position: absolute;
+      margin: 0;
+    }
+  }
+
+
+//Botones planos
+.md-button-flat() {
+  .md-button-base();
+  .md-button-base-square();
+  background-color: transparent;
+  &:hover, &:focus {
+    .shadow(2);
+    @media (max-width: @bp-medium) {
+      box-shadow: none;
+    }
+  }
+  &:active {
+    background-color: @alpha-50;
+  }
+  &:disabled {
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}
+
+//Botones elevados
+.md-button-raised() {
+  .md-button-base();
+  .md-button-base-square();
+  .md-button-base-raised();
+  &:disabled {
+    &:hover {
+      .shadow(1);
+    }
+  }
+}
+
+//Botones circulares
+.md-button-float() {
+  .md-button-base();
+  .md-button-base-raised();
+  .md-button-base-circle();
+  .circle(56px);
+  line-height: 56px;
+  &[data-icon]:before {
+    top: 15px;
+    left: 15px;
+  }
+}
+
+//Botones circulares pequeños
+.md-button-float-mini() {
+  .md-button-base();
+  .md-button-base-raised();
+  .md-button-base-circle();
+  .circle(40px);
+  line-height: 40px;
+  &[data-icon]:before {
+    top: 7px;
+    left: 7px;
+  }
+}

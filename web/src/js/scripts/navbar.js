@@ -8,6 +8,7 @@ window.onscroll = function () {
   else {
     scrollMiddle();
   }
+
 }
 
 function scrollTop() {

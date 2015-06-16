@@ -33,7 +33,7 @@ INFO
   <!-- Android & Google -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#009688">
-  <link rel="manifest" href="manifest.json">
+<!--  <link rel="manifest" href="manifest.json">-->
 
   <!-- iOS -->
   <meta name="apple-mobile-web-app-title" content="">
@@ -84,26 +84,53 @@ INFO
 <body class="test">
 
   <header>
-    <nav class="navbar">
-      <div class="navbar-main">
-
-        <div class="navbar-main_center">
-          <p>Iván Barcia</p>
+    <!--  La clase js-navbar se añade para que funcione el JS.
+    El prefijo '_extended' se añade a 'navbar-toolbar' para que se vea el título
+    en grande cuando estamos arriba de todo en la página. Si no utilizamos el
+    sufijo '_extended' también podemos retirar la clase 'js-navbar'.
+    -->
+    <nav class="navbar  js-navbar">
+      <div class="navbar-toolbar_extended">
+        <div class="navbar-toolbar-left">
+          <a id="open-swipe-menu" data-icon="menu"></a>
+        </div>
+        <h1 class="navbar-toolbar_title">O Castro de Portomouro</h1>
+        <div class="navbar-toolbar-right">
+          <a  href="#" data-badge="2" data-icon="message"></a>
+          <a  href="#" data-icon="&#xE2C0;"></a>
+          <a  href="#" data-icon="&#xE5D4;"></a>
         </div>
       </div>
 
-      <p></p>
-
-      <div class="navbar-tabs">
-        <a href="#" class="tab-active">Blog</a><!--
---><a href="#">Lab</a><!--
---><a href="#">Info</a>
+      <div class="navbar-tab">
+        <a href="#" class="navbar-tab_active">Artigo</a>
+        <a href="#">Fotos</a>
+        <a href="#">Mapa</a>
+        <a href="#">Comentarios</a>
       </div>
     </nav>
   </header>
 
   <main>
 
+    <h1>Un título h1</h1>
+    <p>Nostrud iis quamquam. Veniam ab voluptate ita incurreret ubi pariatur. De veniam
+      ingeniis pariatur. Cillum ad mentitum do culpa iudicem exercitation et sunt
+      proident ubi eruditionem, o eram veniam nisi occaecat. Mandaremus anim multos
+      quibusdam fugiat. Nescius si dolor, ubi velit cupidatat quamquam, enim laborum
+      an sint irure, summis in a velit quibusdam.</p>
+    <h2>Un título h2</h2>
+    <p class="first-letter-big  indent">Nostrud iis quamquam. Veniam ab voluptate ita incurreret ubi pariatur. De veniam
+      ingeniis pariatur. Cillum ad mentitum do culpa iudicem exercitation et sunt
+      proident ubi eruditionem, o eram veniam nisi occaecat. Mandaremus anim multos
+      quibusdam fugiat. Nescius si dolor, ubi velit cupidatat quamquam, enim laborum
+      an sint irure, summis in a velit quibusdam.</p>
+    <h3>Un título h3</h3>
+    <p>Nostrud iis quamquam. Veniam ab voluptate ita incurreret ubi pariatur. De veniam
+      ingeniis pariatur. Cillum ad mentitum do culpa iudicem exercitation et sunt
+      proident ubi eruditionem, o eram veniam nisi occaecat. Mandaremus anim multos
+      quibusdam fugiat. Nescius si dolor, ubi velit cupidatat quamquam, enim laborum
+      an sint irure, summis in a velit quibusdam.</p>
     <h1>Un título h1</h1>
     <p>Nostrud iis quamquam. Veniam ab voluptate ita incurreret ubi pariatur. De veniam
       ingeniis pariatur. Cillum ad mentitum do culpa iudicem exercitation et sunt

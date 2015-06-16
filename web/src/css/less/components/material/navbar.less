@@ -1,0 +1,233 @@
+//Barra de navegacion
+//https://www.google.com/design/spec/components/tabs.html
+//https://www.google.com/design/spec/components/toolbars.html#toolbars-usage
+
+@md-navbar-transition: 200ms;
+
+.md-navbar {
+  position: fixed;
+  width: 100%;
+  background-color: @brand-color;
+  font-size: 24px;
+  color: @white;
+  z-index: 97;
+  will-change: box-shadow;
+  transition: box-shadow @md-navbar-transition ease-in-out;
+  .shadow(1);
+  .navbar-scrolled& {
+    .shadow(3);
+  }
+
+  .navbar-toolbar {
+    display: flex;
+    align-items: center;
+    height: 56px;
+    box-sizing: content-box; //Para que al añadir el padding, no se vea mal por el align-content
+
+    &.extended {
+    will-change: padding-bottom;
+    transition: padding-bottom @md-navbar-transition ease-in-out;
+    padding-bottom: 72px;
+      .navbar-scrolled& {
+        padding-bottom: 0;
+      }
+    }
+
+    a  {
+      border-radius: 100%;
+    }
+
+
+  }
+}
+
+
+
+
+
+
+
+//@bp-height: 400px;
+//
+//
+//  //Navbar main
+//  .navbar-toolbar {
+//    display: flex;
+//    align-items: center;
+//    height: 56px;
+//    box-sizing: content-box;
+//
+//    will-change: padding-bottom;
+//    transition: padding-bottom 200ms ease-in-out;
+//    padding-bottom: 72px;
+//
+//    a  {
+//      border-radius: 100%;
+//    }
+//
+//    .navbar-scrolled& {
+//      padding-bottom: 0;
+//    }
+//
+//
+////    @media (max-width: @bp-medium) {
+////      height: 56px;
+////    }
+////
+////    @media (max-height: @bp-height) {
+////      height: 48px;
+////    }
+//  }
+//
+//  a {
+//    display: inline-block;
+//    color: @white;
+//    text-decoration: none;
+//    &:hover,
+//    &:focus {
+//      background-color: @brand-color-focus;
+//    }
+//    &:active {
+//      background-color: @brand-color-active;
+//    }
+//
+//    @media (max-width: @bp-medium) {
+//      &:hover,
+//      &:focus {
+//        background-color: inherit;
+//      }
+//      &:active {
+//        background-color: @brand-color-focus;
+//      }
+//    }
+//  }
+//
+//  [data-icon]:before {
+//    padding: 16px;
+//    color: @white;
+//  }
+//
+//  h1 {
+//    display: inline-block;
+//    font-size: 20px;
+//    margin: 0;
+//    will-change: transform;
+//    transition: transform 200ms linear;
+//    transform: translate(5px, 50px) scale(1.6);
+//
+//    .navbar-scrolled& {
+//      transform: translate(0, 0) scale(1);
+//    }
+//  }
+//
+//  [data-badge]:after {
+//    content: attr(data-badge);
+//    position: absolute;
+//    background-color: @red-800;
+//    font-size: 14px;
+//    width: 20px;
+//    height: 20px;
+//    line-height: 20px;
+//    border-radius: 100%;
+//    top: 7px;
+//    right: 9px;
+//    text-align: center;
+//  }
+//
+//}
+//
+//    //Icono de hamburguesa o atrás
+//    .navbar-toolbar_left {
+//      width: auto;
+//      margin-left: 10px;
+//
+//      @media (max-width: @bp-small) {
+//        margin-left: 0;
+//      }
+//    }
+//
+//    //Texto del título
+//    .navbar-toolbar_center {
+//      flex: 1;
+//      margin-left: 28px;
+////      overflow-x: auto;
+//      white-space: nowrap;
+//
+////      p {
+////        display: none;
+////
+////        .navbar-scrolled& {
+////          display: inline-block;
+////        }
+////      }
+//
+//      @media (max-width: @bp-medium) {
+//        margin-left: 10px;
+//      }
+//    }
+//
+//    //Iconos con acciones secundarias
+//    .navbar-toolbar_right {
+//      width: auto;
+//      margin-right: 10px;
+//
+//      @media (max-width: @bp-small) {
+//        margin-right: 0;
+//        a {
+//          &:not(:last-child) {
+//            margin-right: -14px;
+//          }
+//        }
+//      }
+//    }
+//
+//  //Título grande. Es recomendable ocultar el título
+//  // de 'navbar-default
+//  .navbar-title {
+//    height: 72px;
+//    overflow-x: auto;
+//    white-space: nowrap;
+//    transition: height 200ms ease-in-out;
+//
+//    p {
+//      font-size: 2.3rem;
+//      margin-left: 28px;
+//      line-height: 86px;
+//    }
+//
+//    .navbar-scrolled& {
+////      display: none;
+//      height: 0;
+//
+//    }
+//  }
+//
+//  // Tabs
+//  .navbar-tabs {
+//    height: 48px;
+//    margin-left: 16px;
+//    overflow-x: auto;
+//    white-space: nowrap;
+//
+//    a {
+//      font-size: 14px;
+//      padding: 0 12px;
+//      line-height: 46px;
+//      border-bottom: 2px solid @alpha;
+//      text-transform: uppercase;
+//      opacity: 0.6;
+//
+//      &:hover, &.tab-active {
+//        border-bottom: 2px solid @white;
+//        opacity: 1;
+//      }
+//    }
+//
+//    @media (max-width: @bp-medium) {
+//      text-align: center;
+//    }
+//
+//    @media (max-width: @bp-small) {
+//      margin-left: 0px;
+//    }
+//  }
