@@ -1,0 +1,181 @@
+//Barra de navegacion
+//https://www.google.com/design/spec/components/tabs.html
+//https://www.google.com/design/spec/components/toolbars.html#toolbars-usage
+//https://www.google.com/design/spec/layout/structure.html#structure-toolbars
+
+@md-navbar-transition: 200ms;
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  background-color: @brand-color;
+  font-size: 24px;
+  color: @white;
+  z-index: 97;
+  will-change: box-shadow;
+  transition: box-shadow @md-navbar-transition ease-in-out;
+  .shadow(1);
+  .navbar_scrolled& {
+    .shadow(2);
+  }
+
+  a {
+    position: relative;
+    display: inline-block;
+    color: @white;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      background-color: @brand-color-focus;
+    }
+    &:active {
+      background-color: @brand-color-active;
+    }
+
+    @media (max-width: @bp-medium) {
+      &:hover,
+      &:focus {
+        background-color: inherit;
+      }
+      &:active {
+        background-color: @brand-color-focus;
+      }
+    }
+
+    &[data-badge]:after {
+      content: attr(data-badge);
+      position: absolute;
+      background-color: @red-800;
+      font-size: 14px;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      border-radius: 100%;
+      top: 3px;
+      right: 3px;
+      text-align: center;
+    }
+  }
+
+  [data-icon]:before {
+    padding: 12px;
+    color: @white;
+  }
+
+}
+
+.navbar-toolbar {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  box-sizing: content-box; //Para que al añadir el padding, no se vea mal por el align-content
+
+  a  {
+    border-radius: 100%;
+  }
+
+  @media (max-width: @bp-medium) {
+    height: 56px;
+  }
+
+  @media (max-width: @bp-small) {
+    height: 56px;
+  }
+}
+
+//Modificador que muestra el título en grande
+.navbar-toolbar_extended {
+  &:extend(.navbar-toolbar all);
+  will-change: padding-bottom;
+  transition: padding-bottom @md-navbar-transition linear;
+  padding-bottom: 72px;
+  .navbar_scrolled & {
+    padding-bottom: 0;
+  }
+}
+
+.navbar-toolbar-left {
+  margin-left: 12px;
+
+  @media (max-width: @bp-small) {
+    margin-left: 0;
+  }
+}
+
+.navbar-toolbar_title {
+  display: inline-block;
+  flex: 1;
+  margin: 0 0 0 20px;
+  font-size: 20px;
+  white-space: nowrap;
+  will-change: transform;
+  transition: transform 200ms linear;
+
+  @media (max-width: @bp-small) {
+    margin-left: 0;
+  }
+
+  .navbar-toolbar_extended & {
+    transform-origin: left;
+    transform: translateY(55px) scale(1.6);
+    @media (max-width: @bp-small) {
+      transform: translate(-36px, 55px) scale(1.6);
+    }
+    .navbar_scrolled & {
+      transform: translate(0, 0) scale(1);
+    }
+  }
+}
+
+//Iconos con acciones secundarias
+.navbar-toolbar-right {
+  margin-right: 12px;
+  @media (max-width: @bp-small) {
+    margin-right: 0;
+    a:not(:last-child) {
+      margin-right: -10px;
+    }
+  }
+}
+
+// Tabs
+.navbar-tab {
+  display: inline-flex;
+  height: 48px;
+  margin-left: 68px;
+
+
+  a {
+    flex-grow: 1;
+    font-size: 14px;
+    padding: 0 12px;
+    line-height: 46px;
+    border-bottom: 2px solid @alpha;
+    text-transform: uppercase;
+    opacity: 0.6;
+
+    &:hover, &.navbar-tab_active {
+      border-bottom: 2px solid @yellow-300;
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: @bp-medium) {
+    display: flex;
+    text-align: center;
+    margin-left: 0;
+  }
+}
+
+//Estilos para Tabs, cuando hay muchos elementos
+.navbar-tabs_large {
+  &:extend(.navbar-tabs all);
+  overflow-x: auto;
+  white-space: nowrap;
+
+  @media (max-width: @bp-medium) {
+    display: block;
+    text-align: center;
+    margin-left: 0;
+  }
+}

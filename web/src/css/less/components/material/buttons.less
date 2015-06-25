@@ -1,23 +1,26 @@
-//Botones
+/*------------------------------------*\
+    $BOTONES
+\*------------------------------------*/
+
 //https://www.google.com/design/spec/components/buttons.html#buttons-usage
 //https://www.google.com/design/spec/components/bottom-sheets.html#bottom-sheets-specs
 //https://www.google.com/design/spec/components/buttons-floating-action-button.html#buttons-floating-action-button-floating-action-button
 
 //Base
-.md-button-base() {
+.button-base {
   position: relative;
-  padding: 0px 12px;
-  margin: 6px 4px;
   will-change: box-shadow;
-  transition: box-shadow .1s ease-in-out;
-  &:hover, &:focus {
+  transition: box-shadow 100ms ease-in-out;
+  &:hover {
     cursor: pointer;
   }
 }
 
   //Estilos para todos los botones rectangulares
-  .md-button-base-square() {
+  .button-base_square {
     height: 36px;
+    padding: 0px 8px;
+    margin: 6px 8px;
     text-transform: uppercase;
     text-align: center;
     white-space: nowrap;
@@ -31,11 +34,16 @@
     }
     &[data-icon]:before {
       margin-right: 8px;
+//      font-size: 16px;
+//      width: 16px;
+//      height: 32px;
+//      line-height: 32px;
+//      vertical-align: bottom;
     }
   }
 
   //Estilos todos los botones elevados
-  .md-button-base-raised() {
+  .button-base_raised {
     .shadow(1);
     background-color: @white;
     &:hover, &:focus {
@@ -49,7 +57,7 @@
   }
 
   //Estilos para todos los botones circulares
-  .md-button-base-circle() {
+  .button-base_circle {
     .shadow(2);
     font-size: 26px;
     &:hover, &:focus {
@@ -63,9 +71,11 @@
 
 
 //Botones planos
-.md-button-flat() {
-  .md-button-base();
-  .md-button-base-square();
+button, .btn, .btn-flat,
+input[type=submit], input[type=button], input[type=reset] {
+  &:extend(.button-base all);
+  &:extend(.button-base_square all);
+
   background-color: transparent;
   &:hover, &:focus {
     .shadow(2);
@@ -84,10 +94,10 @@
 }
 
 //Botones elevados
-.md-button-raised() {
-  .md-button-base();
-  .md-button-base-square();
-  .md-button-base-raised();
+.btn-raised {
+  &:extend(.button-base all);
+  &:extend(.button-base_square all);
+  &:extend(.button-base_raised all);
   &:disabled {
     &:hover {
       .shadow(1);
@@ -96,10 +106,10 @@
 }
 
 //Botones circulares
-.md-button-float() {
-  .md-button-base();
-  .md-button-base-raised();
-  .md-button-base-circle();
+.btn-float {
+  &:extend(.button-base all);
+  &:extend(.button-base_raised all);
+  &:extend(.button-base_circle all);
   .circle(56px);
   line-height: 56px;
   &[data-icon]:before {
@@ -109,10 +119,10 @@
 }
 
 //Botones circulares pequeños
-.md-button-float-mini() {
-  .md-button-base();
-  .md-button-base-raised();
-  .md-button-base-circle();
+.btn-float-mini {
+  &:extend(.button-base all);
+  &:extend(.button-base_raised all);
+  &:extend(.button-base_circle all);
   .circle(40px);
   line-height: 40px;
   &[data-icon]:before {

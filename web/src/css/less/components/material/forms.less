@@ -1,7 +1,9 @@
-//Formularios
+/*------------------------------------*\
+    $FORMULARIOS
+\*------------------------------------*/
 //https://www.google.com/design/spec/components/text-fields.html
 
-.md-form() {
+form {
   li {
     display: flex;
     align-items: center;
@@ -10,7 +12,7 @@
 
   label {
     min-width: 150px;
-    .small;
+    .small();
   }
 
   input {
@@ -87,7 +89,7 @@
   }
 }
 
-.md-select() {
+select {
   background-color: transparent;
   border: 0;
   .pointer();
@@ -96,13 +98,11 @@
   }
 }
 
-.md-textarea() {
+textarea {
   background-color: transparent;
   border: 0;
   border-bottom: 1px solid @grey-150;
   font-size: 0.9rem;
-//  padding: 8px;
-//  margin: 8px 0px;
   &:hover {
     cursor: text;
   }

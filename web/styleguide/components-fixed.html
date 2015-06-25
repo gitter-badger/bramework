@@ -24,34 +24,29 @@
 <body>
   <header>
 
-    <!-- Menú superior -->
-    <nav class="navbar">
-      <div class="navbar-main">
-        <div class="navbar-main_left">
+    <!--  La clase js-navbar se añade para que funcione el JS.
+El prefijo '_extended' se añade a 'navbar-toolbar' para que se vea el título
+en grande cuando estamos arriba de todo en la página. Si no utilizamos el
+sufijo '_extended' también podemos retirar la clase 'js-navbar'.
+-->
+    <nav class="navbar  js-navbar">
+      <div class="navbar-toolbar_extended">
+        <div class="navbar-toolbar-left">
           <a id="open-swipe-menu" data-icon="menu"></a>
         </div>
-
-        <div class="navbar-main_center">
-          <p>Default title</p>
-        </div>
-
-        <div class="navbar-main_right">
-          <a  href="#" data-icon="group"></a>
+        <h1 class="navbar-toolbar_title">The Title</h1>
+        <div class="navbar-toolbar-right">
+          <a  href="#" data-badge="2" data-icon="message"></a>
           <a  href="#" data-icon="&#xE2C0;"></a>
           <a  href="#" data-icon="&#xE5D4;"></a>
-
         </div>
       </div>
 
-      <div class="navbar-title">
-        <p>Title big</p>
-      </div>
-
-      <div class="navbar-tabs">
-        <a href="#" class="tab-active">Item 1</a><!--
-        --><a href="#">Item 2</a><!--
-        --><a href="#">Item 3</a><!--
-        --><a href="#">Item 4</a>
+      <div class="navbar-tab">
+        <a href="#" class="navbar-tab_active">Item 1</a>
+        <a href="#">Item 2</a>
+        <a href="#">Item 3</a>
+        <a href="#">Item 4</a>
       </div>
     </nav>
 
@@ -68,10 +63,10 @@
       <ul>
         <li><a data-icon="person">Item</a></li>
         <li><a data-icon="pages" data-number="32">Item</a></li>
-        <li><a data-icon="whatshot" data-number="17">Item</a><a class="addon" data-icon="add"></a></li>
-        <li><a data-icon="cake">Item</a><a class="addon" data-icon="menu"></a></li>
-        <li><a>Item</a><a class="addon" data-icon="public"></a></li>
-        <li><a>Item</a><a class="addon" data-icon="school"></a></li>
+        <li><a data-icon="whatshot" data-number="17">Item</a><a class="list-addon" data-icon="add"></a></li>
+        <li><a data-icon="cake">Item</a><a class="list-addon" data-icon="menu"></a></li>
+        <li><a>Item</a><a class="list-addon" data-icon="public"></a></li>
+        <li><a>Item</a><a class="list-addon" data-icon="school"></a></li>
       </ul>
     </nav>
 

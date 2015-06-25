@@ -28,7 +28,7 @@ Haciendo esto, cada vez que guardemos cualquier cambio en un archivo `.less` o `
 
 Principalmente escribiremos código en los directorios `layout/` para crear bloques de código o «trozos» de interfaz y en el directorio `pages/` para añadir estilos más específicos.
 
-Además, **antes** de comenzar con la maquetación, podemos crear o editar los [componentes](#components) que necesitemos, configurar los estilos [mas básicos y generales](#base) o añadir [temas](#themes).
+Además, **antes** de comenzar con la maquetación, podemos crear o editar los [componentes](#components) que necesitemos, configurar los estilos [mas básicos y generales](#base) o añadir temas.
 
 
 ##Iconos
@@ -101,16 +101,6 @@ less/
 |– pages/
 |   |– ...
 |
-|– themes/
-|   |– flat/
-|   |   |-...
-|   |
-|   |– material/
-|   |   |-...
-|   |
-|   |- flat.less
-|   |- material.less
-|
 |– vendor/
 |   |– material-fonts.less
 |
@@ -165,36 +155,6 @@ Aquí debes colocar los módulos que crees usando mayormente los componentes. So
 ###pages/
 Aquí debes colocar archivos con los estilos de las **páginas únicas**. Por ejemplo los estilos del `index.html`, de la página de contacto, etc.
 
-###themes/
-Aquí, cada uno dentro de su respectiva carpeta, colocarás los **temas** que vayas creando. Cuando crees un tema puedes crear estilos para todos los componentes que creas oportunos. Son simplemente estilos predefinidos.
-
-La forma de hacerlo es creando **SIEMPRE _mixings_ paramétricos** para que sólo se procesen los estilos de los componentes que utilicemos, y así podremos tener temas lo más extensos y completos que queramos, sin que eso signifique necesariamente que aumente el tamaño de nuestro archivo final de CSS.
-
-Una **buena práctica** para evitar conflictos si usamos elementos de varios temas al mismo tiempo es añadir un prefijo identificativo a cada *mixing* dependiendo del tema. Por ejemplo, si creas un tema basado en el estilo *material design* el *mixing* para los botones puede ser `.md-button` mientras que el *mixing* para los botones del estilo *flat design* podría ser `.flat-button`.
-
-Una vez creados los *mixings* los añadimos al componente que queramos en el directorio `components/`.
-
-Ejemplo:
-
-* *Mixing* paramétrico creado en `themes/`:
-
-```less
-.md-button-base() {
-  height: 36px;
-  padding: 0px 12px;
-  margin: 6px 4px;
-  text-transform: uppercase;
-  text-align: center;
-}
-```
-
-* Lo aplicamos al componente que queremos en `components/`:
-
-```css
-button {
-  .md-button-base();
-}
-```
 
 ###vendor/
 Aquí van las librerías y estilos de **elementos externos**.

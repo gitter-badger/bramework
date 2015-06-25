@@ -1,8 +1,12 @@
-//Listas
+/*------------------------------------*\
+    $LISTAS
+\*------------------------------------*/
 //http://www.google.com/design/spec/components/lists.html#lists-specs
 
-//Colocar en un elemento padre de los UL
-.md-list() {
+/*
+ * Colocar en un DIV padre de los UL.
+ */
+.list {
   background-color: @white;
   ul {
     padding: 8px 0;
@@ -33,7 +37,7 @@
     }
     &:hover,
     &:focus,
-    &.js-list-active{
+    &.list-active{
       color: inherit;
       background-color: @grey-50;
       text-decoration: none;
@@ -43,7 +47,7 @@
 
   //Iconos
   [data-icon]:before {
-    margin-right: 24px;
+    margin-right: 32px;
     font-size: 24px;
     vertical-align: middle;
     width: 24px;
@@ -52,8 +56,8 @@
     color: @grey-500;
   }
 
-  //Botón extra
-  .addon {
+    //Botón extra
+  .list-addon {
     width: 48px;
     padding: 0;
     &[data-icon]:before {
@@ -71,6 +75,8 @@
   }
 }
 
+
+
 //Añadir esta clase a un '<span>' justo antes de un '<ul'> para poner un titulo
 .list-title {
   display: block;
@@ -79,13 +85,15 @@
   line-height: 24px;
   font-size: 0.75rem;
   margin-left: 15px;
-  margin-top: 8px;
+  padding-top: 8px;
 }
 
 
 //Lista pequeña
-//Colocar directamente en los UL
-.md-list-small() {
+/**
+ * Colocar directamente en los UL.
+ */
+.list-small {
   padding: 8px 0;
   background-color: @white;
   list-style-type: none;
