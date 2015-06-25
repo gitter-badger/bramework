@@ -1,7 +1,7 @@
 //Tarjetas
 //https://www.google.com/design/spec/components/cards.html#cards-usage
 
-.md-card() {
+[class^="card"] {
   position: relative; //Es necesario para situar dentro elementos con 'position: absolute'
   display: inline-block;
   vertical-align: top;
@@ -22,72 +22,73 @@
     }
   }
 
-  //Tarjetas oscuras
-  &[class*="dark"] {
-    background-color: @bg-dark;
-    color: @white;
-    h3 {
-      color: @white;
-    }
-  }
-
-  //Tarjetas con imagen de fondo
-  &[class*="image"]  {
-    padding: 0;
-    padding-bottom: 16px;
-    h3, p, footer {
-      .padding-horizontal(16px;)
-    }
-  }
-
-  .title-background {
-      position: relative;
-      height: 300px;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      margin-bottom: 32px;
-      h3 {
-        color: @white;
-        position: absolute;
-        bottom: 0;
-        margin-bottom: 0;
-        &.title-shadow {
-          width: 100%;
-          background: linear-gradient( 0deg, @alpha-150, @alpha );
-          padding-top: 20px;
-          padding-bottom: 5px;
-        }
-      }
-    }
-
-  //Estilos para las tarjetas que además son un enlace en sí mismas
-  &[class*="link"] {
-    .transition (box-shadow;);
-    will-change: box-shadow;
-    transition-duration: 0.1s;
-    cursor: pointer;
-
-    /**
-    * Debes poner aquí todos los elementos que estén dentro de tus
-    * tarjetas que a su vez son todas ellas un enlace.
-    * Así evitamos el uso del selector global '*'.
-    * Además, se desaconseja poner enlaces o botones dentro
-    * de estas tarjetas.
-    */
-    h3, p {
-      color: @text-color;
-      cursor: pointer;
-    }
-
-    &:hover, &:focus {
-      .shadow(3);
-    }
-  }
-
   //Mediaqueries
   @media (max-width: @bp-medium) {
     margin-bottom: 20px;
     .margin-horizontal (10px);
+  }
+}
+
+//Tarjetas oscuras
+.card_dark {
+  background-color: @bg-dark;
+  color: @white;
+  h3 {
+    color: @white;
+  }
+}
+
+//Tarjetas con imagen de fondo
+.card_image {
+  padding: 0;
+  padding-bottom: 16px;
+  h3, p, footer {
+    .padding-horizontal(16px;)
+  }
+}
+
+[class^="image-background"] {
+  position: relative;
+  height: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 32px;
+  h3 {
+    color: @white;
+    position: absolute;
+    padding-bottom: 5px;
+    bottom: 0;
+    margin-bottom: 0;
+  }
+}
+
+.image-background_shadow h3 {
+  width: 100%;
+  background: linear-gradient( 0deg, @alpha-150, @alpha );
+  padding-top: 20px;
+}
+
+//Estilos para las tarjetas que además son un enlace en sí mismas
+.card_link {
+  .transition (box-shadow;);
+  will-change: box-shadow;
+  transition-duration: 0.1s;
+  cursor: pointer;
+
+  /**
+  * Debes poner aquí todos los elementos que estén dentro de tus
+  * tarjetas que a su vez son todas ellas un enlace.
+  * Así evitamos el uso del selector global '*'.
+  * Además, se desaconseja poner enlaces o botones dentro
+  * de estas tarjetas.
+  */
+  h3, p {
+    color: @text-color;
+    cursor: pointer;
+  }
+
+  &:hover, &:focus {
+    .shadow(3);
   }
 }

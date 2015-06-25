@@ -15,7 +15,7 @@
   will-change: box-shadow;
   transition: box-shadow @md-navbar-transition ease-in-out;
   .shadow(1);
-  .navbar-scrolled& {
+  .navbar_scrolled& {
     .shadow(2);
   }
 
@@ -89,7 +89,7 @@
   will-change: padding-bottom;
   transition: padding-bottom @md-navbar-transition linear;
   padding-bottom: 72px;
-  .navbar-scrolled & {
+  .navbar_scrolled & {
     padding-bottom: 0;
   }
 }
@@ -121,7 +121,7 @@
     @media (max-width: @bp-small) {
       transform: translate(-36px, 55px) scale(1.6);
     }
-    .navbar-scrolled & {
+    .navbar_scrolled & {
       transform: translate(0, 0) scale(1);
     }
   }

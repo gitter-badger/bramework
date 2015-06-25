@@ -532,104 +532,6 @@ address {
   letter-spacing: 0.05em;
 }
 /*------------------------------------*\
-    $TARJETAS
-\*------------------------------------*/
-/**
- * A todos los elementes que tengan una clase que comience por
- * la palabra 'card*', se convertirán en tarjetas.
- * Se recomienda que sea un 'div' o un 'article'.
- */
-[class^="card"] {
-  position: relative;
-  display: inline-block;
-  vertical-align: top;
-  text-align: left;
-  background-color: #ffffff;
-  border-radius: 2px;
-  padding: 16px;
-  margin: 0 14px 30px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-}
-[class^="card"] h3 {
-  margin-top: 0;
-}
-[class^="card"] footer {
-  text-align: right;
-  margin-top: 24px;
-}
-[class^="card"] footer button {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-[class^="card"][class*="dark"] {
-  background-color: #37474f;
-  color: #ffffff;
-}
-[class^="card"][class*="dark"] h3 {
-  color: #ffffff;
-}
-[class^="card"][class*="image"] {
-  padding: 0;
-  padding-bottom: 16px;
-}
-[class^="card"][class*="image"] h3,
-[class^="card"][class*="image"] p,
-[class^="card"][class*="image"] footer {
-  padding-left: 16px;
-  padding-right: 16px;
-}
-[class^="card"] .title-background {
-  position: relative;
-  height: 300px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-bottom: 32px;
-}
-[class^="card"] .title-background h3 {
-  color: #ffffff;
-  position: absolute;
-  bottom: 0;
-  margin-bottom: 0;
-}
-[class^="card"] .title-background h3.title-shadow {
-  width: 100%;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
-  padding-top: 20px;
-  padding-bottom: 5px;
-}
-[class^="card"][class*="link"] {
-  transition-property: box-shadow;
-  transition-timing-function: ease-in-out;
-  transition-delay: 0s;
-  will-change: box-shadow;
-  transition-duration: 0.1s;
-  cursor: pointer;
-  /**
-    * Debes poner aquí todos los elementos que estén dentro de tus
-    * tarjetas que a su vez son todas ellas un enlace.
-    * Así evitamos el uso del selector global '*'.
-    * Además, se desaconseja poner enlaces o botones dentro
-    * de estas tarjetas.
-    */
-}
-[class^="card"][class*="link"] h3,
-[class^="card"][class*="link"] p {
-  color: #4d4d4d;
-  cursor: pointer;
-}
-[class^="card"][class*="link"]:hover,
-[class^="card"][class*="link"]:focus {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-}
-@media (max-width: 800px) {
-  [class^="card"] {
-    margin-bottom: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-}
-/*------------------------------------*\
     $CÓDIGO
 \*------------------------------------*/
 code,
@@ -667,228 +569,6 @@ pre code {
   pre code {
     padding: 30px 20px;
   }
-}
-/*------------------------------------*\
-    $FORMULARIOS
-\*------------------------------------*/
-form li {
-  display: flex;
-  align-items: center;
-  min-height: 50px;
-}
-form label {
-  min-width: 150px;
-  font-size: 0.85rem;
-  font-weight: 400;
-  color: #8c8c8c;
-}
-form input {
-  background-color: transparent;
-  transition-property: border-size, border-color;
-  transition-timing-function: ease-in-out;
-  transition-delay: 0s;
-}
-form input[type="text"],
-form input[type="password"],
-form input[type="date"],
-form input[type="datetime"],
-form input[type="datetime-local"],
-form input[type="email"],
-form input[type="number"],
-form input[type="tel"],
-form input[type="search"],
-form input[type="time"],
-form input[type="url"],
-form input[type="datalist"],
-form input[type="week"] {
-  flex-grow: 1;
-  border: 0;
-  border-bottom: 1px solid #d9d9d9;
-  font-size: 0.9rem;
-  padding: 8px 0px;
-  margin: 8px 0px;
-  text-transform: lowercase;
-}
-form input[type="checkbox"]:hover,
-form input[type="radio"]:hover,
-form input[type="file"]:hover,
-form input[type="color"]:hover,
-form input[type="image"]:hover {
-  cursor: pointer;
-}
-form input[type="range"]:hover {
-  cursor: col-resize;
-}
-form input[type="number"]:hover,
-form input[type="date"]:hover,
-form input[type="week"]:hover,
-form input[type="datetime-local"]:hover,
-form input[type="time"]:hover {
-  cursor: default;
-}
-form input:invalid,
-form input:out-of-range {
-  border-bottom-color: #f44336;
-}
-form input:hover {
-  cursor: text;
-}
-form input:focus {
-  outline: 0;
-  border-bottom-color: #26a69a;
-}
-form input:disabled {
-  border-bottom-style: dotted;
-  opacity: 0.6;
-}
-form input:disabled:hover {
-  cursor: not-allowed;
-}
-form [data-icon]:before {
-  margin-right: 16px;
-  font-size: 16px;
-  width: 16px;
-  height: 32px;
-  line-height: 32px;
-  vertical-align: bottom;
-}
-select {
-  background-color: transparent;
-  border: 0;
-}
-select:hover {
-  cursor: pointer;
-}
-select:focus {
-  outline: 0;
-}
-textarea {
-  background-color: transparent;
-  border: 0;
-  border-bottom: 1px solid #d9d9d9;
-  font-size: 0.9rem;
-}
-textarea:hover {
-  cursor: text;
-}
-textarea:focus {
-  outline: 0;
-  border-bottom-color: #26a69a;
-}
-/*------------------------------------*\
-    $LISTAS
-\*------------------------------------*/
-/**
-* Colocar en un DIV padre de los UL.
-*/
-.list {
-  background-color: #ffffff;
-}
-.list ul {
-  padding: 8px 0;
-  list-style-type: none;
-  margin-bottom: 0;
-}
-.list ul:not(:last-child) {
-  border-bottom: 1px solid #e6e6e6;
-}
-.list li {
-  display: flex;
-}
-.list a {
-  line-height: 48px;
-  padding: 0 16px;
-  vertical-align: middle;
-  text-decoration: none;
-  color: inherit;
-}
-.list a:first-child {
-  flex: 1;
-}
-.list a:first-child[data-number]:after {
-  content: attr(data-number);
-  float: right;
-  color: #999999;
-}
-.list a:hover,
-.list a:focus,
-.list a.js-list-active {
-  color: inherit;
-  background-color: #f2f2f2;
-  text-decoration: none;
-  cursor: pointer;
-}
-.list [data-icon]:before {
-  margin-right: 24px;
-  font-size: 24px;
-  vertical-align: middle;
-  width: 24px;
-  height: 48px;
-  line-height: 48px;
-  color: #808080;
-}
-.list .addon {
-  width: 48px;
-  padding: 0;
-}
-.list .addon[data-icon]:before {
-  width: 24px;
-  padding-left: 12px;
-  padding-right: 12px;
-  margin-right: 0;
-}
-.list hr {
-  margin: 8px 0;
-  border-top: 1px solid #e6e6e6;
-}
-/**
-* Colocar directamente en los UL.
-*/
-.list-small {
-  padding: 8px 0;
-  background-color: #ffffff;
-  list-style-type: none;
-  margin-bottom: 0;
-}
-.list-small:not(:last-child) {
-  border-bottom: 1px solid #e6e6e6;
-}
-.list-small ul {
-  list-style-type: none;
-  margin-left: 0;
-  padding-bottom: 8px;
-}
-.list-small a {
-  display: block;
-  line-height: 32px;
-  padding: 0 16px;
-  vertical-align: middle;
-  text-decoration: none;
-  color: inherit;
-}
-.list-small a:hover,
-.list-small a:focus {
-  text-decoration: none;
-  color: inherit;
-  background-color: #f2f2f2;
-  cursor: pointer;
-}
-.list-small a[data-number]:after {
-  content: attr(data-number);
-  float: right;
-  color: #999999;
-}
-.list-small [data-icon]:before {
-  margin-right: 16px;
-  font-size: 16px;
-  width: 16px;
-  height: 32px;
-  line-height: 32px;
-  vertical-align: bottom;
-}
-.list-small hr {
-  margin: 8px 0;
-  border-top: 1px solid #e6e6e6;
 }
 /*------------------------------------*\
     $IMÁGENES
@@ -972,51 +652,6 @@ span[data-role="close"]:before {
   right: 1.5px;
 }
 /*------------------------------------*\
-    $SNACKBAR
-\*------------------------------------*/
-.snackbar {
-  position: fixed;
-  bottom: -68px;
-  left: 0;
-  color: #ffffff;
-  background-color: #37474f;
-  height: 48px;
-  width: 350px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: 10px;
-  cursor: pointer;
-  border-radius: 2px;
-  transition: transform 200ms ease-in-out;
-  padding-left: 24px;
-  padding-right: 24px;
-}
-.snackbar p,
-.snackbar button {
-  margin: 0;
-  cursor: pointer;
-}
-.snackbar p {
-  flex-grow: 1;
-  padding-right: 24px;
-}
-.snackbar p:before {
-  margin-right: 24px;
-  font-size: 24px;
-  vertical-align: bottom;
-}
-.snackbar.open {
-  transform: translateY(-68px);
-}
-@media (max-width: 414px) {
-  .snackbar {
-    margin: 0;
-    border-radius: 0;
-    width: 100%;
-  }
-}
-/*------------------------------------*\
     $SWIPE-MENU
 \*------------------------------------*/
 .swipe-menu {
@@ -1058,14 +693,14 @@ span[data-role="close"]:before {
 }
 .swipe-menu a:hover,
 .swipe-menu a:focus,
-.swipe-menu a.js-list-active {
+.swipe-menu a.list-active {
   color: inherit;
   background-color: #f2f2f2;
   text-decoration: none;
   cursor: pointer;
 }
 .swipe-menu [data-icon]:before {
-  margin-right: 24px;
+  margin-right: 32px;
   font-size: 24px;
   vertical-align: middle;
   width: 24px;
@@ -1073,11 +708,11 @@ span[data-role="close"]:before {
   line-height: 48px;
   color: #808080;
 }
-.swipe-menu .addon {
+.swipe-menu .list-addon {
   width: 48px;
   padding: 0;
 }
-.swipe-menu .addon[data-icon]:before {
+.swipe-menu .list-addon[data-icon]:before {
   width: 24px;
   padding-left: 12px;
   padding-right: 12px;
@@ -1103,50 +738,6 @@ span[data-role="close"]:before {
 }
 .swipe-shadow.enabled {
   opacity: 0.6;
-}
-/*------------------------------------*\
-    $TABLAS
-\*------------------------------------*/
-table {
-  width: 100%;
-}
-table caption {
-  font-style: italic;
-  margin-bottom: 15px;
-}
-table thead {
-  font-size: 0.85rem;
-  color: #808080;
-  border-bottom: 1px solid #e6e6e6;
-}
-table thead tr {
-  height: 56px;
-}
-table tr {
-  height: 48px;
-}
-table th,
-table td {
-  padding: 0 10px;
-}
-table.stripped tbody tr:nth-child(2n-1) {
-  background-color: #e6e6e6;
-}
-table.bordered tbody tr {
-  border-bottom: 1px solid #e6e6e6;
-}
-table.hoverable tbody tr:hover {
-  background-color: #e6e6e6;
-}
-table.hoverable tbody tr:hover td {
-  cursor: pointer;
-}
-table.hoverable-cell tbody td:hover {
-  background-color: #e6e6e6;
-  cursor: pointer;
-}
-table.centered {
-  text-align: center;
 }
 .action-button {
   position: fixed;
@@ -1403,6 +994,269 @@ input[type=reset]:disabled:hover {
   top: 7px;
   left: 7px;
 }
+[class^="card"] {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+  background-color: #ffffff;
+  border-radius: 2px;
+  padding: 16px;
+  margin: 0 14px 30px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+[class^="card"] h3 {
+  margin-top: 0;
+}
+[class^="card"] footer {
+  text-align: right;
+  margin-top: 24px;
+}
+[class^="card"] footer button {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+@media (max-width: 800px) {
+  [class^="card"] {
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+.card_dark {
+  background-color: #37474f;
+  color: #ffffff;
+}
+.card_dark h3 {
+  color: #ffffff;
+}
+.card_image {
+  padding: 0;
+  padding-bottom: 16px;
+}
+.card_image h3,
+.card_image p,
+.card_image footer {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+[class^="image-background"] {
+  position: relative;
+  height: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 32px;
+}
+[class^="image-background"] h3 {
+  color: #ffffff;
+  position: absolute;
+  padding-bottom: 5px;
+  bottom: 0;
+  margin-bottom: 0;
+}
+.image-background_shadow h3 {
+  width: 100%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+  padding-top: 20px;
+}
+.card_link {
+  transition-property: box-shadow;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
+  will-change: box-shadow;
+  transition-duration: 0.1s;
+  cursor: pointer;
+  /**
+  * Debes poner aquí todos los elementos que estén dentro de tus
+  * tarjetas que a su vez son todas ellas un enlace.
+  * Así evitamos el uso del selector global '*'.
+  * Además, se desaconseja poner enlaces o botones dentro
+  * de estas tarjetas.
+  */
+}
+.card_link h3,
+.card_link p {
+  color: #4d4d4d;
+  cursor: pointer;
+}
+.card_link:hover,
+.card_link:focus {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+/*------------------------------------*\
+    $FORMULARIOS
+\*------------------------------------*/
+form li {
+  display: flex;
+  align-items: center;
+  min-height: 50px;
+}
+form label {
+  min-width: 150px;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #8c8c8c;
+}
+form input {
+  background-color: transparent;
+  transition-property: border-size, border-color;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
+}
+form input[type="text"],
+form input[type="password"],
+form input[type="date"],
+form input[type="datetime"],
+form input[type="datetime-local"],
+form input[type="email"],
+form input[type="number"],
+form input[type="tel"],
+form input[type="search"],
+form input[type="time"],
+form input[type="url"],
+form input[type="datalist"],
+form input[type="week"] {
+  flex-grow: 1;
+  border: 0;
+  border-bottom: 1px solid #d9d9d9;
+  font-size: 0.9rem;
+  padding: 8px 0px;
+  margin: 8px 0px;
+  text-transform: lowercase;
+}
+form input[type="checkbox"]:hover,
+form input[type="radio"]:hover,
+form input[type="file"]:hover,
+form input[type="color"]:hover,
+form input[type="image"]:hover {
+  cursor: pointer;
+}
+form input[type="range"]:hover {
+  cursor: col-resize;
+}
+form input[type="number"]:hover,
+form input[type="date"]:hover,
+form input[type="week"]:hover,
+form input[type="datetime-local"]:hover,
+form input[type="time"]:hover {
+  cursor: default;
+}
+form input:invalid,
+form input:out-of-range {
+  border-bottom-color: #f44336;
+}
+form input:hover {
+  cursor: text;
+}
+form input:focus {
+  outline: 0;
+  border-bottom-color: #26a69a;
+}
+form input:disabled {
+  border-bottom-style: dotted;
+  opacity: 0.6;
+}
+form input:disabled:hover {
+  cursor: not-allowed;
+}
+form [data-icon]:before {
+  margin-right: 16px;
+  font-size: 16px;
+  width: 16px;
+  height: 32px;
+  line-height: 32px;
+  vertical-align: bottom;
+}
+select {
+  background-color: transparent;
+  border: 0;
+}
+select:hover {
+  cursor: pointer;
+}
+select:focus {
+  outline: 0;
+}
+textarea {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid #d9d9d9;
+  font-size: 0.9rem;
+}
+textarea:hover {
+  cursor: text;
+}
+textarea:focus {
+  outline: 0;
+  border-bottom-color: #26a69a;
+}
+/*------------------------------------*\
+    $LISTAS
+\*------------------------------------*/
+/*
+ * Colocar en un DIV padre de los UL.
+ */
+.list {
+  background-color: #ffffff;
+}
+.list ul {
+  padding: 8px 0;
+  list-style-type: none;
+  margin-bottom: 0;
+}
+.list ul:not(:last-child) {
+  border-bottom: 1px solid #e6e6e6;
+}
+.list li {
+  display: flex;
+}
+.list a {
+  line-height: 48px;
+  padding: 0 16px;
+  vertical-align: middle;
+  text-decoration: none;
+  color: inherit;
+}
+.list a:first-child {
+  flex: 1;
+}
+.list a:first-child[data-number]:after {
+  content: attr(data-number);
+  float: right;
+  color: #999999;
+}
+.list a:hover,
+.list a:focus,
+.list a.list-active {
+  color: inherit;
+  background-color: #f2f2f2;
+  text-decoration: none;
+  cursor: pointer;
+}
+.list [data-icon]:before {
+  margin-right: 32px;
+  font-size: 24px;
+  vertical-align: middle;
+  width: 24px;
+  height: 48px;
+  line-height: 48px;
+  color: #808080;
+}
+.list .list-addon {
+  width: 48px;
+  padding: 0;
+}
+.list .list-addon[data-icon]:before {
+  width: 24px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-right: 0;
+}
+.list hr {
+  margin: 8px 0;
+  border-top: 1px solid #e6e6e6;
+}
 .list-title {
   display: block;
   color: #999999;
@@ -1410,7 +1264,56 @@ input[type=reset]:disabled:hover {
   line-height: 24px;
   font-size: 0.75rem;
   margin-left: 15px;
-  margin-top: 8px;
+  padding-top: 8px;
+}
+/**
+ * Colocar directamente en los UL.
+ */
+.list-small {
+  padding: 8px 0;
+  background-color: #ffffff;
+  list-style-type: none;
+  margin-bottom: 0;
+}
+.list-small:not(:last-child) {
+  border-bottom: 1px solid #e6e6e6;
+}
+.list-small ul {
+  list-style-type: none;
+  margin-left: 0;
+  padding-bottom: 8px;
+}
+.list-small a {
+  display: block;
+  line-height: 32px;
+  padding: 0 16px;
+  vertical-align: middle;
+  text-decoration: none;
+  color: inherit;
+}
+.list-small a:hover,
+.list-small a:focus {
+  text-decoration: none;
+  color: inherit;
+  background-color: #f2f2f2;
+  cursor: pointer;
+}
+.list-small a[data-number]:after {
+  content: attr(data-number);
+  float: right;
+  color: #999999;
+}
+.list-small [data-icon]:before {
+  margin-right: 16px;
+  font-size: 16px;
+  width: 16px;
+  height: 32px;
+  line-height: 32px;
+  vertical-align: bottom;
+}
+.list-small hr {
+  margin: 8px 0;
+  border-top: 1px solid #e6e6e6;
 }
 .navbar {
   position: fixed;
@@ -1423,7 +1326,7 @@ input[type=reset]:disabled:hover {
   transition: box-shadow 200ms ease-in-out;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
-.navbar-scrolled.navbar {
+.navbar_scrolled.navbar {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 .navbar a {
@@ -1493,7 +1396,7 @@ input[type=reset]:disabled:hover {
   transition: padding-bottom 200ms linear;
   padding-bottom: 72px;
 }
-.navbar-scrolled .navbar-toolbar_extended {
+.navbar_scrolled .navbar-toolbar_extended {
   padding-bottom: 0;
 }
 .navbar-toolbar-left {
@@ -1527,7 +1430,7 @@ input[type=reset]:disabled:hover {
     transform: translate(-36px, 55px) scale(1.6);
   }
 }
-.navbar-scrolled .navbar-toolbar_extended .navbar-toolbar_title {
+.navbar_scrolled .navbar-toolbar_extended .navbar-toolbar_title {
   transform: translate(0, 0) scale(1);
 }
 .navbar-toolbar-right {
@@ -1578,7 +1481,7 @@ input[type=reset]:disabled:hover {
     margin-left: 0;
   }
 }
-.md-snackbar {
+.snackbar {
   position: fixed;
   bottom: -68px;
   left: 0;
@@ -1596,69 +1499,69 @@ input[type=reset]:disabled:hover {
   padding-left: 24px;
   padding-right: 24px;
 }
-.md-snackbar p,
-.md-snackbar button {
+.snackbar p,
+.snackbar button {
   margin: 0;
   cursor: pointer;
 }
-.md-snackbar p {
+.snackbar p {
   flex-grow: 1;
   padding-right: 24px;
 }
-.md-snackbar p:before {
+.snackbar p:before {
   margin-right: 24px;
   font-size: 24px;
   vertical-align: bottom;
 }
-.md-snackbar.open {
+.snackbar.open {
   transform: translateY(-68px);
 }
 @media (max-width: 414px) {
-  .md-snackbar {
+  .snackbar {
     margin: 0;
     border-radius: 0;
     width: 100%;
   }
 }
-.md-table {
+table {
   width: 100%;
 }
-.md-table caption {
+table caption {
   font-style: italic;
   margin-bottom: 15px;
 }
-.md-table thead {
+table thead {
   font-size: 0.85rem;
   color: #808080;
   border-bottom: 1px solid #e6e6e6;
 }
-.md-table thead tr {
+table thead tr {
   height: 56px;
 }
-.md-table tr {
+table tr {
   height: 48px;
 }
-.md-table th,
-.md-table td {
+table th,
+table td {
   padding: 0 10px;
 }
-.md-table.stripped tbody tr:nth-child(2n-1) {
+table.stripped tbody tr:nth-child(2n-1) {
   background-color: #e6e6e6;
 }
-.md-table.bordered tbody tr {
+table.bordered tbody tr {
   border-bottom: 1px solid #e6e6e6;
 }
-.md-table.hoverable tbody tr:hover {
+table.hoverable tbody tr:hover {
   background-color: #e6e6e6;
 }
-.md-table.hoverable tbody tr:hover td {
+table.hoverable tbody tr:hover td {
   cursor: pointer;
 }
-.md-table.hoverable-cell tbody td:hover {
+table.hoverable-cell tbody td:hover {
   background-color: #e6e6e6;
   cursor: pointer;
 }
-.md-table.centered {
+table.centered {
   text-align: center;
 }
 main {
