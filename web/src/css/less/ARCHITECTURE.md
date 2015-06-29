@@ -9,7 +9,7 @@
 
 ##Introducción
 
-Todos los estilos *CSS* del sitio se encuentran en `/src/css/`.
+Todos los estilos **CSS** del sitio se encuentran en `/src/css/`.
 
 Dentro de ese directorio nos encontramos el directorio `less/` y el archivo donde se encuentran todos los estilos del sitio, el `style.css` (además, puede haber un `style.min.css`).
 
@@ -31,8 +31,8 @@ Principalmente escribiremos código en los directorios `layout/` para crear bloq
 Además, **antes** de comenzar con la maquetación, podemos crear o editar los [componentes](#components) que necesitemos, configurar los estilos [mas básicos y generales](#base) o añadir temas.
 
 
-##Iconos
-Para los iconos no utilizo clases sino los **_data-* attributes_**. Aunque por especificación no estén diseñados para eso, sino para «almacenar datos personalizados privados a la página o aplicación», no están restringidos únicamente a ese uso, y considero que se consigue un HTML más limpio y legible.
+##Iconos y Emojis
+Para los iconos y los emojis no utilizo clases sino los **_data-* attributes_**. Aunque por especificación no estén diseñados para eso, sino para «almacenar datos personalizados privados a la página o aplicación», no están restringidos únicamente a ese uso, y considero que se consigue un HTML más limpio y legible.
 
 Para añadir un icono a un elemento simplemente añadimos el atributo **`data-icon="{nombre del icono}"`**.
 
@@ -40,6 +40,7 @@ Por ejemplo:
 
 ```html
 <button data-icon="add">Añadir</button>
+<span data-emoji="smile"></span>
 ```
 
 El archivo `.less` con la configuración de las fuentes de iconos está en el directorio [`vendor/`](#vendor).
@@ -61,7 +62,7 @@ Por ejemplo:
 }
 ```
 
-Como cada fuente de iconos suele tener muchos mas iconos de los que utilizamos, una **buena práctica** es comentarlos todos con dos barras `//` para que no se procesen y descomentar sólo los que vayamos a utilizar. Así reduciremos mucho el tamaño de nuestro `.css` final.
+Como cada fuente de iconos o de emojis suele tener muchos mas iconos de los que utilizamos, una **buena práctica** es comentarlos todos con dos barras `//` para que no se procesen y descomentar sólo los que vayamos a utilizar. Así reduciremos mucho el tamaño de nuestro `.css` final.
 
 
 ##Arquitectura
@@ -74,11 +75,15 @@ less/
 |   |– typography.less
 |
 |– components/
-|   |– buttons.less
-|   |– cards.less
+|   |-themes/
+|       |-material/
+|           |– buttons.less
+|           |– cards.less
+|           |– images.less
+|           |– lists.less
+|           |– ...
+|
 |   |– code.less
-|   |– images.less
-|   |– lists.less
 |   |– misc.less
 |   |-...
 |
@@ -120,7 +125,7 @@ less/
 
 
 ###components/
-Aquí van todos los **componentes** que se utilizan en el *framework*. Puedes añadir los que quieras o modificarlos a tu gusto. Puedes cambiar muy fácilmente los estilos de la mayoría según los temas que le apliques.
+Aquí van todos los **componentes** que se utilizan en el *framework*. Puedes añadir los que quieras o modificarlos a tu gusto. Los que sean más genéricos, están directamente dentro de la carpeta. Otros cambian según el tema que usemos, por que que se encuentran e su directorios correspondiente dentro de `themes/`.
 
 Ojo, no confundir componentes con los bloques de *layout*. Los componentes son elementos mas pequeños, y los bloques de *layout* son elementos mas grandes creados, en parte, con varios componentes.
 

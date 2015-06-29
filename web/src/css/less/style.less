@@ -1,17 +1,34 @@
-/* CONTENIDO
- *
+/*
  * BASE
- * $Base
- * $Tipografía
+ *  $Base
+ *  $Tipografía
  *
  * COMPONENTS
+ *   $Botón Flotante
+ *   $Botones
+ *   $Tarjetas
+ *   $Formularios
+ *   $Listas
+ *   $Navbar
+ *   $Snackbar
+ *   $Tablas
+ *  $Código
+ *  $Imágenes
+ *  $Miscelánea
  *
  * LAYOUT
+ *  $Footer
+ *  $Header
+ *  $Main
  *
  * PAGES
+ *  $Home
  *
  * VENDOR
- *
+ *  $Emoji-Twitter
+ *  $Material-Design-Icons
+ *  $Prism
+ *  $Swipe-Menu
  */
 
 //Base
@@ -19,32 +36,28 @@
 @import "base/typography";
 
 //Componentes
+  //Material Design
+  @import "components/themes/material/action-button";
+  @import "components/themes/material/buttons";
+  @import "components/themes/material/cards";
+  @import "components/themes/material/forms";
+  @import "components/themes/material/lists";
+  @import "components/themes/material/navbar";
+  @import "components/themes/material/snackbar";
+  @import "components/themes/material/shadows";
+  @import "components/themes/material/tables";
+  @import "components/themes/material/variables";
 @import "components/code";
 @import "components/images";
 @import "components/misc";
-@import "components/swipe-menu";
-
-  //Temas
-    //Material Design
-    @import "components/material/action-button";
-    @import "components/material/buttons";
-    @import "components/material/cards";
-    @import "components/material/forms";
-    @import "components/material/lists";
-    @import "components/material/navbar";
-    @import "components/material/snackbar";
-    @import "components/material/shadows";
-    @import "components/material/tables";
-    @import "components/material/variables";
 
 //Interfaz
-//@import "layout/header";
+@import "layout/header";
 @import "layout/main";
-//@import "layout/footer";
+@import "layout/footer";
 
 //Páginas
 @import "pages/home";
-//@import "pages/contact";
 
 //Librerías
 @import "libraries/color";
@@ -58,3 +71,4 @@
 @import "vendor/emoji-twitter";
 @import "vendor/icons-material";
 @import "vendor/prism";
+@import "vendor/swipe-menu";

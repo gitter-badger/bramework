@@ -8,7 +8,7 @@
     * [Lenguajes](#lenguajes)
     * [Librerías externas](#librer%C3%ADas-y-herramientas-externas)
     * [Directorios y archivos adjuntos](#directorios-y-archivos-adjuntos)
-* [Arquitectura](#arquitectura)
+* [Arquitectura CSS](#arquitectura-css)
 * [*Grunt*](#grunt)
 * [Registro de Cambios](#registro-de-cambios)
 * [Contribuír](#contribu%C3%ADr)
@@ -85,12 +85,12 @@ En el diseño web siempre intento estudiar y utilizar los últimos estándares. 
     * **components-fixed.html:** Igual que el anterior, pero contiene los elementos fijos.
     * **colors.html:** Paleta de colores con todos los colores disponibles en el *framework*.
   * **src/:**
-    * **css/:** Contiene todos los archivo que tengas que ver con estilos CSS o preprocesadores.
+  * **css/:** Contiene todos los archivos que tengan que ver con estilos CSS o preprocesadores. Mira [arquitectura CSS](#arquitectura-css) para mas información.
     * **font/:** Archivos de fuentes tipográficas o de iconos.
     * **img/:** Contiene todas las imágenes del sitio.
     * **js/:** Contiene todos los archivos JavaScript del sitio.
 
-##Arquitectura
+##Arquitectura CSS
 Puedes ver la arquitectura y directrices de los estilos CSS en [web/src/css/less/ARCHITECTURE.md](web/src/css/less/ARCHITECTURE.md).
 
 ##Grunt
