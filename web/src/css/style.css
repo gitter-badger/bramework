@@ -1,20 +1,37 @@
-/* CONTENIDO
- *
+/*
  * BASE
- * $Base
- * $Tipografía
+ *  $Base
+ *  $Tipografía
  *
  * COMPONENTS
+ *   $Botón Flotante
+ *   $Botones
+ *   $Tarjetas
+ *   $Formularios
+ *   $Listas
+ *   $Navbar
+ *   $Snackbar
+ *   $Tablas
+ *  $Código
+ *  $Imágenes
+ *  $Miscelánea
  *
  * LAYOUT
+ *  $Footer
+ *  $Header
+ *  $Main
  *
  * PAGES
+ *  $Home
  *
  * VENDOR
- *
+ *  $Emoji-Twitter
+ *  $Material-Design-Icons
+ *  $Prism
+ *  $Swipe-Menu
  */
 /*------------------------------------*\
-    $Base
+    $BASE
 \*------------------------------------*/
 * {
   box-sizing: border-box;
@@ -532,213 +549,8 @@ address {
   letter-spacing: 0.05em;
 }
 /*------------------------------------*\
-    $CÓDIGO
+    $BOTÓN FLOTANTE
 \*------------------------------------*/
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace;
-}
-code,
-kbd {
-  font-size: 0.9rem;
-  display: inline-block;
-  vertical-align: middle;
-  line-height: 1.5em;
-  padding: 1px 5px;
-}
-kbd {
-  box-shadow: 0 2px #d9d9d9;
-}
-pre {
-  overflow: auto;
-  display: block;
-  text-align: left;
-}
-pre:not(:last-child) {
-  margin-bottom: 1rem;
-}
-pre code {
-  display: block;
-  padding: 30px;
-  overflow-x: auto;
-  overflow-y: auto;
-}
-@media (max-width: 414px) {
-  pre code {
-    padding: 30px 20px;
-  }
-}
-/*------------------------------------*\
-    $IMÁGENES
-\*------------------------------------*/
-figure {
-  width: auto;
-  margin-top: 2em;
-  margin-bottom: 2em;
-}
-img {
-  border: 0;
-  /* Elimina el borde dentro de `a` en IE 8/9/10.*/
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  vertical-align: middle;
-}
-figcaption {
-  color: #8c8c8c;
-  font-size: 0.85rem;
-  font-style: italic;
-}
-/*------------------------------------*\
-    $OTROS
-\*------------------------------------*/
-hr {
-  display: block;
-  clear: both;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #d9d9d9;
-  margin: 3rem 0;
-  padding: 0;
-  -moz-box-sizing: content-box;
-  /* Consistencia entre navegadores */
-  box-sizing: content-box;
-  /* Consistencia entre navegadores */
-}
-details summary::-webkit-details-marker {
-  display: none;
-}
-details summary:focus {
-  outline: 0;
-}
-details summary:after {
-  font-family: 'Material Icons';
-  vertical-align: middle;
-  margin-left: 10px;
-  font-size: 1.3em;
-  content: "\E5CF";
-}
-details summary:hover {
-  cursor: pointer;
-}
-details[open] summary:after {
-  content: "\E5CE";
-}
-/*Botones-iconos*/
-span[data-role="close"] {
-  font-size: 1.5rem;
-  font-weight: 700;
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  width: 18px;
-  height: 18px;
-  border-radius: 100%;
-  opacity: 0.5;
-}
-span[data-role="close"]:hover {
-  opacity: 1;
-  cursor: pointer;
-}
-span[data-role="close"]:active {
-  background-color: rgba(0, 0, 0, 0.2);
-}
-span[data-role="close"]:before {
-  content: '×';
-  position: absolute;
-  top: -4px;
-  right: 1.5px;
-}
-/*------------------------------------*\
-    $SWIPE-MENU
-\*------------------------------------*/
-.swipe-menu {
-  background-color: #ffffff;
-  width: 300px;
-  height: 100%;
-  z-index: 99;
-  position: fixed;
-  left: -300px;
-  transition: transform 200ms ease-in-out;
-  will-change: transform;
-  overflow-y: auto;
-}
-.swipe-menu ul {
-  padding: 8px 0;
-  list-style-type: none;
-  margin-bottom: 0;
-}
-.swipe-menu ul:not(:last-child) {
-  border-bottom: 1px solid #e6e6e6;
-}
-.swipe-menu li {
-  display: flex;
-}
-.swipe-menu a {
-  line-height: 48px;
-  padding: 0 16px;
-  vertical-align: middle;
-  text-decoration: none;
-  color: inherit;
-}
-.swipe-menu a:first-child {
-  flex: 1;
-}
-.swipe-menu a:first-child[data-number]:after {
-  content: attr(data-number);
-  float: right;
-  color: #999999;
-}
-.swipe-menu a:hover,
-.swipe-menu a:focus,
-.swipe-menu a.list-active {
-  color: inherit;
-  background-color: #f2f2f2;
-  text-decoration: none;
-  cursor: pointer;
-}
-.swipe-menu [data-icon]:before {
-  margin-right: 32px;
-  font-size: 24px;
-  vertical-align: middle;
-  width: 24px;
-  height: 48px;
-  line-height: 48px;
-  color: #808080;
-}
-.swipe-menu .list-addon {
-  width: 48px;
-  padding: 0;
-}
-.swipe-menu .list-addon[data-icon]:before {
-  width: 24px;
-  padding-left: 12px;
-  padding-right: 12px;
-  margin-right: 0;
-}
-.swipe-menu hr {
-  margin: 8px 0;
-  border-top: 1px solid #e6e6e6;
-}
-.swipe-menu.open {
-  transform: translateX(300px);
-}
-.swipe-shadow {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  transition: opacity 200ms ease-in-out;
-  background-color: black;
-  opacity: 0;
-  z-index: 98;
-}
-.swipe-shadow.enabled {
-  opacity: 0.6;
-}
 .action-button {
   position: fixed;
   bottom: 10px;
@@ -994,6 +806,9 @@ input[type=reset]:disabled:hover {
   top: 7px;
   left: 7px;
 }
+/*------------------------------------*\
+    $TARJETAS
+\*------------------------------------*/
 [class^="card"] {
   position: relative;
   display: inline-block;
@@ -1315,6 +1130,9 @@ textarea:focus {
   margin: 8px 0;
   border-top: 1px solid #e6e6e6;
 }
+/*------------------------------------*\
+    $NAVBAR
+\*------------------------------------*/
 .navbar {
   position: fixed;
   width: 100%;
@@ -1481,6 +1299,9 @@ textarea:focus {
     margin-left: 0;
   }
 }
+/*------------------------------------*\
+    $SNACKBAR
+\*------------------------------------*/
 .snackbar {
   position: fixed;
   bottom: -68px;
@@ -1523,6 +1344,9 @@ textarea:focus {
     width: 100%;
   }
 }
+/*------------------------------------*\
+    $TABLAS
+\*------------------------------------*/
 table {
   width: 100%;
 }
@@ -1564,6 +1388,132 @@ table.hoverable-cell tbody td:hover {
 table.centered {
   text-align: center;
 }
+/*------------------------------------*\
+    $CÓDIGO
+\*------------------------------------*/
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace;
+}
+code,
+kbd {
+  font-size: 0.9rem;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.5em;
+  padding: 1px 5px;
+}
+kbd {
+  box-shadow: 0 2px #d9d9d9;
+}
+pre {
+  overflow: auto;
+  display: block;
+  text-align: left;
+}
+pre:not(:last-child) {
+  margin-bottom: 1rem;
+}
+pre code {
+  display: block;
+  padding: 30px;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+@media (max-width: 414px) {
+  pre code {
+    padding: 30px 20px;
+  }
+}
+/*------------------------------------*\
+    $IMÁGENES
+\*------------------------------------*/
+img {
+  border: 0;
+  /* Elimina el borde dentro de `a` en IE 8/9/10.*/
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+/*------------------------------------*\
+    $MISCELÁNEA
+\*------------------------------------*/
+figure {
+  width: auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+figcaption {
+  color: #8c8c8c;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+hr {
+  display: block;
+  clear: both;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #d9d9d9;
+  margin: 3rem 0;
+  padding: 0;
+  -moz-box-sizing: content-box;
+  /* Consistencia entre navegadores */
+  box-sizing: content-box;
+  /* Consistencia entre navegadores */
+}
+details summary::-webkit-details-marker {
+  display: none;
+}
+details summary:focus {
+  outline: 0;
+}
+details summary:after {
+  font-family: 'Material Icons';
+  vertical-align: middle;
+  margin-left: 10px;
+  font-size: 1.3em;
+  content: "\E5CF";
+}
+details summary:hover {
+  cursor: pointer;
+}
+details[open] summary:after {
+  content: "\E5CE";
+}
+/*Botones-iconos*/
+span[data-role="close"] {
+  font-size: 1.5rem;
+  font-weight: 700;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 18px;
+  height: 18px;
+  border-radius: 100%;
+  opacity: 0.5;
+}
+span[data-role="close"]:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+span[data-role="close"]:active {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+span[data-role="close"]:before {
+  content: '×';
+  position: absolute;
+  top: -4px;
+  right: 1.5px;
+}
+/*------------------------------------*\
+    $HEADER
+\*------------------------------------*/
+/*------------------------------------*\
+    $MAIN
+\*------------------------------------*/
 main {
   padding-top: 204px;
   height: 1000px;
@@ -1573,6 +1523,12 @@ main {
     padding-top: 104px;
   }
 }
+/*------------------------------------*\
+    $FOOTER
+\*------------------------------------*/
+/*------------------------------------*\
+    $HOME
+\*------------------------------------*/
 /**
 * Mixings que pueden ser útiles para posicionar elementos
 * durante el diseño y programación del CSS
@@ -1859,7 +1815,7 @@ blockquote.error {
   background-color: #ef5350;
 }
 /*------------------------------------*\
-    $EMOJI TWITTER
+    $EMOJI-TWITTER
 \*------------------------------------*/
 [data-emoji] {
   display: inline-block;
@@ -1929,7 +1885,7 @@ blockquote.error {
   background-image: url("../img/svg/emoji/twitter/2764.svg");
 }
 /*------------------------------------*\
-    $MATERIAL DESIGN ICONS
+    $MATERIAL-DESIGN-ICONS
 \*------------------------------------*/
 [data-icon]:before {
   font-family: 'Material Icons';
@@ -2012,6 +1968,9 @@ blockquote.error {
   -o-transform: rotate(90deg);
   transform: rotate(90deg);
 }
+/*------------------------------------*\
+    $PRISM
+\*------------------------------------*/
 /**
 * prism.js default theme for JavaScript, CSS and HTML
 * Based on dabblet (http://dabblet.com)
@@ -2082,4 +2041,92 @@ code {
 }
 .token a {
   color: inherit;
+}
+/*------------------------------------*\
+    $SWIPE-MENU
+\*------------------------------------*/
+.swipe-menu {
+  background-color: #ffffff;
+  width: 300px;
+  height: 100%;
+  z-index: 99;
+  position: fixed;
+  left: -300px;
+  transition: transform 200ms ease-in-out;
+  will-change: transform;
+  overflow-y: auto;
+}
+.swipe-menu ul {
+  padding: 8px 0;
+  list-style-type: none;
+  margin-bottom: 0;
+}
+.swipe-menu ul:not(:last-child) {
+  border-bottom: 1px solid #e6e6e6;
+}
+.swipe-menu li {
+  display: flex;
+}
+.swipe-menu a {
+  line-height: 48px;
+  padding: 0 16px;
+  vertical-align: middle;
+  text-decoration: none;
+  color: inherit;
+}
+.swipe-menu a:first-child {
+  flex: 1;
+}
+.swipe-menu a:first-child[data-number]:after {
+  content: attr(data-number);
+  float: right;
+  color: #999999;
+}
+.swipe-menu a:hover,
+.swipe-menu a:focus,
+.swipe-menu a.list-active {
+  color: inherit;
+  background-color: #f2f2f2;
+  text-decoration: none;
+  cursor: pointer;
+}
+.swipe-menu [data-icon]:before {
+  margin-right: 32px;
+  font-size: 24px;
+  vertical-align: middle;
+  width: 24px;
+  height: 48px;
+  line-height: 48px;
+  color: #808080;
+}
+.swipe-menu .list-addon {
+  width: 48px;
+  padding: 0;
+}
+.swipe-menu .list-addon[data-icon]:before {
+  width: 24px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-right: 0;
+}
+.swipe-menu hr {
+  margin: 8px 0;
+  border-top: 1px solid #e6e6e6;
+}
+.swipe-menu.open {
+  transform: translateX(300px);
+}
+.swipe-shadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transition: opacity 200ms ease-in-out;
+  background-color: black;
+  opacity: 0;
+  z-index: 98;
+}
+.swipe-shadow.enabled {
+  opacity: 0.6;
 }
