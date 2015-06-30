@@ -1,5 +1,7 @@
+"use strict";
+
 var strings = {
-  activationId: "open-swipe-menu",
+  buttonID: "swipe-menu-button",
   menuId: "swipe-menu",
   menuOpenClass: "open",
   shadowClass: "swipe-shadow",
@@ -23,26 +25,20 @@ var shadowSlideStartX;
 var shadowSlideEndX;
 
 //Eventos que se realizan después de cargar la página
-//window.onload = function() {
-//  activator = document.getElementById(strings.activationId);
-//  menu = document.getElementById(strings.menuId);
-//  body = document.getElementsByTagName('body')[0];
-//  body.addEventListener('touchstart', slideStart);
-//  activator.addEventListener('click', swipeMenu);
-//  body.addEventListener('touchend', slideEnd);
-//}
+//window.onload = loadMenu;
 
-    function loadSlideMenu() {
-      activator = document.getElementById(strings.activationId);
-      menu = document.getElementById(strings.menuId);
-      body = document.getElementsByTagName('body')[0];
-      body.addEventListener('touchstart', slideStart);
-      if (activator && menu) {
-        activator.addEventListener('click', swipeMenu);
-        body.addEventListener('touchend', slideEnd);
-        console.info("Cargado Slide Menu.")
-      }
-    }
+//Función que carga el menú
+function loadMenu() {
+  activator = document.getElementById(strings.buttonID);
+  menu = document.getElementById(strings.menuId);
+  if (activator && menu) {
+    body = document.getElementsByTagName('body')[0];
+    body.addEventListener('touchstart', slideStart);
+    activator.addEventListener('click', slideMenu);
+    body.addEventListener('touchend', slideEnd);
+    console.info("Slide menu cargado correctamente.")
+  }
+}
 
 //Función que abre el menú
 function openMenu() {
@@ -65,7 +61,7 @@ function createShadow() {
 }
 
 //Función que reúne las dos anteriores, ya que siempre van unidas
-function swipeMenu() {
+function slideMenu() {
   openMenu();
   createShadow();
 }
@@ -85,6 +81,7 @@ function slideStart(event) {
   if (event.targetTouches.length == 1) {
     var touch = event.targetTouches[0];
     slideStartX = touch.pageX;
+    confirm.log(touch.pageX)
   }
 }
 
@@ -93,7 +90,7 @@ function slideEnd(event) {
   slideEndX = touch.pageX;
   console.log()
   if (slideStartX < conf.slideZoneStart && slideEndX > conf.slideZoneEnd && !menu.classList.contains(strings.menuOpenClass)) {
-    swipeMenu();
+    slideMenu();
   }
 }
 
