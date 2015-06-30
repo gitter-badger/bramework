@@ -2,7 +2,7 @@
 
 //Load
 window.onload = function() {
-  loadSlideMenu()
+  loadMenu();
   actionButtonLoad();
 };
 
