@@ -10,3 +10,27 @@ main {
     padding-top: 104px
   }
 }
+
+.wrapper-nav-extended,
+.wrapper-nav-image {
+  will-change: padding-top;
+  transition: padding-top @md-navbar-transition linear;
+}
+
+  .wrapper-nav-extended {
+    padding-top: 184px;
+    @media (max-width: @bp-medium) {
+      padding-top: 176px;
+    }
+  }
+
+  .wrapper-nav-image {
+    padding-top: 312px;
+    @media (max-width: @bp-medium) {
+      padding-top: 304px;
+    }
+  }
+
+.wrapper-scrolled {
+  padding-top: 112px;
+}

@@ -25,29 +25,35 @@
   <header>
 
     <!--  La clase js-navbar se añade para que funcione el JS.
-El prefijo '_extended' se añade a 'navbar-toolbar' para que se vea el título
-en grande cuando estamos arriba de todo en la página. Si no utilizamos el
-sufijo '_extended' también podemos retirar la clase 'js-navbar'.
+El sufijo '-extended o -image' se añade a 'navbar' para que se vea el título
+en grande cuando estamos arriba de todo en la página, o una imagen de fondo. Si no utilizamos el
+sufijo '-extended o -image' también podemos retirar la clase 'js-navbar'.
 -->
-    <nav class="navbar  js-navbar">
-      <div class="navbar-toolbar_extended">
-        <div class="navbar-toolbar-left">
+    <nav class="navbar-extended  js-navbar">
+
+      <div class="navbar_toolbar">
+
+        <div class="navbar_toolbar-left">
           <a id="swipe-menu-button" data-icon="menu"></a>
         </div>
-        <h1 class="navbar-toolbar_title">The Title</h1>
-        <div class="navbar-toolbar-right">
+
+        <h1 class="navbar_toolbar-title">The Title</h1>
+
+        <div class="navbar_toolbar-right">
           <a  href="#" data-badge="2" data-icon="message"></a>
           <a  href="#" data-icon="&#xE2C0;"></a>
           <a  href="#" data-icon="&#xE5D4;"></a>
         </div>
+
       </div>
 
-      <div class="navbar-tab">
-        <a href="#" class="navbar-tab_active">Item 1</a>
+      <div class="navbar_tab">
+        <a href="#" class="navbar_tab-active">Item 1</a>
         <a href="#">Item 2</a>
         <a href="#">Item 3</a>
         <a href="#">Item 4</a>
       </div>
+
     </nav>
 
     <!-- Menú deslizable -->
@@ -72,7 +78,7 @@ sufijo '_extended' también podemos retirar la clase 'js-navbar'.
 
   </header>
 
-  <main>
+  <main class="wrapper-nav-extended  js-wrapper">
 
     <!-- Snackbar -->
     <button onclick="snackbar('Mensaje con icono', 'done');">Snackbar 1</button>
