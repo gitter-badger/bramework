@@ -29,31 +29,31 @@ El sufijo '-extended o -image' se añade a 'navbar' para que se vea el título
 en grande cuando estamos arriba de todo en la página, o una imagen de fondo. Si no utilizamos el
 sufijo '-extended o -image' también podemos retirar la clase 'js-navbar'.
 -->
-    <nav class="navbar-extended  js-navbar">
+    <!-- Navbar -->
+    <nav class="navbar js-navbar">
 
       <div class="navbar_toolbar">
-
         <div class="navbar_toolbar-left">
-          <a id="swipe-menu-button" data-icon="menu"></a>
+          <a class="navbar_button" id="swipe-menu-button" data-icon="menu"></a>
         </div>
 
-        <h1 class="navbar_toolbar-title">The Title</h1>
+        <div class="navbar_toolbar-center">
+          <h1 class="navbar_title">The Title</h1>
+        </div>
 
         <div class="navbar_toolbar-right">
-          <a  href="#" data-badge="2" data-icon="message"></a>
-          <a  href="#" data-icon="&#xE2C0;"></a>
-          <a  href="#" data-icon="&#xE5D4;"></a>
+          <a class="navbar_button" href="#" data-badge="2" data-icon="message"></a>
+          <a class="navbar_button" href="#" data-icon="&#xE2C0;"></a>
+          <a class="navbar_button" href="#" data-icon="&#xE5D4;"></a>
         </div>
-
       </div>
 
       <div class="navbar_tab">
-        <a href="#" class="navbar_tab-active">Item 1</a>
-        <a href="#">Item 2</a>
-        <a href="#">Item 3</a>
-        <a href="#">Item 4</a>
+        <a class="navbar_tab_item  navbar_tab_item-active" href="#">Item 1</a>
+        <a class="navbar_tab_item" href="#">Item 2</a>
+        <a class="navbar_tab_item" href="#">Item 3</a>
+        <a class="navbar_tab_item" href="#">Item 4</a>
       </div>
-
     </nav>
 
     <!-- Menú deslizable -->

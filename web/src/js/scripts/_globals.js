@@ -3,7 +3,7 @@
 //Load
 window.onload = function() {
   loadMenu();
-  actionButtonLoad();
+//  actionButtonLoad();
 };
 
 
@@ -13,7 +13,7 @@ var currentScroll;
 window.onscroll = function(){
 
   navbarScroll();
-  actionButtonScroll();
+//  actionButtonScroll();
 
   currentScroll = window.scrollY;
 }

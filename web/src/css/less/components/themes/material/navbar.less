@@ -7,34 +7,150 @@
 
 @md-navbar-transition: 200ms;
 
-
 //Navbar General
 .navbar {
   position: fixed;
   width: 100%;
-  background-color: @brand-color;
   font-size: 24px;
-  color: @white;
   z-index: 97;
+
+  //Tema por defecto
+  background-color: @brand-color; 
+  color: @white;
+  
   will-change: box-shadow;
   transition: box-shadow @md-navbar-transition ease-in-out;
   .shadow(1);
   &.navbar-scrolled {
     .shadow(2);
   }
+}
 
 
-  a {
-    position: relative;
-    display: inline-block;
-    color: @white;
-    text-decoration: none;
+//Elementos
+.navbar_button {
+  position: relative;
+  display: inline-block;
+  color: @white;
+  border-radius: 100%;
+  text-decoration: none;
+  
+  &:hover,
+  &:focus {
+    background-color: @walpha-300;
+  }
+  &:active {
+    background-color: @walpha-200;
+  }
+
+  @media (max-width: @bp-medium) {
     &:hover,
     &:focus {
-      background-color: @brand-color-focus;
+      background-color: inherit;
     }
     &:active {
-      background-color: @brand-color-active;
+      background-color: @walpha-300;
+    }
+  }
+  
+  &[data-icon]:before {
+    padding: 12px;
+    color: @white;
+  }
+  
+  &[data-badge]:after {
+    content: attr(data-badge);
+    position: absolute;
+    background-color: @red-800;
+    color: @white;
+    font-size: 14px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 100%;
+    top: 3px;
+    right: 3px;
+    text-align: center;
+  }
+}
+
+.navbar_title {
+  margin: 0;
+  font-size: 20px;
+}
+
+
+//Zonas
+.navbar_toolbar {
+  display: flex;
+  align-items: center;
+  height: 64px;
+
+  @media (max-width: @bp-medium) {
+    height: 56px;
+  }
+}
+
+  .navbar_toolbar-left {
+    margin-left: 12px;
+
+    @media (max-width: @bp-small) {
+      margin-left: 2px;
+    }
+  }
+
+  .navbar_toolbar-center {
+    flex: 1;
+    margin-left: 20px;
+    white-space: nowrap;
+    @media (max-width: @bp-small) {
+      margin-left: 10px;
+    }
+  }
+
+  .navbar_toolbar-right {
+    margin-right: 12px;
+    @media (max-width: @bp-small) {
+      margin-right: 2px;
+      a:not(:last-child) {
+        margin-right: -10px;
+      }
+    }
+  }
+
+
+//Variantes
+//La barra de navegación no se queda fija al hacer scroll
+.navbar_variant-nofixed {
+  position: absolute;
+}
+
+//La barra de navegación es grande
+.navbar_variant-big {
+  .navbar_toolbar {
+    box-sizing: content-box; //Para que al añadir el padding, no se vea mal por el align-content
+    padding-bottom: 136px; //En pantallas grandes, 300px de tamaño total del navbar
+
+    will-change: padding-bottom;
+    transition: padding-bottom @md-navbar-transition ease-in-out;
+  }
+  &.navbar-scrolled {
+    .navbar_toolbar {
+      padding-bottom: 0;
+    }
+  }
+}
+
+//Temas
+.navbar_theme-transparent {
+  background-color: transparent;
+  .navbar_button {
+    &:hover,
+    &:focus {
+      background-color: @alpha-500;
+    }
+    &:active {
+      background-color: @alpha-400;
     }
 
     @media (max-width: @bp-medium) {
@@ -43,178 +159,95 @@
         background-color: inherit;
       }
       &:active {
-        background-color: @brand-color-focus;
+        background-color: @alpha-400;
       }
     }
-
-    &[data-badge]:after {
-      content: attr(data-badge);
-      position: absolute;
-      background-color: @red-800;
-      font-size: 14px;
-      width: 20px;
-      height: 20px;
-      line-height: 20px;
-      border-radius: 100%;
-      top: 3px;
-      right: 3px;
-      text-align: center;
-    }
-  }
-
-  [data-icon]:before {
-    padding: 12px;
-    color: @white;
   }
 }
 
-  //Navbar con título en grande
-  .navbar-extended {
-    &:extend(.navbar all);
-  }
-
-  //Navbar con fondo de imagen
-  .navbar-image {
-    &:extend(.navbar all);
-    background-image: url(../img/pdh2.jpg);
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    .navbar-scrolled& {
-      background-image: none;
+.navbar_theme-white {
+  background-color: @white;
+  color: @text-color;
+  .navbar_button {
+    &:hover,
+    &:focus {
+      background-color: @alpha-200;
     }
-    &:not(.navbar-scrolled) {
-      a {
-        position: relative;
-        display: inline-block;
-        color: @white;
-        text-decoration: none;
-        &:hover,
-        &:focus {
-          background-color: @alpha-400;
-        }
-        &:active {
-          background-color: @alpha-300;
-        }
+    &:active {
+      background-color: @alpha-100;
+    }
 
-        @media (max-width: @bp-medium) {
-          &:hover,
-          &:focus {
-            background-color: inherit;
-          }
-          &:active {
-            background-color: @alpha-400;
-          }
-        }
+    @media (max-width: @bp-medium) {
+      &:hover,
+      &:focus {
+        background-color: inherit;
+      }
+      &:active {
+        background-color: @alpha-200;
       }
     }
+    
+    &[data-icon]:before {
+      color: @text-color;
+    }
   }
-
-.navbar_toolbar {
-  display: flex;
-  align-items: center;
-  height: 64px;
-  box-sizing: content-box; //Para que al añadir el padding, no se vea mal por el align-content
-
-  a  {
-    border-radius: 100%;
-  }
-
-  @media (max-width: @bp-medium) {
-    height: 56px;
-  }
-
-  .navbar-extended & {
-    will-change: padding-bottom;
-    transition: padding-bottom @md-navbar-transition linear;
-    padding-bottom: 72px;
-  }
-
-  .navbar-image & {
-    will-change: padding-bottom;
-    transition: padding-bottom @md-navbar-transition linear;
-    padding-bottom: 200px;
-  }
-
-  .navbar-extended.navbar-scrolled &,
-  .navbar-image.navbar-scrolled & {
-    padding-bottom: 0;
+  
+  .navbar_tab_item {
+    color: @text-color;
+    &:hover, &:focus, &.navbar_tab_item-active {
+      color: @text-color;
+      border-bottom-color: @grey-500;
+    }
   }
 }
 
-  .navbar_toolbar-left {
-    margin-left: 12px;
+.navbar_theme-indigo {
+  background-color: @indigo-500;
+}
 
-    @media (max-width: @bp-small) {
-      margin-left: 0;
+[class*="navbar_theme-image"] {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .navbar_button {
+    &:hover,
+    &:focus {
+      background-color: @alpha-500;
     }
-  }
-
-  .navbar_toolbar-title {
-    display: inline-block;
-    flex: 1;
-    margin: 0 0 0 20px;
-    font-size: 20px;
-    white-space: nowrap;
-    @media (max-width: @bp-small) {
-      margin-left: 0;
+    &:active {
+      background-color: @alpha-400;
     }
 
-    .navbar-extended & {
-      will-change: transform;
-      transition: transform 200ms linear;
-      transform-origin: left;
-      transform: translateY(72px) scale(1.6);
-      @media (max-width: @bp-small) {
-        transform: translate(-36px, 72px) scale(1.6);
+    @media (max-width: @bp-medium) {
+      &:hover,
+      &:focus {
+        background-color: inherit;
       }
-    }
-    .navbar-image & {
-      will-change: transform;
-      transition: transform 200ms linear;
-      transform-origin: left;
-      transform: translateY(200px) scale(1.6);
-      @media (max-width: @bp-small) {
-        transform: translate(-36px, 200px) scale(1.6);
-      }
-    }
-    .navbar-extended.navbar-scrolled &,
-    .navbar-image.navbar-scrolled &{
-      transform: translate(0, 0) scale(1);
-    }
-  }
-
-  .navbar_toolbar-right {
-    margin-right: 12px;
-    @media (max-width: @bp-small) {
-      margin-right: 0;
-      a:not(:last-child) {
-        margin-right: -10px;
+      &:active {
+        background-color: @alpha-400;
       }
     }
   }
+}
+
+  .navbar_theme-image-xyz {
+  background-image: url(../img/xyz.jpg);
+}
+
+/**
+ * Puedes añadir las imágenes de fondo dinámicamente con algún CMS poniendo
+ * la ruta de la imagen en el propio HTML.
+    <nav class="navbar  navbar_theme-image" style="background-image: url(src/img/xyz.jpg);">
+ */
+
 
 // Tabs
 .navbar_tab {
   display: inline-flex;
   height: 48px;
   margin-left: 68px;
-
-
-  a {
-    flex-grow: 1;
-    font-size: 14px;
-    padding: 0 12px;
-    line-height: 46px;
-    border-bottom: 2px solid @alpha;
-    text-transform: uppercase;
-    opacity: 0.6;
-
-    &:hover, &.navbar_tab-active {
-      border-bottom: 2px solid @yellow-300;
-      opacity: 1;
-    }
-  }
+  flex-wrap: nowrap;
+  overflow-x: auto;
 
   @media (max-width: @bp-medium) {
     display: flex;
@@ -223,15 +256,23 @@
   }
 }
 
-  //Estilos para Tabs, cuando hay muchos elementos
-  .navbar_tab-large {
-    &:extend(.navbar_tabs all);
-    overflow-x: auto;
-    white-space: nowrap;
+.navbar_tab_item {
+  flex-grow: 1;
+  font-size: 14px;
+  padding: 0 12px;
+  line-height: 46px;
+  border-bottom: 2px solid @alpha;
+  text-transform: uppercase;
+  color: @white;
+  text-decoration: none;
+  opacity: 0.6;
+  min-width: 130px;
+  text-align: center;
 
-    @media (max-width: @bp-medium) {
-      display: block;
-      text-align: center;
-      margin-left: 0;
-    }
+  &:hover, &:focus, &.navbar_tab_item-active {
+    color: @white;
+    border-bottom: 2px solid @yellow-500;
+    text-decoration: none;
+    opacity: 1;
   }
+}
