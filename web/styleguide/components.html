@@ -24,29 +24,29 @@
       background-color: #f2f2f2;
     }
 
-    header, main {
+    .styleguide-header, .styleguide-main {
       padding: 0 200px;
     }
 
-    header {
+    .styleguide-header {
       background-color: #4285f4;
       color: white;
       padding-top: 30px;
       padding-bottom: 30px;
     }
 
-    header a {
+    .styleguide-header a {
       color: white;
       text-decoration: none;
       font-family: sans-serif;
     }
 
-    header a:hover {
+    .styleguide-header a:hover {
       color: white;
       text-decoration: underline;
     }
 
-    header .title {
+    .styleguide-header .title {
       color: white;
       text-decoration: none;
       border-bottom: 0;
@@ -72,7 +72,7 @@
     }
 
     @media (max-width: 800px) {
-      header, main {
+      .styleguide-header, .styleguide-main {
         padding-left: 10px;
         padding-right: 10px;
       }
@@ -81,7 +81,7 @@
 </head>
 
 <body>
-  <header>
+  <header class="styleguide-header">
     <h1 class="title">Components</h1>
     <ol>
       <li><a href="#buttons">Buttons</a></li>
@@ -100,7 +100,7 @@
     </ol>
   </header>
 
-  <main>
+  <main class="styleguide-main">
     <!-- Buttons -->
     <div>
       <h1 id="buttons" class="title">Buttons</h1>
@@ -144,50 +144,122 @@
     <!-- Cards -->
     <div>
       <h1 id="cards" class="title">Cards</h1>
+      
+      <section class="card_container">
 
-      <article class="card">
-        <h3>Simple Card Title</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </article>
-
-      <a>
-        <article class="card_link">
-          <h3>Link Card Title</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <!-- Tarjeta con todos los elementos -->
+        <article class="card">
+          <a href="#" class="card_clickzone" title="The Title">
+            <!-- Header superior -->
+            <header class="card_header-secondary">
+              <div class="card_header_avatar"  style="background-image: url(http://3ggqje2jhgjp45f9yd48ay211i1.wpengine.netdna-cdn.com/wp-content/uploads/2013/09/generic-face.png);"></div>
+              <div class="card_header_textbox">
+                <h2 class="card_header_title-small">The Title</h2>
+                <small class="card_header_subtitle">The subtitle</small>
+              </div>
+            </header>
+            <!-- Imagen de la tarjeta -->
+            <div class="card_media"  style="background-image: url(http://www.valdodubra.com/galeria/iglesias/images/igrexa%20portomouro%201_jpg.jpg);">
+              <h2 class="card_header_title-media ">The Title</h2>
+            </div>
+            <!-- Header inferior -->
+            <header class="card_header-primary">
+              <div class="card_header_avatar" style="background-image: url(http://3ggqje2jhgjp45f9yd48ay211i1.wpengine.netdna-cdn.com/wp-content/uploads/2013/09/generic-face.png);"></div>
+              <div class="card_header_textbox">
+                <h2 class="card_header_title">The Title</h2>
+                <small class="card_header_subtitle">The subtitle</small>
+              </div>
+            </header>
+            <!-- Contenido de la tarjeta -->
+            <main class="card_content">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Suspendisse quis elit nibh. In scelerisque gravida tellus, tempor dapibus elit tempus id. Cras ac semper lectus</p>
+            </main>
+          </a>
+          <!-- Pié de la tarjeta -->
+          <footer class="card_footer">
+            <button class="float-left">Cancel</button>
+            <button>Info</button>
+            <button class="primary">Article</button>
+          </footer>
         </article>
-      </a>
 
-      <article class="card">
-        <h3>Card Title</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <footer>
-          <button class="float-left">Cancelar</button>
-          <button>+ Info</button>
-          <button class="info">Aceptar</button>
-        </footer>
-      </article>
+        <!-- Tarjeta Simple -->
+        <article class="card">
+          <a href="#" class="card_clickzone" title="The Title">
+            <!-- Header inferior -->
+            <header class="card_header-primary">
+              <div class="card_header_avatar" style="background-image: url(http://3ggqje2jhgjp45f9yd48ay211i1.wpengine.netdna-cdn.com/wp-content/uploads/2013/09/generic-face.png);"></div>
+              <div class="card_header_textbox">
+                <h2 class="card_header_title">The Title</h2>
+                <small class="card_header_subtitle">The subtitle</small>
+              </div>
+            </header>
+            <!-- Contenido de la tarjeta -->
+            <main class="card_content">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Suspendisse quis elit nibh. In scelerisque gravida tellus, tempor dapibus elit tempus id. Cras ac semper lectus</p>
+            </main>
+          </a>
+        </article>
+        
+        <!-- Tarjeta Simple con tema -->
+        <article class="card  card_theme-dark">
+          <a href="#" class="card_clickzone" title="The Title">
+            <!-- Header inferior -->
+            <header class="card_header-primary">
+              <div class="card_header_avatar" style="background-image: url(http://3ggqje2jhgjp45f9yd48ay211i1.wpengine.netdna-cdn.com/wp-content/uploads/2013/09/generic-face.png);"></div>
+              <div class="card_header_textbox">
+                <h2 class="card_header_title">The Title</h2>
+                <small class="card_header_subtitle">The subtitle</small>
+              </div>
+            </header>
+            <!-- Contenido de la tarjeta -->
+            <main class="card_content">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Suspendisse quis elit nibh. In scelerisque gravida tellus, tempor dapibus elit tempus id. Cras ac semper lectus</p>
+            </main>
+          </a>
+            <!-- Pié de la tarjeta -->
+            <footer class="card_footer">
+              <button class="btn-raised  alert">Share</button>
+            </footer>
+        </article>
 
-      <article class="card_dark">
-        <h3>Card Title</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <footer>
-          <button class="float-left">Cancelar</button>
-          <button>+Info</button>
-          <button class="btn-raised info">Aceptar</button>
-        </footer>
-      </article>
+        <!-- Tarjeta de sólo imágen -->
+        <article class="card">
+          <a href="#" class="card_clickzone" title="The Title">
+            <!-- Imagen de la tarjeta -->
+            <div class="card_media"  style="background-image: url(http://www.valdodubra.com/galeria/iglesias/images/igrexa%20portomouro%201_jpg.jpg);">
+              <h2 class="card_header_title-media ">The Title</h2>
+            </div>
+          </a>
+        </article>
 
-      <article class="card_image">
-        <div class="image-background" style="background-image: url(http://dummyimage.com/600x400/64cc8e/fff);">
-          <h3>Card Title</h3>
-        </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <footer>
-          <button class="float-left">Cancelar</button>
-          <button>+ Info</button>
-          <button class="t-primary">Aceptar</button>
-        </footer>
-      </article>
+        <!-- Tarjeta alternativa -->
+        <article class="card">
+          <a href="#" class="card_clickzone" title="The Title">
+            <!-- Header superior -->
+            <header class="card_header-secondary">
+              <div class="card_header_avatar"  style="background-image: url(http://3ggqje2jhgjp45f9yd48ay211i1.wpengine.netdna-cdn.com/wp-content/uploads/2013/09/generic-face.png);"></div>
+              <div class="card_header_textbox">
+                <h2 class="card_header_title-small">The Title</h2>
+                <small class="card_header_subtitle">The subtitle</small>
+              </div>
+            </header>
+            <!-- Imagen de la tarjeta -->
+            <div class="card_media"  style="background-image: url(http://www.valdodubra.com/galeria/iglesias/images/igrexa%20portomouro%201_jpg.jpg);">
+            </div>
+            <!-- Contenido de la tarjeta -->
+            <main class="card_content">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Suspendisse quis elit nibh. In scelerisque gravida tellus, tempor dapibus elit tempus id. Cras ac semper lectus</p>
+            </main>
+          </a>
+          <!-- Pié de la tarjeta -->
+          <footer class="card_footer">
+            <button>Read more</button>
+          </footer>
+        </article>
+
+      </section>
+      
     </div>
 
     <!-- Lists -->

@@ -3,25 +3,25 @@
 \*------------------------------------*/
 //https://www.google.com/design/spec/components/cards.html#cards-usage
 
-[class^="card"] {
+//Medidas genéricas
+@card-width: 400px;
+
+.card {
   position: relative; //Es necesario para situar dentro elementos con 'position: absolute'
-  display: inline-block;
-  vertical-align: top;
   text-align: left;
   background-color: @white;
   border-radius: @md-border-radius;
-  padding: 16px;
-  margin: 0 14px 30px;
+  margin: 0 14px 20px;
+  cursor: pointer;
+  width: @card-width;
+  
+  will-change: box-shadow;
+  .transition(box-shadow);
+  transition-duration: 200ms;
   .shadow(2);
-  h3 {
-    margin-top: 0;
-  }
-  footer {
-    text-align: right;
-    margin-top: 24px;
-    button {
-      .margin-vertical(0);
-    }
+  //Hoverable
+  &:hover {
+    .shadow(3);
   }
 
   //Mediaqueries
@@ -29,68 +29,131 @@
     margin-bottom: 20px;
     .margin-horizontal (10px);
   }
+  
+  @media (max-width: @bp-small) {
+    width: 100%;
+  }
+  
 }
 
-//Tarjetas oscuras
-.card_dark {
-  background-color: @bg-dark;
-  color: @white;
-  h3 {
-    color: @white;
+
+//Container
+.card_container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+
+//Zonas
+.card_clickzone {
+  color: @text-color;
+  
+  &:hover, &:focus {
+    color: @text-color;
+    text-decoration: none;
+  }
+  
+  /**
+  * Debes poner aquí todos los elementos que estén dentro de esta
+  * zona. Así evitamos el uso del selector global '*'.
+  * Además, se desaconseja poner enlaces o botones dentro
+  * de esta zona.
+  */
+  p, h1, h2, h3, small, div, header, main, footer {
+    cursor: pointer;
   }
 }
 
-//Tarjetas con imagen de fondo
-.card_image {
-  padding: 0;
-  padding-bottom: 16px;
-  h3, p, footer {
-    .padding-horizontal(16px;)
-  }
+[class^="card_header-"] {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 16px;
 }
 
-[class^="image-background"] {
-  position: relative;
-  height: 300px;
+  .card_header-primary {
+    margin-top: 24px;
+  }
+
+    .card_header_textbox{
+      flex: 1;
+      vertical-align: top;
+      display: inline-block;
+    }
+
+.card_media {
+  position: relative; //Para que se posicione bien el título interno
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin-bottom: 32px;
-  h3 {
-    color: @white;
-    position: absolute;
-    padding-bottom: 5px;
-    bottom: 0;
-    margin-bottom: 0;
+  padding-bottom: 17.77777778%; //16:9
+  
+  &:last-child {
+    .border-bottom-radius(2px);
+  }
+  &:first-child {
+    .border-top-radius(2px);
+  }
+  
+  //Esto es para que conserve el aspect ratio
+  //http://nicolasgallagher.com/flexible-css-cover-images/
+  &:before {
+    content: "";
+    display: block;
+    padding-bottom: 50%;
   }
 }
 
-.image-background_shadow h3 {
-  width: 100%;
-  background: linear-gradient( 0deg, @alpha-150, @alpha );
-  padding-top: 20px;
+.card_content {
+  margin: 16px;
 }
 
-//Estilos para las tarjetas que además son un enlace en sí mismas
-.card_link {
-  .transition (box-shadow;);
-  will-change: box-shadow;
-  transition-duration: 0.1s;
-  cursor: pointer;
+.card_footer {
+  margin: 8px;
+  text-align: right;
+}
 
-  /**
-  * Debes poner aquí todos los elementos que estén dentro de tus
-  * tarjetas que a su vez son todas ellas un enlace.
-  * Así evitamos el uso del selector global '*'.
-  * Además, se desaconseja poner enlaces o botones dentro
-  * de estas tarjetas.
-  */
-  h3, p {
-    color: @text-color;
-    cursor: pointer;
+
+//Elementos
+.card_header_avatar {
+  margin-right: 16px;
+  display: inline-block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .circle(40px);
+}
+
+[class^="card_header_title"] {
+  margin: 0;
+  font-size: 24px;
+}
+
+  .card_header_title-small {
+      font-weight: 600;
+      font-size: @font-size-base;
+    }
+
+  .card_header_title-media {
+      position: absolute;
+      color: @white;
+      width: 100%;
+      margin: 0;
+      bottom: 0;
+      padding-left: 16px;
+      .padding-vertical (10px);
+      background-image: linear-gradient(to top, @alpha-800, @alpha-700, @alpha);
+    }
+
+
+//Temas
+.card_theme-dark {
+  background-color: @bluegrey-800;
+  p, h1, h2, h3, div, header, main, footer {
+      color: @white;
   }
-
-  &:hover, &:focus {
-    .shadow(3);
+  small {
+    color: @walpha-450;
   }
 }

@@ -432,7 +432,7 @@ em {
 small {
   font-size: 0.85rem;
   font-weight: 400;
-  color: #8c8c8c;
+  color: rgba(0, 0, 0, 0.45);
 }
 cite {
   font-style: italic;
@@ -461,7 +461,7 @@ blockquote {
   padding: 40px;
   font-size: 1.2rem;
   font-style: italic;
-  color: #8c8c8c;
+  color: rgba(0, 0, 0, 0.45);
   line-height: 1.5em;
   border-radius: 2px;
   border-left: 10px solid #e6e6e6;
@@ -516,7 +516,7 @@ address {
   font-style: italic;
 }
 .light-text {
-  color: #8c8c8c;
+  color: rgba(0, 0, 0, 0.45);
 }
 .dark-text {
   color: #333333;
@@ -809,95 +809,151 @@ input[type=reset]:disabled:hover {
 /*------------------------------------*\
     $TARJETAS
 \*------------------------------------*/
-[class^="card"] {
+.card {
   position: relative;
-  display: inline-block;
-  vertical-align: top;
   text-align: left;
   background-color: #ffffff;
   border-radius: 2px;
-  padding: 16px;
-  margin: 0 14px 30px;
+  margin: 0 14px 20px;
+  cursor: pointer;
+  width: 400px;
+  will-change: box-shadow;
+  transition-property: box-shadow;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
+  transition-duration: 200ms;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
-[class^="card"] h3 {
-  margin-top: 0;
-}
-[class^="card"] footer {
-  text-align: right;
-  margin-top: 24px;
-}
-[class^="card"] footer button {
-  margin-top: 0;
-  margin-bottom: 0;
+.card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 @media (max-width: 800px) {
-  [class^="card"] {
+  .card {
     margin-bottom: 20px;
     margin-left: 10px;
     margin-right: 10px;
   }
 }
-.card_dark {
-  background-color: #37474f;
-  color: #ffffff;
+@media (max-width: 414px) {
+  .card {
+    width: 100%;
+  }
 }
-.card_dark h3 {
-  color: #ffffff;
+.card_container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
-.card_image {
-  padding: 0;
-  padding-bottom: 16px;
+.card_clickzone {
+  color: #4d4d4d;
+  /**
+  * Debes poner aquí todos los elementos que estén dentro de esta
+  * zona. Así evitamos el uso del selector global '*'.
+  * Además, se desaconseja poner enlaces o botones dentro
+  * de esta zona.
+  */
 }
-.card_image h3,
-.card_image p,
-.card_image footer {
-  padding-left: 16px;
-  padding-right: 16px;
+.card_clickzone:hover,
+.card_clickzone:focus {
+  color: #4d4d4d;
+  text-decoration: none;
 }
-[class^="image-background"] {
+.card_clickzone p,
+.card_clickzone h1,
+.card_clickzone h2,
+.card_clickzone h3,
+.card_clickzone small,
+.card_clickzone div,
+.card_clickzone header,
+.card_clickzone main,
+.card_clickzone footer {
+  cursor: pointer;
+}
+[class^="card_header-"] {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 16px;
+}
+.card_header-primary {
+  margin-top: 24px;
+}
+.card_header_textbox {
+  flex: 1;
+  vertical-align: top;
+  display: inline-block;
+}
+.card_media {
   position: relative;
-  height: 300px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin-bottom: 32px;
+  padding-bottom: 17.77777778%;
 }
-[class^="image-background"] h3 {
-  color: #ffffff;
+.card_media:last-child {
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.card_media:first-child {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+.card_media:before {
+  content: "";
+  display: block;
+  padding-bottom: 50%;
+}
+.card_content {
+  margin: 16px;
+}
+.card_footer {
+  margin: 8px;
+  text-align: right;
+}
+.card_header_avatar {
+  margin-right: 16px;
+  display: inline-block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+[class^="card_header_title"] {
+  margin: 0;
+  font-size: 24px;
+}
+.card_header_title-small {
+  font-weight: 600;
+  font-size: 1rem;
+}
+.card_header_title-media {
   position: absolute;
-  padding-bottom: 5px;
-  bottom: 0;
-  margin-bottom: 0;
-}
-.image-background_shadow h3 {
+  color: #ffffff;
   width: 100%;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
-  padding-top: 20px;
+  margin: 0;
+  bottom: 0;
+  padding-left: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
 }
-.card_link {
-  transition-property: box-shadow;
-  transition-timing-function: ease-in-out;
-  transition-delay: 0s;
-  will-change: box-shadow;
-  transition-duration: 0.1s;
-  cursor: pointer;
-  /**
-  * Debes poner aquí todos los elementos que estén dentro de tus
-  * tarjetas que a su vez son todas ellas un enlace.
-  * Así evitamos el uso del selector global '*'.
-  * Además, se desaconseja poner enlaces o botones dentro
-  * de estas tarjetas.
-  */
+.card_theme-dark {
+  background-color: #37474f;
 }
-.card_link h3,
-.card_link p {
-  color: #4d4d4d;
-  cursor: pointer;
+.card_theme-dark p,
+.card_theme-dark h1,
+.card_theme-dark h2,
+.card_theme-dark h3,
+.card_theme-dark div,
+.card_theme-dark header,
+.card_theme-dark main,
+.card_theme-dark footer {
+  color: #ffffff;
 }
-.card_link:hover,
-.card_link:focus {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+.card_theme-dark small {
+  color: rgba(255, 255, 255, 0.45);
 }
 /*------------------------------------*\
     $FORMULARIOS
@@ -911,7 +967,7 @@ form label {
   min-width: 150px;
   font-size: 0.85rem;
   font-weight: 400;
-  color: #8c8c8c;
+  color: rgba(0, 0, 0, 0.45);
 }
 form input {
   background-color: transparent;
@@ -1145,7 +1201,7 @@ textarea:focus {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 .navbar.navbar-scrolled {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 .navbar_button {
   position: relative;
@@ -1509,7 +1565,7 @@ figure {
   margin-bottom: 2em;
 }
 figcaption {
-  color: #8c8c8c;
+  color: rgba(0, 0, 0, 0.45);
   font-size: 0.85rem;
   font-style: italic;
 }
@@ -1666,6 +1722,7 @@ span[data-role="close"]:before {
 \*------------------------------------*/
 .wrapper {
   position: absolute;
+  width: 100%;
   height: 1000px;
 }
 .wrapper-navbar {
