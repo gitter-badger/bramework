@@ -11,6 +11,7 @@
  *   $Listas
  *   $Navbar
  *   $Snackbar
+ *   $Post
  *   $Tablas
  *  $Código
  *  $Imágenes
@@ -457,7 +458,7 @@ dfn {
  * Se pueden aplicar texturas. Ver 'libraries/textures.less'
  */
 blockquote {
-  margin: 20px;
+  margin: 0;
   padding: 40px;
   font-size: 1.2rem;
   font-style: italic;
@@ -465,6 +466,9 @@ blockquote {
   line-height: 1.5em;
   border-radius: 2px;
   border-left: 10px solid #e6e6e6;
+}
+blockquote:not(:last-child) {
+  margin-bottom: 2em;
 }
 blockquote footer {
   margin-top: .6em;
@@ -1418,6 +1422,87 @@ textarea:focus {
   opacity: 1;
 }
 /*------------------------------------*\
+    $POST
+\*------------------------------------*/
+.post {
+  position: relative;
+  text-align: left;
+  background-color: #ffffff;
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+@media (max-width: 800px) {
+  .post {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 414px) {
+  .post {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.post_header {
+  padding-bottom: 30px;
+}
+.post_main p {
+  text-align: justify;
+}
+.post_footer {
+  padding-top: 50px;
+}
+.post_footer_author {
+  display: flex;
+  flex-wrap: wrap;
+}
+.post_footer_author_info {
+  flex: 1;
+  max-width: 300px;
+}
+.post_title {
+  font-family: 'Roboto Condensed', sans-serif;
+  text-rendering: optimizeLegibility;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 0;
+}
+.post_subtitle {
+  color: rgba(0, 0, 0, 0.45);
+  font-style: italic;
+  padding-top: 5px;
+}
+.post_footer_author_avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  margin-right: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.post_footer_author_name p {
+  font-weight: 600;
+}
+.post_footer_author_desc {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.45);
+}
+.post_footer_author_social {
+  padding-top: 5px;
+}
+/*------------------------------------*\
     $SNACKBAR
 \*------------------------------------*/
 .snackbar {
@@ -1561,13 +1646,17 @@ img {
 \*------------------------------------*/
 figure {
   width: auto;
-  margin-top: 2em;
+  margin: 0;
+}
+figure:not(:last-child) {
   margin-bottom: 2em;
 }
 figcaption {
-  color: rgba(0, 0, 0, 0.45);
   font-size: 0.85rem;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.45);
   font-style: italic;
+  padding-top: 5px;
 }
 hr {
   display: block;
@@ -1723,7 +1812,7 @@ span[data-role="close"]:before {
 .wrapper {
   position: absolute;
   width: 100%;
-  height: 1000px;
+  height: 2000px;
 }
 .wrapper-navbar {
   padding-top: 64px;

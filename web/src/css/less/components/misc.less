@@ -5,14 +5,17 @@
 //Contenido que se entiende por sí solo. imágenes, código, etc.
 figure {
   width: auto;
-  .margin-vertical(@margin-bottom-base);
+  margin: 0;
+  &:not(:last-child) {
+    margin-bottom: @margin-bottom-base;
+  }
 }
 
 //Leyenda de 'figure'
 figcaption {
-  color: @text-color-light;
-  font-size: @font-size-small;
+  .small;
   font-style: italic;
+  padding-top: 5px;
 }
 
 //Línea

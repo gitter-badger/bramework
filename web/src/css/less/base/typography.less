@@ -238,7 +238,7 @@ dfn {
  * Se pueden aplicar texturas. Ver 'libraries/textures.less'
  */
 blockquote{
-  margin: 20px;
+  margin: 0;
   padding: 40px;
   font-size: @font-size-large;
   font-style: italic;
@@ -246,6 +246,9 @@ blockquote{
   line-height: @line-height-base;
   border-radius: @border-radius;
   border-left: 10px solid @grey-100;
+  &:not(:last-child) {
+    margin-bottom: @margin-bottom-base;
+  }
   footer {
     margin-top: .6em;
     font-size: @font-size-small;
