@@ -1,11 +1,10 @@
+# editorconfig.org
+
 root = true
 
-#Indentation for HTML, LESS and JS files
 [*]
 charset = utf-8
 indent_style = space
 indent_size = 2
-
-#Other
 trim_trailing_whitespace = true
 insert_final_newline = false
