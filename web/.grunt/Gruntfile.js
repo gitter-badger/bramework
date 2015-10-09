@@ -1,20 +1,24 @@
 module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-
-    less: {
+    
+    sass: {
       production: {
         options: {
-          cleancss: true,
-          compress: true
+          sourcemap: 'none',
+          style: 'compressed'
         },
-        files: {
-          '../src/css/style.min.css': '../src/css/less/style.less'
+        files: { 
+          '../src/css/style.min.css': '../src/css/sass/style.scss'
         }
       },
       development: {
+        options: {
+          sourcemap: 'none',
+          style: 'expanded'
+        },
         files: {
-          '../src/css/style.css': '../src/css/less/style.less'
+          '../src/css/style.css': '../src/css/sass/style.scss'
         }
       }
     },
@@ -39,13 +43,13 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-notify');
 
   grunt.registerTask('default', ['watch']);
-  grunt.registerTask('all', ['less', 'uglify']);
-  grunt.registerTask('css', ['less']);
+  grunt.registerTask('all', ['sass', 'uglify']);
+  grunt.registerTask('css', ['sass']);
   grunt.registerTask('js', ['uglify']);
 };
