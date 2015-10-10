@@ -22,6 +22,15 @@ module.exports = function (grunt) {
         }
       }
     },
+    
+    autoprefixer: {
+      options:{
+        browsers: ['last 2 version','ie 9']
+      },
+      main: {
+        src: ['../src/css/style.css', '../src/css/style.min.css']
+      }
+    },
 
     uglify: {
       scripts: {
@@ -33,8 +42,12 @@ module.exports = function (grunt) {
 
     watch: {
       styles: {
-        files: ['../src/css/less/**/*.less'],
-        tasks: ['less']
+        files: ['../src/css/sass/**/*.scss'],
+        tasks: ['sass']
+      },
+      autoprfx: {
+        files: ['../src/css/style.css', '../src/css/style.min.css'],
+        tasks: ['autoprefixer']
       },
       scripts: {
         files: ['../src/js/scripts/*.js', '../src/js/vendor/*.js', '../src/js/polyfills/*.js'],
@@ -46,10 +59,12 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-notify');
 
   grunt.registerTask('default', ['watch']);
-  grunt.registerTask('all', ['sass', 'uglify']);
-  grunt.registerTask('css', ['sass']);
+  grunt.registerTask('all', ['sass', 'autoprefixer', 'uglify']);
+  grunt.registerTask('css', ['sass', 'autoprefixer']);
+  grunt.registerTask('auto', ['autoprefixer']);
   grunt.registerTask('js', ['uglify']);
 };

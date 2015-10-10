@@ -1,1 +1,14 @@
 @charset 'utf-8';
+
+//@import 'vendor/normalize';
+//@import 'vendor/sanitize';
+
+@import 'libraries/colors';
+
+//@import 'base/base';
+//@import 'base/typography';
+
+.main {
+  display: flex;
+  transition: 3s;
+}

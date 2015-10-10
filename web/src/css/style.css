@@ -1,7 +1,6 @@
-/*exemplo*/
-body {
-  background-color: aqua;
-  margin: 0 auto;
+.main {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  transition: 3s;
 }
-
-/*# sourceMappingURL=style.css.map */
