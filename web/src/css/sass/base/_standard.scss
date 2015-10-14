@@ -1,0 +1,72 @@
+/*------------------------------------*\
+    $STANDARD
+\*------------------------------------*/
+
+//Contenido que se entiende por sí solo. imágenes, código, etc.
+figure {
+  width: 100%;
+  @include margin-horizontal(0);
+}
+
+//Leyenda de 'figure'
+figcaption {
+  @extend small;
+  font-style: italic;
+  padding-top: 5px;
+}
+
+
+img {
+  border: 0;  /* Elimina el borde dentro de `a` en IE 8/9/10.*/
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+
+code,
+kbd,
+pre,
+samp {
+  font-family: $font-family-monospace;
+  * {
+    cursor: text;
+  }
+}
+
+code,
+kbd {
+  font-size: $font-size-base*0.9;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: $line-height-base;
+  padding: 1px 5px;
+}
+
+kbd {
+  box-shadow: 0 2px $grey-150;
+}
+
+//Texto preformateado
+pre {
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: block;
+  text-align: left;
+  margin: 0;
+}
+
+
+//Línea
+hr {
+  display: block;
+  clear: both;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid $grey-150;
+  margin: 3rem 0;
+  padding: 0;
+  -moz-box-sizing: content-box; /* Consistencia entre navegadores */
+  box-sizing: content-box; /* Consistencia entre navegadores */
+}

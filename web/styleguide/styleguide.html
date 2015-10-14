@@ -25,29 +25,29 @@
       background-color: #f2f2f2;
     }
 
-      header, main {
+      .styleguide-header, .styleguide-main {
           padding: 0 200px;
       }
 
-      header {
+      .styleguide-header {
           background-color: #4285f4;
           color: white;
           padding-top: 30px;
           padding-bottom: 30px;
       }
 
-      header a {
+      .styleguide-header a {
           color: white;
           text-decoration: none;
           font-family: sans-serif;
       }
 
-      header a:hover {
+      .styleguide-header a:hover {
           color: white;
           text-decoration: underline;
       }
 
-      header .title {
+      .styleguide-header .title {
           color: white;
           text-decoration: none;
           border-bottom: 0;
@@ -72,7 +72,7 @@
       }
 
       @media (max-width: 800px) {
-          header, main {
+        .styleguide-header, .styleguide-main {
               padding-left: 10px;
               padding-right: 10px;
           }
@@ -82,7 +82,7 @@
 
 <body>
 
-    <header>
+    <header class="styleguide-header">
         <h1 class="title">Styleguide</h1>
         <ol>
             <li><a href="#headings">Headings</a></li>
@@ -100,7 +100,7 @@
 
     </header>
 
-    <main>
+  <main class="styleguide-main">
 
         <!-- Headings -->
         <div>
@@ -151,7 +151,7 @@
             <p>The <dfn>dfn element</dfn> and <dfn title="Title text">dfn element with title</dfn> examples</p>
             <p>The <i>i element</i> example</p>
             <p>The <ins>ins element</ins> example</p>
-            <p>The <kbd>Kbd</kbd> + <kbd>element</kbd> example</p>
+            <p>The <kbd>Kbd</kbd> example</p>
             <p>The <mark>mark element</mark> example</p>
             <p>The <q>q element</q> example</p>
             <p>The <s>s element</s> example</p>
@@ -342,7 +342,7 @@
 
             <h1 class="subtitle">Responsive image</h1>
             <picture>
-              <source  media="(min-width: 1000px)" srcset="http://placehold.it/1000x150" type="image/png">
+              <source  media="(min-width: 1200px)" srcset="http://placehold.it/1000x150" type="image/png">
               <source  media="(min-width: 500px)" srcset="http://placehold.it/500x150" type="image/png">
                 <img srcset="http://placehold.it/300x150" alt="Alt text" title="img title">
             </picture>

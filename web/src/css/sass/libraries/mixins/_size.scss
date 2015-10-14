@@ -1,0 +1,12 @@
+//Establece las medidas de un elemento. Ancho x Alto.
+@mixin size($width, $height: $width) {
+  width : $width;
+  height: $height;
+}
+
+//Hace un elemento circular
+@mixin circle($size) {
+  width        : $size;
+  height       : $size;
+  border-radius: 100%;
+}

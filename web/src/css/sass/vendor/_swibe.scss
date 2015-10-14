@@ -1,0 +1,36 @@
+/*------------------------------------*\
+    $SWIBE MENU
+\*------------------------------------*/
+
+$menuWidth: 300px;
+$animationTime: 200ms;
+.swibe-menu {
+  width: $menuWidth;
+  height: 100%;
+  z-index: 99;
+  position: fixed;
+  left: -$menuWidth;
+  transition: transform $animationTime ease-in-out ;
+  will-change: transform;
+  overflow-y: auto;
+
+  &.open {
+    transform: translateX($menuWidth);
+  }
+}
+
+.swibe-shadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transition: opacity $animationTime ease-in-out ;
+  background-color: black;
+  opacity: 0;
+  z-index: 98;
+
+  &.enabled {
+    opacity: 0.6;
+  }
+}

@@ -1,0 +1,150 @@
+/*------------------------------------*\
+    $TARJETAS MATERIAL-DESIGN
+\*------------------------------------*/
+
+// https://www.google.com/design/spec/components/cards.html#cards-usage
+
+//Medidas genéricas
+$card-width: 400px;
+
+.card {
+  position: relative; //Es necesario para situar dentro elementos con 'position: absolute'
+  text-align: left;
+  background-color: $md-color-light;
+  border-radius: $md-border-radius;
+  width: $card-width;
+  margin: 0 14px 20px;
+  cursor: pointer;
+
+  will-change: box-shadow;
+  @include transition(box-shadow, 200ms);
+  @include md-shadow(2);
+  &:hover {
+    @include md-shadow(3);
+  }
+  @include bp-medium {
+    margin-bottom: 20px;
+    @include margin-horizontal (10px);
+  }
+  @include bp-small {
+    width: 100%;
+  }
+}
+
+
+//Container ('section' padre de varias cards)
+.card_container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+
+//Zonas
+.card_clickzone {
+  color: $text-color;
+
+  &:hover, &:focus {
+    color: $text-color;
+    text-decoration: none;
+  }
+  * {
+    cursor: pointer;
+  }
+}
+
+.card_header-big, .card_header-small {
+  display: flex;
+}
+
+  .card_header_textbox{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+
+.card_header-big, .card_header-small, .card_content {
+  margin: 16px;
+}
+
+.card_media {
+  position: relative; //Para que se posicione bien el título interno
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 17.77777778%; //16:9
+  margin-bottom: 24px;
+
+  &:first-child {
+    @include border-top-radius(2px);
+  }
+  &:last-child {
+    @include border-bottom-radius(2px);
+    margin-bottom: 0;
+  }
+
+  // Esto es para que conserve el aspect ratio
+  // http://nicolasgallagher.com/flexible-css-cover-images/
+  &:before {
+    content: "";
+    display: block;
+    padding-bottom: 50%;
+  }
+}
+
+
+.card_footer {
+  margin: 8px;
+//  text-align: right;
+}
+
+
+//Elementos
+.card_header_avatar {
+  margin-right: 16px;
+  display: inline-block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include circle(40px);
+}
+
+.card_header_title-big, .card_header_title-small {
+  margin: 0;
+}
+
+.card_header_title-big, .card_header_title-media {
+  font-size: 24px;
+}
+
+.card_header_title-small {
+  font-weight: 600;
+  font-size: $font-size-base;
+}
+
+.card_header_title-media {
+  position: absolute;
+  color: $white;
+  width: 100%;
+  margin: 0;
+  bottom: 0;
+  padding: 10px 16px;
+  background-image: linear-gradient(to top, $alpha-800, $alpha-700, $alpha);
+  @include border-bottom-radius(2px);
+}
+
+
+//Temas
+.card_theme-dark {
+  background-color: $md-color-dark;
+  * {
+    color: $white;
+  }
+  small {
+    color: $walpha-450;
+  }
+}

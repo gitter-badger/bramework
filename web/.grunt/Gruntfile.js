@@ -43,11 +43,7 @@ module.exports = function (grunt) {
     watch: {
       styles: {
         files: ['../src/css/sass/**/*.scss'],
-        tasks: ['sass']
-      },
-      autoprfx: {
-        files: ['../src/css/style.css', '../src/css/style.min.css'],
-        tasks: ['autoprefixer']
+        tasks: ['sass', 'autoprefixer']
       },
       scripts: {
         files: ['../src/js/scripts/*.js', '../src/js/vendor/*.js', '../src/js/polyfills/*.js'],

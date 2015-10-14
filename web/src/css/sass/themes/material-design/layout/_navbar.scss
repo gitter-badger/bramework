@@ -1,0 +1,279 @@
+/*------------------------------------*\
+    $NAVBAR MATERIAL-DESIGN
+\*------------------------------------*/
+
+//https://www.google.com/design/spec/components/tabs.html
+//https://www.google.com/design/spec/components/toolbars.html#toolbars-usage
+//https://www.google.com/design/spec/layout/structure.html#structure-toolbars
+
+$md-navbar-transition: 200ms;
+
+//Navbar General
+.md-navbar {
+  position: fixed;
+  width: 100%;
+  font-size: 24px;
+  z-index: 97;
+
+  //Tema por defecto
+  background-color: $brand-color; 
+  color: $white;
+
+  will-change: box-shadow;
+  transition: box-shadow $md-navbar-transition ease-in-out;
+  @include md-shadow(1);
+  &.md-navbar-scrolled {
+    @include md-shadow(3);
+  }
+}
+
+
+//Elementos
+.md-navbar_button {
+  position: relative;
+  display: inline-block;
+  color: $white;
+  border-radius: 100%;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    background-color: $walpha-300;
+  }
+  &:active {
+    background-color: $walpha-200;
+  }
+
+  @include bp-large {
+    &:hover,
+    &:focus {
+      background-color: inherit;
+    }
+    &:active {
+      background-color: $walpha-300;
+    }
+  }
+
+  &[data-icon]:before {
+    padding: 12px;
+    color: $white;
+  }
+
+  &[data-badge]:after {
+    content: attr(data-badge);
+    position: absolute;
+    background-color: $red-800;
+    color: $white;
+    font-size: 14px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 100%;
+    top: 3px;
+    right: 3px;
+    text-align: center;
+  }
+}
+
+.md-navbar_title {
+  margin: 0;
+  font-size: 20px;
+}
+
+
+//Zonas
+.md-navbar_toolbar {
+  display: flex;
+  align-items: center;
+  height: 64px;
+
+  @include bp-medium {
+    height: 56px;
+  }
+}
+
+.md-navbar_toolbar-left {
+  margin-left: 12px;
+
+  @include bp-small {
+    margin-left: 2px;
+  }
+}
+
+.md-navbar_toolbar-center {
+  flex: 1;
+  margin-left: 20px;
+  white-space: nowrap;
+  @include bp-small {
+    margin-left: 10px;
+  }
+}
+
+.md-navbar_toolbar-right {
+  margin-right: 12px;
+  @include bp-small {
+    margin-right: 2px;
+    a:not(:last-child) {
+      margin-right: -10px;
+    }
+  }
+}
+
+
+//Variantes
+//La barra de navegación no se queda fija al hacer scroll
+.md-navbar_variant-nofixed {
+  position: absolute;
+}
+
+//La barra de navegación es grande
+.md-navbar_variant-big {
+  .md-navbar_toolbar {
+    box-sizing: content-box; //Para que al añadir el padding, no se vea mal por el align-content
+    padding-bottom: 136px; //En pantallas grandes, 300px de tamaño total del navbar
+
+    will-change: padding-bottom;
+    transition: padding-bottom $md-navbar-transition ease-in-out;
+  }
+  &.md-navbar-scrolled {
+    .md-navbar_toolbar {
+      padding-bottom: 0;
+    }
+  }
+}
+
+//Temas
+.md-navbar_theme-transparent {
+  background-color: transparent;
+  .md-navbar_button {
+    &:hover,
+    &:focus {
+      background-color: $alpha-500;
+    }
+    &:active {
+      background-color: $alpha-400;
+    }
+
+    @include bp-medium {
+      &:hover,
+      &:focus {
+        background-color: inherit;
+      }
+      &:active {
+        background-color: $alpha-400;
+      }
+    }
+  }
+}
+
+.md-navbar_theme-white {
+  background-color: $white;
+  color: $text-color;
+  .md-navbar_button {
+    &:hover,
+    &:focus {
+      background-color: $alpha-200;
+    }
+    &:active {
+      background-color: $alpha-100;
+    }
+
+    @include bp-medium {
+      &:hover,
+      &:focus {
+        background-color: inherit;
+      }
+      &:active {
+        background-color: $alpha-200;
+      }
+    }
+
+    &[data-icon]:before {
+      color: $text-color;
+    }
+  }
+
+  .md-navbar_tab_item {
+    color: $text-color;
+    &:hover, &:focus, &.md-navbar_tab_item-active {
+      color: $text-color;
+      border-bottom-color: $grey-500;
+    }
+  }
+}
+
+.md-navbar_theme-indigo {
+  background-color: $indigo-500;
+}
+
+[class*="navbar_theme-image"] {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .md-navbar_button {
+    &:hover,
+    &:focus {
+      background-color: $alpha-500;
+    }
+    &:active {
+      background-color: $alpha-400;
+    }
+
+    @include bp-medium {
+      &:hover,
+      &:focus {
+        background-color: inherit;
+      }
+      &:active {
+        background-color: $alpha-400;
+      }
+    }
+  }
+}
+
+.md-navbar_theme-image-xyz {
+  background-image: url(../img/xyz.jpg);
+}
+
+/**
+* Puedes añadir las imágenes de fondo dinámicamente con algún CMS poniendo
+* la ruta de la imagen en el propio HTML.
+<nav class="navbar  navbar_theme-image" style="background-image: url(src/img/xyz.jpg);">
+*/
+
+
+// Tabs
+.md-navbar_tab {
+  display: inline-flex;
+  height: 48px;
+  margin-left: 68px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+
+  @include bp-medium {
+    display: flex;
+    text-align: center;
+    margin-left: 0;
+  }
+}
+
+.md-navbar_tab_item {
+  flex-grow: 1;
+  font-size: 14px;
+  padding: 0 12px;
+  line-height: 46px;
+  border-bottom: 2px solid $alpha;
+  text-transform: uppercase;
+  color: $white;
+  text-decoration: none;
+  opacity: 0.6;
+  min-width: 130px;
+  text-align: center;
+
+  &:hover, &:focus, &.md-navbar_tab_item-active {
+    color: $white;
+    border-bottom: 2px solid $yellow-500;
+    text-decoration: none;
+    opacity: 1;
+  }
+}

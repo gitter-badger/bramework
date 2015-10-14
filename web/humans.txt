@@ -18,5 +18,4 @@ Name: nombre o url
 Creation: YYYY/MM/DD
 Last update: YYYY/MM/DD
 Standards: HTML5, CSS3, JavaScript.
-Components: Less.js, Normalize.css, Material Design Icon Font.
-Software: Linux, Android, Brackets, Google Chrome, Ngrok, Git, Grunt.js.
+Software: Linux, Android, Brackets, Google Chrome, Firefox, Ngrok, Git, Grunt.js.

@@ -1,0 +1,13 @@
+//@keyframes thename {
+// 
+//}
+
+@mixin animation ($name, $duration, $function: ease-in-out, $delay: 0s, $count: infinite, $direction: alternate, $play-state: running) {
+  animation-name: $name;
+  animation-duration: $duration; //En segundos
+  animation-timing-function: $function; //(http://goo.gl/2rbYlE  |  http://goo.gl/3btZHf)
+  animation-delay: $delay; //Tiempo que tarda en empezar la animación. En segundos
+  animation-iteration-count: $count; //Numero de veces que se realiza la animación
+  animation-direction: $direction; //Indica como se debe reproducir la animación 'normal', 'reverte', 'alternate'
+  animation-play-state: $play-state; //Estado de la animación 'running' o 'paused'
+}

@@ -1,0 +1,26 @@
+//Centra un elemento
+@mixin center() {
+  margin-left : auto;
+  margin-right: auto;
+}
+
+//Centra un elemento y lo convierte en bloque
+@mixin center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+//Da a un elemento la anchura máxima
+@mixin full-width() {
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin pointer() {
+  &:hover {
+    cursor: pointer;
+  }
+}

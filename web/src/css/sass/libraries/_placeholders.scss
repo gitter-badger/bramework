@@ -1,0 +1,46 @@
+/*------------------------------------*\
+    $PLACEHOLDERS
+\*------------------------------------*/
+
+//Oculta un elemento
+.hide {display: none !important;}
+
+//No muestra un elemento, pero lo mantiene en la interfaz
+.invisible {visibility: hidden;}
+
+//Oculta un elemento, pero lo mantiene para los lectores de pantalla
+.screenreader {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+//Hace flotar a un elemento a un lado
+.float-right {float: right;}
+.float-left  {float: left;}
+
+//El elemento no se puede seleccionar
+.unselectable {user-select: none;}
+
+// LOCALIZADORES. útiles para desarrollo
+//Recuadro rojo que rodea un elemento.
+.loc {outline: 1px solid red;}
+.loc2 {outline: 1px solid blue;}
+.loc3 {outline: 1px solid yellow;}
+.loc4 {outline: 1px solid green;}
+
+//Recuadro rojo sombra de fondo en el elemento
+.loc-s {
+  outline: 1px solid red;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+//Recuadro rojo elaborado con "border" (ocupa 1px de espacio, en "outline" no)
+.loc-border {
+  border: 1px solid red;
+}

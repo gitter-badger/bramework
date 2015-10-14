@@ -1,0 +1,112 @@
+/*------------------------------------*\
+    $TEXTURAS MATERIAL-DESIGN
+\*------------------------------------*/
+$md-color-success      : $green-400;
+$md-color-success-focus: $green-500;
+$md-color-success-light: $green-50;
+$md-color-info         : $blue-400;
+$md-color-info-focus   : $blue-500;
+$md-color-info-light   : $blue-50;
+$md-color-alert        : $amber-400;
+$md-color-alert-focus  : $amber-500;
+$md-color-alert-light  : $amber-50;
+$md-color-error        : $red-400;
+$md-color-error-focus  : $red-500;
+$md-color-error-light  : $red-50;
+
+.md-primary, .md-info, .md-success, .md-alert, .md-error {
+
+  /*Buttons*/
+  &.md-btn-raised, &.md-btn-float, &.md-btn-float-mini {
+    color:$white;
+  }
+
+  /*blockquote*/
+  blockquote#{&} {
+    color: $white;
+    border-left: 0;
+  }
+}
+
+.md-primary {
+  /*Buttons*/
+  &.md-btn-flat {
+    color: $brand-color;
+  }
+
+  &.md-btn-raised, &.md-btn-float, &.md-btn-float-mini {
+    background-color: $brand-color;
+    &:active {
+      background-color: $brand-color-focus;
+    }
+  }
+}
+
+.md-info {
+  /*Buttons*/
+  &.md-btn-flat {
+    color: $md-color-info;
+  }
+
+  &.md-btn-raised, &.md-btn-float, &.md-btn-float-mini {
+    background-color: $md-color-info;
+    &:active {
+      background-color: $md-color-info-focus;
+    }
+  }
+}
+
+.md-success  {
+  /*Buttons*/
+  &.md-btn-flat {
+    color: $md-color-success;
+  }
+
+  &.md-btn-raised, &.md-btn-float, &.md-btn-float-mini {
+    background-color: $md-color-success;
+    &:active {
+      background-color: $md-color-success-focus;
+    }
+  }
+}
+
+.md-alert  {
+  /*Buttons*/
+  &.md-btn-flat {
+    color: $md-color-alert;
+  }
+
+  &.md-btn-raised, &.md-btn-float, &.md-btn-float-mini {
+    background-color: $md-color-alert;
+    &:active {
+      background-color: $md-color-alert-focus;
+    }
+  }
+}
+
+.md-error  {
+  /*Buttons*/
+  &.md-btn-flat {
+    color: $md-color-error;
+  }
+
+  &.md-btn-raised, &.md-btn-float, &.md-btn-float-mini {
+    background-color: $md-color-error;
+    &:active {
+      background-color: $md-color-error-focus;
+    }
+  }
+}
+
+blockquote {
+  &.md-primary, &.md-info, &.md-success, &.md-alert, &.md-error {
+    color: $white;
+    border-radius: $md-border-radius;
+  }
+  &.md-primary {background-color: $brand-color;}
+  &.md-success {background-color: $md-color-success;}
+  &.md-info {background-color: $md-color-info;}
+  &.md-alert {background-color: $md-color-alert;}
+  &.md-error {background-color: $md-color-error;}
+
+}

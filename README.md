@@ -19,7 +19,7 @@
 **Bramework** es un *framework* para crear sitios web.
 
 * Autor: [Iván Barcia](http://ivanbarcia.eu)
-* Version: Beta-0.2.1
+* Version: Beta-0.3.0
 * Web: [ivanbarcia.eu/bramework/](http://ivanbarcia.eu/bramework/)
 * Trello: https://trello.com/b/IzLg4nk4
 * Comunidad: [Google+](https://plus.google.com/communities/104938291205143609131/stream/957ba9b5-234b-4260-a6e7-f6a8ab29a7a3)
@@ -31,9 +31,9 @@ El objetivo principal es tener una base para agilizar la creación de sitios web
 
 Está creado totalmente desde cero a partir de conocimientos propios, pero adquiriendo ideas, conceptos y trozos de código de multitud de *frameworks*. Tampoco sigue ninguna tendencia o guía de estilo en concreto, pero después de leer y estudiar algunas, puede tener influencias o conceptos de varias como pueden ser [BEM](https://en.bem.info/), [SMACSS](https://smacss.com/), [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/), [OOCSS](http://oocss.org/), [KISS](http://es.wikipedia.org/wiki/Principio_KISS), etc.
 
-En cuanto al la arquitectura, intento crear un sistema de componentes que sean fácilmente modificables sólo cambiando el tema.
+En cuanto a la arquitectura, intento crear un sistema de componentes que sean fácilmente expandibles mediante temas.
 
-No se utilizan sistemas de *grids* por decisión personal. Raramente encuentro utilidad a un *grid* predefinido, puesto que el tiempo que me llevaría adaptarlo a mi proyecto suele ser superior al que lleva crear esa interfaz desde cero y perfectamente adaptada a mis necesidades. Además, suelen estar construídos simplemente con `<div>`, algo que puede resultar en un HTML poco semántico.
+No se utilizan sistemas de *grids* por decisión personal. Raramente encuentro utilidad a un *grid* predefinido, puesto que el tiempo que me llevaría adaptarlo a mi proyecto suele ser superior al que lleva crear esa interfaz desde cero y perfectamente adaptada a mis necesidades. Además, suelen terminar en un HTML poco semántico.
 
 Tampoco cuenta con *mediaqueries* específicos para cada dispositivo, sino que los creo simplemente cuando considero que la interfaz debe cambiar para seguir manteniendo una correcta experiencia de usuario. Una web debe ser global y flexible, teniendo en cuenta que hoy en día se visita con infinidad de pantallas, sistemas operativos, teléfonos móviles, *tablets*, ordenadores, TV's, videoconsolas e incluso *smartwatches*.
 
@@ -58,15 +58,18 @@ En el diseño web siempre intento estudiar y utilizar los últimos estándares. 
 
 ###Lenguajes
 * HTML
-* CSS (Con el preprocesador LESS)
+* CSS (Con el preprocesador SASS)
 * JavaScript
 
 ###Librerías y herramientas externas
-* [Less.js](http://lesscss.org/)
+* [Sass](http://sass-lang.com/)
 * [Grunt.js](http://gruntjs.com/)
 * [Git](http://git-scm.com/)
-* [Normalize.css](http://necolas.github.io/normalize.css/)
-* [Material design icons](http://google.github.io/material-design-icons/)
+* [Normalize.css](https://github.com/necolas/normalize.css)
+* [Sanitize.css](http://github.com/jonathantneal/sanitize.css/)
+* [Reset.css](https://github.com/richclark/HTML5resetCSS)
+* [Prism.js](http://prismjs.com/)
+* [Swibe menu](http://barcia.github.io/swibe-menu)
 
 ###Directorios y archivos adjuntos
 * **README.md:** Archivo en formato *Markdown* que contiene toda la información del proyecto.
@@ -85,21 +88,22 @@ En el diseño web siempre intento estudiar y utilizar los últimos estándares. 
     * **components-fixed.html:** Igual que el anterior, pero contiene los elementos fijos.
     * **colors.html:** Paleta de colores con todos los colores disponibles en el *framework*.
   * **src/:**
-  * **css/:** Contiene todos los archivos que tengan que ver con estilos CSS o preprocesadores. Mira [arquitectura CSS](#arquitectura-css) para mas información.
+    * **css/:** Contiene todos los archivos que tengan que ver con estilos CSS o preprocesadores. Mira [arquitectura CSS](#arquitectura-css) para mas información.
     * **font/:** Archivos de fuentes tipográficas o de iconos.
     * **img/:** Contiene todas las imágenes del sitio.
     * **js/:** Contiene todos los archivos JavaScript del sitio.
 
 ##Arquitectura CSS
-Puedes ver la arquitectura y directrices de los estilos CSS en [web/src/css/less/ARCHITECTURE.md](web/src/css/less/ARCHITECTURE.md).
+Puedes ver la arquitectura y directrices de los estilos CSS en [web/src/css/sass/ARCHITECTURE.md](web/src/css/sass/ARCHITECTURE.md).
 
 ##Grunt
 Todos los archivos de *Grunt* se encuentran en el directorio oculto: `/web/.grunt/`. Por lo tanto, para trabajar con *grunt* debemos meternos con la terminal en ese directorio.
 
 ###Comandos:
-* **`grunt`** - pone a *grunt* en escucha, y ante cualquier cambio en un .LESS o un .JS ejecuta las tareas correspondientes.
+* **`grunt`** - pone a *grunt* en escucha, y ante cualquier cambio en un .SASS o un .JS ejecuta las tareas correspondientes.
 * **`grunt all`** - Ejecuta todas las tareas del proyecto.
-* **`grunt css`** - Procesa el `style.less` creando así un `style.css` y un `style.min.css`.
+* **`grunt css`** - Procesa el `style.scss` creando así un `style.css` y un `style.min.css`.
+* **`grunt auto`** - Procesa el `style.css` con la herramienta AutoPrefixer creando así un `style.css` y un `style.min.css` con prefijos.
 * **`grunt js`** - Junta todos los `.JS` en un solo archivo creando un `script.min.js`.
 
 > Como extra, la configuración *grunt* incluye un plugin para mostrar una notificación en nuestro escritorio cada vez que la tarea falla.

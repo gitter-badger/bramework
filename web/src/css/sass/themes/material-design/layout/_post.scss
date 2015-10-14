@@ -1,0 +1,87 @@
+/*------------------------------------*\
+    $POST MATERIAL-DESIGN
+\*------------------------------------*/
+
+
+.md-post {
+  position: relative; //Es necesario para situar dentro elementos con 'position: absolute'
+  text-align: left;
+  background-color: $white;
+  border-radius: $md-border-radius;
+  cursor: pointer;
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+
+  @include md-shadow(2);
+
+  @include bp-medium {
+    @include margin-horizontal(10px);
+    margin-bottom: 10px;
+  }
+
+  @include bp-small {
+    @include padding-horizontal(15px);
+    @include margin-horizontal(0);
+  }
+}
+
+//Zonas
+.md-post_header {
+  padding-bottom: 30px;
+}
+
+.md-post_main {
+  p {text-align: justify;}
+}
+
+.md-post_footer {
+  padding-top: 50px;
+}
+
+.md-post_footer_author {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.md-post_footer_author_info {
+  flex: 1;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+//Elementos
+.md-post_title {
+  @extend h2;
+  margin: 0;
+}
+
+.md-post_subtitle {
+  color: $text-color-light;
+  font-style: italic;
+  padding-top: 5px;
+  margin-bottom: 0;
+}
+
+.md-post_footer_author_avatar {
+  @include circle(70px);
+  margin-right: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.md-post_footer_author_name p {
+  font-weight: 600;
+}
+
+.md-post_footer_author_desc {
+  @extend small;
+}
+
+.md-post_footer_author_social {
+  padding-top: 5px;
+}

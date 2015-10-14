@@ -1,15 +1,15 @@
 /*------------------------------------*\
-$TIPOGRAFÍA
+    $TIPOGRAFÍA
 \*------------------------------------*/
 
 //A continuación se definen todas las variables relativas a la tipografía
 //Fuente
-$font-family-sans-serif: "Roboto", sans-serif;
-$font-family-serif     : Georgia, "Times New Roman", Times, serif;
-$font-family-monospace : monospace;
+$font-family-sans-serif: 'Roboto', 'Open Sans', sans-serif;
+$font-family-serif     : Georgia, 'Times New Roman', Times, serif;
+$font-family-monospace : 'inconsolata', monospace;
 
 $font-family-base     : $font-family-sans-serif;
-$font-family-base-alt : $font-family-base;
+$font-family-base-alt : 'Roboto Condensed', sans-serif;
 $font-family-title    : 'Roboto Condensed', sans-serif;
 $font-family-title-alt: $font-family-title;
 
@@ -50,10 +50,10 @@ $font-weight-h5: 500;
 $font-weight-h6: 500;
 
 //Márgenes y altos de línes
-$headings-margin-top     : 1em;
-$headings-margin-bottom  : .5em;
-$line-height-base        : 1.5em; //Alto de línea para párrafos y listas
-$margin-bottom-base      : 2em;
+$headings-margin-top   : 1em;
+$headings-margin-bottom: .5em;
+$line-height-base      : 1.5em; //Alto de línea para párrafos y listas
+$margin-bottom-base    : 2em;
 
 //Separación entre letras
 $letter-spacing-narrow: -0.05em;
@@ -64,11 +64,12 @@ $word-spacing-narrow: -0.05em;
 $word-spacing-wide  : 0.05em;
 
 
-/**ENCABEZADOS
-* Las clases con nombre de encabezados sirven para dar un estilo de un
-* encabezado a otro, para cambiar el estilo visual manteniendo una correcta
-* semántica del HTML.
-*/
+/**
+ * ENCABEZADOS
+ * Las clases con nombre de encabezados sirven para dar un estilo de un
+ * encabezado a otro. Para cambiar el estilo visual manteniendo una correcta
+ * semántica del HTML.
+ */
 
 h1,  h2,  h3,  h4,  h5,  h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -109,7 +110,6 @@ h6, .h6 {
 }
 
 
-//Links
 a {
   color: $link-color;
   text-decoration: none;
@@ -122,19 +122,23 @@ a {
 }
 
 
-/**
-* Formato básico de elemento del texto
-*/
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  color: $text-color;
+}
+
 p,
 ul,
 ol,
 dl,
 table,
 address,
-form {
+form,
+figure{
   text-align: left;
-  font-weight  : $font-weight-base;
-  line-height  : $line-height-base;
+  font-weight: $font-weight-base;
+  line-height: $line-height-base;
   margin-top: 0;
   &:not(:last-child) {
     margin-bottom: $margin-bottom-base;
@@ -156,122 +160,12 @@ p.story {
 }
 
 
-/**LISTAS
-* El 'padding-left' elimina los estilos predefinidos de algunos navegadores
-*/
-
-ul,
-ol {
-  padding-left: 0;
-  list-style-position:inside;
-
-  //Listas anidadas
-  li>& {
-    text-indent: 40px;
-    margin-bottom: inherit;
-  }
-}
-
-/* Van dentro de un 'dl' */
-dt {
-  font-weight: $font-weight-bold;
-  &:after {content: ":";}
-}
-
-dd {
-  text-indent: 20px;
-}
-
-
-//Negrita y cursiva
 b, strong {
   font-weight: $font-weight-bold;
 }
 
 i, em {
   font-style: italic;
-}
-
-
-//Small. Está como mixing para poder aplicarlo también a outros elementos.
-.small() {
-  font-size  : $font-size-small;
-  font-weight: $font-weight-base;
-  color      : $text-color-light;
-}
-
-small {
-  .small;
-}
-
-
-//Cita (cita o nombra al autor o creador de algo)
-cite {
-  font-style: italic;
-}
-
-
-//Texto resaltado
-mark {
-  background-color: yellow;
-  color: inherit;
-}
-
-
-//Abreviatura
-abbr {
-  text-transform: uppercase;
-  &[title] {
-    border-bottom: 1px dotted $text-color;
-    &:hover {cursor: help;}
-  }
-}
-
-
-//Definicion
-dfn {
-  font-style: italic;
-}
-
-
-/**
-* Se pueden aplicar texturas. Ver 'libraries/textures.less'
-*/
-blockquote{
-  margin: 0;
-  padding: 40px;
-  font-size: $font-size-large;
-  font-style: italic;
-  color: $text-color-light;
-  line-height: $line-height-base;
-  border-radius: $border-radius;
-  border-left: 10px solid $grey-100;
-  &:not(:last-child) {
-    margin-bottom: $margin-bottom-base;
-  }
-  footer {
-    margin-top: .6em;
-    font-size: $font-size-small;
-    opacity: 0.6;
-    a {
-      color: inherit;
-      &:hover {
-        color: inherit;
-      }
-    }
-  }
-
-  $media (max-width: $bp-small) {
-    .margin-horizontal(0);
-    .margin-vertical(10px);
-    padding: 20px;
-  }
-}
-
-//Quote
-q {
-  &:before {content: "«";}
-  &:after {content: "»";}
 }
 
 
@@ -291,30 +185,106 @@ sup {top: -0.5em;}
 sub {bottom: -0.25em;}
 
 
-//Direcciones
+small, .small {
+  font-size  : $font-size-small;
+  font-weight: $font-weight-base;
+  color      : $text-color-light;
+}
+
+
+cite {
+  font-style: italic;
+}
+
+
+mark {
+  background-color: yellow;
+  color: inherit;
+}
+
+
+abbr {
+  text-transform: uppercase;
+  &[title] {
+    border-bottom: 1px dotted $text-color;
+    &:hover {cursor: help;}
+  }
+}
+
+
+dfn {
+  font-style: italic;
+}
+
+code, kbd, samp {
+  cursor: text;
+}
+
+
+/**
+* LISTAS
+* El 'padding-left' elimina los estilos predefinidos de algunos navegadores
+*/
+
+ul,
+ol {
+  padding-left: 0;
+  list-style-position:inside;
+
+  //Listas anidadas
+  li>& {
+    text-indent: 40px;
+    margin-bottom: inherit;
+  }
+}
+
+dt {
+  font-weight: $font-weight-bold;
+}
+
+
+/* Se pueden aplicar texturas. Ver 'libraries/_textures.scss' */
+blockquote{
+  margin: 0;
+  padding: 40px;
+  font-size: $font-size-large;
+  font-style: italic;
+  color: $text-color-light;
+  line-height: $line-height-base;
+  &:not(:last-child) {
+    margin-bottom: $margin-bottom-base;
+  }
+  p {
+    margin-bottom: 0;
+  }
+  footer {
+    margin-top: .5em;
+    font-size: $font-size-small;
+    opacity: 0.6;
+    a {
+      color: inherit;
+      &:hover,
+      &:focus,
+      &:active {
+        color: inherit;
+      }
+    }
+  }
+
+  @include bp-small {
+    padding: 20px;
+  }
+}
+
+q {
+  &:before {content: "«";}
+  &:after {content: "»";}
+}
+
+
 address {
   margin-left: 10px;
   padding-left: 10px;
   border-left: 1px solid $text-color;
   font-style: italic;
 }
-
-//Placeholders
-//Texto claro y oscuro
-.light-text {color: $text-color-light;}
-.dark-text  {color: $text-color-dark;}
-
-// Alineamiento
-.text-left    {text-align: left;}
-.text-right   {text-align: right;}
-.text-center  {text-align: center;}
-.text-justify {text-align: justify;}
-
-// Transformación de texto
-.text-lowercase  {text-transform: lowercase;}
-.text-uppercase  {text-transform: uppercase;}
-.text-capitalize {text-transform: capitalize;}
-
-//Mostrar las letras mas juntas o mas separadas
-.text-narrow {letter-spacing: $letter-spacing-narrow;}
-.text-wide   {letter-spacing: $letter-spacing-wide;}

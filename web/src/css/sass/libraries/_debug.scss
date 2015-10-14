@@ -1,0 +1,88 @@
+//Marcan los posibles errores en los elementos HTML
+/*------------------------------------*\
+    $DESARROLLO
+\*------------------------------------*/
+
+@mixin dev-error {outline:5px solid red;} //Error
+@mixin dev-alert {outline:5px solid yellow;} //Puede estar algo mal, revísalo
+@mixin dev-ok {outline:none;}
+//Detecta los elementos vacíos
+:empty:not(input,textarea,img,hr){
+  outline:5px solid yellow;
+}
+
+//Detecta las imágenes sin "alt" o con un "alt" vacío.
+img{
+  @include dev-error;
+}
+img[alt]{
+  @include dev-ok;
+}
+img[alt=""]{
+  @include dev-alert;
+}
+
+//Detecta errores en los links. Deben tener un 'href' y es muy recomendable que tengan un 'title'
+a{
+  @include dev-alert;
+}
+a[title]{
+  @include dev-ok;
+}
+
+a[href="#"], a[href=""] {
+  @include dev-alert;
+}
+
+//Una lista solo debe anidar 'li'
+ul,
+ol{
+  &>*:not(li) {
+    @include dev-error;
+  }
+}
+
+// los 'table' no deben tener de hijo directamente a un 'tr'. Debe ser un 'thead', 'tfoot' y 'tbody'
+table > tr{
+  @include dev-alert;
+}
+
+//El 'tfoot' se debe colocar antes del 'tbody'
+tbody + tfoot{
+  @include dev-alert;
+}
+
+//Los formularios necesitan el atributo 'action'
+form{
+  @include dev-error
+}
+form[action]{
+  @include dev-ok;
+}
+
+//Elementos que necesitan los input
+input {
+  @include dev-error;
+}
+input[type]{
+  @include dev-ok;
+}
+textarea[rows][cols]{
+  @include dev-ok;
+}
+
+//Se recomienda que los 'label' estén conectados con su 'input' correspondiente mediante el atributo 'for'
+label{
+  @include dev-alert;
+}
+label[for]{
+  @include dev-ok;
+}
+
+//Todos los 'submit' deben tener un 'value'
+input[type=submit]{
+  @include dev-error;
+}
+input[type=submit][value]{
+  @include dev-ok;
+}
