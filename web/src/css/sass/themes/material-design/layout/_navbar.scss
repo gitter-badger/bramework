@@ -272,7 +272,7 @@ $md-navbar-transition: 200ms;
 
   &:hover, &:focus, &.md-navbar_tab_item-active {
     color: $white;
-    border-bottom: 2px solid $yellow-500;
+    border-bottom: 2px solid $brand-color-alt;
     text-decoration: none;
     opacity: 1;
   }

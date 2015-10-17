@@ -1628,7 +1628,7 @@ table.centered {
 }
 .md-navbar_tab_item:hover, .md-navbar_tab_item:focus, .md-navbar_tab_item.md-navbar_tab_item-active {
   color: #fff;
-  border-bottom: 2px solid #FFEB3B;
+  border-bottom: 2px solid #FFC107;
   text-decoration: none;
   opacity: 1;
 }
