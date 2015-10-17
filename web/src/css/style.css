@@ -1632,6 +1632,9 @@ table.centered {
   text-decoration: none;
   opacity: 1;
 }
+.md-navbar_tab_item:hover, .md-navbar_tab_item:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
 
 /*------------------------------------*\
     $POST MATERIAL-DESIGN

@@ -276,4 +276,8 @@ $md-navbar-transition: 200ms;
     text-decoration: none;
     opacity: 1;
   }
+  
+  &:hover, &:focus {
+    background-color: $alpha-100;
+  }
 }
