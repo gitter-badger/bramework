@@ -821,8 +821,6 @@ hr {
   color: #4d4d4d;
   border: 0;
   outline: 0;
-  will-change: box-shadow;
-  transition: box-shadow 100ms ease-in-out;
 }
 .md-button_base:hover, .md-btn-flat:hover, .md-btn-raised:hover, .md-btn-float:hover, .md-btn-float-mini:hover {
   cursor: pointer;
@@ -845,9 +843,6 @@ hr {
   border-radius: 2px;
   font-size: 0.85rem;
 }
-.md-button_base-square:hover, .md-btn-flat:hover, .md-btn-raised:hover, .md-button_base-square:focus, .md-btn-flat:focus, .md-btn-raised:focus {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-}
 .md-button_base-square[data-icon]:before, [data-icon].md-btn-flat:before, [data-icon].md-btn-raised:before {
   margin-right: 8px;
 }
@@ -855,19 +850,19 @@ hr {
 .md-button_base-flat, .md-btn-flat {
   background-color: transparent;
 }
-.md-button_base-flat:active, .md-btn-flat:active {
+.md-button_base-flat:hover, .md-btn-flat:hover, .md-button_base-flat:focus, .md-btn-flat:focus {
   background-color: rgba(0, 0, 0, 0.05);
 }
-.md-button_base-flat:disabled:hover, .md-btn-flat:disabled:hover {
-  box-shadow: none;
+.md-button_base-flat:active, .md-btn-flat:active {
+  background-color: rgba(0, 0, 0, 0.1);
 }
-@media only screen and (max-width: 1024px) {
-  .md-button_base-flat:hover, .md-btn-flat:hover, .md-button_base-flat:focus, .md-btn-flat:focus {
-    box-shadow: none;
-  }
+.md-button_base-flat:disabled:hover, .md-btn-flat:disabled:hover {
+  background-color: transparent;
 }
 
 .md-button_base-raised, .md-btn-raised, .md-btn-float, .md-btn-float-mini {
+  will-change: box-shadow;
+  transition: box-shadow 100ms ease-in-out;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   background-color: #fff;
 }
@@ -876,6 +871,9 @@ hr {
 }
 .md-button_base-raised:disabled:hover, .md-btn-raised:disabled:hover, .md-btn-float:disabled:hover, .md-btn-float-mini:disabled:hover {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+.md-button_base-raised:hover, .md-btn-raised:hover, .md-btn-float:hover, .md-btn-float-mini:hover, .md-button_base-raised:focus, .md-btn-raised:focus, .md-btn-float:focus, .md-btn-float-mini:focus {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 @media only screen and (max-width: 1024px) {
   .md-button_base-raised:hover, .md-btn-raised:hover, .md-btn-float:hover, .md-btn-float-mini:hover, .md-button_base-raised:focus, .md-btn-raised:focus, .md-btn-float:focus, .md-btn-float-mini:focus {
