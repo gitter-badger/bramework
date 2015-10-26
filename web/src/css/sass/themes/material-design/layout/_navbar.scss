@@ -104,8 +104,15 @@ $md-navbar-transition: 200ms;
   flex: 1;
   margin-left: 20px;
   white-space: nowrap;
+  overflow-x: auto;
+  &:last-child {
+    margin-right: 20px;
+  }
   @include bp-small {
     margin-left: 10px;
+    &:last-child {
+      margin-right: 10px;
+    }
   }
 }
 

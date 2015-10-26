@@ -1475,10 +1475,17 @@ table.centered {
           flex: 1;
   margin-left: 20px;
   white-space: nowrap;
+  overflow-x: auto;
+}
+.md-navbar_toolbar-center:last-child {
+  margin-right: 20px;
 }
 @media only screen and (max-width: 450px) {
   .md-navbar_toolbar-center {
     margin-left: 10px;
+  }
+  .md-navbar_toolbar-center:last-child {
+    margin-right: 10px;
   }
 }
 
