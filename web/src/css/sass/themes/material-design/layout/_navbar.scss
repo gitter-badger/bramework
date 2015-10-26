@@ -21,7 +21,7 @@ $md-navbar-transition: 200ms;
 
   will-change: box-shadow;
   transition: box-shadow $md-navbar-transition ease-in-out;
-  @include md-shadow(1);
+  @include md-shadow(2);
   &.md-navbar-scrolled {
     @include md-shadow(3);
   }
