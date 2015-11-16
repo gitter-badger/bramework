@@ -1,0 +1,37 @@
+/*------------------------------------*\
+    $ETIQUETAS MATERIAL-DESIGN
+\*------------------------------------*/
+
+// https://www.google.com/design/spec/components/chips.html
+
+[class*="chip"] {
+  @extend small;
+  padding: 5px 12px;
+  margin-left: 10px;
+  border-radius: 26px;
+  background-color: $grey-100; //Color por defecto
+}
+
+[class*="chip-dark"] {
+  background-color: $grey-400; //Color por defecto
+  color: $white;
+}
+
+.chip-red {background-color: $red-100;}
+.chip-purple {background-color: $purple-100;}
+.chip-blue {background-color: $blue-100;}
+.chip-green {background-color: $green-100;}
+.chip-amber {background-color: $amber-100;}
+
+.chip-dark-red {background-color: $red-400;}
+.chip-dark-purple {background-color: $purple-400;}
+.chip-dark-blue {background-color: $blue-400;}
+.chip-dark-green {background-color: $green-400;}
+.chip-dark-amber {background-color: $amber-400;}
+
+
+// Colores según el contenido de la etiqueta 'data-tag' (case-sentitive)
+.chip[data-tag="Etiqueta1"] {background-color: $pink-100;}
+.chip[data-tag="Etiqueta2"] {background-color: $teal-100;}
+.chip[data-tag="Etiqueta3"] {background-color: $brown-100;}
+.chip[data-tag="Etiqueta4"] {background-color: $bluegrey-100;}

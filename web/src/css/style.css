@@ -139,7 +139,7 @@ mark {
 /**
  * Address inconsistent and variable font size in all browsers.
  */
-small, figcaption, form label, .md-post_footer_author_desc {
+small, figcaption, [class*="chip"], form label, .md-post_footer_author_desc {
   font-size: 80%;
 }
 
@@ -546,7 +546,7 @@ sub {
   bottom: -0.25em;
 }
 
-small, figcaption, form label, .md-post_footer_author_desc, .small {
+small, figcaption, [class*="chip"], form label, .md-post_footer_author_desc, .small {
   font-size: 0.85rem;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.45);
@@ -1005,7 +1005,7 @@ hr {
           justify-content: center;
 }
 
-.card_header-big, .card_header-small, .card_content {
+.card_header-big, .card_header-small, .card_content, .card_tags {
   margin: 16px;
 }
 
@@ -1030,6 +1030,10 @@ hr {
   content: "";
   display: block;
   padding-bottom: 50%;
+}
+
+.card_tags {
+  text-align: right;
 }
 
 .card_footer {
@@ -1078,8 +1082,79 @@ hr {
 .card_theme-dark * {
   color: #fff;
 }
-.card_theme-dark small, .card_theme-dark figcaption, .card_theme-dark form label, form .card_theme-dark label, .card_theme-dark .md-post_footer_author_desc {
+.card_theme-dark small, .card_theme-dark figcaption, .card_theme-dark [class*="chip"], .card_theme-dark form label, form .card_theme-dark label, .card_theme-dark .md-post_footer_author_desc {
   color: rgba(255, 255, 255, 0.45);
+}
+
+/*------------------------------------*\
+    $ETIQUETAS MATERIAL-DESIGN
+\*------------------------------------*/
+[class*="chip"] {
+  padding: 5px 12px;
+  margin-left: 10px;
+  border-radius: 26px;
+  background-color: #e6e6e6;
+}
+
+[class*="chip-dark"] {
+  background-color: #999999;
+  color: #fff;
+}
+
+.chip-red {
+  background-color: #FFCDD2;
+}
+
+.chip-purple {
+  background-color: #E1BEE7;
+}
+
+.chip-blue {
+  background-color: #BBDEFB;
+}
+
+.chip-green {
+  background-color: #C8E6C9;
+}
+
+.chip-amber {
+  background-color: #FFECB3;
+}
+
+.chip-dark-red {
+  background-color: #EF5350;
+}
+
+.chip-dark-purple {
+  background-color: #AB47BC;
+}
+
+.chip-dark-blue {
+  background-color: #42A5F5;
+}
+
+.chip-dark-green {
+  background-color: #66BB6A;
+}
+
+.chip-dark-amber {
+  background-color: #FFCA28;
+}
+
+.chip[data-tag="Etiqueta1"] {
+  background-color: #F8BBD0;
+}
+
+.chip[data-tag="Etiqueta2"] {
+  background-color: #B2DFDB;
+}
+
+.chip[data-tag="Etiqueta3"] {
+  background-color: #D7CCC8;
+}
+
+.chip[data-tag="Etiqueta4"] {
+  background-color: #CFD8DC;
 }
 
 /*------------------------------------*\

@@ -67,7 +67,7 @@ $card-width: 400px;
   }
 
 
-.card_header-big, .card_header-small, .card_content {
+.card_header-big, .card_header-small, .card_content, .card_tags {
   margin: 16px;
 }
 
@@ -94,6 +94,10 @@ $card-width: 400px;
     display: block;
     padding-bottom: 50%;
   }
+}
+
+.card_tags {
+  text-align: right;
 }
 
 
