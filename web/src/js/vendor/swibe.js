@@ -54,7 +54,7 @@ function createShadow() {
   shadow.classList.add(strings.shadowClass);
   setTimeout(function(){
     shadow.classList.add(strings.shadowOpenCLass);
-  }, 0.1);
+  }, 1);
   shadow.addEventListener('click', closeAll); //Añade evento a la sombra: Al hacer clic, ejecuta la función 'closeAll'
   shadow.addEventListener('touchstart', shadowSlideStart);
   shadow.addEventListener('touchend', shadowSlideEnd);

@@ -142,11 +142,20 @@ $md-navbar-transition: 200ms;
     will-change: padding-bottom;
     transition: padding-bottom $md-navbar-transition ease-in-out;
   }
+  .md-navbar_toolbar-center {
+    transform-origin: top left;
+    transform: translateY(70px) scale(2);
+  }
   &.md-navbar-scrolled {
     .md-navbar_toolbar {
       padding-bottom: 0;
     }
+    .md-navbar_toolbar-center {
+      transform-origin: top left;
+      transform: translateY(0) scale(1);
+    }
   }
+  
 }
 
 //Temas
