@@ -8,14 +8,14 @@ table {
   width: 100%;
 
   caption {
-    font-style: italic;
     margin-bottom: 15px;
+    font-style: italic;
   }
 
   thead {
+    border-bottom: 1px solid $grey-100;
     font-size: $font-size-small;
     color: $grey-500;
-    border-bottom: 1px solid $grey-100;
     tr {
       height: 56px;
     }

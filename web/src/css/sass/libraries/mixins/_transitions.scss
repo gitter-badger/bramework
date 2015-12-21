@@ -1,9 +1,9 @@
 $transition-duration: 3s;
 
-@mixin transition($property, $duration: $transition-duration) {
+@mixin transition($property, $duration: $transition-duration, $timing-function: ease-in-out) {
   transition-property: $property;
   transition-duration: $duration;
-  transition-timing-function: ease-in-out; //timing-function ('ease', 'linear', 'step-end', 'steps(4, end)') (http://goo.gl/2rbYlE  | http://goo.gl/3btZHf)
+  transition-timing-function: $timing-function; //timing-function ('ease', 'linear', 'step-end', 'steps(4, end)') (http://goo.gl/2rbYlE  | http://goo.gl/3btZHf)
   transition-delay: 0s;
 }
 

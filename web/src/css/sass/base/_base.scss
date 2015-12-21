@@ -15,7 +15,7 @@ $brand-color-alt-light : $amber-50;
 $border-radius: 2px;
 
 //Interfaz
-$max-width: 1366px; // => PC & Tablet Horizontal
+$max-width    : 1366px; // => PC & Tablet Horizontal
 $wrapper-width: 700px;
 
 * {
@@ -25,19 +25,17 @@ $wrapper-width: 700px;
 }
 
 /**
-* Establece el alto de 'html' y de 'body' igual al de la pantalla.
-* Es útil para fondos grandes, o para elementos que tengan
-* que ocupar toda la pantalla. En Google Chrome en Android falla porque
-* al hacer scroll aparece y desaparece la barra superior del navegador.
-*/
-html, body {
-  height:100%;
+ * Establece el alto de 'html' y de 'body' igual al de la pantalla.
+ * Es útil para fondos grandes, o para elementos que tengan
+ * que ocupar toda la pantalla. En Google Chrome en Android falla porque
+ * al hacer scroll aparece y desaparece la barra superior del navegador.
+ */
+html,
+body {
+  height: 100%;
 }
-
 
 body {
   margin: 0 auto;
   background-color: $grey-50;
 }
-
-

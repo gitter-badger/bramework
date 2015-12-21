@@ -10,19 +10,19 @@
 
 //Oculta un elemento, pero lo mantiene para los lectores de pantalla
 .screenreader {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
   position: absolute;
   width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
 }
 
 //Hace flotar a un elemento a un lado
 .float-right {float: right;}
-.float-left  {float: left;}
+.float-left {float: left;}
 
 //El elemento no se puede seleccionar
 .unselectable {user-select: none;}
@@ -41,6 +41,6 @@
 }
 
 //Recuadro rojo elaborado con "border" (ocupa 1px de espacio, en "outline" no)
-.loc-border {
+.loc-b {
   border: 1px solid red;
 }

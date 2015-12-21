@@ -1,4 +1,4 @@
-@charset 'UTF-8';
+// @charset 'UTF-8';
 
 @import 'vendor/normalize';
 //@import 'vendor/sanitize';
@@ -20,10 +20,10 @@
 @import 'themes/material-design';
 
 @import 'vendor/swibe';
-@import 'vendor/emoji';
 @import 'vendor/prism';
 
 @import 'base/shame';
 @import 'libraries/placeholders';
+@import 'libraries/emojis';
 @import 'libraries/print';
 //@import 'libraries/debug';

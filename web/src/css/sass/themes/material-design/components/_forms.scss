@@ -6,8 +6,8 @@
 form {
   li {
     display: flex;
-    align-items: center;
     min-height: 50px;
+    align-items: center;
   }
 
   label {
@@ -31,12 +31,12 @@ form {
     &[type="url"],
     &[type="datalist"],
     &[type="week"] {
-      flex-grow: 1;
+      padding: 8px 0px;
       border: 0;
       border-bottom: 1px solid $grey-150;
-      font-size: 0.9rem;
-      padding: 8px 0px;
       margin: 8px 0px;
+      flex-grow: 1;
+      font-size: 0.9rem;
       text-transform: lowercase;
     }
 
@@ -49,7 +49,7 @@ form {
     }
 
     &[type="range"] {
-      &:hover{cursor: col-resize;}
+      &:hover {cursor: col-resize;}
     }
 
     &[type="number"],
@@ -57,7 +57,7 @@ form {
     &[type="week"],
     &[type="datetime-local"],
     &[type="time"] {
-      &:hover{cursor: default;}
+      &:hover {cursor: default;}
     }
 
     &:invalid, &:out-of-range {
@@ -67,8 +67,8 @@ form {
       cursor: text;
     }
     &:focus {
-      outline: 0;
       border-bottom-color: $brand-color-focus;
+      outline: 0;
     }
     &:disabled {
       border-bottom-style: dotted;
@@ -80,18 +80,18 @@ form {
   }
 
   [data-icon]:before {
-    margin-right: 16px;
-    font-size: 16px;
     width: 16px;
     height: 32px;
+    margin-right: 16px;
+    font-size: 16px;
     line-height: 32px;
     vertical-align: bottom;
   }
 }
 
 select {
-  background-color: transparent;
   border: 0;
+  background-color: transparent;
   @include pointer;
   &:focus {
     outline: 0;
@@ -99,15 +99,15 @@ select {
 }
 
 textarea {
-  background-color: transparent;
   border: 0;
   border-bottom: 1px solid $grey-150;
   font-size: 0.9rem;
+  background-color: transparent;
   &:hover {
     cursor: text;
   }
   &:focus {
-    outline: 0;
     border-bottom-color: $brand-color-focus;
+    outline: 0;
   }
 }

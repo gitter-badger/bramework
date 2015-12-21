@@ -8,8 +8,7 @@
 if [ -e _normalize.scss ]; then
 	rm _normalize.scss
 fi
-wget https://raw.githubusercontent.com/necolas/normalize.css/master/normalize.css
-mv normalize.css _normalize.scss
+curl -s https://raw.githubusercontent.com/necolas/normalize.css/master/normalize.css > _normalize.scss
 
 
 # SANITIZE.CSS
@@ -17,8 +16,7 @@ mv normalize.css _normalize.scss
 if [ -e _sanitize.scss ]; then
 	rm _sanitize.scss
 fi
-wget https://raw.githubusercontent.com/10up/sanitize.css/master/sanitize.scss
-mv sanitize.scss _sanitize.scss
+curl -s https://raw.githubusercontent.com/10up/sanitize.css/master/sanitize.scss > _sanitize.scss
 
 
 # HTML5Doctor RESET.CSS
@@ -26,5 +24,4 @@ mv sanitize.scss _sanitize.scss
 if [ -e _reset.scss ]; then
 	rm _reset.scss
 fi
-wget https://raw.githubusercontent.com/richclark/HTML5resetCSS/master/reset.css
-mv reset.css _reset.scss
+curl -s https://raw.githubusercontent.com/richclark/HTML5resetCSS/master/reset.css > _reset.scss

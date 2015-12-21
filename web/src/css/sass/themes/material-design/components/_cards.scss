@@ -9,19 +9,15 @@ $card-width: 400px;
 
 .card {
   position: relative; //Es necesario para situar dentro elementos con 'position: absolute'
-  text-align: left;
-  background-color: $md-color-light;
-  border-radius: $md-border-radius;
   width: $card-width;
   margin: 0 14px 20px;
   cursor: pointer;
-
+  text-align: left;
+  border-radius: $md-border-radius;
+  background-color: $md-color-light;
   will-change: box-shadow;
   @include transition(box-shadow, 200ms);
   @include md-shadow(2);
-  &:hover {
-    @include md-shadow(3);
-  }
   @include bp-medium {
     margin-bottom: 20px;
     @include margin-horizontal (10px);
@@ -29,16 +25,21 @@ $card-width: 400px;
   @include bp-small {
     width: 100%;
   }
+
+  &:hover {
+    @include md-shadow(3);
+  }
 }
 
 
 //Container ('section' padre de varias cards)
 .card_container {
   display: flex;
+  width: 100%;
+
   justify-content: space-around;
   align-items: flex-start;
   flex-wrap: wrap;
-  width: 100%;
 }
 
 
@@ -47,8 +48,8 @@ $card-width: 400px;
   color: $text-color;
 
   &:hover, &:focus {
-    color: $text-color;
     text-decoration: none;
+    color: $text-color;
   }
   * {
     cursor: pointer;
@@ -59,10 +60,11 @@ $card-width: 400px;
   display: flex;
 }
 
-  .card_header_textbox{
-    flex: 1;
+  .card_header_textbox {
     display: flex;
     flex-direction: column;
+
+    flex: 1;
     justify-content: center;
   }
 
@@ -73,26 +75,26 @@ $card-width: 400px;
 
 .card_media {
   position: relative; //Para que se posicione bien el título interno
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   padding-bottom: 17.77777778%; //16:9
   margin-bottom: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 
   &:first-child {
     @include border-top-radius(2px);
   }
   &:last-child {
-    @include border-bottom-radius(2px);
     margin-bottom: 0;
+    @include border-bottom-radius(2px);
   }
 
   // Esto es para que conserve el aspect ratio
   // http://nicolasgallagher.com/flexible-css-cover-images/
   &:before {
-    content: "";
     display: block;
     padding-bottom: 50%;
+    content: "";
   }
 }
 
@@ -109,10 +111,10 @@ $card-width: 400px;
 
 //Elementos
 .card_header_avatar {
-  margin-right: 16px;
   display: inline-block;
-  background-position: center;
+  margin-right: 16px;
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
   @include circle(40px);
 }
@@ -126,17 +128,17 @@ $card-width: 400px;
 }
 
 .card_header_title-small {
-  font-weight: 600;
   font-size: $font-size-base;
+  font-weight: 600;
 }
 
 .card_header_title-media {
   position: absolute;
-  color: $white;
-  width: 100%;
-  margin: 0;
   bottom: 0;
+  width: 100%;
   padding: 10px 16px;
+  margin: 0;
+  color: $white;
   background-image: linear-gradient(to top, $alpha-800, $alpha-700, $alpha);
   @include border-bottom-radius(2px);
 }
