@@ -1,5 +1,7 @@
 #Bramework
 
+[![Join the chat at https://gitter.im/barcia/bramework](https://badges.gitter.im/barcia/bramework.svg)](https://gitter.im/barcia/bramework?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 * [Presentación](#presentaci%C3%B3n)
 * [Descripción](#descripci%C3%B3n)
 * [Guía de estilo](#gu%C3%ADa-de-estilo)
