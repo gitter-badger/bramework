@@ -1,0 +1,65 @@
+/*------------------------------------*\
+    $ETIQUETAS MATERIAL-DESIGN
+\*------------------------------------*/
+
+// https://www.google.com/design/spec/components/md-chips.html
+
+[class*="md-chip"] {
+  margin-left: 10px;
+  padding: 5px 12px;
+  border-radius: 26px;
+  background-color: $grey-100; //Color por defecto
+  @extend small;
+}
+
+[class*="md-chip-dark"] {
+  color: $white;
+  background-color: $grey-400; //Color por defecto
+  }
+
+.md-chip-red {
+  background-color: $red-100;
+  }
+.md-chip-purple {
+  background-color: $purple-100;
+  }
+.md-chip-blue {
+  background-color: $blue-100;
+  }
+.md-chip-green {
+  background-color: $green-100;
+  }
+.md-chip-amber {
+  background-color: $amber-100;
+  }
+
+.md-chip-dark-red {
+  background-color: $red-400;
+  }
+.md-chip-dark-purple {
+  background-color: $purple-400;
+  }
+.md-chip-dark-blue {
+  background-color: $blue-400;
+  }
+.md-chip-dark-green {
+  background-color: $green-400;
+  }
+.md-chip-dark-amber {
+  background-color: $amber-400;
+  }
+
+
+// Colores según el contenido de la etiqueta 'data-tag' (case-sentitive)
+.md-chip[data-tag="Etiqueta1"] {
+  background-color: $pink-100;
+  }
+.md-chip[data-tag="Etiqueta2"] {
+  background-color: $teal-100;
+  }
+.md-chip[data-tag="Etiqueta3"] {
+  background-color: $brown-100;
+  }
+.md-chip[data-tag="Etiqueta4"] {
+  background-color: $bluegrey-100;
+  }

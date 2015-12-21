@@ -11,8 +11,8 @@
   background-color: $md-color-light;
   ul {
     padding: 8px 0;
-    list-style-type: none;
     margin-bottom: 0;
+    list-style-type: none;
     &:not(:last-child) {
       border-bottom: 1px solid $grey-100;
     }
@@ -23,37 +23,37 @@
   }
 
   a {
-    line-height: 48px;
     padding: 0 16px;
+    line-height: 48px;
     vertical-align: middle;
     text-decoration: none;
     color: inherit;
     &:first-child {
       flex: 1;
       &[data-number]:after {
-        content: attr(data-number);
         float: right;
+        content: attr(data-number);
         color: $grey-400;
       }
     }
     &:hover,
     &:focus,
-    &.md-list-active{
+    &.md-list-active {
+      cursor: pointer;
+      text-decoration: none;
       color: inherit;
       background-color: $md-color-light-hover;
-      text-decoration: none;
-      cursor: pointer;
     }
   }
 
   //Iconos
   [data-icon]:before {
-    margin-right: 32px;
-    font-size: 24px;
-    vertical-align: middle;
     width: 24px;
     height: 48px;
+    margin-right: 32px;
+    font-size: 24px;
     line-height: 48px;
+    vertical-align: middle;
     color: $grey-500;
   }
 
@@ -63,16 +63,16 @@
     padding: 0;
     &[data-icon]:before {
       width: 24px;
-      padding-left: 12px;
       padding-right: 12px;
+      padding-left: 12px;
       margin-right: 0;
     }
   }
 
   //Puedes añadir barras separadoras, dentro del mismo '<ul>'
   hr {
-    margin: 8px 0;
     border-top: 1px solid $grey-100;
+    margin: 8px 0;
   }
 }
 
@@ -81,85 +81,85 @@
 //Añadir esta clase a un '<span>' justo antes de un '<ul'> para poner un titulo
 .md-list-title {
   display: block;
-  color: $grey-400;
   height: 24px;
-  line-height: 24px;
-  font-size: 0.75rem;
-  margin-left: 15px;
   padding-top: 8px;
+  margin-left: 15px;
+  font-size: 0.75rem;
+  line-height: 24px;
+  color: $grey-400;
 }
 
 
 //Lista pequeña
 /**
-* Colocar directamente en los UL.
-*/
+ * Colocar directamente en los UL.
+ */
 .md-list-small {
   padding: 8px 0;
-  background-color: $md-color-light;
-  list-style-type: none;
   margin-bottom: 0;
+  list-style-type: none;
+  background-color: $md-color-light;
   &:not(:last-child) {
     border-bottom: 1px solid $grey-100;
   }
 
   ul {
-    list-style-type: none;
-    margin-left: 0;
     padding-bottom: 8px;
+    margin-left: 0;
+    list-style-type: none;
   }
 
   a {
     display: block;
-    line-height: 32px;
     padding: 0 16px;
+    line-height: 32px;
     vertical-align: middle;
     text-decoration: none;
     color: inherit;
     &:hover,
     &:focus {
+      cursor: pointer;
       text-decoration: none;
       color: inherit;
       background-color: $md-color-light-hover;
-      cursor: pointer;
     }
     &[data-number]:after {
-      content: attr(data-number);
       float: right;
+      content: attr(data-number);
       color: $grey-400;
     }
   }
 
   [data-icon]:before {
-    margin-right: 16px;
-    font-size: 16px;
     width: 16px;
     height: 32px;
+    margin-right: 16px;
+    font-size: 16px;
     line-height: 32px;
     vertical-align: bottom;
   }
 
   //Puedes añadir barras separadoras, dentro del mismo '<ul>'
   hr {
-    margin: 8px 0;
     border-top: 1px solid $grey-100;
+    margin: 8px 0;
   }
 }
 
 //Temas
 .md-list_theme-dark {
   background-color: $md-color-dark;
-  
+
   * {
     color: $white;
   }
-  
+
   ul {
     &:not(:last-child) {
       border-bottom: 1px solid $bluegrey-700;
     }
   }
-  
+
   a {
     &:first-child {
       &[data-number]:after {
@@ -168,15 +168,15 @@
     }
     &:hover,
     &:focus,
-    &.md-list-active{
+    &.md-list-active {
       background-color: $md-color-dark-hover;
     }
   }
-  
+
   .md-list-title {
     color: $bluegrey-400;
   }
-  
+
   [data-icon]:before {
     color: $bluegrey-100;
   }

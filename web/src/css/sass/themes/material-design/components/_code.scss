@@ -2,14 +2,14 @@
     $CÓDIGO MATERIAL-DESIGN
 \*------------------------------------*/
 
-$code-color-bg: $bluegrey-800;
+$code-color-bg     : $bluegrey-800;
 $code-color-comment: $bluegrey-500;
-$code-padding: 30px;
+$code-padding      : 30px;
 $code-padding-small: 20px;
 
 code, pre {
-  background-color: $code-color-bg;
   color: $white;
+  background-color: $code-color-bg;
 }
 
 

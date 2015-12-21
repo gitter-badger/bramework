@@ -1,0 +1,50 @@
+/*------------------------------------*\
+    $EMOJIS
+\*------------------------------------*/
+
+// http://www.emoji-cheat-sheet.com/
+
+// Para web estática, descomenta solo los que utilices
+// Para blog, descomentalos todos y añade el fichero como un .css independiente.
+
+[data-emoji] {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin: 0 0.05em 0 0.1em;
+  vertical-align: -0.1em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 1em 1em;
+}
+
+//ANIMACIONES
+//Risa
+[data-emoji].laught {
+  @include animation (laught, 150ms);
+}
+
+  @keyframes laught {
+    from {transform: translateY(1px);}
+    to {transform: translateY(-1px);}
+  }
+
+//Latido
+[data-emoji].beat {
+  @include animation (beat, 400ms);
+}
+
+  @keyframes beat {
+    from {transform: scale(1);}
+    to {transform: scale(1.15);}
+  }
+
+// TEMAS
+
+  // http://www.emojione.com
+  // https://github.com/Ranks/emojione
+  @import 'emojis/emojione';
+
+  // http://twitter.github.io/twemoji/preview.html
+  // https://github.com/twitter/twemoji
+  // @import 'emojis/twitter';

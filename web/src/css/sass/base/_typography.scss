@@ -4,13 +4,13 @@
 
 //A continuación se definen todas las variables relativas a la tipografía
 //Fuente
-$font-family-sans-serif: 'Roboto', 'Open Sans', sans-serif;
-$font-family-serif     : Georgia, 'Times New Roman', Times, serif;
-$font-family-monospace : 'inconsolata', monospace;
+$font-family-sans-serif: "Roboto", "Open Sans", sans-serif;
+$font-family-serif     : Georgia, "Times New Roman", Times, serif;
+$font-family-monospace : "inconsolata", monospace;
 
 $font-family-base     : $font-family-sans-serif;
-$font-family-base-alt : 'Roboto Condensed', sans-serif;
-$font-family-title    : 'Roboto Condensed', sans-serif;
+$font-family-base-alt : "Roboto Condensed", sans-serif;
+$font-family-title    : "Roboto Condensed", sans-serif;
 $font-family-title-alt: $font-family-title;
 
 //Color texto
@@ -26,8 +26,8 @@ $link-color-visited: $link-color;
 
 //Tamaños de letra
 $font-size-base : 1rem; //~16px
-$font-size-large: $font-size-base*1.2; //~19px
-$font-size-small: $font-size-base*0.85; //~14px
+$font-size-large: $font-size-base * 1.2; //~19px
+$font-size-small: $font-size-base * 0.85; //~14px
 
 $font-size-h1: 3rem;
 $font-size-h2: 2rem;
@@ -51,7 +51,7 @@ $font-weight-h6: 500;
 
 //Márgenes y altos de línes
 $headings-margin-top   : 1em;
-$headings-margin-bottom: .5em;
+$headings-margin-bottom: 0.5em;
 $line-height-base      : 1.5em; //Alto de línea para párrafos y listas
 $margin-bottom-base    : 2em;
 
@@ -71,15 +71,20 @@ $word-spacing-wide  : 0.05em;
  * semántica del HTML.
  */
 
-h1,  h2,  h3,  h4,  h5,  h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: $font-family-title;
-  text-rendering: optimizeLegibility;
+h1, .h1,
+h3, .h2,
+h4, .h3,
+h2, .h4,
+h5, .h5,
+h6, .h6, {
   margin-top: $headings-margin-top;
   margin-bottom: $headings-margin-bottom;
+  font-family: $font-family-title;
+
+  text-rendering: optimizeLegibility;
 }
 
-h1, .h1 {
+h1,.h1 {
   font-size: $font-size-h1;
   font-weight: $font-weight-h1;
 }
@@ -100,7 +105,7 @@ h4, .h4 {
 }
 
 h5, .h5 {
-  font-size  : $font-size-h5;
+  font-size: $font-size-h5;
   font-weight: $font-weight-h5;
 }
 
@@ -111,13 +116,13 @@ h6, .h6 {
 
 
 a {
-  color: $link-color;
   text-decoration: none;
+  color: $link-color;
   &:hover,
   &:focus {
-    color : $link-color-hover;
     cursor: pointer;
     text-decoration: underline;
+    color: $link-color-hover;
   }
 }
 
@@ -135,11 +140,11 @@ dl,
 table,
 address,
 form,
-figure{
-  text-align: left;
+figure {
+  margin-top: 0;
   font-weight: $font-weight-base;
   line-height: $line-height-base;
-  margin-top: 0;
+  text-align: left;
   &:not(:last-child) {
     margin-bottom: $margin-bottom-base;
   }
@@ -147,9 +152,9 @@ figure{
 
 
 /**
-* Los párrafos con la clase '.story' se identarán y la primera letra será más
-* grande. También se puede aplicar a un elemento padre.
-*/
+ * Los párrafos con la clase '.story' se identarán y la primera letra será más
+ * grande. También se puede aplicar a un elemento padre.
+ */
 
 .story p,
 p.story {
@@ -160,35 +165,43 @@ p.story {
 }
 
 
-b, strong {
+b,
+strong {
   font-weight: $font-weight-bold;
 }
 
-i, em {
+i,
+em {
   font-style: italic;
 }
 
 
 /**
-* Previene que `sub` y `sup` sean afectados por
-* `line-height` en todos los navegadores
-*/
+ * Previene que `sub` y `sup` sean afectados por
+ * `line-height` en todos los navegadores
+ */
 sub,
 sup {
   position: relative;
-  vertical-align: baseline;
   font-size: 75%;
   line-height: 0;
+  vertical-align: baseline;
 }
 
-sup {top: -0.5em;}
-sub {bottom: -0.25em;}
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
 
 
-small, .small {
-  font-size  : $font-size-small;
+small,
+.small {
+  font-size: $font-size-small;
   font-weight: $font-weight-base;
-  color      : $text-color-light;
+  color: $text-color-light;
 }
 
 
@@ -198,8 +211,8 @@ cite {
 
 
 mark {
-  background-color: yellow;
   color: inherit;
+  background-color: $yellow-600;
 }
 
 
@@ -207,7 +220,9 @@ abbr {
   text-transform: uppercase;
   &[title] {
     border-bottom: 1px dotted $text-color;
-    &:hover {cursor: help;}
+    &:hover {
+      cursor: help;
+    }
   }
 }
 
@@ -216,25 +231,27 @@ dfn {
   font-style: italic;
 }
 
-code, kbd, samp {
+code,
+kbd,
+samp {
   cursor: text;
 }
 
 
 /**
-* LISTAS
-* El 'padding-left' elimina los estilos predefinidos de algunos navegadores
-*/
+ * LISTAS
+ * El 'padding-left' elimina los estilos predefinidos de algunos navegadores
+ */
 
 ul,
 ol {
   padding-left: 0;
-  list-style-position:inside;
+  list-style-position: inside;
 
   //Listas anidadas
-  li>& {
-    text-indent: 40px;
+  li > & {
     margin-bottom: inherit;
+    text-indent: 40px;
   }
 }
 
@@ -244,13 +261,16 @@ dt {
 
 
 /* Se pueden aplicar texturas. Ver 'libraries/_textures.scss' */
-blockquote{
-  margin: 0;
+blockquote {
   padding: 40px;
+  margin: 0;
   font-size: $font-size-large;
   font-style: italic;
-  color: $text-color-light;
   line-height: $line-height-base;
+  color: $text-color-light;
+  @include bp-small {
+    padding: 20px;
+  }
   &:not(:last-child) {
     margin-bottom: $margin-bottom-base;
   }
@@ -258,7 +278,7 @@ blockquote{
     margin-bottom: 0;
   }
   footer {
-    margin-top: .5em;
+    margin-top: 0.5em;
     font-size: $font-size-small;
     opacity: 0.6;
     a {
@@ -266,25 +286,25 @@ blockquote{
       &:hover,
       &:focus,
       &:active {
-        color: inherit;
+          color: inherit;
       }
     }
-  }
-
-  @include bp-small {
-    padding: 20px;
   }
 }
 
 q {
-  &:before {content: "«";}
-  &:after {content: "»";}
+  &:before {
+    content: "«";
+  }
+  &:after {
+    content: "»";
+  }
 }
 
 
 address {
-  margin-left: 10px;
   padding-left: 10px;
   border-left: 1px solid $text-color;
+  margin-left: 10px;
   font-style: italic;
 }

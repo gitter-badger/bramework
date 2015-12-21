@@ -11,18 +11,18 @@ function actionButtonLoad() {
     console.info("Cargado Action Button.")
   }
 }
+
 function actionButtonScroll() {
   if (window.scrollY > currentScroll) {
     actionButtonBox.classList.remove("action-button_open");
     actionButtonBox.classList.add("action-button_hidden");
-  }
-  else {
+  } else {
     actionButtonBox.classList.remove("action-button_hidden");
   }
 }
 
 function actionButtonToggle() {
-    setTimeout(function(){
-      actionButtonBox.classList.toggle("action-button_open");
-    }, 0.1);
-  }
+  setTimeout(function() {
+    actionButtonBox.classList.toggle("action-button_open");
+  }, 0.1);
+}

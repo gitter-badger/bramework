@@ -2,9 +2,9 @@
   "lang": "es",
   "short_name": "Nombre_corto",
   "name": "Nombre",
-  "start_url": "test.html",
+  "start_url": "index.html",
   "display": "standalone",
-  "theme_color": "#9D2933",
+  "theme_color": "#009688",
   "background_color": "#fff",
   //"orientation": "landscape",
   "icons": [

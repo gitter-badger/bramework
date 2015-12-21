@@ -11,18 +11,16 @@ $md-navbar-transition: 200ms;
 //Navbar General
 .md-navbar {
   position: fixed;
+  z-index: 97;
   width: 100%;
   font-size: 24px;
-  z-index: 97;
-
-  //Tema por defecto
-  background-color: $brand-color; 
-  color: $white;
-
   will-change: box-shadow;
   transition: box-shadow $md-navbar-transition ease-in-out;
-  @include md-shadow(1);
-  &.md-navbar-scrolled {
+  //Tema por defecto
+  color: $white;
+  background-color: $brand-color;
+  @include md-shadow(2);
+  &:not(.md-navbar_variant-nofixed).md-navbar-scrolled {
     @include md-shadow(3);
   }
 }
@@ -32,26 +30,25 @@ $md-navbar-transition: 200ms;
 .md-navbar_button {
   position: relative;
   display: inline-block;
+  text-decoration: none;
   color: $white;
   border-radius: 100%;
-  text-decoration: none;
-
-  &:hover,
-  &:focus {
-    background-color: $walpha-300;
-  }
-  &:active {
-    background-color: $walpha-200;
-  }
-
   @include bp-large {
     &:hover,
     &:focus {
       background-color: inherit;
     }
     &:active {
-      background-color: $walpha-300;
+      background-color: $walpha-100;
     }
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $walpha-100;
+  }
+  &:active {
+    background-color: $walpha-200;
   }
 
   &[data-icon]:before {
@@ -60,18 +57,18 @@ $md-navbar-transition: 200ms;
   }
 
   &[data-badge]:after {
-    content: attr(data-badge);
     position: absolute;
-    background-color: $red-800;
-    color: $white;
-    font-size: 14px;
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
-    border-radius: 100%;
     top: 3px;
     right: 3px;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    line-height: 20px;
+    content: attr(data-badge);
     text-align: center;
+    color: $white;
+    border-radius: 100%;
+    background-color: $red-800;
   }
 }
 
@@ -84,9 +81,8 @@ $md-navbar-transition: 200ms;
 //Zonas
 .md-navbar_toolbar {
   display: flex;
-  align-items: center;
   height: 64px;
-
+  align-items: center;
   @include bp-medium {
     height: 56px;
   }
@@ -94,18 +90,24 @@ $md-navbar-transition: 200ms;
 
 .md-navbar_toolbar-left {
   margin-left: 12px;
-
   @include bp-small {
     margin-left: 2px;
   }
 }
 
 .md-navbar_toolbar-center {
-  flex: 1;
   margin-left: 20px;
+  overflow-x: auto;
+  flex: 1;
   white-space: nowrap;
   @include bp-small {
     margin-left: 10px;
+    &:last-child {
+      margin-right: 10px;
+    }
+  }
+  &:last-child {
+    margin-right: 20px;
   }
 }
 
@@ -129,31 +131,30 @@ $md-navbar-transition: 200ms;
 //La barra de navegación es grande
 .md-navbar_variant-big {
   .md-navbar_toolbar {
-    box-sizing: content-box; //Para que al añadir el padding, no se vea mal por el align-content
     padding-bottom: 136px; //En pantallas grandes, 300px de tamaño total del navbar
-
+    box-sizing: content-box; //Para que al añadir el padding, no se vea mal por el align-content
     will-change: padding-bottom;
     transition: padding-bottom $md-navbar-transition ease-in-out;
   }
-  &.md-navbar-scrolled {
+  .md-navbar_toolbar-center {
+    transform: translateY(70px) scale(2);
+    transform-origin: top left;
+  }
+  &:not(.md-navbar_variant-nofixed).md-navbar-scrolled {
     .md-navbar_toolbar {
       padding-bottom: 0;
     }
+    .md-navbar_toolbar-center {
+      transform: translateY(0) scale(1);
+    }
   }
 }
+
 
 //Temas
 .md-navbar_theme-transparent {
   background-color: transparent;
   .md-navbar_button {
-    &:hover,
-    &:focus {
-      background-color: $alpha-500;
-    }
-    &:active {
-      background-color: $alpha-400;
-    }
-
     @include bp-medium {
       &:hover,
       &:focus {
@@ -163,21 +164,20 @@ $md-navbar-transition: 200ms;
         background-color: $alpha-400;
       }
     }
+    &:hover,
+    &:focus {
+      background-color: $alpha-500;
+    }
+    &:active {
+      background-color: $alpha-400;
+    }
   }
 }
 
 .md-navbar_theme-white {
-  background-color: $white;
   color: $text-color;
+  background-color: $white;
   .md-navbar_button {
-    &:hover,
-    &:focus {
-      background-color: $alpha-200;
-    }
-    &:active {
-      background-color: $alpha-100;
-    }
-
     @include bp-medium {
       &:hover,
       &:focus {
@@ -186,6 +186,13 @@ $md-navbar-transition: 200ms;
       &:active {
         background-color: $alpha-200;
       }
+    }
+    &:hover,
+    &:focus {
+      background-color: $alpha-200;
+    }
+    &:active {
+      background-color: $alpha-100;
     }
 
     &[data-icon]:before {
@@ -196,43 +203,74 @@ $md-navbar-transition: 200ms;
   .md-navbar_tab_item {
     color: $text-color;
     &:hover, &:focus, &.md-navbar_tab_item-active {
-      color: $text-color;
       border-bottom-color: $grey-500;
+      color: $text-color;
     }
   }
 }
 
-.md-navbar_theme-indigo {
-  background-color: $indigo-500;
+.md-navbar_theme-blue {
+  background-color: $blue-500;
 }
 
 [class*="navbar_theme-image"] {
-  background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-position: center;
+//  background-size: cover;
   .md-navbar_button {
-    &:hover,
-    &:focus {
-      background-color: $alpha-500;
-    }
-    &:active {
-      background-color: $alpha-400;
-    }
-
     @include bp-medium {
       &:hover,
       &:focus {
         background-color: inherit;
       }
       &:active {
-        background-color: $alpha-400;
+        background-color: $alpha-300;
       }
+    }
+    &:hover,
+    &:focus {
+      background-color: $alpha-200;
+    }
+    &:active {
+      background-color: $alpha-300;
     }
   }
 }
 
 .md-navbar_theme-image-xyz {
   background-image: url(../img/xyz.jpg);
+}
+
+/**
+ * Imágenes de unsplash.com
+ */
+
+.md-navbar_theme-image-random {
+  background-image: url("https://source.unsplash.com/random/1600x200");
+}
+
+.md-navbar_theme-image-buildings {
+  background-image: url("https://source.unsplash.com/category/buildings/1600x200");
+}
+
+.md-navbar_theme-image-food {
+  background-image: url("https://source.unsplash.com/category/food/1600x200");
+}
+
+.md-navbar_theme-image-nature {
+  background-image: url("https://source.unsplash.com/category/nature/1600x200");
+}
+
+.md-navbar_theme-image-people {
+  background-image: url("https://source.unsplash.com/category/people/1600x200");
+}
+
+.md-navbar_theme-image-technology {
+  background-image: url("https://source.unsplash.com/category/technology/1600x200");
+}
+
+.md-navbar_theme-image-objects {
+  background-image: url("https://source.unsplash.com/category/objects/1600x200");
 }
 
 /**
@@ -247,33 +285,36 @@ $md-navbar-transition: 200ms;
   display: inline-flex;
   height: 48px;
   margin-left: 68px;
-  flex-wrap: nowrap;
   overflow-x: auto;
-
+  flex-wrap: nowrap;
   @include bp-medium {
     display: flex;
-    text-align: center;
     margin-left: 0;
+    text-align: center;
   }
 }
 
 .md-navbar_tab_item {
+  min-width: 130px;
+  padding: 0 12px;
+  border-bottom: 2px solid $alpha;
   flex-grow: 1;
   font-size: 14px;
-  padding: 0 12px;
   line-height: 46px;
-  border-bottom: 2px solid $alpha;
-  text-transform: uppercase;
-  color: $white;
-  text-decoration: none;
-  opacity: 0.6;
-  min-width: 130px;
   text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  opacity: 0.6;
+  color: $white;
 
   &:hover, &:focus, &.md-navbar_tab_item-active {
-    color: $white;
-    border-bottom: 2px solid $yellow-500;
+    border-bottom: 2px solid $brand-color-alt;
     text-decoration: none;
     opacity: 1;
+    color: $white;
+  }
+
+  &:hover, &:focus {
+    background-color: $alpha-100;
   }
 }

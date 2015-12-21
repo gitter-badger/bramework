@@ -2,18 +2,17 @@
     $BOTONES MATERIAL-DESIGN
 \*------------------------------------*/
 
-//https://www.google.com/design/spec/components/buttons.html#buttons-usage
-//https://www.google.com/design/spec/components/bottom-sheets.html#bottom-sheets-specs
-//https://www.google.com/design/spec/components/buttons-floating-action-button.html#buttons-floating-action-button-floating-action-button
+// https://www.google.com/design/spec/components/buttons.html#buttons-usage
+// https://www.google.com/design/spec/components/bottom-sheets.html#bottom-sheets-specs
+// https://www.google.com/design/spec/components/buttons-floating-action-button.html#buttons-floating-action-button-floating-action-button
 
 //Base
 .md-button_base {
   position: relative;
-  color: $text-color;
   border: 0;
+  color: $text-color;
   outline: 0;
-  will-change: box-shadow;
-  transition: box-shadow 100ms ease-in-out;
+
   &:hover {
     cursor: pointer;
   }
@@ -27,18 +26,16 @@
 
   //Estilos para todos los botones rectangulares
   .md-button_base-square {
-    height: 36px;
     min-width: 64px;
+    height: 36px;
     padding: 0px 8px;
     margin: 6px 8px;
-    text-transform: uppercase;
+    font-size: $font-size-small;
     text-align: center;
     white-space: nowrap;
+    text-transform: uppercase;
     border-radius: $md-border-radius;
-    font-size: $font-size-small;
-    &:hover, &:focus {
-      @include md-shadow(2);
-    }
+
     &[data-icon]:before {
       margin-right: 8px;
       //      font-size: 16px;
@@ -52,25 +49,26 @@
   //Estilos todos los botones planos
   .md-button_base-flat {
     background-color: transparent;
-    &:active {
+    &:hover, &:focus {
       background-color: $alpha-50;
+    }
+    &:active {
+      background-color: $alpha-100;
     }
     &:disabled {
       &:hover {
-        box-shadow: none;
-      }
-    }
-    &:hover, &:focus {
-      @include bp-large {
-        box-shadow: none;
+        background-color: transparent;
       }
     }
   }
 
   //Estilos todos los botones elevados
   .md-button_base-raised {
-    @include md-shadow(1);
+    transition: box-shadow 100ms ease-in-out;
     background-color: $white;
+    @include md-shadow(1);
+
+    will-change: box-shadow;
     &:active {
       background-color: $grey-100;
     }
@@ -80,6 +78,7 @@
       }
     }
     &:hover, &:focus {
+      @include md-shadow(2);
       @include bp-large {
         @include md-shadow(1);
       }
@@ -88,8 +87,8 @@
 
   //Estilos para todos los botones circulares
   .md-button_base-circle {
-    @include md-shadow(2);
     font-size: 26px;
+    @include md-shadow(2);
     &:hover, &:focus {
       @include md-shadow(3);
       @include bp-large {
@@ -124,11 +123,11 @@
 
 //Botones circulares
 .md-btn-float {
+  line-height: 56px;
   @extend .md-button_base;
   @extend .md-button_base-raised;
   @extend .md-button_base-circle;
   @include circle(56px);
-  line-height: 56px;
   &[data-icon]:before {
     top: 15px;
     left: 15px;
@@ -137,11 +136,11 @@
 
 //Botones circulares pequeños
 .md-btn-float-mini {
+  line-height: 40px;
   @extend .md-button_base;
   @extend .md-button_base-raised;
   @extend .md-button_base-circle;
   @include circle(40px);
-  line-height: 40px;
   &[data-icon]:before {
     top: 7px;
     left: 7px;

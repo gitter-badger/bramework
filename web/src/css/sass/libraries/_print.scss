@@ -6,8 +6,8 @@
   *,
   *:before,
   *:after {
+    color: #000000 !important;
     background: transparent !important;
-    color: #000 !important;
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -36,7 +36,8 @@
 
   pre,
   blockquote {
-    border: 1px solid #999;
+    border: 1px solid #999999;
+
     page-break-inside: avoid;
   }
 
@@ -68,6 +69,6 @@
   // Chrome (OSX) fix for https://github.com/twbs/bootstrap/issues/11245
   // Once fixed, we can just straight up remove this.
   select {
-    background: #fff !important;
+    background: #ffffff !important;
   }
 }
